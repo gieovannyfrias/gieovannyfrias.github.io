@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="robots" content="noindex"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+      <object class="barra_nav" data="menu_de_encabezado.html" 
+          type="text/html">
+  </object>
+      <div class="mensaje_mantenimiento">
+    <article>
+        <h1>¡Volveremos pronto!
+</h1>
+        <div class="txt">
+            <p>Disculpen las molestias, pero estamos realizando algunas tareas de mantenimiento en nuestra pagina oficial de Gieovanny Frias por este momento. Si lo necesitas, siempre puedes <a href="https://dino-chrome.com/es"> ponerte en contacto con nosotros</a>, de lo contrario volveremos a estar en línea en breve lo mas rapido posible.</p>
+            
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <p class="day"></p>
+            <p class="hour"></p>
+            <p class="minute"></p>
+            <p class="second"></p>
+        </div>
+    </article>
+      </div>
+      <style>
+          body{
+            background-color: black;
+          background-image: url(img/mantenimiento%20breve.png);
+              width: 100%;
+          }
+      .mensaje_mantenimiento {
+          text-align: center;
+          padding: 20px;
+          font: 20px Helvetica, sans-serif; color: #efe8e8;
+          }
+      @media (min-width: 768px){
+        body{
+            padding-top: 150px; 
+          }
+      }
+            .barra_nav{
+   height: 65px; 
+    width: 100%;
+              position: relative;
+              bottom: 150px;
+  }
+   @media only screen and (min-width:321px) and (max-width:708px){
+
+  .barra_nav{
+      position: relative;
+              bottom: 10px;
+    position: relative;
+   z-index: 2;
+    margin-bottom: -300px;
+   height: 380px; 
+
+    }
+}
+      h1 {
+          font-size: 50px; 
+          }
+      article { 
+          display: block;
+          text-align: left;
+          max-width: 650px;
+          margin: 0 auto;
+          }
+      a { 
+          color: #dc8100;
+          text-decoration: none; 
+          }
+      a:hover { 
+          color: #efe8e8;
+          text-decoration: none;
+          }
+    </style>
+    <script>
+        const countDown = () => {
+            const countDay = new Date('December 30, 2024 00:00:00');
+            const now = new Date();
+            const counter = countDay - now;
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+            const textDay = Math.floor(counter / day);
+            const textHour = Math.floor((counter % day) / hour);
+            const textMinute = Math.floor((counter % hour) / minute);
+            const textSecond = Math.floor((counter % minute) / second)
+            document.querySelector(".day").innerText = textDay + ' Dia';
+            document.querySelector(".hour").innerText = textHour + ' Hora';
+            document.querySelector(".minute").innerText = textMinute + ' Minutos';
+            document.querySelector(".second").innerText = textSecond + ' Segundos';
+        }
+        setInterval(countDown, 1000);
+    </script>
+  </body>
+</html>
