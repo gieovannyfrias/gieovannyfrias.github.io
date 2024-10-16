@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Calendario"/>
 
+        <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+
+    <meta name="title" content="Calendario"/>
     <meta name="description" content="Eventos y conciertos"/>
     <meta name="robots" content="index"/>
 <meta name="robots" content="follow"/>
@@ -20,6 +22,11 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="header">
@@ -31,7 +38,7 @@
 <nav class="box-menu-navegacion" id="menu-navegacion">
       <ul class="menu-navegacion">
         <li class="item-menu">
-          <a href="pagina%20principal.html" class="item-menu-link">Pagina principal</a>
+          <a href="index.html" class="item-menu-link">Pagina principal</a>
         </li>
         <li class="item-menu">
           <a href="acerca%20de.html" class="item-menu-link">Acerca de</a>
@@ -139,8 +146,18 @@
               <a href="App.html" class="item-menu-link">App</a>
             </li>
             
+            
+            <li class="item-menu">
+              <a href="mi%20tienda.html" class="item-menu-link">Tienda</a>
+            </li>
+            
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
+            </li>
+            
+            
+            <li class="item-menu">
+              <a href="#" class="item-menu-link">Empleo</a>
             </li>
          
           </ul>
@@ -411,9 +428,60 @@
 </div>
 
     </div>  
-    
+     <h1 class="nuevo">Lo mas nuevo de este año</h1>
+ <div class="linea-tiempo">
+  <div class="momento">
+    <h3 class="ano">2024</h3>
+    <div class="descripcion">
+      <h1 class="proximo">Proximamente
+</h1>
+      <h2 class="evento_premium">Evento</h2>
+      <p class="localizacion">El evento estaran en proximamente del año.Ciudad de México, CDMX.
+      </p>
     </div>
-    
+
+  </div>
+   
+            <a class="button-highlight" href="#">Gratis del año</a>
+  <div class="momento">
+    <h3 class="ano">2025</h3>
+    <div class="descripcion">
+        <h1 class="proximo">Proximamente
+</h1>
+      <h2 class="evento_premium">Evento</h2>
+      <p class="localizacion">El evento estaran en proximamente del año.Ciudad de México, CDMX.
+      </p>
+    </div>
+  </div>
+   
+            <a class="button-highlight" href=""#>Pagar del año</a>
+  <div class="momento">
+    <h3 class="ano">2026</h3>
+    <div class="descripcion">
+     <h1 class="proximo">Proximamente
+</h1>
+      <h2 class="evento_premium">Evento</h2>
+      <p class="localizacion">El evento estaran en proximamente del año.Ciudad de México, CDMX.
+      </p>
+    </div>
+  </div>
+   
+            <a class="button-highlight" href="#">Gratis del año</a>
+  <div class="momento">
+    <h3 class="ano">2027</h3>
+    <div class="descripcion">
+ <h1 class="proximo">Proximamente
+</h1>
+      <h2 class="evento_premium">Evento</h2>
+      <p class="localizacion">El evento estaran en proximamente del año.Ciudad de México, CDMX.
+      </p>
+    </div>
+  </div>
+   
+            <a class="button-highlight" href="#">Pagar del año</a>
+</div>
+    </div>
+  
     <div class="pie-pagina">
     <div class="main"></div>
 <div class="footer">
@@ -1172,9 +1240,15 @@ background: linear-gradient(90deg, rgba(235,249,0,1) 0%, rgba(245,75,2,1) 51%, r
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
   overflow-x: clip;
-  min-height: 10vh;
+  min-height: 160vh;
   font-family: "Open Sans", sans-serif;
 }
+    @media only screen and (min-width:320px) and (max-width:600px){
+.pie-pagina {
+  min-height: 180vh;
+
+      }
+  }
 .pie-pagina .footer {
   z-index: 1;
 background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
@@ -1224,6 +1298,156 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
 .content-final span {
   font-size: 15px;
 }
+   .nuevo{
+      color: white;
+      font-size: 30px;
+   font-family: "Righteous", serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+    .evento_premium{
+      font-size: 25px;
+    }
+    .localizacion{
+      font-size: 20px;
+    }
+.linea-tiempo {
+  position: absolute;
+  width: 100%;
+  max-width: 95vw;
+  height: 600%px;
+  font-family: Arial;
+  max-width: 1300px;
+}
+
+.linea-tiempo::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color:aqua;
+  left: auto;
+  height: 150%;
+  border-radius: 10px;
+  
+}
+
+.momento {
+  position: relative;
+  width: 45%;
+  box-sizing: border-box;
+}
+
+.momento:nth-child(even) {
+  left: 5%;
+}
+
+.momento::after {
+  content: '';
+  position: absolute;
+  top: calc(50% + 10px);
+  height: 20px;
+  width: 20px;
+  left: -8px;
+  background-color: aqua;
+  border-radius: 50%;
+}
+
+.momento:nth-child(even)::after {
+  left: calc(-11.11% - 8.5px);
+}
+
+.momento .ano {
+  margin: 10px 0px;
+  font-size: 30px;
+  text-align: center;
+  color: red;
+}
+
+.momento .descripcion {
+  background-color: mediumvioletred;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  line-height: 22px;
+  font-size: 14px;
+  position: relative;
+  left: 10%;
+}
+    @media only screen and (min-width:320px) and (max-width:600px){
+.momento .descripcion {
+  width:fit-content;
+      }
+  }
+
+.momento .descripcion::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: calc(50% - 10px);
+  height: 0;
+  width: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid mediumvioletred;
+}
+
+.momento:nth-child(even) .descripcion {
+  background-color: #3393FE;
+  color: white;
+}
+
+.momento:nth-child(even) .descripcion::after{
+  left: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 12px solid #3393FE;
+  border-left: none;
+}
+  
+.button-highlight {
+  position: relative;
+  bottom: 10%;
+  left: 80%;
+  display:inline-block;
+  background-color: rgba(166, 231,   219, 1);
+  border: 3px solid white;
+  margin-top: 2.8rem;
+  padding-block: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 30px;
+  color: black;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-decoration: none;
+ display:inline;
+}
+    @media only screen and (min-width:320px) and (max-width:600px){
+.button-highlight {
+left: 50%;
+  top: 5%;
+  padding: 15px;
+  font-size: 15px;
+      }
+  }
+.button-highlight:hover {
+background: linear-gradient(90deg, rgba(255,0,54,1) 0%, rgba(0,212,255,1) 100%);
+
+}
+
+  @media only screen and (min-width:320px) and (max-width:600px){
+   .highlight-grid {
+      grid-template-columns:320px 1fr;
+     }
+  }
+
+  @media only screen and (min-width:320px) and (max-width:600px){
+   .highlight-grid {
+      grid-template-columns:320px 1fr minmax(250px, 1fr);
+     }
+  }
+    
 
 .footer__links  {
     list-style: none;
@@ -1336,7 +1560,6 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
   }
 }
       
-    
       </style>
     <script >
          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
