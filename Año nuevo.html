@@ -1,4 +1,5 @@
 <head><meta name=viewport content="width=device-width, initial-scale=1" />
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
 <meta name="title" content="Año nuevo"/>
 
     <meta name="description" content="Feliz año para todo"/>
@@ -16,7 +17,7 @@
     <nav class="box-menu-navegacion" id="menu-navegacion">
       <ul class="menu-navegacion">
         <li class="item-menu">
-          <a href="pagina%20principal.html" class="item-menu-link">Pagina principal</a>
+          <a href="index.html" class="item-menu-link">Pagina principal</a>
         </li>
         <li class="item-menu">
           <a href="acerca%20de.html" class="item-menu-link">Acerca de</a>
@@ -121,11 +122,17 @@
             </li>
             
             <li class="item-menu">
+              <a href="mi%20tienda.html" class="item-menu-link">Tienda</a>
+            </li>
+            <li class="item-menu">
               <a href="App.html" class="item-menu-link">App</a>
             </li>
             
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
+            </li>
+         <li class="item-menu">
+              <a href="#" class="item-menu-link">Empleo</a>
             </li>
          
           </ul>
@@ -198,17 +205,17 @@
   </div>
 </header>
     <div class="wrapper">
-<audio id=player loop><source src="https://drive.google.com/uc?export=download&id=1uVduNuN9xACVNgfRXQ7W-hSyCkL-QDNs" preload=auto tabindex=0 type=audio/mp3 /><embed src="https://drive.google.com/uc?export=download&id=1uVduNuN9xACVNgfRXQ7W-hSyCkL-QDNs" preload=auto tabindex=0 type=audio/mp3 /></audio>
- <div class="imagen-fondo">
-<div id=greetings class=center>
+  <div class="imagen-fondo">
+<div id=greetings  class="center">
    
-    <div  class="mensaje-año-nuevo">
+    <div  class="mensaje-ano-nuevo">
     
     
-    <h1>Un nuevo comienzo empieza</h1>
+    <h1 class="comienzo">Un nuevo comienzo empieza</h1>
      </div>       
     </div>
 </div>
+  <canvas id="canvas"></canvas>
   </div>
   
     <div class="pie-pagina">
@@ -374,9 +381,9 @@
             border: 0;
            
         }
-    body {
-background-color: black;
-
+  body {
+  margin:0;
+    background: black;
 }
       
 
@@ -385,6 +392,7 @@ background-color: black;
   width: 100%;
 background: linear-gradient(180deg, rgba(52,52,52,1) 0%, rgba(64,61,62,1) 46%, rgba(1,0,0,1) 100%);
     font-family: 'Signika Negative', sans-serif;
+  position: relative;
 z-index: 2;
 }
 .header a {
@@ -573,41 +581,61 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
 }
   
-       .wrapper {
+ 
+     .wrapper {
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 32px;
+       padding: 0;
+      }
+       
+canvas {
+  position:fixed;
+  width:100%;
+  height:76.9%;
+  image-rendering: optimizeSpeed;            
+  image-rendering: -moz-crisp-edges;         
+  image-rendering: -webkit-optimize-contrast; 
+  image-rendering: -o-crisp-edges;            
+  image-rendering: pixelated;                 
+  -ms-interpolation-mode: nearest-neighbor;   
 }
-        .imagen-fondo{
-             background-image: url(https://lh3.googleusercontent.com/d/1ztb3IpGwAGH9XmXAQS90yzVPpc0Vg-1F=w1000);
- height:100vh;
-    width: 100%;
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-   background-attachment: fixed;
-        
-        }
-        .mensaje-año-nuevo{
+    .imagen-fondo{
+      height: 0;
+      background: aqua;
+    }
+    .comienzo{
+      color: red;
+    }
+ .mensaje-ano-nuevo{
             color: #fff;
           height: 0vh;
   filter: drop-shadow(0 0 10px white);  
             
         }
 .center {
-       color: #fff;
+       color: red;
   font-size: 3em;
   overflow: hidden;
-        height: 100vh;
   filter: drop-shadow(0 0 10px white);  
-    
+    position: relative;
+  top: 0;
+  z-index: 1;
   display: flex;
-  height: 100vh;
+  height: 30vh;
   text-align: center;
   justify-content: center;
   align-items: center;
   animation: fade-in-out $duration infinite;
 }
+
+  @media only screen and (min-width:320px) and (max-width:600px){
+    .comienzo{
+      font-size: 30px;
+    }
+    .center{
+      font-size: 25px;
+    }
+    }
 
 .footer__link {
   text-decoration: none;
@@ -622,7 +650,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
   overflow-x: clip;
-  min-height: 10vh;
+  min-height: 80vh;
   font-family: "Open Sans", sans-serif;
 }
 .pie-pagina .footer {
@@ -788,6 +816,119 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
     
     </style>
     <script>
+      const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+window.onload = window.onresize = function() {
+  const factor = 2;
+  const scale = window.devicePixelRatio / factor;
+  canvas.width = window.innerWidth * scale;
+  canvas.height = window.innerHeight * scale;
+  ctx.scale(scale * factor, scale * factor);
+  
+  setup();
+  window.requestAnimationFrame(draw);
+}
+
+function setup() {
+  wind = 0;
+  
+  snowCount = 0;
+  snow = [];
+  while (snowCount++ < 500) snow.push(new Particle);
+  
+  snowCanvas = document.createElement('canvas');
+  landCanvas = document.createElement('canvas');
+  ctxSnow = snowCanvas.getContext('2d');
+  ctxLand = landCanvas.getContext('2d');
+  snowCanvas.width = landCanvas.width = canvas.width;
+  landCanvas.height = snowCanvas.height = canvas.height;
+  snowData = ctxSnow.getImageData(0,0,snowCanvas.width,snowCanvas.height);
+  landData = ctxLand.getImageData(0,0,landCanvas.width,landCanvas.height);
+  snowBuffer = new ArrayBuffer(snowData.data.length);
+  landBuffer = new ArrayBuffer(landData.data.length);
+  snowBuf8 = new Uint8ClampedArray(snowBuffer);
+  landBuf8 = new Uint8ClampedArray(landBuffer);
+  snowRef = new Uint32Array(snowBuffer);
+  landRef = new Uint32Array(landBuffer);
+  
+  ctx.fillStyle = '#1e1f26'; // Codepen color!
+}
+
+function draw() {
+  window.requestAnimationFrame(draw);
+  if (snow.length <= 10) setup();
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  for (const s of snow) {
+    s.update();
+    s.draw();
+  }
+  snowData.data.set(snowBuf8);
+  landData.data.set(snowBuf8);
+  ctxSnow.putImageData(snowData,0,0);
+  ctxLand.putImageData(landData,0,0);
+  ctx.drawImage(snowCanvas,0,0);
+  ctx.drawImage(landCanvas,0,0)
+  
+  snow = snow.filter(s => { return !s.dead });
+  wind += 0.001;
+  wind %= 2*Math.PI;
+}
+
+window.onclick = function(event) {
+  setup();
+}
+
+class Particle {
+  constructor() {
+    this.color = '0xffFFF0A0';
+    this.reset();
+    this.y = Math.floor(canvas.height * (2 * Math.random() - 1));
+    this.dead = false;
+    this.weight = Math.random();
+  }
+  update() {
+    if (this.y == canvas.height-1) this.landHere();
+    let move = false;
+    if (
+      landRef[(this.y+1)*canvas.width+this.x] == this.color &&
+      landRef[(this.y+1)*canvas.width+this.x+1] == this.color &&
+      landRef[(this.y+1)*canvas.width+this.x-1] == this.color
+    ) this.landHere();
+    
+    if (landRef[(this.y+1)*canvas.width+this.x] != this.color) {
+      snowRef[this.y*canvas.width+this.x] = '0x00000000';
+      this.y++;
+    }
+    
+    let chance = Math.random();
+    if (
+      this.weight+chance < Math.cos(wind) &&
+      landRef[this.y*canvas.width+this.x+1] != this.color
+    ) this.x++;
+    
+    if (
+      this.weight+chance < Math.sin(wind) && 
+      landRef[this.y*canvas.width+this.x-1] != this.color
+    ) this.x--;
+    
+    this.x %= canvas.width;
+  }
+  reset() {
+    this.x = Math.floor(Math.random() * canvas.width);
+    this.y = Math.floor(-canvas.height * Math.random());
+  }
+  landHere() {
+    landRef[this.y*canvas.width+this.x] = this.color;
+    this.reset();
+    if (landRef[this.y*canvas.width+this.x] == this.color) this.dead = true;
+  }
+  draw() {
+    let index = this.y*canvas.width+this.x;
+    snowRef[index] = this.color;
+  }
+}
+      /*canva arriba*/
     function update(){greetings.innerHTML=options}const DURATION=5e3;let options=["Muy pronto","🥠 2024 sera el inicio del año  y empiezara nuevas aventuras! 🍪"],greetings=document.getElementById("greetings");setInterval(update,DURATION);document.addEventListener("click",function(){document.getElementById("player").play()},{once:!0});
       /*menu*/
       
