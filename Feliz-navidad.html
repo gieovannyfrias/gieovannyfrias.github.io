@@ -1076,27 +1076,6 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
     }
 
 .snap-section:nth-child(2) {
-background: rgb(19,4,5);
-background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(23,5,7,1) 100%);
-  background-size: 400% 400%;
-  position: relative;
-  animation: cambiar 10s ease-in-out infinite;
-}
-    @keyframes cambiar{
-      0%{background-position: 0 50%;}
-      50%{background-position: 100% 50%;}
-      100%{background-position:  0 50%;}
-    }
-    
-    @keyframes show{
-      from{
-        opacity:0;
-        scale:25%;
-      }
-      to{
-        opacity: 1;
-        scale:100%;
-      }
     }
  
     
@@ -1417,6 +1396,7 @@ font-size: 15px;
 .regalo:hover .promo {
   top: -80px;
 }
+ 
 .snap-section:nth-child(5) {
 background: rgb(19,4,5);
 background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(23,5,7,1) 100%);
@@ -1428,6 +1408,16 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
       0%{background-position: 0 50%;}
       50%{background-position: 100% 50%;}
       100%{background-position:  0 50%;}
+    }
+       @keyframes show{
+      from{
+        opacity:0;
+        scale:25%;
+      }
+      to{
+        opacity: 1;
+        scale:100%;
+      }
     }
     .divison-5{
       float: left;
