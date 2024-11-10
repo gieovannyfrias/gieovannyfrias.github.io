@@ -1098,83 +1098,13 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
         scale:100%;
       }
     }
-    .new{
-      view-timeline-name: --image;
-      view-timeline-axis:block;
-      animation-timeline: --image;
-      animation-name: show;
-      animation-range:entry 25% cover 30%;
-      animation-fill-mode: both;
-       width: 400px;
-      height: 400px;
-      float: right;
-     
-}
-
-      @media only screen and (min-width:320px) and (max-width:600px){
-
-    .new{
-      float: left;
-      width: 300px;
-      height: 300px;
-         }
-    }
+ 
     
     .new-1{
       width: 400px;
       height: 290px;
     }
     
-    
-    
-    
- .division-2 .new-1 {
-  width: 98%;
-  vertical-align: top;
-  z-index: 5;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-@keyframes mask-ani {
-  0% {
-    transform: rotate(-36deg) translate(-40px, -430px);
-  }
-
-  70%,
-  100% {
-    transform: rotate(-36deg) translate(-40px, 378px);
-  }
-}
-@keyframes mask-border-ani {
-  0% {
-    opacity: 0.8;
-    transform: rotate(-36deg) translate(-126px, -190px);
-  }
-
-  70%,
-  100% {
-    opacity: 0.8;
-    transform: rotate(-36deg) translate(-126px, 355px);
-  }
-}
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    }
     .division-1{
       float: left;
     }
@@ -1186,6 +1116,7 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
       opacity: 0.15;
 	animation: highlight both ease-in-out;
 	animation-timeline: view();
+      float: left;
 
     }
     
@@ -1197,21 +1128,10 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
     
 
 
-    .division-2{
-     position: relative;
-      bottom: 600px;
-      float: right;
-  width: 400px;
-  height: 400px;
- 
-}
-      @media only screen and (min-width:320px) and (max-width:600px){
-    .division-2{
-         width: 300px;
-      height: 300px;
-     }
-    }
+  
+     
     .division-2 {
+      float: right;
   box-sizing: border-box;
   width: 400px;
   height: 300px;
@@ -1277,7 +1197,7 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
     
      }
     }
-.division-2 img {
+.division-2 .new-1 {
   width: 98%;
   vertical-align: top;
   z-index: 5;
@@ -1344,7 +1264,27 @@ float: left;
     opacity: 1;
 	}
 }
-    
+       .new{
+      view-timeline-name: --image;
+      view-timeline-axis:block;
+      animation-timeline: --image;
+      animation-name: show;
+      animation-range:entry 25% cover 30%;
+      animation-fill-mode: both;
+       width: 400px;
+      height: 400px;
+      float: right;
+     
+}
+
+      @media only screen and (min-width:320px) and (max-width:600px){
+
+    .new{
+      float: left;
+      width: 300px;
+      height: 300px;
+         }
+    }
     
     .new-0{
       width: 400px;
