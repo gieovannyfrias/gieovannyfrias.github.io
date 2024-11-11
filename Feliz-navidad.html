@@ -305,13 +305,10 @@
 </div>
 <div class="snap-section">
     <h3 class="title_anos">Noche buena</h3>
-  <div class="division-1">
   <p class="nochebuena">La Nochebuena es el corazón de la celebración <br>navideña en México. Cada 24 de diciembre,<br> las familias se reúnen para festejar el nacimiento <br>de Jesús, agradecer las bendiciones recibidas <br>durante el año y disfrutar alrededor de la mesa <br>de exquisitos platillos típicos.
     <br>
-    El 24 de diciembre es la cena, y no puede faltar el<br> ponche, la bebida de la temporada, así como el <br>platillo más tradicional es el pavo,la costumbre <br>de su preparación viene de la población cristiana<br> desde el siglo XVI, Navidad era el mayor día de<br> fiesta y se fue haciendo costumbre preparar el <br>manejar más delicioso y a la vez rendidor <br>para compartir con la familias.</p></div>
-  <div class="division-2">
+    El 24 de diciembre es la cena, y no puede faltar el<br> ponche, la bebida de la temporada, así como el <br>platillo más tradicional es el pavo,la costumbre <br>de su preparación viene de la población cristiana<br> desde el siglo XVI, Navidad era el mayor día de<br> fiesta y se fue haciendo costumbre preparar el <br>manejar más delicioso y a la vez rendidor <br>para compartir con la familias.</p>
   <img class="new-1" src="https://lh3.googleusercontent.com/d/1MajxeJU-Sq-_2d7n4N9uDgkHEEME7goB=w1000">
-  </div>
 </div>
 <div class="snap-section">
 
@@ -1087,8 +1084,17 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
     }
 
 .snap-section:nth-child(2) {
+    background: rgb(19,4,5);
+background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(23,5,7,1) 100%);
+  background-size: 400% 400%;
+  position: relative;
+  animation: cambiar 10s ease-in-out infinite;
+}
+    @keyframes cambiar{
+      0%{background-position: 0 50%;}
+      50%{background-position: 100% 50%;}
+      100%{background-position:  0 50%;}
     }
- 
     
     
    
