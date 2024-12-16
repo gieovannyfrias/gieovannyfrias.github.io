@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
    <meta name="title" content="YouTube"/>
 
     <meta name="description" content="Entretenimiento de lo mejor y de lo que no se ve en la plataforma"/>
@@ -42,13 +44,14 @@
  <header class="header">
   <div class="child-header">
     <div class="box-logo">
-      <a href="" class="link-logo">Gieovanny Frias</a>
+      <a href="index.html" class="link-logo">Gieovanny Frias</a>
       <h6>Influencer, blogger o creador digital</h6>
     </div>
+    
     <nav class="box-menu-navegacion" id="menu-navegacion">
       <ul class="menu-navegacion">
         <li class="item-menu">
-          <a href="pagina%20principal.html" class="item-menu-link">Pagina principal</a>
+          <a href="index.html" class="item-menu-link">Pagina principal</a>
         </li>
         <li class="item-menu">
           <a href="acerca%20de.html" class="item-menu-link">Acerca de</a>
@@ -62,11 +65,24 @@
             <li class="item-menu">
               <a href="calendario.html" class="item-menu-link">Calendario</a>
             </li>
+              <li class="item-menu">
+              <a href="Dia-de-muertos.html" class="item-menu-link">Dia de muertos</a>
+            </li>
             <li class="item-menu">
               <a href="A%C3%B1o%20nuevo.html" class="item-menu-link">Año nuevo</a>
             </li>
             <li class="item-menu">
               <a href="Reyes%20magos.html" class="item-menu-link">Reyes magos</a>
+            </li>
+               <li class="item-menu">
+              <a href="San-Valentin.html" class="item-menu-link">San valentin</a>
+            </li>
+               <li class="item-menu">
+              <a href="Covid-19.html" class="item-menu-link">Covid-19</a>
+            </li>
+            
+            <li class="item-menu">
+              <a href="Feliz-navidad.html" class="item-menu-link">Feliz navidad</a>
             </li>
           </ul>
         </li>
@@ -86,6 +102,16 @@
             </li>
             <li class="item-menu">
               <a href="Noticias.html" class="item-menu-link">Noticias</a>
+            </li>
+            
+            <li class="item-menu">
+              <a href="Responder%20preguntas%20anonimas%20frecuentes.html" class="item-menu-link">Preguntas anonimas</a>
+            </li>
+              <li class="item-menu">
+              <a href="Colaboraciones.html" class="item-menu-link">Colaboraciones</a>
+            </li>
+              <li class="item-menu">
+              <a href="Articulos-instantaneos.html" class="item-menu-link">Articulos instantaneos</a>
             </li>
          
           </ul>
@@ -147,11 +173,16 @@
             <li class="item-menu">
               <a href="Management%20Team.html" class="item-menu-link">Management Team</a>
             </li>
+              <li class="item-menu">
+              <a href="Directorio.html" class="item-menu-link">Directorio</a>
+            </li>
             
             <li class="item-menu">
               <a href="agencias.html" class="item-menu-link">Agencias</a>
             </li>
-            
+            <li class="item-menu">
+              <a href="mi%20tienda.html" class="item-menu-link">Tienda</a>
+            </li>
             <li class="item-menu">
               <a href="App.html" class="item-menu-link">App</a>
             </li>
@@ -159,7 +190,9 @@
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
-         
+         <li class="item-menu">
+              <a href="Empleo.html" class="item-menu-link">Empleo</a>
+            </li>
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
@@ -222,9 +255,9 @@
     </nav>
   
     <button class="btn-hamburguesa" id="btn-hamburguesa">
-      <span class="span_1"></span>
-      <span class="span_1"></span>
-      <span class="span_1"></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   
   </div>
@@ -549,7 +582,7 @@
   </div>
       
       
-      <div style="position: relative; left: 0; top: 300px;">
+      <div class="explorar_mas">
 		<img class="img_7" src="https://lh3.googleusercontent.com/d/1xfMP8UHNns3g0evPSGPFA5CcSvUKHygh=w1000"/>
 		<img class="img_8" src="https://lh3.googleusercontent.com/d/1mcxEnsKRqDHfUELZ2xGOOQ3OrMujRHSq=w1000"/>
     <div class="suscribirte">
@@ -741,10 +774,19 @@ background-color: black;
 
 }
   
+
+  svg{
+    
+    color: white;
+  }
+
 .header {
   width: 100%;
-background: linear-gradient(180deg, rgba(52,52,52,1) 0%, rgba(64,61,62,1) 46%, rgba(1,0,0,1) 100%);
-    font-family: 'Signika Negative', sans-serif;
+    background: rgba(0,0,0,0.9);
+
+  font-family: 'Signika Negative', sans-serif;
+  top: 0;
+  position: fixed;
 z-index: 2;
 }
 .header a {
@@ -754,11 +796,10 @@ z-index: 2;
   max-width: 100%;
   padding: 0 2%;
   margin: 0 auto 0;
-  
-  display: flex;
-  justify-content: space-between;
+    display: flex;
   align-items: center;
-}
+flex-direction: column;
+  }
 
 
 .link-logo {
@@ -813,7 +854,21 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   color: #d92626;
   transition: .3s linear;
 }
-
+  .fa-angle-down{
+  
+  }
+   .fa-angle-down:before {
+      content: "\f107";
+      color: white;
+    width: 1rem;
+    text-align: center;
+    float: none;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+    content: '\f107';
+    font-family: 'FontAwesome';
+    }
 
 .btn-hamburguesa {
   display: none;
@@ -822,14 +877,14 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   border: none;
   cursor: pointer;
 }
-.btn-hamburguesa .span_1 {
+.btn-hamburguesa span {
   height: 2px;
   display: block;
   background-color:wheat;
   width: 25px;
   border-radius: 20px;
 }
-.btn-hamburguesa .span_1:nth-child(2) {
+.btn-hamburguesa span:nth-child(2) {
   margin: .4rem 0;
 }
 
@@ -855,12 +910,11 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   transform: scaley(1);
 }
 
-
-  
-
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .btn-hamburguesa {
     display: block;
+    position: absolute;
+    right: 0;
   }
 
   .header {
@@ -868,7 +922,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     padding: 1rem 0;
   }
   
-
+  
   .box-menu-navegacion {
     position: absolute;
     top: 100%;
@@ -882,11 +936,15 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
   .menu-navegacion {
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
   }
   .item-menu-link {
     padding: 1vh;
   }
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    left: 100px;
+}
   /* .item-menu-sub-menu {
          display: flex;
 
@@ -895,8 +953,9 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     flex-wrap: wrap;
     width: 100%;
   }*/
+    
  .angle-view-sub-menu {
-    border: 1px solid red;
+   /* border: 1px solid red;*/
     width: 30px;
    height: 30px;
     display: flex;
@@ -933,7 +992,6 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
 }
   
-  
    .wrapper {
 	max-width: 1400px;
 	margin: 0 auto;
@@ -944,6 +1002,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     width: 500px;
     height: 600px;
       border-radius: 25px 25px 25px 25px;
+      margin-top: 150px;
   }
   .title_youtube{
       font-family: "Walter Turncoat", cursive;
@@ -980,8 +1039,7 @@ margin-left: 600px;
   .video-short{
       position: relative;
     bottom: 450px;
-margin-left: 600px;
-    
+left: 0;    
   }
   .short_img_1, .short_img_2, .short_img_3, .short_img_4{
     width: 200px;
@@ -993,18 +1051,24 @@ margin-left: 100px;
           border-radius: 25px 25px 25px 25px;
 
   }
-  @media only screen and (min-width: 331px) and (max-width: 708px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
     .img_1{
-    width: 400px;
+    width: 200px;
       height: 350px;
+      display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
     }
    .title_youtube,  .subtitle_youtube, .subtitle_short{
 margin-left: 0;
      top: 30px;
+     text-align: center;
      
   }
   .video-short{
-margin-left: 0;  
+margin-left: -100px;
     top:10px;
     }
       .short_img_1, .short_img_2, .short_img_3, .short_img_4{
@@ -1038,7 +1102,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(252,0,255,1) 35%, rgba
         background-position: 0% 50%;
     }
 }
-    @media only screen and (min-width: 331px) and (max-width: 708px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
 
   .galeria_video {
    
@@ -1130,7 +1194,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(252,0,255,1) 35%, rgba
   grid-column: 2/4;
 }
 
-@media only screen and (max-width: 770px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .container {
     flex-direction: column;
     justify-content: center;
@@ -1168,7 +1232,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(252,0,255,1) 35%, rgba
   }
 }
 
-@media only screen and (max-width: 430px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .maintext {
     font-size: 2rem;
   }
@@ -1227,12 +1291,17 @@ a.channel:hover {
   height: 400px;
 
 }
-    @media only screen and (min-width: 331px) and (max-width: 708px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
  #video-dis iframe {
-  width: 350px;
+  width: 250px;
   height:300px;
 position: relative;
    bottom: 300px;
+ display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
     }
   }
   
@@ -1246,7 +1315,7 @@ position: relative;
   flex-direction: column;
   background: var(--primary);
 }
-   @media only screen and (min-width: 331px) and (max-width: 708px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
 .video-li {
 position: relative;
   bottom: 250px;
@@ -1347,13 +1416,13 @@ position: relative;
   margin-top: var(--s-pad);
 }
 
-@media only screen and (max-width: 1150px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   #playlist {
     width: 95vw;
     height: 60vh;
   }
 }
-@media only screen and (max-width: 950px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   #playlist {
     top: 10%;
     width: 50vw;
@@ -1369,12 +1438,12 @@ position: relative;
     height: 300px;
   }
 }
-@media only screen and (max-width: 800px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   #playlist {
     width: 60vw;
   }
 }
-@media only screen and (max-width: 650px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   #playlist {
     width: 80vw;
   }
@@ -1394,7 +1463,7 @@ position: relative;
       position: relative;
     margin-top: 600px;
   }
-  @media only screen and (min-width:370px) and (max-width:768px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 
   .video_lista{
        top: 100px;
@@ -1403,7 +1472,6 @@ position: relative;
 }
   .video-sec-wrap {
 	width: 100%;
-	min-height: 100vh;
     
 }
 .video-sec {
@@ -1431,6 +1499,7 @@ position: relative;
 }
 .thumb_1 {
 	display: block;
+  max-width: 200px;
 	margin: .4em;
   width: 300px;
   height: 200px;
@@ -1444,17 +1513,37 @@ position: relative;
 	opacity: .8;
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .5);
 }
-    @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 .thumb_1 {
 width: 200px;
   height: 150px;
+  display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
      }
     }
+  
+  .explorar_mas{
+    position: relative; 
+    left: 0;
+    top: 300px;
+    display:block;
+ display:inline-block;
+  }
+    @media only screen and (min-width:320px) and (max-width:1400px){
+      .explorar_mas{
+        top: 300px;
+        text-align: center;
+      }
+      }
 .thumb-info {
 	display: inline-block;
 	height: 100%;
 	width: 100%;
 	padding: .4em;
+  text-align: center;
 }
 .thumb-title {
 	color: #f5f5f5;
@@ -1496,22 +1585,22 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(241,0,49,1) 100%);
 	padding: 10px;
 	font-size: 1.2em;
 }
-@media only screen and (max-width: 1456px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
 	.video-sec-middle {
 		grid-template-columns: repeat(4,1fr);
 	}
 }
-@media only screen and (max-width: 1024px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
 	.video-sec-middle {
 	  grid-template-columns: repeat(3,1fr);
 	}
 }
-@media only screen and (max-width: 756px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .video-sec-middle {
    grid-template-columns: repeat(2,1fr);
   }
 }
-@media only screen and (max-width: 496px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .video-sec-middle {
    grid-template-columns: repeat(1,1fr);
   }
@@ -1524,9 +1613,10 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(241,0,49,1) 100%);
   height:200px;
   width:200px;
   top: 40px;
-  left : 900px;
+  left : 400px;
   z-index: 1;
      border-radius: 25px 25px 25px 25px;
+     margin-left: 200px;
 }
 
 .img_8
@@ -1534,7 +1624,7 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(241,0,49,1) 100%);
   position:relative;
   height:300px;
   width:300px;
-  left: 800px;
+  left: 300px;
   z-index: -1;
    border-radius: 25px 25px 25px 25px;
 }
@@ -1587,12 +1677,19 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(255,59,0,1) 100%)
 .azul:hover{
 background: linear-gradient(90deg, rgba(146,21,230,1) 0%, rgba(27,163,137,1) 100%);
 }
-       @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
      .img_7{
+       width: 200px;
        left: 0;
-       top: 150px;
+       top: 200px;
+      display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
      }
          .img_8{
+           width: 250px;
       left: 0;  
            bottom: 250px;
          }
@@ -1618,9 +1715,9 @@ background: linear-gradient(90deg, rgba(146,21,230,1) 0%, rgba(27,163,137,1) 100
   min-height: 800vh;
   font-family: "Open Sans", sans-serif;
 }
-   @media only screen and (min-width:320px) and (max-width:600px){
+   @media only screen and (min-width:320px) and (max-width:1200px){
         .pie-pagina {
-               min-height:1350vh;
+               min-height:1450vh;
 
              }
              
