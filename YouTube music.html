@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
@@ -56,7 +58,7 @@
  <header class="header">
   <div class="child-header">
     <div class="box-logo">
-      <a href="#" class="link-logo">Gieovanny Frias</a>
+      <a href="index.html" class="link-logo">Gieovanny Frias</a>
       <h6>Influencer, blogger o creador digital</h6>
     </div>
     
@@ -77,11 +79,24 @@
             <li class="item-menu">
               <a href="calendario.html" class="item-menu-link">Calendario</a>
             </li>
+              <li class="item-menu">
+              <a href="Dia-de-muertos.html" class="item-menu-link">Dia de muertos</a>
+            </li>
             <li class="item-menu">
               <a href="A%C3%B1o%20nuevo.html" class="item-menu-link">Año nuevo</a>
             </li>
             <li class="item-menu">
               <a href="Reyes%20magos.html" class="item-menu-link">Reyes magos</a>
+            </li>
+               <li class="item-menu">
+              <a href="San-Valentin.html" class="item-menu-link">San valentin</a>
+            </li>
+               <li class="item-menu">
+              <a href="Covid-19.html" class="item-menu-link">Covid-19</a>
+            </li>
+            
+            <li class="item-menu">
+              <a href="Feliz-navidad.html" class="item-menu-link">Feliz navidad</a>
             </li>
           </ul>
         </li>
@@ -101,6 +116,16 @@
             </li>
             <li class="item-menu">
               <a href="Noticias.html" class="item-menu-link">Noticias</a>
+            </li>
+            
+            <li class="item-menu">
+              <a href="Responder%20preguntas%20anonimas%20frecuentes.html" class="item-menu-link">Preguntas anonimas</a>
+            </li>
+              <li class="item-menu">
+              <a href="Colaboraciones.html" class="item-menu-link">Colaboraciones</a>
+            </li>
+              <li class="item-menu">
+              <a href="Articulos-instantaneos.html" class="item-menu-link">Articulos instantaneos</a>
             </li>
          
           </ul>
@@ -162,6 +187,9 @@
             <li class="item-menu">
               <a href="Management%20Team.html" class="item-menu-link">Management Team</a>
             </li>
+              <li class="item-menu">
+              <a href="Directorio.html" class="item-menu-link">Directorio</a>
+            </li>
             
             <li class="item-menu">
               <a href="agencias.html" class="item-menu-link">Agencias</a>
@@ -169,7 +197,6 @@
             <li class="item-menu">
               <a href="mi%20tienda.html" class="item-menu-link">Tienda</a>
             </li>
-            
             <li class="item-menu">
               <a href="App.html" class="item-menu-link">App</a>
             </li>
@@ -177,10 +204,9 @@
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
-            <li class="item-menu">
-              <a href="#" class="item-menu-link">Empleo</a>
+         <li class="item-menu">
+              <a href="Empleo.html" class="item-menu-link">Empleo</a>
             </li>
-         
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
@@ -673,10 +699,18 @@
     color: white;
 }
     
+  svg{
+    
+    color: white;
+  }
+
 .header {
   width: 100%;
-background: linear-gradient(180deg, rgba(52,52,52,1) 0%, rgba(64,61,62,1) 46%, rgba(1,0,0,1) 100%);
-    font-family: 'Signika Negative', sans-serif;
+    background: rgba(0,0,0,0.9);
+
+  font-family: 'Signika Negative', sans-serif;
+  top: 0;
+  position: fixed;
 z-index: 2;
 }
 .header a {
@@ -686,11 +720,10 @@ z-index: 2;
   max-width: 100%;
   padding: 0 2%;
   margin: 0 auto 0;
-  
-  display: flex;
-  justify-content: space-between;
+    display: flex;
   align-items: center;
-}
+flex-direction: column;
+  }
 
 
 .link-logo {
@@ -745,7 +778,24 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   color: #d92626;
   transition: .3s linear;
 }
+    svg:not(:root).svg-inline--fa {
+    overflow: visible;
+      top: 0;
+    }
+  .fa-angle-down{
 
+  }
+   .fa-angle-down:before {
+      content: "\f107";
+      color: white;
+    text-align: center;
+    float: none;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+    content: '\f107';
+    font-family: 'FontAwesome';
+    }
 
 .btn-hamburguesa {
   display: none;
@@ -787,12 +837,11 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   transform: scaley(1);
 }
 
-
-  
-
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .btn-hamburguesa {
     display: block;
+    position: absolute;
+    right: 0;
   }
 
   .header {
@@ -800,7 +849,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     padding: 1rem 0;
   }
   
-
+  
   .box-menu-navegacion {
     position: absolute;
     top: 100%;
@@ -814,11 +863,16 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
   .menu-navegacion {
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
   }
   .item-menu-link {
     padding: 1vh;
   }
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    left: 100px;
+position: relative;
+    }
   /* .item-menu-sub-menu {
          display: flex;
 
@@ -827,8 +881,9 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     flex-wrap: wrap;
     width: 100%;
   }*/
+    
  .angle-view-sub-menu {
-    border: 1px solid red;
+   /* border: 1px solid red;*/
     width: 30px;
    height: 30px;
     display: flex;
@@ -864,6 +919,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     color: red;
   }
 }
+
   
    .wrapper {
 	max-width: 1400px;
@@ -871,12 +927,13 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
 	padding: 32px;
 }
     .logo_animado{
+      margin-top: 200px;
       width: 100%;
       height: 800px;
        background-size: cover;
       background-position: center;
     }
-      @media only screen and (min-width:320px) and (max-width:600px){
+      @media only screen and (min-width:320px) and (max-width:1200px){
     .logo_animado{
      width: 100%;
       height: auto;
@@ -919,7 +976,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   font-weight: 400;
   font-style: normal;
     }
-          @media only screen and (min-width:320px) and (max-width:600px){
+          @media only screen and (min-width:320px) and (max-width:1200px){
                .title{
 bottom:-100px;
                  font-size: 20px;
@@ -1009,7 +1066,7 @@ bottom:-100px;
   font-style: normal;
       
     }
-     @media only screen and (min-width:320px) and (max-width:600px){
+     @media only screen and (min-width:320px) and (max-width:1200px){
     .img_3{
           width: 300px;
       height: 200px;
@@ -1035,7 +1092,7 @@ bottom:-100px;
   color: #fff;
   background-color: #007bff;
 }
-         @media only screen and (min-width:320px) and (max-width:600px){
+         @media only screen and (min-width:320px) and (max-width:1200px){
     .btn-borde {
       margin-bottom: 100px;
            }
@@ -1121,7 +1178,7 @@ bottom:-100px;
       font-size: 40px;
       margin-top: 200px;
     }
-      @media only screen and (min-width:320px) and (max-width:600px){
+      @media only screen and (min-width:320px) and (max-width:1200px){
     .tendencia_music{
       font-size: 25px;
         }
@@ -1135,7 +1192,7 @@ bottom:-100px;
   padding: 2rem;
   animation: scroll 20s infinite linear;
 }
-   @media only screen and (min-width:320px) and (max-width:600px){
+   @media only screen and (min-width:320px) and (max-width:1200px){
     .gallery {
 max-width: 300px;  
       justify-content: right;
@@ -1186,7 +1243,7 @@ max-width: 300px;
       left: auto;
       
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
     .logo-youtube-music{
 margin-left: 0;
      }
@@ -1219,7 +1276,7 @@ margin-top: 20pt;
   margin-left: 5pt;
   margin-top: -2pt;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 #music{
 margin-left: 80px;
      }
@@ -1239,7 +1296,7 @@ margin-left: 95pt;
     }
 
 
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 label{
 font-size: 100px;
 z-index: 1;
@@ -1274,7 +1331,7 @@ margin-top: -134pt;
   left: 500px;
   top: 150px;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player {
   left: 45px;
     top: 190px;
@@ -1288,7 +1345,7 @@ margin-top: -134pt;
   position: relative;
   z-index: 4;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player__top {
     flex-wrap: wrap;
   }
@@ -1303,7 +1360,7 @@ margin-top: -134pt;
   border-radius: 15px;
   z-index: 1;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player-cover {
     margin-top: -70px;
     margin-bottom: 25px;
@@ -1324,7 +1381,7 @@ margin-top: -134pt;
   left: 0;
   top: 0;
 }
-      @media only screen and (min-width:320px) and (max-width:600px){
+      @media only screen and (min-width:320px) and (max-width:1200px){
     .player-cover__item {
 width: 60%;
       height: 70%;
@@ -1374,7 +1431,7 @@ width: 60%;
   position: relative;
   bottom: 100px;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player-controls {
     flex-direction: row;
     padding-left: 0;
@@ -1396,7 +1453,7 @@ width: 60%;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player-controls__item {
     font-size: 26px;
     padding: 5px;
@@ -1423,7 +1480,7 @@ width: 60%;
   transition: all 0.3s ease-in-out;
   transition: all 0.4s cubic-bezier(0.35, 0.57, 0.13, 0.88);
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player-controls__item:hover {
     color: #000000;
   }
@@ -1432,7 +1489,7 @@ width: 60%;
     transform: scale(1.3);
   }
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player-controls__item:active {
     color: #000000;
   }
@@ -1454,7 +1511,7 @@ width: 60%;
   height: auto;
   display: inline-flex;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .player-controls__item.-xl {
     margin-left: auto;
     font-size: 75px;
@@ -1522,7 +1579,7 @@ width: 60%;
   padding-right: 60px;
   user-select: none;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .album-info {
     padding-right: 30px;
   }
@@ -1533,7 +1590,7 @@ width: 60%;
   margin-bottom: 12px;
   line-height: 1.3em;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .album-info__name {
     font-size: 18px;
     margin-bottom: 9px;
@@ -1546,7 +1603,7 @@ width: 60%;
   line-height: 1.3em;
   min-height: 52px;
 }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .album-info__track {
     font-size: 18px;
     min-height: 50px;
@@ -1568,13 +1625,13 @@ width: 60%;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
 }
-@media screen and (min-width: 500px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .github-btn:hover {
     transform: scale(1.1);
     box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
   }
 }
-@media screen and (max-width: 700px) {
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .github-btn {
     position: relative;
     bottom: auto;
@@ -1648,7 +1705,7 @@ width: 60%;
   margin-top: 1rem;
   margin-bottom: 1rem;
   }
-      @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 .destacado_music {
 font-size: 20px;
         }
@@ -1688,7 +1745,7 @@ font-size: 20px;
     }
 
 .highlight-grid {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat (auto-fit,minmax(18rem 3fr));
   grid-gap: 3rem;
 
@@ -1720,15 +1777,15 @@ font-size: 20px;
 
 }
 
-@media screen and (min-width:720px){
+  @media only screen and (min-width:320px) and (max-width:800px){
    .highlight-grid {
-      grid-template-columns:320px 1fr;
-     }
+display: block;     }
   }
 
-@media screen and (min-width:1080px){
+  @media only screen and (min-width:320px) and (max-width:600px){
    .highlight-grid {
       grid-template-columns:320px 1fr minmax(250px, 1fr);
+  
      }
   }
     
@@ -2171,6 +2228,7 @@ new Vue({
         year =today.getFullYear();
         document.getElementById("yearlogin").innerHTML=year;
 /*menu*/
+  
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
 btnHamburguesa.addEventListener('click', function(){
@@ -2180,7 +2238,9 @@ btnHamburguesa.addEventListener('click', function(){
 $(".angle-view-sub-menu ").click(function(){
   $(this).siblings(".sub-menu").toggle();
 });
-    
+    /*font awesome heard flecha abajo*/
+     window.FontAwesomeConfig = {
+        searchPseudoElements: true}
   </script>
   </body>
 </html>
