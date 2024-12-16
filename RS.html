@@ -19,11 +19,11 @@
 <meta name="author" content="Gieovanny Frias">
   </head>
 <body>
-  
+ 
  <header class="header">
   <div class="child-header">
     <div class="box-logo">
-      <a href="" class="link-logo">Gieovanny Frias</a>
+      <a href="index.html" class="link-logo">Gieovanny Frias</a>
       <h6>Influencer, blogger o creador digital</h6>
     </div>
     
@@ -53,9 +53,11 @@
             <li class="item-menu">
               <a href="Reyes%20magos.html" class="item-menu-link">Reyes magos</a>
             </li>
-            
-            <li class="item-menu">
-              <a href="San%20valentin.html" class="item-menu-link">San valentin</a>
+               <li class="item-menu">
+              <a href="San-Valentin.html" class="item-menu-link">San valentin</a>
+            </li>
+               <li class="item-menu">
+              <a href="Covid-19.html" class="item-menu-link">Covid-19</a>
             </li>
             
             <li class="item-menu">
@@ -83,6 +85,12 @@
             
             <li class="item-menu">
               <a href="Responder%20preguntas%20anonimas%20frecuentes.html" class="item-menu-link">Preguntas anonimas</a>
+            </li>
+              <li class="item-menu">
+              <a href="Colaboraciones.html" class="item-menu-link">Colaboraciones</a>
+            </li>
+              <li class="item-menu">
+              <a href="Articulos-instantaneos.html" class="item-menu-link">Articulos instantaneos</a>
             </li>
          
           </ul>
@@ -162,7 +170,7 @@
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
          <li class="item-menu">
-              <a href="#" class="item-menu-link">Empleo</a>
+              <a href="Empleo.html" class="item-menu-link">Empleo</a>
             </li>
           </ul>
         </li>
@@ -880,7 +888,7 @@ agencias@gieovannyfrias.com<br>
 mytienda@gieovannyfrias.com
           </div>
 
-          <button class="contact-me">Enviar</button>
+          <a href="Contactos.html" ><button class="contact-me">Enviar</button></a>
 
         </div>
 
@@ -1084,16 +1092,19 @@ body {
 	margin: 0 auto;
 	padding: 32px;
 }
-    svg{
+  
+  svg{
     
-    color: gray;
+    color: white;
   }
 
 .header {
   width: 100%;
-background: linear-gradient(180deg, rgba(52,52,52,1) 0%, rgba(64,61,62,1) 46%, rgba(1,0,0,1) 100%);
-    font-family: 'Signika Negative', sans-serif;
-  position: relative;
+    background: rgba(0,0,0,0.9);
+
+  font-family: 'Signika Negative', sans-serif;
+  top: 0;
+  position: fixed;
 z-index: 2;
 }
 .header a {
@@ -1103,11 +1114,10 @@ z-index: 2;
   max-width: 100%;
   padding: 0 2%;
   margin: 0 auto 0;
-  
-  display: flex;
-  justify-content: space-between;
+    display: flex;
   align-items: center;
-}
+flex-direction: column;
+  }
 
 
 .link-logo {
@@ -1218,12 +1228,11 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   transform: scaley(1);
 }
 
-
-  
-
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .btn-hamburguesa {
     display: block;
+    position: absolute;
+    right: 0;
   }
 
   .header {
@@ -1231,7 +1240,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     padding: 1rem 0;
   }
   
-
+  
   .box-menu-navegacion {
     position: absolute;
     top: 100%;
@@ -1245,11 +1254,15 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
   .menu-navegacion {
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
   }
   .item-menu-link {
     padding: 1vh;
   }
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    left: 100px;
+}
   /* .item-menu-sub-menu {
          display: flex;
 
@@ -1258,6 +1271,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     flex-wrap: wrap;
     width: 100%;
   }*/
+    
  .angle-view-sub-menu {
    /* border: 1px solid red;*/
     width: 30px;
@@ -1296,6 +1310,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
 }
   
+  
 
 .card {
 
@@ -1330,6 +1345,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   border-radius: 10px;
 
   box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+  margin-top: 100px;
 
 }
     .bi{
@@ -1353,7 +1369,7 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
       50%{background-position: 100% 50%;}
       100%{background-position:  0 50%;}
     }
-   @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 .container{
         text-align:left;
 
@@ -1401,10 +1417,14 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
   90% { transform: rotate(0deg); }
   100% { transform: rotate(-1deg); }
 }
-    @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 .social-buttons{
-  width: 90%;
-
+        width: max-content;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
      }
     }
     .bi-patch-check-fill{
@@ -1420,7 +1440,7 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
   font-weight: 400;
   font-style: normal;
     }
-       @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
     .redes_sociales{
     font-size: 15px;
      }
@@ -1591,7 +1611,7 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
   color: white;
 
 }
-       @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 .card.is-active .card-jobtitle {
 top: 80px;
   left: auto;
@@ -1724,7 +1744,7 @@ width: 100%;
           transform: translateX(-50%) translateY(-7px);
 
 }
-       @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 .card-jobtitle {
         letter-spacing: 0.1px;
 
@@ -1760,6 +1780,11 @@ width: 100%;
   font-size: 13px;
 
   margin-bottom: 8px;
+  display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
 
 }
 
@@ -2098,6 +2123,11 @@ width: 100%;
 .card-contact-wrapper {
 
   margin-top: 20px;
+  display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
 
 }
 
@@ -2120,6 +2150,12 @@ width: 100%;
   line-height: 1.6;
 
   cursor: pointer;
+  
+  display: block;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        text-align: center;
 
 }
 
@@ -2182,7 +2218,7 @@ background: linear-gradient(90deg, rgba(127,125,159,1) 0%, rgba(58,58,164,1) 52%
   transition: 0.3s;
 
 }
-       @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
      .contact-me {
   width: 60%;
 
@@ -2407,7 +2443,7 @@ buttons.forEach(btn => {
 
 });
     /*menu encabezado abajo*/
-      let btnHamburguesa = document.getElementById("btn-hamburguesa");
+   let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
 btnHamburguesa.addEventListener('click', function(){
     menuNavegacion.classList.toggle("viewMenu");
