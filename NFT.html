@@ -1,7 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>nft</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+
    <meta name="title" content="NFT"/>
 
     <meta name="description" content="Descubre, colecciona y
@@ -14,16 +19,18 @@ Oficial NFT"/>
 </head>
 
 <body>
-   <header class="header">
+  
+ <header class="header">
   <div class="child-header">
     <div class="box-logo">
-      <a href="" class="link-logo">Gieovanny Frias</a>
+      <a href="index.html" class="link-logo">Gieovanny Frias</a>
       <h6>Influencer, blogger o creador digital</h6>
     </div>
+    
     <nav class="box-menu-navegacion" id="menu-navegacion">
       <ul class="menu-navegacion">
         <li class="item-menu">
-          <a href="pagina%20principal.html" class="item-menu-link">Pagina principal</a>
+          <a href="index.html" class="item-menu-link">Pagina principal</a>
         </li>
         <li class="item-menu">
           <a href="acerca%20de.html" class="item-menu-link">Acerca de</a>
@@ -37,11 +44,24 @@ Oficial NFT"/>
             <li class="item-menu">
               <a href="calendario.html" class="item-menu-link">Calendario</a>
             </li>
+              <li class="item-menu">
+              <a href="Dia-de-muertos.html" class="item-menu-link">Dia de muertos</a>
+            </li>
             <li class="item-menu">
               <a href="A%C3%B1o%20nuevo.html" class="item-menu-link">Año nuevo</a>
             </li>
             <li class="item-menu">
               <a href="Reyes%20magos.html" class="item-menu-link">Reyes magos</a>
+            </li>
+               <li class="item-menu">
+              <a href="San-Valentin.html" class="item-menu-link">San valentin</a>
+            </li>
+               <li class="item-menu">
+              <a href="Covid-19.html" class="item-menu-link">Covid-19</a>
+            </li>
+            
+            <li class="item-menu">
+              <a href="Feliz-navidad.html" class="item-menu-link">Feliz navidad</a>
             </li>
           </ul>
         </li>
@@ -61,6 +81,16 @@ Oficial NFT"/>
             </li>
             <li class="item-menu">
               <a href="Noticias.html" class="item-menu-link">Noticias</a>
+            </li>
+            
+            <li class="item-menu">
+              <a href="Responder%20preguntas%20anonimas%20frecuentes.html" class="item-menu-link">Preguntas anonimas</a>
+            </li>
+              <li class="item-menu">
+              <a href="Colaboraciones.html" class="item-menu-link">Colaboraciones</a>
+            </li>
+              <li class="item-menu">
+              <a href="Articulos-instantaneos.html" class="item-menu-link">Articulos instantaneos</a>
             </li>
          
           </ul>
@@ -122,11 +152,16 @@ Oficial NFT"/>
             <li class="item-menu">
               <a href="Management%20Team.html" class="item-menu-link">Management Team</a>
             </li>
+              <li class="item-menu">
+              <a href="Directorio.html" class="item-menu-link">Directorio</a>
+            </li>
             
             <li class="item-menu">
               <a href="agencias.html" class="item-menu-link">Agencias</a>
             </li>
-            
+            <li class="item-menu">
+              <a href="mi%20tienda.html" class="item-menu-link">Tienda</a>
+            </li>
             <li class="item-menu">
               <a href="App.html" class="item-menu-link">App</a>
             </li>
@@ -134,7 +169,9 @@ Oficial NFT"/>
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
-         
+         <li class="item-menu">
+              <a href="Empleo.html" class="item-menu-link">Empleo</a>
+            </li>
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
@@ -511,10 +548,19 @@ body {
 }
   
 
+
+  svg{
+    
+    color: white;
+  }
+
 .header {
   width: 100%;
-background: linear-gradient(180deg, rgba(52,52,52,1) 0%, rgba(64,61,62,1) 46%, rgba(1,0,0,1) 100%);
-    font-family: 'Signika Negative', sans-serif;
+    background: rgba(0,0,0,0.9);
+
+  font-family: 'Signika Negative', sans-serif;
+  top: 0;
+  position: fixed;
 z-index: 2;
 }
 .header a {
@@ -524,11 +570,10 @@ z-index: 2;
   max-width: 100%;
   padding: 0 2%;
   margin: 0 auto 0;
-  
-  display: flex;
-  justify-content: space-between;
+    display: flex;
   align-items: center;
-}
+flex-direction: column;
+  }
 
 
 .link-logo {
@@ -583,7 +628,21 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   color: #d92626;
   transition: .3s linear;
 }
-
+  .fa-angle-down{
+  
+  }
+   .fa-angle-down:before {
+      content: "\f107";
+      color: white;
+    width: 1rem;
+    text-align: center;
+    float: none;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+    content: '\f107';
+    font-family: 'FontAwesome';
+    }
 
 .btn-hamburguesa {
   display: none;
@@ -625,12 +684,11 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   transform: scaley(1);
 }
 
-
-  
-
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .btn-hamburguesa {
     display: block;
+    position: absolute;
+    right: 0;
   }
 
   .header {
@@ -638,7 +696,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     padding: 1rem 0;
   }
   
-
+  
   .box-menu-navegacion {
     position: absolute;
     top: 100%;
@@ -652,11 +710,15 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
   .menu-navegacion {
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
   }
   .item-menu-link {
     padding: 1vh;
   }
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    left: 100px;
+}
   /* .item-menu-sub-menu {
          display: flex;
 
@@ -665,8 +727,9 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
     flex-wrap: wrap;
     width: 100%;
   }*/
+    
  .angle-view-sub-menu {
-    border: 1px solid red;
+   /* border: 1px solid red;*/
     width: 30px;
    height: 30px;
     display: flex;
@@ -714,6 +777,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
 background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+      margin-top: 100px;
     }
   @media only screen and (min-width:320px) and (max-width:600px){
 
@@ -734,7 +798,7 @@ background-clip: text;
 
 
     }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 
 .text2 {
       font-size: 45px;
@@ -766,7 +830,7 @@ background-clip: text;
           font-family: 'Comic Sans MS','Comic Sans' , 'cursive';
 
     }
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 
 .text5 {
       font-size: 45px;
@@ -830,16 +894,15 @@ background-clip: text;
 	}
 }
 
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
 
 .text {
       font-size: 20px;
       top: 10px;
-
+	.wrapper {
+      padding-left: 0;}
     }
 }
-    
-    
     
     
     
@@ -863,6 +926,12 @@ background-clip: text;
 	justify-content: center;
 	align-items: center;
 }
+  
+  @media only screen and (min-width:320px) and (max-width:1200px){
+
+.container .btn {
+width: 250px;      
+    }}
 .container .btn a {
 	position: absolute;
 	top: 0;
@@ -1044,13 +1113,13 @@ img {
   width: 60%;
 }
 
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .container {
     max-width: 960px;
   }
 }
 
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   body {
     height: 100%;
   }
@@ -1063,7 +1132,7 @@ img {
   }
 }
 
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .container {
     max-width: 520px;
   }
@@ -1078,7 +1147,7 @@ img {
   }
 }
 
-  @media only screen and (min-width:320px) and (max-width:600px){
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .container {
     max-width: 100%;
   }
@@ -1381,7 +1450,7 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
 }
       /*menu*/
         
-  let btnHamburguesa = document.getElementById("btn-hamburguesa");
+    let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
 btnHamburguesa.addEventListener('click', function(){
     menuNavegacion.classList.toggle("viewMenu");
@@ -1389,7 +1458,10 @@ btnHamburguesa.addEventListener('click', function(){
 
 $(".angle-view-sub-menu ").click(function(){
   $(this).siblings(".sub-menu").toggle();
-})
+});
+    /*font awesome heard flecha abajo*/
+     window.FontAwesomeConfig = {
+        searchPseudoElements: true}
     </script>
     </body>
 </html>
