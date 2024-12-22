@@ -4,7 +4,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
    <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
-      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script> 
+  <title>Spotify</title>
     <meta name="title" content="Spotify"/>
 
     <meta name="description" content="Escucha la mejor musica de spotify"/>
@@ -216,6 +217,10 @@
              <li class="item-menu">
               <a href="Passes.html" class="item-menu-link">Passes</a>
             </li>
+            
+             <li class="item-menu">
+              <a href="Reservar-fans.html" class="item-menu-link">Reservar Fans</a>
+            </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
             </li>
@@ -241,7 +246,7 @@
       <img class="img_0"  src="https://lh3.googleusercontent.com/d/1pZzXkgZ7JfsYVQkV4wzOOIqrEifxiW6x=w1000">
 <h1 class="title_spotify">Lo mejor del año de las novedades<br> en millones de visualizaciones<br> en el mundo.</h1>
       <h2 class="subtitle_spotify">Dirigete al artista de su musica en cualquier parte con<br> tan solo oirlo playlista,nuevo album desde la app.</h2>
-      <a href="#" class="btn btn-custom btn-roxo btn-lg">Artista Spotify </a>
+      <a href="https://open.spotify.com/user/yrbu9019jzvhb4cjjnccvialh" class="btn btn-custom btn-roxo btn-lg">Artista Spotify </a>
       <p class="subtitle_music">En spotify tendra la musica mas deseada para escuchar donde sea totalmente gratis que podras buscar,explorar y compartir.</p>
       <img class="img_1" src="https://lh3.googleusercontent.com/d/109xllNnmLUom3gNGswDATUtL4L9OgW9H=w1000">
       <div class="listado_spotify">
@@ -1094,7 +1099,10 @@ top: 0;
         height: 200px; 
         float: right;
         margin-top: 100px;
+        border: 2px solid #eee;
+    border-radius: 15px;
       }
+     
        @media only screen and (min-width:320px) and (max-width:1200px){
          .img_0{
            float: none;
@@ -1274,6 +1282,7 @@ display:inline-block;
 vertical-align:top;
 overflow:hidden;
 }
+
      @media only screen and (min-width:320px) and (max-width:1200px){
        .compartir{
          font-size: 20px;
@@ -1292,6 +1301,51 @@ display: block;
       }
 :root {
 	--duration: 5s;
+}
+      .img_5{
+    opacity: 0.7;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));
+}
+ 
+.img_5:hover {
+ opacity: 1;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
+    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+}
+      .img_6{
+    opacity: 0.7;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));
+}
+ 
+.img_6:hover {
+ opacity: 1;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
+    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+}
+      .img_7{
+    opacity: 0.4;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));
+}
+ 
+.img_7:hover {
+ opacity: 1;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
+    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
 }
 .lista_spotify {
 	overflow: hidden;
@@ -1383,7 +1437,16 @@ display: grid;
         top:600px;
         width: 70%;
         height: 400px;
-      }
+        margin: 15px 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+ 
+.dispositivos:hover {
+    height: 80%;
+    width: 600px;
+}
       .img_fans{
         position: relative;
         top: 600px;
@@ -1423,6 +1486,10 @@ font-size: 20px;
         margin-right: auto;
         align-content: center;
         text-align: center;
+          }
+          .dispositivos:hover{
+            width: 280px;
+            height: 300px;
           }
            .title_fans{
         font-size: 20px;
@@ -1689,10 +1756,20 @@ background:  radial-gradient(farthest-side at 60% 55%,blue,green,yellow,black) 5
       .img_10{
         position: relative;
         top: 900px; 
-        width: 500px;
+        width: 450px;
+        border: 2px solid #eee;
+    border-radius: 15px;
  margin-left: auto;
   margin-right: auto;
+           margin: 15px 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
       }
+      .img_10:hover {
+    height: 500px;
+    width: 400px;
+}
         @media only screen and (min-width:320px) and (max-width:1200px){
       .audio_listado{
       width: 250px;
@@ -1731,15 +1808,21 @@ background:  radial-gradient(farthest-side at 60% 55%,blue,green,yellow,black) 5
         align-content: center;
         text-align: center;
           }
-          .img_10{
-            width: 300px;
-            height: 400px;
-            display: block;
+            .img_10{
+          width: 250px;
+                  height: 250px;
+                  display: block;
         margin-left: auto;
         margin-right: auto;
         align-content: center;
         text-align: center;
           }
+          .img_10:hover{
+            width: 260px;
+            height: 350px;
+                margin-left: -50px;
+
+          }  
       }
       
 .footer__link {
