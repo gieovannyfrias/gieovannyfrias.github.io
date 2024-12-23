@@ -239,6 +239,9 @@
              <li class="item-menu">
               <a href="Passes.html" class="item-menu-link">Passes</a>
             </li>
+                 <li class="item-menu">
+              <a href="Reservar-fans.html" class="item-menu-link">Reservar Fans</a>
+            </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
             </li>
@@ -1230,6 +1233,7 @@ font-size: 20px;
      background: url("https://lh3.googleusercontent.com/d/1lsXGJO9z6GjFC0MUv1iAOK0ksOObWuXV=w1000") center center no-repeat;
 height:  200px;
      background-size: cover;
+      margin-top: 100px;
 }
  .bg-img:hover {
      animation: shake 0.92s cubic-bezier(.36,.07,.19,.97) both;
@@ -2169,19 +2173,9 @@ function printDrinks(drinkArray) {
 		drinkContainer.insertAdjacentHTML("beforeend", html);
 	});
 }
-     /*noticias inicio*/
-       var today =new Date();
-        year =today.getFullYear();
-        document.getElementById("yearlogin").innerHTML=year;
-     
-     $('.back-to-top').click(function(){
-  $('html, body').animate({ scrollTop: 0 }, 'slow');
-  return false;
-});
-     /*menu*/
+          /*menu*/
     
-  function openNav() {
-
+  
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
 btnHamburguesa.addEventListener('click', function(){
@@ -2190,7 +2184,20 @@ btnHamburguesa.addEventListener('click', function(){
 
 $(".angle-view-sub-menu ").click(function(){
   $(this).siblings(".sub-menu").toggle();
-})};
+});
+    /*font awesome heard flecha abajo*/
+     window.FontAwesomeConfig = {
+        searchPseudoElements: true}
+     /* año automaticamente abajo*/
+       var today =new Date();
+        year =today.getFullYear();
+        document.getElementById("yearlogin").innerHTML=year;
+     
+     $('.back-to-top').click(function(){
+  $('html, body').animate({ scrollTop: 0 }, 'slow');
+  return false;
+});
+
   </script>
     </body>
 </html>
