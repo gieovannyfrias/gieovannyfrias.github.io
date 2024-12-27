@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+ 
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+  <title>Solicitud-Empleo</title>
+      <meta name="title" content="Inscripcion-Empleo"/>
+
+    <meta name="description" content="Buscas trabajar para nosotros entonces inscribete."/>
+    <meta name="robots" content="index"/>
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
+  </head>
+<body>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+    <div class="wrapper">
+
+  <form id="registro_empleo"   action="https://formspree.io/f/xvggzaea" method="POST" enctype="multipart/form-data" novalidate action="#">
+    <audio  id="audioelement">
+    <source src="https://github.com/gieovannyfrias/gieovannyfrias.github.io/raw/refs/heads/main/Musica/inscripcion%20empleo.mp3"autoplay="true" loop="-1" type="audio/mp3">
+</audio>
+  <fieldset>
+    <div class="portada_empleo">
+   <h1 class="title">UNETE A NOSOTROS</h1>
+  <h2>Inscripción de empleo</h2>
+  <h3>Gieovanny Frias</h3>
+    </div>
+    <input type="button" name="next" class="next btn btn-info" value="si" />
+  </fieldset>
+  <fieldset>
+    <h2> Nivel 2: Información personal</h2>
+    <div class="form-group">
+    <label for="fName">¿Cuál es tu nombre?</label>
+    <input type="text" class="form-control" name="fName" id="fName" placeholder="Escribe aqui tu respuesta" required>
+    </div>
+    <div class="form-group">
+    <label for="lName">Apellido</label>
+    <input type="text" class="form-control" name="lName" id="lName" placeholder="Escribe aqui tu respuesta">
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 3: Puede facilitarnos tu email personal cuando te respondan</h2>
+    <div class="form-group">
+    <label for="iName">¿Y cuál es tu e-mail?</label>
+    <input type="email" class="form-control" name="email" id="email" pattern=".+@example\.com" size="30" required placeholder="nombre@ejemplo.com">
+    </div>
+ 
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 4: Poner tu numero personal cuando te notifiquemos</h2>
+    <div class="form-group">
+    <label for="qName">¿Puedes facilitarnos el numero de telefono?</label>
+    <input type="tel" class="form-control" name="phone" id="phone" placeholder="+00 55-00-00-00-00">
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+            <p class="alert alert-info"> 
+Te recomendamos que ponga el numero del pais donde te encuentres.Ejemplo +00 12-34-56-78-90 del pais se pone en automatico sin la necesidad de deslizar el icono izquierdo.
+</p>
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 5: Inserta tu rede sociales para encontrarte de Facebook</h2>
+    <div class="form-group">
+    <label for="url">Link</label>
+    <input type="url" class="form-control" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="40" required >
+    </div>
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 6: Trabaja con nosotros</h2>
+    <div class="form-group">
+    <label for="rName">¿Porque quieres trabajar con nosotros?</label>
+    <input type="text" class="form-control" name="rName" id="rName" size="40" placeholder="Escribe aqui tu respuesta">
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 7: Puesto de area</h2>
+    <div class="form-group">
+    <label for="ñName"for="position">Escoje el puesto que deseas para trabajar?</label>
+      <select class="form-control" name="puesto" id="position">
+        <option value="Edicion de video">Edicion de video</option>
+        <option value="Limpieza">Limpieza</option>
+        <option value="Seguridad">Seguridad</option>
+        <option value="Diseño grafico">Diseño grafico</option>
+        <option value="Animacion">Animacion</option>
+        <option value="Edicion de audio">Edicion de audio</option>
+
+      </select>
+    </div>
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 8: Nivel de estudios (certificado o titulación)</h2>
+    <div class="form-group">
+    <label for="aurl">insertar el nivel de estudios terminado?</label>
+    <input type="url" class="form-control" name="aurl" id="aurl" placeholder="subirlo desde drive y compartirlo publico" pattern="https://.*" size="40" required >
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 9: Este CV es para ver que herramientas o experiencias utilizas</h2>
+    <div class="form-group">
+    <label for="burl">Insertar tu CV?</label>
+    <input type="url" class="form-control" name="burl" id="burl" placeholder="Inserta el enlace de drive y compartirlo en publico" pattern="https://.*" size="40" required >
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+          <fieldset>
+    <h2> Nivel 10: Tienes experiencia laboral con los requeriemientos que indicamos </h2>
+            <h3 style="font-size: 12px;">No tiene mucha importancia si tienes o no aceptamos a  cualquiera sin descriminación</h3>
+    <div class="form-group">
+  <div class="form-group">
+ <input type="checkbox" id="experiencia1" name="experiencia1" value="si tengo experiencia"/>
+    <label for="experiencia1">si</label>
+  </div>
+    <div class="form-group">
+    <input type="checkbox" id="experiencia2" name="experiencia2" value="no tengo experiencia"/>
+    <label for="experiencia2">no</label>
+  </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+             <fieldset>
+    <h2> Nivel 11: ¿Qué tipo de turno deseas?</h2>
+  <div class="form-group">
+    <input type="checkbox" id="turno1" name="turno1" value=" Turno Matutino"/>
+    <label for="turno1">Matutino</label>
+  </div>
+
+  <div class="form-group">
+      <input type="checkbox" id="turno2" name="turno2" value=" TurnoVespertino"/>
+    <label for="turno2">Vespertino</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="turno3" name="turno3" value="Turno Nocturno"/>
+    <label for="turno3">Nocturno</label>
+  </div>
+    <div class="form-group">
+      <input type="checkbox" id="turno4" name="turno4" value="Turno Madrugador"/>
+    <label for="turno4">Madrugador</label>
+  </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+             <fieldset>
+    <h2> Nivel 12: Salario mensual deseado</h2>
+               <h3 style="font-size: 12px;">Esto es para darnos una ideas no es segura</h3>
+ <div class="form-group">
+    <input type="checkbox" id="salario1" name="salario1" value="2.000"/>
+    <label for="salario1">2.000</label>
+  </div>
+
+  <div class="form-group">
+   <input type="checkbox" id="salario2" name="salario2" value="5.000"/>
+    <label for="salario2">5.000</label>
+  </div>
+  <div class="form-group">
+ <input type="checkbox" id="salario4" name="salario4" value="10.000"/>
+    <label for="salario4">10.000</label>
+  </div>
+    <div class="form-group">
+    <input type="checkbox" id="salario6" name="salario6" value="15.000"/>
+    <label for="salario6">15.000</label>
+  </div>
+    <div class="form-group">
+ <input type="checkbox" id="salario3" name="salario3" value="8.000"/>
+    <label for="salario3">8.000</label>
+  </div>
+    <div class="form-group">
+ <input type="checkbox" id="salario5" name="salario5" value="12.000"/>
+    <label for="salario5">12.000</label>
+  </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+       <fieldset>
+    <h2> Nivel 13: Se requiere tu CURP original para saber si eres autentico de la nación</h2>
+    <div class="form-group">
+    <label for="wurl">Insertar tu CURP verificado?</label>
+    <input type="url" class="form-control" name="wurl" id="wurl" placeholder="subirlo desde drive y compartirlo publico" pattern="https://.*" size="40" required >
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+         <fieldset>
+    <h2> Nivel 14: Se requiere tu Acta de nacimieno  para saber si eres autentico de la nación</h2>
+    <div class="form-group">
+    <label for="rurl">Insertar tu AN verificado?</label>
+    <input type="url" class="form-control" name="rurl" id="rurl" placeholder="subirlo desde drive y compartirlo publico" pattern="https://.*" size="40" required >
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+       <fieldset>
+    <h2> Nivel 15: Se requiere tu comprobante de domicilio  para saber si eres autentico de la nación</h2>
+    <div class="form-group">
+    <label for="kurl">Insertar tu CD no mas de 3 meses?</label>
+    <input type="url" class="form-control" name="kurl" id="kurl" placeholder="subirlo desde drive y compartirlo publico" pattern="https://.*" size="40" required >
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+      <fieldset>
+    <h2> Nivel 16: Necesitamos tu clave intervancaria para depositarte</h2>
+        <h3 style="font-size: 12px;">ADVERTENCIA: Verifica los numeros correctos cualquier error sera fatal si no cualquier modificación dirigirse con RH personalmente</h3>
+    <div class="form-group">
+    <label for="ñName">Clave intervancaria?</label>
+    <input type="password" class="form-control" name="clave" id="password" size="40" required >
+    </div>
+          <div class="col">
+  <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button>
+</div>
+        <br>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+             <fieldset>
+    <h2> Nivel 17: ¿Cómo nos encontraste?</h2>
+    <div class="form-group">
+    <label for="sName">Describe breve</label>
+    <input type="text" class="form-control" name="sName" id="sName"size="40" placeholder="Escribe aqui tu respuesta">
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="button" name="next" class="next btn btn-info" value="Aceptar" />
+  </fieldset>
+    
+  <fieldset>
+    <h2>Nivel 18: ¿Cuántos años piensas trabajar para nosotros? </h2>
+<div class="form-group">
+  <input type="checkbox" id="año1" name="año1" value="1 año pienso trabajar con ustedes"/>
+    <label for="año1">1 año</label>
+  </div>
+
+  <div class="form-group">
+  <input type="checkbox" id="año2" name="año2" value="2 año pienso trabajar con ustedes"/>
+    <label for="año2">2 año</label>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="año3" name="año3" value="3 año pienso trabajar con ustedes"/>
+    <label for="año3">3 año</label>
+  </div>
+    <div class="form-group">
+  <input type="checkbox" id="año4" name="año4" value="4 año pienso trabajar con ustedes"/>
+    <label for="año4">4 año</label>
+  </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Enviar" />
+    <p class="alert alert-info"> 
+Te responderemos por correo si fuiste seleccionado como minimo 1 semana o maximo 1 mes.No te desesperes estamos trabajando lo que nos enviaste saludos.
+</p>
+  </fieldset>
+  </form>
+  </div>
+    <style>
+    html, body{
+      background-image: url(https://lh3.googleusercontent.com/d/1RGNq7-WMBAYd6rBGYoTEGgYdAraMFx65=w1000);
+        background-size: cover;
+      background-position: center;
+      height: 100%;
+      color: white;
+    }
+      .wrapper {
+  
+	max-width: 1400px;
+	padding: 32px;
+  margin: 0 auto;
+}
+    .portada_empleo{
+      text-align: center;
+      align-content: center;
+    }
+    .title{
+        font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+      font-size: 100px;
+    }
+      @media only screen and (min-width:320px) and (max-width:1200px){
+        .title{
+        font-size: 30px;
+        }
+        }
+    h2{
+      font-family: "Mochiy Pop P One", serif;
+  font-weight: 400;
+  font-style: normal;
+      font-size: 40px;
+    }
+    .form-group{
+      text-align: center;
+      align-content: center;
+    }
+    label{
+  font-family: "Chilanka", serif;
+  font-weight: 400;
+  font-style: normal;
+      font-size: 25px;
+    }
+    .form-control{
+      display: inline;
+      width: auto;
+      background-color: transparent;
+      color: red;
+    }
+  #registro_empleo fieldset:not(:first-of-type) {
+    display: none;
+          text-align: center;
+
+  }
+    
+    .alert {
+  font-family:  Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+      margin-top: 50px;
+}
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+  </style>
+  <script>
+  $(document).ready(function(){
+  var current = 1,current_step,next_step,steps;
+  steps = $("fieldset").length;
+  $(".next").click(function(){
+    current_step = $(this).parent();
+    next_step = $(this).parent().next();
+    next_step.show();
+    current_step.hide();
+    setProgressBar(++current);
+  });
+  $(".previous").click(function(){
+    current_step = $(this).parent();
+    next_step = $(this).parent().prev();
+    next_step.show();
+    current_step.hide();
+    setProgressBar(--current);
+  });
+  setProgressBar(current);
+  // Change progress bar action
+  function setProgressBar(curStep){
+    var percent = parseFloat(100 / steps) * curStep;
+    percent = percent.toFixed();
+    $(".progress-bar")
+      .css("width",percent+"%")
+      .html(percent+"%");   
+  }
+});
+    /*musica fondo*/
+    const playSound = function() {
+    var sonido = new Audio("https://github.com/gieovannyfrias/gieovannyfrias.github.io/raw/refs/heads/main/Musica/inscripcion%20empleo.mp3");
+  sonido.play();
+    document.getElementById('audioelement').play();
+    document.removeEventListener('click' ,playSound);
+}
+document.addEventListener('click', playSound);
+    /*telefono internacional*/
+       const phoneInputField = document.querySelector("#phone");
+   const phoneInput = window.intlTelInput(phoneInputField, {
+     utilsScript:
+       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+   });
+    /*mostrar contraseña*/
+     function mostrarContrasena(){
+      var tipo = document.getElementById("password");
+      if(tipo.type == "password"){
+          tipo.type = "text";
+      }else{
+          tipo.type = "password";
+      }
+  }
+  </script>
+  </body>
+</html>
