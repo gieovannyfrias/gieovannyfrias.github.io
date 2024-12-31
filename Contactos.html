@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Puddles&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Geo:ital@0;1&family=Rubik+Puddles&display=swap" rel="stylesheet">
   
         <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script> 
-  
+  <title>Contactos</title>
     <meta name="title" content="Contacto"/>
 
     <meta name="description" content="Enviarme al correo oficial Gieovanny Frias."/>
@@ -485,7 +485,22 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+	background-size: 200% 100%;
+	animation: gradient 15s ease infinite;
     }
+    
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 @media screen and (max-width: 768px) {
     html {
         font-size:15px
@@ -729,9 +744,23 @@ svg:not(:root).svg-inline--fa {
 .contact-title{
   color: #CCCCCC;
   font-size: 3.5rem;
-    font-family: "Frijole", system-ui;
+  font-family: "Luckiest Guy", serif;
   font-weight: 400;
   font-style: normal;
+  	text-transform: uppercase;
+	background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
 }
 
 .contact-form{
@@ -741,7 +770,7 @@ svg:not(:root).svg-inline--fa {
   gap: 1rem;
   border: 1px solid #602DFF;
   border-radius: 1rem;
-  background: #252525;
+  background: transparent;
   max-width: 375px;
   width: 100%;
 }
