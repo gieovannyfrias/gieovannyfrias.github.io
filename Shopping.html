@@ -696,18 +696,26 @@ svg:not(:root).svg-inline--fa {
     background: rgba(0,0,0,0.9);
 	border-radius: 10px;
   border: 1px solid white;
+padding: 100px;
 }
+     .contenido:hover{
+        scale: 1.05;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 10px white;
+  transition: ease-in-out 0.4s;
+}
+
 
 #cerrar {
 	display: none;
 }
 
-#cerrar + label {
+#cerrar + label{
 	position: fixed;
 	color: #fff;
 	font-size: 25px;
   /* cambair a 2 en vez auto
-	z-index: 2;
+	z-index: auto;
   */
   z-index: auto;
   text-align: center;
@@ -716,9 +724,9 @@ svg:not(:root).svg-inline--fa {
 	width: 40px;
 	line-height: 40px;
 	border-radius: 50%;
-	right: 420px;
-	top: 220px;
-	cursor: pointer;
+	right: 0;
+margin-top: 100px;
+  cursor: pointer;
 	animation: modal 2s 3s forwards;
 	visibility: hidden;
 	opacity: 0;
@@ -807,10 +815,28 @@ justify-content: center;
     .card:hover{
         scale: 1.05;
   cursor: pointer;
-  box-shadow: 2px 2px 10px #82bd69;
+  box-shadow: 6px 6px 4px 8px #446081;
   transition: ease-in-out 0.4s;
+  animation: shake 0.72s;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
   
-    }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
   @media only screen and (min-width:320px) and (max-width:1200px){
         .card {
     min-width: 120px;
