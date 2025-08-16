@@ -8,7 +8,12 @@
       <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
   <meta name="google-adsense-account" content="ca-pub-8616709924287043">
 
-
+     <meta name="title" content="Mini biografia-CCPD"/>
+    <meta name="description" content="Biografia corta de creditos">
+    <meta name="robots" content="index"/>
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+      <title>Mini biografia-CCPD</title>
   </head>
 <body>
   
@@ -733,7 +738,7 @@ svg:not(:root).svg-inline--fa {
      position: absolute;
      left: 0;
      display: block;
-     z-index: 1;
+     z-index: 2;
   }
   
   .viewMenu {
@@ -770,9 +775,18 @@ img {
   z-index: 0;
   transition: opacity 0.25s ease;
 }
-
+  img:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(1.10, 1.10);
+}
+        @media only screen and (min-width:320px) and (max-width:1200px){
+          img {
+             border-radius:20px 20px 20px 20px;
+        height: auto;
+          }
+  }
 .contenedorTitulos{
-  z-index: 2;
+  z-index: 1;
   text-align: center;
   align-self: flex-end;
 }
@@ -786,7 +800,7 @@ img {
   background-color: black;
   border-radius: 100%;
   background-color: white;
-  z-index: 2;
+  z-index: 1;
   opacity: 0.5
 }
 
@@ -802,15 +816,44 @@ img {
   color: green;
   margin-bottom: -20px;
   user-select: none;
+  
+ font-size: 2em;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.subtitulo:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
 }
 
 #titulo{
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
-  color: darkred;
   font-size: 70px;
   user-select: none;
+  	background: linear-gradient(90deg, #00f, #0ff, #00f) -100%/ 200%;
+	/* being excessively careful with compat, 
+	 * though this has been supported unprefixed and 
+	 * in the shorthand across major browsers for a while */
+	-webkit-background-clip: text;
+	        background-clip: text;
+	/* use color, don't use -webkit-text-fill-color anymore, 
+	 * was meant to solve a problem we haven't had in years */
+	color: transparent;
+	animation: shimmer 2s linear infinite
 }
+  @keyframes shimmer { 
+    to {
+    background-position: 100% }
+  }
 
 .bi-arrow-right, .bi-arrow-left{
   margin: 0 auto;
@@ -851,7 +894,7 @@ img {
   background-color: black;
   border-radius: 100%;
   background-color: white;
-  z-index: 2;
+  z-index: 1;
   opacity: 0.5
 }
   
