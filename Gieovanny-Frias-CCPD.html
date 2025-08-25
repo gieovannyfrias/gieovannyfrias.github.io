@@ -345,11 +345,70 @@ Marca personal digital
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
       </svg></h1></a>
     <hr style="  background-color: darkgray;">
-  <h5>Más en CcPdPro
-   <a href="Tabla-CCPD.html"><li style="color: teal">Información de contacto <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+    <h5>Más en CcPdPro</h5>
+    <a href="#" id="myBtn"><li style="color: teal">Información de contacto <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
   <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-     </svg></li></a></h5></div>
+     </svg></li></a>
+  
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+  
+  <div class="position">
+  <h1 class="suscription">Suscripción</h1>
+<div class="card-container">
+    <div class="card">
+        <div class="offer-title">Basico</div>
+        <p class="offer-description">Para principiantes.</p>
+        <p class="offer-price">100</p>
+      <a class="buy" href="https://buy.stripe.com/00w6oIcZ45vK2VG3m9fUQ03">Comprar ahora</a>
+        <hr class="divition_pagos">
+        <ul class="list_pagos">
+            <li>Total información / mes</li>
+            <li>Fotos disponibles</li>
+          <li>Videos disponibles</li>
+          <li>Noticias disponibles</li>
+
+        </ul>
+    </div>
+    <div class="card recommended-offer">
+        <div class="offer-title">Estandar</div>
+        <p class="offer-description">Para profesionales.</p>
+        <p class="offer-price_2">600</p>
+      <a class="buy" href="https://buy.stripe.com/eVq5kE2kq0bqcwgf4RfUQ05">Comprar ahora</a>
+        <hr class="divition_pagos">
+        <ul class="list_pagos">
+         <li>Total información /x 6 semestral</li>
+            <li>Fotos disponibles</li>
+          <li>Videos disponibles</li>
+          <li>Noticias disponibles</li>
+        </ul>
+    </div>
+    <div class="card">
+        <div class="offer-title">Premium</div>
+        <p class="offer-description">Para empresas.</p>
+        <p class="offer-price_1">1200</p>
+      <a class="buy" href="https://buy.stripe.com/4gM28s6AGe2g8g0aOBfUQ04">Comprar ahora</a>
+        <hr class="divition_pagos">
+        <ul class="list_pagos">
+   <li>Total información / anual</li>
+            <li>Fotos disponibles</li>
+          <li>Videos disponibles</li>
+          <li>Noticias disponibles</li>
+        </ul>
+    </div>
+  <img class="img_pagos" src="https://lh3.googleusercontent.com/d/1bfV_oaQRZud-_4X3Cm8XHbzfPO3buFDb=w1000">
+</div>
+    </div>
+    </div>
+
+</div>
+  </div>
   
 </div>
   <div class="title_img">
@@ -1219,7 +1278,316 @@ display: flex;
   font-size: 1.2rem;
   line-height: 1.3;
 }
+/*modal*/
+      
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
 
+.modal-content {
+  border-radius: 20px 20px 20px 20px;
+    background: linear-gradient(145deg, #1c1c1c, #0f0f0f);  
+  width: 85%;
+  	max-width: 1400px;
+	margin: 0 auto;
+	padding: 2px;
+  position: relative;
+    top: 200px;
+}
+
+/* boton de cerrar */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+    /*card abajo*/
+    .suscription{
+        font-family: "Poppins", sans-serif;
+       font-size: 3em;
+  font-weight: 500;
+      color: white;
+  letter-spacing: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s;
+      
+    }
+    .suscription:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+.buy {
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+.list_pagos {
+
+    transform: translateX(15.5px);
+    text-align: left;
+}
+
+.divition_pagos {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border: none;
+    border-radius: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Cards */
+    .position{
+          min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    padding: 60px 40px;
+    }
+
+
+.card-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 29%;
+    max-width: 350px;
+    min-width: 240px;
+    background-color: #8a8a8a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin: 15px 0;
+    border-radius: 25px;
+    box-shadow: 0 10px 12px 3px rgba(0, 0, 0, .25), inset 0 0px 3px 1px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    cursor: default;
+    transition: transform .35s, width .35s;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+.card:nth-child(1) {
+    background-image: linear-gradient(to bottom left, #41f6a9, #027118);
+}
+.card:nth-child(2) {
+    background-image: linear-gradient(to bottom, red, black);
+    }
+.card:nth-child(3) {
+    background-image: linear-gradient(to bottom right, #3cb5f5, #0c2879);
+}
+
+.card * {
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+  color: white;
+}
+.card hr {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+}
+
+.offer-title {
+    font-size: 2em;
+}
+
+.offer-title, .buy {
+    text-transform: uppercase;
+}
+
+.card:not(.recommended-offer) {
+    margin-top: 45px;
+}
+
+.recommended-offer {
+    padding-top: 60px;
+    position: relative;
+}
+
+.recommended-offer::before {
+    line-height: 30px;
+    content: "RECOMENDADO";
+    position: absolute;
+    top: 17.5px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    mix-blend-mode: screen;
+}
+.recommended-offer::after {
+    content: "";
+    height: 30px;
+    position: absolute;
+    top: 17.5px;
+    width: 100%;
+    box-shadow: 0 0 6px 6px rgba(0, 0, 0, .2), inset 0 0 5px 2px rgba(0, 0, 0, .15);
+}
+/*mensual*/
+.offer-price {
+    font-size: 4.2em;
+    position: relative;
+  color: white;
+}
+
+.offer-price::before {
+    content: "$";
+    font-size: .9em;
+    position: absolute;
+    top: 0;
+    right: 105%;
+    right: calc(100% + 7px);
+}
+
+.offer-price::after {
+    content: "/mensual";
+    font-size: .2em;
+    position: absolute;
+    bottom: 18px;
+    left: 105%;
+    left: calc(100% + 3px);
+}
+    /*semestral*/
+    .offer-price_2 {
+    font-size: 4.2em;
+    position: relative;
+      color: white;
+}
+
+.offer-price_2::before {
+    content: "$";
+    font-size: .9em;
+    position: absolute;
+    top: 0;
+    right: 105%;
+    right: calc(100% + 7px);
+}
+
+.offer-price_2::after {
+    content: "/semestral";
+    font-size: .2em;
+    position: absolute;
+    bottom: 18px;
+    left: 105%;
+    left: calc(100% + 3px);
+}
+/*anual*/
+    .offer-price_1 {
+    font-size: 4.2em;
+    position: relative;
+      color: white;
+}
+
+.offer-price_1::before {
+    content: "$";
+    font-size: .9em;
+    position: absolute;
+    top: 0;
+    right: 105%;
+    right: calc(100% + 7px);
+}
+
+.offer-price_1::after {
+    content: "/anual";
+    font-size: .2em;
+    position: absolute;
+    bottom: 18px;
+    left: 105%;
+    left: calc(100% + 3px);
+}
+.buy {
+    color: black;
+    background-color: white;
+    mix-blend-mode: screen;
+    padding: 15px 30px;
+    border-radius: 1000px;
+}
+
+.offer-price, hr {
+    margin: 20px 0;
+}
+@media only screen and (min-width:320px) and (max-width:1800px){
+   .img_pagos{
+            width: -webkit-fill-available;
+        height: 60px;
+  }
+    }
+
+  @media only screen and (min-width:320px) and (max-width:1200px){
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+              display: contents;
+    }
+    .card {
+        width: 85%;
+        margin: 15px 0 !important;
+    }
+ 
+    .offer-price, .offer-price_1{
+          font-size: xx-large;
+    }
+}
+
+  @media only screen and (min-width:320px) and (max-width:768px){
+    html {
+        font-size: 12px;
+    }
+    .card {
+        width: 50%;
+    }
+       }
+
+  @media only screen and (min-width:320px) and (max-width:320px){
+    .card-container {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+        min-width: 200px;
+    }
+}
 /*imagenes*/
       .title_img{
       color: white;
@@ -1477,6 +1845,27 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
             
   </style>
   <script>
+    /*modal*/
+     var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+/*termina modal*/
    let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
 btnHamburguesa.addEventListener('click', function(){
@@ -1489,6 +1878,7 @@ $(".angle-view-sub-menu ").click(function(){
     /*font awesome heard flecha abajo*/
      window.FontAwesomeConfig = {
         searchPseudoElements: true}
+    
   </script>
   </body>
 </html>
