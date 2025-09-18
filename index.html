@@ -70,7 +70,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -299,10 +299,19 @@
       <img style="font-size: 22pxfloat:none;width: auto;height: 200px" src="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000"><p style="font-size: 22px">Marca personal digital donde se representa a si mismo como youtuber, influencer y streamer.</p>
           </article>
         <br>
+          <div class="video-container">
+    <iframe 
+      src="https://firebasestorage.googleapis.com/v0/b/gieovanny-frias-432317.appspot.com/o/Videos%2FGieovanny_Fr%C3%ADas_Creador_Digital.mp4?alt=media&token=b1fd4d1a-b9eb-413c-97b4-0cf6d8a27588"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <button class="btn_video" onclick="toggleVideo()">Mostrar/Ocultar</button>
           <p style="font-size: 22px">Encuéntrame en el buscador de Google como Gieovanny Frías para ver todas mis redes sociales.</p>
             
           
     <img style="float: right;width: 400px;height: 300px" src=" https://lh3.googleusercontent.com/d/1an6vJlE6Tg_iF9fQ-cV4toh1PrU5oPHH=w1000" alt="image" class=”full-width-img”>
+        
         <div class="redes_sociales">
         <a class="btn10" href="http://www.gieovannyfrias.com/RS">Redes sociales oficiales</a>
         </div>
@@ -352,7 +361,6 @@
 	</div>
 	<button class="nav-arrow right">›</button>
 </div>
-
 <div class="member-info">
 	<h2 class="member-name">David Kim</h2>
 	<p class="member-role">Founder</p>
@@ -635,7 +643,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1039,6 +1047,38 @@ margin: auto;
 width: 90%;
 }
         }
+       .video-container {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      margin: auto;
+      border: 2px solid #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    .btn_video {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #0078D7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      
+    }
+
+    .btn_video:hover {
+      background-color: #005fa3;
+    }
         .redes_sociales {
    text-align: center;
    margin: 7rem auto;
@@ -1707,7 +1747,7 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
      grid-template-areas: "main" "." "footer";
 
   }
-}
+      }
       
     </style>
     <script>
@@ -1848,7 +1888,18 @@ function handleSwipe() {
 
 updateCarousel(0);
 
-  
+  /*años*/
+      
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
       /*menu*/
         let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
@@ -1863,7 +1914,12 @@ $(".angle-view-sub-menu ").click(function(){
      window.FontAwesomeConfig = {
         searchPseudoElements: true}
       /*fin menu*/
-   
+      /*mostrar y ocultar video*/
+           function toggleVideo() {
+      const container = document.querySelector('.video-container');
+      container.style.display = (container.style.display === 'none') ? 'block' : 'none';
+    }
+      
     </script>
     </body>
 </html>
