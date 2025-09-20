@@ -751,6 +751,8 @@ h1 {
   height: 50vh;
   width: 100%;
   z-index: 1;
+  position: relative;
+  top:100px;
 }
     .cnv_0{
      display:flex;
@@ -766,6 +768,13 @@ h1 {
      .cnv_0:hover {
   box-shadow: 0 0 34px white;
 }
+      @media only screen and (min-width:320px) and (max-width:1200px){
+        .cnv_0{
+ width: 80%;
+        height: 400px;
+        }
+    }
+          
     .cnv_1{
       position: relative;
     margin-top: 20px;
@@ -787,7 +796,29 @@ h1 {
   gap: 30px;
   padding: 30px;
 }
-
+      @media only screen and (min-width:320px) and (max-width:1200px){
+        .charts{
+         display: grid;
+        padding: 0;
+        justify-content: end;
+          
+        }
+        }
+           @media only screen and (min-width:500px) and (max-width:800px){
+        .charts{
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+             }
+    }
+            @media only screen and (min-width:800px) and (max-width:1000px){
+        .charts{
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+             }
+    }
+            @media only screen and (min-width:1000px) and (max-width:1200px){
+        .charts{
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+             }
+    }
 canvas {
   max-width: 400px;
   width: 100%;
@@ -849,6 +880,7 @@ a.opacity-0 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-content: space-between;
+  z-index: 1;
 }
     
 a.card {
