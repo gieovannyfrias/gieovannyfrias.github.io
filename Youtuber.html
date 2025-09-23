@@ -7,7 +7,8 @@
    <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
       <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
   <title>Youtuber</title>
-	<meta name="google-adsense-account" content="ca-pub-8616709924287043">
+    <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+
    <meta name="title" content="YouTuber"/>
 
     <meta name="description" content="Entretenimiento de lo mejor y de lo que no se ve en la plataforma"/>
@@ -60,7 +61,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -228,7 +229,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -578,8 +579,37 @@
 		</article>
     </div>
   </div>
-      
-      
+      <div class="video_galeria">
+        <!-- Filtros -->
+  <div class="filter-buttons">
+    <button data-filter="all">Todos</button>
+    <button data-filter="documental">Documental</button>
+    <button data-filter="aventuras">Aventuras</button>
+    <button data-filter="bloguero">Bloguero</button>
+  </div>
+
+  <!-- Galería -->
+  <div class="video-gallery">
+    <div class="video-item documental">
+      <iframe src="https://www.youtube.com/watch?v=p2vpqKBPj4U" allowfullscreen></iframe>
+    </div>
+    <div class="video-item aventuras">
+      <iframe src="https://www.youtube.com/embed/p2vpqKBPj4U" allowfullscreen></iframe>
+    </div>
+    <div class="video-item bloguero">
+      <iframe src="https://www.youtube.com/embed/p2vpqKBPj4U" allowfullscreen></iframe>
+    </div>
+    <div class="video-item documental">
+      <iframe src="https://www.youtube.com/embed/p2vpqKBPj4U" allowfullscreen></iframe>
+    </div>
+    <div class="video-item aventuras">
+      <iframe src="https://www.youtube.com/embed/p2vpqKBPj4U" allowfullscreen></iframe>
+    </div>
+    <div class="video-item bloguero">
+      <iframe src="https://www.youtube.com/embed/p2vpqKBPj4U" allowfullscreen></iframe>
+    </div>
+  </div>
+      </div>
       <div class="explorar_mas">
 		<img class="img_7" src="https://lh3.googleusercontent.com/d/1xfMP8UHNns3g0evPSGPFA5CcSvUKHygh=w1000"/>
 		<img class="img_8" src="https://lh3.googleusercontent.com/d/1mcxEnsKRqDHfUELZ2xGOOQ3OrMujRHSq=w1000"/>
@@ -748,7 +778,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1700,7 +1730,55 @@ background: linear-gradient(90deg, rgba(146,21,230,1) 0%, rgba(27,163,137,1) 100
                display: contents;
          }
     }
-  
+  /*videos publico*/
+  .video_galeria{
+    position: relative;
+    top: 200px;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  padding: 20px;
+  text-align: center;
+
+  }
+.filter-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  background-color: #00bcd4;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #0097a7;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+  @media only screen and (min-width:320px) and (max-width:1200px){
+  .video-item iframe {
+    height: 180px;
+  }
+}
+  /*footer*/
 .footer__link {
   text-decoration: none;
   color: #fff;
@@ -2013,9 +2091,35 @@ window.addEventListener("load", function () {
     toggle_list();
   });
 });
+/*videos publico*/
+    const buttons = document.querySelectorAll(".filter-buttons button");
+const videos = document.querySelectorAll(".video-item");
 
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.getAttribute("data-filter");
+
+    videos.forEach(video => {
+      if (filter === "all" || video.classList.contains(filter)) {
+        video.style.display = "block";
+      } else {
+        video.style.display = "none";
+      }
+    });
+  });
+});
+    /*años*/
     
-    
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
     /*menu*/
      
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
