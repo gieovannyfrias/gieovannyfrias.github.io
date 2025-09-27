@@ -41,7 +41,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -209,7 +209,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -251,7 +251,7 @@
     <section class="card">
       <div class="text-content">
         <h3>Gieovanny Frias</h3>
-        <p> Gieovanny Frías nació el 10 de septiembre de 1996 en Ciudad de México, Distrito Federal, México. Es un youtuber, influencer, streamer, blogger o creador digital y celebridad de internet mexicano cuyo canal consiste principalmente en vlogs, documental y viajes.</p>  
+        <p>Gieovanny Frías nació el 10 de septiembre de 1996 en Ciudad de México, Distrito Federal, México. Es un youtuber, influencer, streamer, blogger o creador digital y celebridad de internet mexicano cuyo canal consiste principalmente en vlogs, documental, viajes y aventuras.</p>  
         <a href="acerca%20de.html">¡Más sobre mí!</a>
         <div class="enlaces">
        <h3> Whatsapp</h3>
@@ -979,7 +979,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -3350,6 +3350,17 @@ radioButtons.forEach(radio => {
   });
 });
 document.documentElement.className = 'dark-blue';
+    
+  // año
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
     /*header*/
       
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
@@ -3367,4 +3378,3 @@ $(".angle-view-sub-menu ").click(function(){
   </script>
 </body>
 </html>
-
