@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap" rel="stylesheet">
-	<meta name="google-adsense-account" content="ca-pub-8616709924287043">
+    <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+
     <meta name="title" content="Empleo"/>
 
     <meta name="description" content="Encuentra todo tipo de empleo que solicites de acuerdo a tus estudios o carrera tronca disponible."/>
@@ -44,7 +45,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -212,7 +213,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -387,8 +388,7 @@ Dominio de herramientas como , InDesign,photoshop, Premiere Pro y After Effects<
       </div>
       
       <div class="date-group">
-        <h4><label class="label_2" for="1name"> Enero 1, hasta 31 Diciembre
-    <span class="texto-gris" id="yearlogin"></span>
+        <h4><label class="label_2" for="1name"> Enero 1, hasta 31 Diciembre <span class="year"></span>
           </label></h4>
         <p>7:00 AM A 1:00 PM(matutino)</p>
       </div>
@@ -405,8 +405,7 @@ Dominio de herramientas como , InDesign,photoshop, Premiere Pro y After Effects<
       </div>
       
       <div class="date-group">
-        <h4><label class="label_2" for="2name"> Enero 1, hasta 31 Diciembre
-    <span class="texto-gris" id="yearlogin"></span>
+        <h4><label class="label_2" for="2name"> Enero 1, hasta 31 Diciembre <span class="year"></span>
           </label></h4>
         <p>1:00 PM A 7:00 PM(vespertino)</p>
       </div>
@@ -423,8 +422,7 @@ Dominio de herramientas como , InDesign,photoshop, Premiere Pro y After Effects<
       </div>
       
       <div class="date-group">
-   <h4><label class="label_2" for="3name"> Enero 1, hasta 31 Diciembre
-    <span class="texto-gris" id="yearlogin"></span>
+   <h4><label class="label_2" for="3name"> Enero 1, hasta 31 Diciembre <span class="year"></span>
           </label></h4>
         <p>7:00 PM A 1:00 AM(nocturno)</p>
       </div>
@@ -441,8 +439,7 @@ Dominio de herramientas como , InDesign,photoshop, Premiere Pro y After Effects<
       </div>
       
       <div class="date-group">
-   <h4><label class="label_2" for="4name"> Enero 1, hasta 31 Diciembre
-    <span class="texto-gris" id="yearlogin"></span>
+   <h4><label class="label_2" for="4name"> Enero 1, hasta 31 Diciembre <span class="year"></span>
           </label></h4>
         <p>1:00 AM A 7:00 AM(madrugador)</p>
       </div>
@@ -898,7 +895,7 @@ Mantenerse actualizado con las tendencias del diseño y las mejores prácticas d
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1760,10 +1757,16 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
   
     </style>
   <script>
-    var today =new Date();
-        year =today.getFullYear();
-        document.getElementById("yearlogin").innerHTML=year;
-    
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
        /*menu*/
     
   
