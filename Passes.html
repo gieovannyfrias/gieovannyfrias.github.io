@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
       <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
-<meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+
   <meta name="title" content="Passes"/>
 
     <meta name="description" content="Imagenes de HD o 4K ,pero tambien tien una de paga."/>
@@ -35,7 +36,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -203,7 +204,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -267,7 +268,7 @@
       <div class="passes_0">
       <h1 class="title_0">Passes</h1>
           <label style="font-size: 30px" for="1name">
-    <span class="texto-gris" id="yearlogin"></span>
+             <span class="year"></span>
     </label>
     </div>
     <div class="card_0">
@@ -478,7 +479,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -725,6 +726,7 @@ svg:not(:root).svg-inline--fa {
       margin-top: 200px;
     
     }
+
        @media only screen and (min-width:320px) and (max-width:1200px){
       .image_0{
         flex-direction: column;
@@ -740,6 +742,10 @@ svg:not(:root).svg-inline--fa {
        border-style: solid;
   border-color: wheat;
     }
+    .photo_1:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(2.10, 2.10);
+}
     .photo_2{
       position: relative;
       top: 350px;
@@ -750,6 +756,10 @@ svg:not(:root).svg-inline--fa {
         border-style: solid;
   border-color: whitesmoke;
     }
+         .photo_2:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(2.10, 2.10);
+}
     .photo_3{
         width: 150px;
       height: 150px; 
@@ -759,6 +769,10 @@ svg:not(:root).svg-inline--fa {
         border-style: solid;
   border-color: snow;
     }
+    .photo_3:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(2.10, 2.10);
+}
     .photo_4{
         width: 200px;
       height: 200px; 
@@ -769,6 +783,10 @@ svg:not(:root).svg-inline--fa {
         border-style: solid;
   border-color: antiquewhite;
     }
+    .photo_4:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(2.10, 2.10);
+}
     .photo_5{
        width: 200px;
       height: 200px; 
@@ -779,6 +797,10 @@ svg:not(:root).svg-inline--fa {
         border-style: solid;
   border-color: lightgoldenrodyellow;
     }
+    .photo_5:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(2.10, 2.10);
+}
        .photo_6{
        width: 200px;
       height: 200px; 
@@ -789,6 +811,10 @@ svg:not(:root).svg-inline--fa {
            border-style: solid;
   border-color: floralwhite;
     }
+    .photo_6:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(2.10, 2.10);
+}
        .photo_7{
        width: 150px;
       height: 150px; 
@@ -800,6 +826,10 @@ svg:not(:root).svg-inline--fa {
   border-color: papayawhip;
       
     }
+    .photo_7:hover {
+  box-shadow: 0 0 24px #00ffd5aa;
+    transform: scale(2.10, 2.10);
+}
             @media only screen and (min-width:320px) and (max-width:1200px){
 
     .photo_1, .photo_2, .photo_3, .photo_4, .photo_5, .photo_6, .photo_7{
@@ -812,6 +842,10 @@ svg:not(:root).svg-inline--fa {
     background-repeat: no-repeat;
     background-size: cover;
 margin-top: 40px;
+              }
+    
+        .photo_1:hover, .photo_2:hover, .photo_3:hover, .photo_4:hover, .photo_5:hover, .photo_6:hover, .photo_7:hover{
+transform: scale(1.01, 1.01);
               }
     }
     .passes_0{
@@ -1216,10 +1250,18 @@ const initOverlayCard = (cardEl) => {
 cards.forEach(initOverlayCard);
 document.body.addEventListener("pointermove", applyOverlayMask);
   
-    /*cambio de fecha actual*/
-     var today =new Date();
-        year =today.getFullYear();
-        document.getElementById("yearlogin").innerHTML=year;
+  /*año*/
+  
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
   /*menu*/
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
