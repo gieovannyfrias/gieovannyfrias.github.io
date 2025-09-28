@@ -31,7 +31,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
-    <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+      <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+
      <meta name="title" content="YouTube music"/>
     <meta name="description" content="Escucha musica la mas reciente con tus audifonos a todo volumen."/>
     <meta name="robots" content="index"/>
@@ -72,7 +73,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"> <span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -240,7 +241,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -281,7 +282,7 @@
   <div class="contenedor">
   <img class="logo_animado" src="https://lh3.googleusercontent.com/d/15J38n9xsxgoiJW8EdIDlHRbFYlYdk6-Z=w1000" />
   <div class="title">Nueva musica</div>
-  <div class="subtitle">Gieovanny Frias</div>
+  <div class="subtitle">Gieovanny Frías</div>
   </div>
 <div class="#">
   <img class="img_0" src="https://lh3.googleusercontent.com/d/1RB_dnQVlcHNVwFZjiDezSjcJnXtpgHhr=w1000">
@@ -359,7 +360,7 @@
       You Tube Music
     </h1>
      <label for="hel"> 
-    <span class="texto-gris" id="yearlogin"></span>
+       <span class="year"></span>
     </label><br>
   </div>
 
@@ -488,7 +489,7 @@
       <div>
         
         <p class="colored-subtitle">Introducción -Gieovanny Frias</p>
-        <p>**/**/202*<br>21:30 - Lanzado en todas las plataformas</p> <br> <p class="description_lanzamiento">Este año no te pierdas el lanzamiento más esperado del año de Gieovanny Frias, con su nuevo video.</p>
+        <p>**/**/<span class="year"></span><br>21:30 - Lanzado en todas las plataformas</p> <br> <p class="description_lanzamiento">Este año no te pierdas el lanzamiento más esperado del año de Gieovanny Frias, con su nuevo video.</p>
         
          </div>
       <div>
@@ -513,7 +514,7 @@
       <div>
          
         <p class="colored-subtitle">proxiamamente -Gieovanny Frias</p>
-        <p>**/**/202*<br>1:57 - Lanzado en todas las plataformas</p> <br> <p class="description_lanzamiento">Este año no te pierdas el lanzamiento más esperado del año de Gieovanny Frias, con su nuevo video.</p>
+        <p>**/**/<span class="year"></span><br>1:57 - Lanzado en todas las plataformas</p> <br> <p class="description_lanzamiento">Este año no te pierdas el lanzamiento más esperado del año de Gieovanny Frias, con su nuevo video.</p>
         
          </div>
       <div>
@@ -677,7 +678,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -2224,9 +2225,18 @@ new Vue({
   }
 });
     
-      var today =new Date();
-        year =today.getFullYear();
-        document.getElementById("yearlogin").innerHTML=year;
+     /*año*/
+    
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
 /*menu*/
   
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
