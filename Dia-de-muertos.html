@@ -29,7 +29,8 @@
   
         <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
 
-  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+    <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+
   <meta name="title" content="Dia de muertos"/>
 
     <meta name="description" content="Tradición mexicana que se celebra cada año."/>
@@ -57,7 +58,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -225,7 +226,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -266,18 +267,18 @@
     <source src="https://github.com/gieovannyfrias/gieovannyfrias.github.io/raw/refs/heads/main/Musica/Apprehensive%20at%20Best%20-%20Biz%20Baz%20Studio.mp3"autoplay="true" loop="-1" type="audio/mp3">
 </audio>
   <div class="portada">
-  <h1 class="title">Dia de muertos</h1>
+  <h1 class="title">Dia de muertos <span class="year"></span></h1>
   <p class="noviembre">Tradición que se celebra en México el 1 y 2 de noviembre en la que se honra la memoria de los muertos.</p>
   </div>
-  <h1 class="primera_semana">octubre - noviembre</h1>
+  <h1 class="primera_semana">octubre - noviembre <span class="year"></span></h1>
   <div class="dias">
-    <a class="tradicion_mexicana" href="#">27 octubre<p>Fallecidos mascotas</p></a>
-    <a class="tradicion_mexicana" href="#">28 octubre<p>Fallecieron de forma tragica,<br>por violencia o accidentes</p></a>
-    <a class="tradicion_mexicana" href="#">29 octubre<p>Fallecidos ahogados</p></a>
-<a class="tradicion_mexicana" href="#">30 octubre<p>Difuntos olvidados por<br> su familia</p></a>
-    <a class="tradicion_mexicana" href="#">31 octubre<p>Niños sin ser bautizados</p></a>
-    <a class="tradicion_mexicana" href="#">1 noviembre<p>Niños ya fallecidos</p></a>
-<a class="tradicion_mexicana" href="#">2 noviembre<p>Adolescentes adultos<br> ya fallecidos</p></a>
+    <a class="tradicion_mexicana" href="#">27 octubre <span class="year"></span><p>Fallecidos mascotas</p></a>
+    <a class="tradicion_mexicana" href="#">28 octubre <span class="year"></span><p>Fallecieron de forma tragica,<br>por violencia o accidentes</p></a>
+    <a class="tradicion_mexicana" href="#">29 octubre <span class="year"></span><p>Fallecidos ahogados</p></a>
+<a class="tradicion_mexicana" href="#">30 octubre <span class="year"></span><p>Difuntos olvidados por<br> su familia</p></a>
+    <a class="tradicion_mexicana" href="#">31 octubre <span class="year"></span><p>Niños sin ser bautizados</p></a>
+    <a class="tradicion_mexicana" href="#">1 noviembre <span class="year"></span><p>Niños ya fallecidos</p></a>
+<a class="tradicion_mexicana" href="#">2 noviembre <span class="year"></span><p>Adolescentes adultos<br> ya fallecidos</p></a>
   </div>
  
   <div>
@@ -697,7 +698,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1657,6 +1658,18 @@ class CollapsibleTimeline {
     document.removeEventListener('click' ,playSound);
 }
 document.addEventListener('click', playSound);
+/*años*/
+
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
 /*menu encabezado abajo*/
     let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
