@@ -37,7 +37,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -205,7 +205,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -243,7 +243,7 @@
 </header>
   <div class="wrapper">
   
-   <h1 class="title">Gieovanny Frias</h1>
+   <h1 class="title">Gieovanny Frías</h1>
     <img class="resolucion_imagen" src="https://lh3.googleusercontent.com/d/1F0DTqu9mmg_m89xjRMBIObHH8-71uZAy=w10000" alt="image">
 
   <div class="keyboard">
@@ -569,7 +569,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1718,6 +1718,18 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
      function showAndroidToast(toast) {
         Android.showToast(toast);
         }
+    /*años*/
+    
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
     /*menu*/
     
 
