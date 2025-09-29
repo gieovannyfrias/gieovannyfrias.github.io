@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
    <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
       <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
-<meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+
    <meta name="title" content="X"/>
 
     <meta name="description" content="Estilo de vida mediante una publicaciones lo que expreso."/>
@@ -35,7 +36,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -203,7 +204,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -218,6 +219,9 @@
             </li>
              <li class="item-menu">
               <a href="Passes.html" class="item-menu-link">Passes</a>
+            </li>
+               <li class="item-menu">
+              <a href="Reservar-fans.html" class="item-menu-link">Reservar fans</a>
             </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
@@ -1191,7 +1195,7 @@ Sabía que la primera flor de un hombre la recibe en su funeral y la segunda cua
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1537,7 +1541,11 @@ h4 {
     height: var(--size);
     container-type: size;
 }
-      
+        @media only screen and (min-width:320px) and (max-width:384px){
+    main {
+      bottom: 30px;
+    }
+    }
 main div {
     position: absolute;
     border-style: solid;
@@ -1592,7 +1600,7 @@ main div {
   width: 20px;
   position: relative;
   bottom: 15px;
-  left: 120px;
+  left: 130px;
     }
 .username .uname {
   color: rgba(255, 255, 255, 0.6);
@@ -1601,7 +1609,7 @@ main div {
   font-weight: 400;
    position: relative;
   bottom: 25px; 
-  left: 140px;
+  left: 150px;
   line-height: normal;
 line-height:0;
 }
@@ -1611,7 +1619,7 @@ line-height:0;
          }
     .username .uname{
 top: -10px;
-      left: 20px;
+      left: 0;
     }
     }
     .username .img_0{
@@ -1621,9 +1629,15 @@ line-height:0;
     }
   @media only screen and (min-width:320px) and (max-width:1200px){
     .username .img_0{
-      position: relative;
-      left: 0px;
-      bottom: 0px;
+             position: relative;
+        margin-left: 10px;
+        bottom: 25px;
+    }
+    }
+      @media only screen and (min-width:320px)and (max-width:384px){
+    .username .img_0{
+                  left: 40px;
+        bottom: 25px;
     }
     }
 .twitt .tag {
@@ -1809,6 +1823,19 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
       
   </style>
   <script>
+    /*años*/
+      
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
+    /*header*/
     let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
 btnHamburguesa.addEventListener('click', function(){
