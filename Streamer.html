@@ -13,8 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
-	<meta name="title" content="Streamer"/>
+    <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+
+  <meta name="title" content="Streamer"/>
 
     <meta name="description" content="Esta es la forma de jugar con estilo mediante con un monitor gamer con los juegos favoritos."/>
     <meta name="robots" content="index"/>
@@ -42,7 +43,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -210,7 +211,7 @@
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="#" class="item-menu-link">Content pay</a>
+          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
           <i style="color: white" class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -225,6 +226,9 @@
             </li>
              <li class="item-menu">
               <a href="Passes.html" class="item-menu-link">Passes</a>
+            </li>
+               <li class="item-menu">
+              <a href="Reservar-fans.html" class="item-menu-link">Reservar fans</a>
             </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
@@ -559,7 +563,7 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1614,7 +1618,18 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
 
             animateLetters();
         });
-  
+  /*años*/
+      
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
     /*menu*/
       
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
