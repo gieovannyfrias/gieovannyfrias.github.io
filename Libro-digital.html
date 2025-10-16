@@ -8,9 +8,22 @@
       <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
   <meta name="google-adsense-account" content="ca-pub-8616709924287043">
   
-  <title>El ascenso digital - Gieovanny Frías</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   
-  </head>
+  <title>El ascenso digital de una marca autentica- Gieovanny Frías</title>
+     <meta name="title" content="El ascenso digital - Gieovanny Frías"/>
+
+    <meta name="description" content="El libro digital de gieovanny Frías mediante el ascenso digital de una marca autentica."/>
+    <meta name="robots" content="index"/>
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+</head>
 <body>
   
  <header class="header">
@@ -226,9 +239,31 @@
          
           </ul>
         </li>
-   <li class="item-menu">
-              <a href="Contacto.html" class="item-menu-link">Contacto</a>
-            </li>
+<li class="item-menu item-menu-sub-menu">
+  <a href="#" class="item-menu-link" aria-haspopup="true" aria-expanded="false">Contacto</a>
+  <i class="fas fa-angle-down angle-view-sub-menu"></i>
+  <ul class="sub-menu">
+    
+    <!-- Prueba 1: horizontal -->
+    <li class="item-menu item-menu-sub-menu">
+      <a href="#" class="item-menu-link" aria-haspopup="true" aria-expanded="false">Reportes</a>
+      <i class="fas fa-angle-right angle-view-sub-menu-1"></i>
+      <ul class="sub-menu-horizontal">
+        <li class="item-menu"><a href="#" class="item-menu-link">Informes</a></li>
+      </ul>
+    </li>
+
+    <!-- Prueba 2: vertical -->
+    <li class="item-menu item-menu-sub-menu">
+      <a href="#" class="item-menu-link" aria-haspopup="true" aria-expanded="false">Errores</a>
+      <i class="fas fa-angle-down angle-view-sub-menu-1"></i>
+      <ul class="sub-menu">
+        <li class="item-menu"><a href="#" class="item-menu-link">Chat vivo</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
       </ul>
     </nav>
   
@@ -240,28 +275,14 @@
   
   </div>
 </header>
+            <div class="wrapper">
+<stripe-buy-button
+  buy-button-id="buy_btn_1SIetZJrTRuDni7ZafiUYdLF"
+  publishable-key="pk_live_51Ju5obJrTRuDni7ZOLRAFnKk45zl5bu1lxOVZfyycQfzCf81E8Rrxeh9JwMsqWi55XUft7KwRVlyWjtL52M5j0e500mbNenxfN"
+>
+</stripe-buy-button>
   
-  <div class="reader">
-    <h1 id="bookTitle">El ascenso digital de una marca autentica</h1>
-<h2> Marca personal digital</h2>
-    <h2>Índice</h2>
-    <ul id="indexList" class="index-list"></ul>
-    <hr>
-
-    <h2 id="chapterTitle"></h2>
-    <div id="chapterContent" class="content"></div>
-
-    <div class="controls">
-      <button onclick="prevChapter()">⟵ Anterior</button>
-      <span id="chapterIndicator"></span>
-      <button onclick="nextChapter()">Siguiente ⟶</button>
-    </div>
   </div>
-  
-  
-  
-  
-  
     <div class="pie-pagina">
     <div class="main"></div>
 <div class="footer">
@@ -419,22 +440,25 @@
   </div>
 </div>
     </div>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+  <style>
+  
+/* estilos base */
 * {
  margin:0;
 border: 0;         
 box-sizing: border-box;
 }
 body {
-  font-family: 'Inter', sans-serif;
+
   background-color: black;
-  color: #1c1e21;
-  margin: 0;
-  padding: 0;
 }
-/*menu*/
-    svg{
+         .wrapper {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 32px;
+}
+
+  svg{
     
     color: white;
   }
@@ -555,8 +579,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   
   
   
-  
-  
+
 
 /* Submenú vertical para Prueba 2 (ya incluido en tu base) */
 .sub-menu {
@@ -714,139 +737,13 @@ svg:not(:root).svg-inline--fa {
     color: red;
   }
 }
-  /*fin del menu*/
-.reader {
-  position: relative;
-  top:200px;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.1); /* Transparente */
-  border-radius: 16px;
-  transition: box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px); /* Efecto vidrio */
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.reader:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-      transform: scale(1.10, 1.10);
-
-}
- 
-h1 {
-  font-size: 32px;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 10px;
-  color: #007b7f;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 30px;
-  color: whitesmoke;
-}
-
-.content {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-top: 20px;
-  padding: 10px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  color: white;
-}
-
-.controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: #007b7f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #005f61;
-}
-
-#chapterIndicator {
-  font-size: 16px;
-  font-weight: 500;
-  color: #555;
-}
-
-.index-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-}
-
-.index-list li {
-  background-color: #f0f2f5;
-  padding: 12px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: 500;
-}
-
-.index-list li:hover {
-  background-color: #e0e4e8;
-}
-
-@media (max-width: 600px) {
-  .reader {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .content {
-    font-size: 16px;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  .controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-  .url_1{
-    color: aqua;
-    text-decoration: none;
-  }
-
-  /*footer*/
-
+  /*boton stripe*/
+    stripe-buy-button{
+      position: relative;
+      top: 200px;
+    }
+    /*footer*/
+    
 .footer__link {
   text-decoration: none;
   color: #fff;
@@ -1022,100 +919,11 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
 
   }
 }
-            
-
+          
   </style>
   <script>
-  const chapters = [
-  {
-    title: "Capítulo 1: El ascenso digital de Gieovanny Frías",
-    content: `Un nuevo comienzo para Gieovanny Frías desde México como nombre real Jovani Camacho Frías...`
-  },
-  {
-    title: "Capítulo 2: Orígenes y formación",
-    content: `· Nombre completo: Jovani Camacho Frías<br>· Fecha de nacimiento: 10 de septiembre de 1996<br>· Lugar de origen: Ciudad de México<br>· Ascendencia: Española y mexicana<br>· Educación: Tecnologías de la Información (2022)`
-  },
-  {
-    title: "Capítulo 3: Explorando el mundo del streaming en vivo",
-    content: `· Inicio en Twitch y Kick en 2023<br>· Juegos como Fortnite<br>· Estilo espontáneo, sin guiones ni filtros`
-  },
-  {
-    title: "Capítulo 4: YouTube: Documentando la aventura",
-    content: `· Vlogs, viajes, documentales<br>· Enfoque visual y emocional<br>· Comunidad creciente por su autenticidad`
-  },
-  {
-    title: "Capítulo 5: Podcast sin censura: Voz sin filtro",
-    content: `· Lanzado en Spotify en 2025<br>· Temas maduros, sin censura<br>· Conversaciones honestas y profundas`
-  },
-  {
-    title: "Capítulo 6: La marca personal digital",
-    content: `· Gestión personal de contenido y monetización<br>· Conexión directa con seguidores<br>· Filosofía: "Ser la versión más auténtica de mí mismo"`
-  },
-  {
-    title: "Capítulo 7: Presencia multiplataforma",
-    content: `· Facebook, Instagram, Twitter (X), YouTube, TikTok, Snapchat, Telegram<br>· OnlyFans, Fansly, Mym Fans, Passes<br>· Cameo: videos y mensajes personalizados`
-  },
-  {
-    title: "Capítulo 8: Contenido exclusivo y comunidad privada",
-    content: `· OnlyFans: contenido en 4K sin contenido sexual explícito<br>· Mym Fans: estilo Instagram por suscripción<br>· Passes: transmisiones en vivo de paga`
-  },
-  {
-    title: "Capítulo 9: Colaboraciones y conexiones",
-    content: `· Previstas con Staryuki y Caelike<br>· Expansión hacia nuevos públicos`
-  },
-  {
-    title: "Capítulo 10: Visión hacia el futuro",
-    content: `· Debut como DJ electro/electrónica en 2026<br>· Música en Spotify<br>· Evolución artística y creativa`
-  },
-  {
-    title: "Capítulo 11: Reflexiones finales",
-    content: `Gieovanny Frías no es solo un creador de contenido. Es un símbolo de autenticidad, evolución y conexión. Su historia inspira a quienes buscan expresarse sin miedo.`
-  },
-  {
-    title: "Capítulo 12: Referencia",
-    content: `Frías, G. (s.f.). El ascenso digital. Obtenido de <a class="url_1" href="https://www.gieovannyfrias.com/acerca%20de" target="_blank">gieovannyfrias.com</a>`
-  }
-];
-
-let currentChapter = 0;
-
-function renderChapter() {
-  document.getElementById('chapterTitle').textContent = chapters[currentChapter].title;
-  document.getElementById('chapterContent').innerHTML = chapters[currentChapter].content;
-  document.getElementById('chapterIndicator').textContent = `Capítulo ${currentChapter + 1} de ${chapters.length}`;
-}
-
-function renderIndex() {
-  const indexList = document.getElementById('indexList');
-  chapters.forEach((chapter, index) => {
-    const li = document.createElement('li');
-    li.textContent = chapter.title;
-    li.onclick = () => {
-      currentChapter = index;
-      renderChapter();
-    };
-    indexList.appendChild(li);
-  });
-}
-
-function nextChapter() {
-  if (currentChapter < chapters.length - 1) {
-    currentChapter++;
-    renderChapter();
-  }
-}
-
-function prevChapter() {
-  if (currentChapter > 0) {
-    currentChapter--;
-    renderChapter();
-  }
-}
-
-renderChapter();
-renderIndex();
-    /*menu*/
-document.addEventListener("DOMContentLoaded", function () {
+  
+   document.addEventListener("DOMContentLoaded", function () {
   const btnHamburguesa = document.getElementById("btn-hamburguesa");
   const menuNavegacion = document.getElementById("menu-navegacion");
     
@@ -1133,7 +941,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-    /*fin del menu*/
     /*años*/
     
   // Obtener el año actual
@@ -1148,4 +955,3 @@ yearElements.forEach(el => {
 });
   </script>
 </body>
-</html>
