@@ -39,7 +39,7 @@
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link">2024</a>
+          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
           <i class="fas fa-angle-down angle-view-sub-menu"></i>
           
           <ul class="sub-menu" id="sub-menu">
@@ -171,6 +171,9 @@
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
+             <li class="item-menu">
+              <a href="Libro-digital.html" class="item-menu-link">Libro</a>
+            </li>
          <li class="item-menu">
               <a href="Empleo.html" class="item-menu-link">Empleo</a>
             </li>
@@ -223,6 +226,9 @@
              <li class="item-menu">
               <a href="Passes.html" class="item-menu-link">Passes</a>
             </li>
+             <li class="item-menu">
+              <a href="Reservar-fans.html" class="item-menu-link">Reservar fans</a>
+            </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
             </li>
@@ -257,7 +263,7 @@
   <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
 </svg></h1>
 
-    <h2 class="card-jobtitle">Youtuber|Influencer|Streaming|<br>Bloguero o creador digital</h2>
+    <h2 class="card-jobtitle">Youtuber|Influencer|Streamer|<br>Bloguero o creador digital|<br>Artista musical|Modelo</h2>
 
   </div>
 
@@ -268,11 +274,17 @@
       <div class="card-content">
 
         <div class="card-subtitle">Acerca de</div>
-
-        <p class="card-desc">Encuéntrame en el buscador de Google como Gieovanny Frias para ver todas mis redes sociales/🇲🇽🌮 #gieovannyfrias
-
+<p>🎥 Youtuber • 📱 Influencer • 🎮 Streamer • ✍️ Bloguero / Creador digital • 🎶 Artista musical • 📸 Modelo • 🌐 Celebridad de internet 🇲🇽 🌮</p>
+        <p class="card-desc">
+Gieovanny Frías nació el 10 de septiembre de 1996 en Ciudad de México, México. Es un youtuber, influencer, streamer, bloguero o creador digital, artista musical, modelo y celebridad de internet mexicano cuyo canal consiste principalmente en vlogs, documental, viajes y aventuras.En tanto en twitch y kick en videojuegos de streaming en vivo de diferente categoría variado.En cambio la musica me categorizo como Dj electro/electronica mexicano.Tambien soy modelo fashion donde comparto contenido de moda y estilo mediante modelo influencer e digital donde creo contenido en redes sociales de fotografía o video donde comparto ideas de vestimenta en el outfit masculino.
         </p>
-
+<ul>
+  <li>Nacimiento: 10 de septiembre de 1996, México, Ciudad de México</li>
+  <li>Nombre completo: Jovani Camacho Frías</li>
+  <li>Estatura: 1.75 m</li>
+  <li>Años activo: 2023-presente</li>
+  <li>Ocupación: Youtuber, influencer, streamer, bloguero o creador digital, artista musical, modelo, celebridad de Internet o personalidad de internet</li> 
+</ul>
       </div>
 
       <div class="card-social">
@@ -860,9 +872,9 @@
           </div>
             <div class="card-item" data-year="2026">
 
-            <div class="card-item-title">Creo musica de <span>Dance/Electronica</span></div>
+            <div class="card-item-title">Creo musica como artista musical de DJ <span>Electro/Electronica</span></div>
 
-            <div class="card-item-desc">Subiendo en plataformas como spotify.</div>
+            <div class="card-item-desc">Subiendo en plataformas como spotify, youtube music y etc.</div>
 
           </div>
           
@@ -1115,7 +1127,7 @@ mytienda@gieovannyfrias.com
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
@@ -1844,7 +1856,7 @@ width: 100%;
 
 .card-content {
 
-  padding: 20px;
+  padding: 40px;
 
 }
 
@@ -2496,6 +2508,18 @@ buttons.forEach(btn => {
   btn.addEventListener("click", handleButtonClick);
 
 });
+    /*años*/
+      
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
     /*menu encabezado abajo*/
    let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
@@ -2509,6 +2533,7 @@ $(".angle-view-sub-menu ").click(function(){
     /*font awesome heard flecha abajo*/
      window.FontAwesomeConfig = {
         searchPseudoElements: true}
+    /*años*/
     
   </script>
   </body>
