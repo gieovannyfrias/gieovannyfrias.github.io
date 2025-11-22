@@ -1,5 +1,4 @@
 User-agent: *
-
 Disallow: /wp-admin/
 Disallow: /wp-includes/
 Disallow: /wp-content/plugins/
@@ -80,3 +79,5 @@ Allow: /
 User-agent: Specify
 Allow: /
 
+# Directiva Sitemap corregida con la URL completa
+Sitemap: https://www.gieovannyfrias.com
