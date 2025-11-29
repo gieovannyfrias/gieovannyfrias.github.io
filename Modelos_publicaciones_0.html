@@ -482,7 +482,7 @@
     <div class="card-content">
         <h2 class="card-title-overlay">Título Sobre Imagen</h2>
         <p class="card-paragraph-overlay">
-            Este texto y título están superpuestos sobre la imagen utilizando CSS.
+            Este texto y título están superpuestos sobre la imagen utilizando.
         </p>
     </div>
 </div>
@@ -521,7 +521,7 @@
 <div class="tags_0">
  <div class="main-container">
    <div class="tags">
-   <h1>TAGS</h1>
+   <h1 class="title_tags">TAGS</h1>
    </div>
         <!-- SECCIÓN 1: LISTA DE TAGS -->
         <div id="seccion-tags" class="tags-container">
@@ -537,8 +537,8 @@
         <!-- SECCIÓN 2: CONTENIDO DE LA PUBLICACIÓN DE JAVASCRIPT -->
         <div id="js-post-content" class="post-content-detail" style="display: none;">
             <button onclick="cerrarPublicacion()">← Volver a los Tags</button>
-            <h2>Publicación sobre JavaScript Avanzado</h2>
-            <p>Detalles específicos del artículo de JavaScript. Aprende sobre funciones, variables <br>y el DOM.</p>
+            <h2>Publicación Avanzado</h2>
+            <p>Detalles específicos del artículo. Aprende sobre funciones, variables <br>y el DOM.</p>
           <img src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000" class="post-image_1">  
             <!-- COMENTARIOS INTEGRADOSS -->
             <div class="comentarios-container-moderno">
@@ -567,8 +567,8 @@
           <hr style="  border: none;height: 1px;   background-color: #333; margin: 20px 0;">
         <div class="public_tags_separation">
           
-          <h2>Publicación el JavaScript Avanzado</h2>
-            <p>Detalles específicos del artículo de JavaScript. Aprende sobre funciones, variables <br>y el DOM.</p>
+          <h2>Publicación Avanzado</h2>
+            <p>Detalles específicos del artículo. Aprende sobre funciones, variables <br>y el DOM.</p>
           <img src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000" class="post-image_1">  
             <!-- COMENTARIOS INTEGRADOSS -->
             <div class="comentarios-container-moderno">
@@ -600,9 +600,9 @@
         <!-- SECCIÓN 3: CONTENIDO DE LA PUBLICACIÓN DE CSS -->
         <div id="css-post-content" class="post-content-detail" style="display: none;">
             <button onclick="cerrarPublicacion()">← Volver a los Tags</button>
-            <h2>Guía Completa de CSS3 Moderno</h2>
+            <h2>Guía Completa de Moderno</h2>
             <img src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000" alt="Avatar 3" class="post-image_1">
-            <p>Detalles específicos del artículo de CSS, con ejemplos de diseño responsive y flexbox.</p>
+            <p>Detalles específicos del artículo con ejemplos de diseño responsive y flexbox.</p>
             
             <!-- COMENTARIOS INTEGRADOSS -->
             <div class="comentarios-container-moderno">
@@ -611,7 +611,7 @@
                     <img src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000" alt="Avatar 3" class="avatar">
                     <div class="comentario-cuerpo-nuevo">
                         <div class="info-usuario">
-                            <span class="nombre-usuario">CSSFan</span>
+                            <span class="nombre-usuario">Fan</span>
                             <div class="cuadrado-right"></div>
                         </div>
                         <p>Me encantaron los ejemplos de Flexbox.</p>
@@ -656,7 +656,7 @@
         <!-- SECCIÓN 5: CONTENIDO DE LA PUBLICACIÓN DE HTML5 -->
         <div id="html5-post-content" class="post-content-detail" style="display: none;">
             <button onclick="cerrarPublicacion()">← Volver a los Tags</button>
-            <h2>Novedades de HTML5 Semántico</h2>
+            <h2>Novedades Semántico</h2>
           <img src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000" class="post-image_1">  
           <p>Uso de las nuevas etiquetas como </p>
               <!-- COMENTARIOS INTEGRADOSS -->
@@ -687,7 +687,7 @@
       <!-- SECCIÓN 6: CONTENIDO DE LA PUBLICACIÓN DE HTML5 -->
         <div id="html1-post-content" class="post-content-detail" style="display: none;">
             <button onclick="cerrarPublicacion()">← Volver a los Tags</button>
-            <h2>Novedades de HTML1 Semántico</h2>
+            <h2>Novedades Semántico</h2>
                     <img src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000" class="post-image_1">  
           <p>Uso de las nuevas etiquetas como </p>
               <!-- COMENTARIOS INTEGRADOSS -->
@@ -997,6 +997,13 @@
 border: 0;         
 box-sizing: border-box;
 }
+   :root {
+  --color-primary: #007bff;
+  --color-text-dark: #333;
+  --color-text-light: #666;
+  --color-bg-light: #f1f1f1;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
   .wrapper {
 	max-width: 1400px;
 	margin: 0 auto;
@@ -1293,410 +1300,1039 @@ h2, p, .boton-encima {
     display:inline-table;
   }
 /*public*/
-  .public {
-float: left;
+ 
+
+/* --- Contenedor principal --- */
+.public {
+  float: left;
   font-family: sans-serif;
- background: rgba(255, 255, 255, 0.1);
-    margin: 0;
-    padding: 20px;
-    border-radius: 10px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-   .public:hover {
-  box-shadow: 0 0 24px white;
-    transform: scale(1.01, 1.01);
+
+.public:hover {
+  box-shadow: 0 0 24px #fff;
+  transform: scale(1.01);
 }
+
+/* --- Listado de posts --- */
 .blog-list-container {
-    max-width: 600px; /* Limita el ancho del listado para que quede a la izquierda */
-    margin-right: auto;
+  max-width: 600px;
+  margin-right: auto;
 }
 
 .post-card {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 25px; /* Espacio entre posts */
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-.post-title { margin: 0 0 5px 0; color: #333; }
-.post-subtitle { font-size: 0.8rem; color: #666; margin: 0 0 15px 0; }
-
-.post-image {
-    width: 100%;       /* Imagen del post */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.post-paragraph {
-    font-size: 1rem;
-    line-height: 1.4;
-    color: #444;
-    text-align: left;
-    margin-bottom: 20px;
-}
-  .post-image_1{
-   width: 100%;
-    height: 600px;
-  }
-/* --- Estilos para la sección de comentarios --- */
-.comentarios-container-moderno {
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-}
-
-.comments-title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #333;
-    margin: 0 0 15px 0;
-}
-
-.comentario-moderno {
-    display: flex;       /* Alinea el avatar y el texto */
-    margin-bottom: 15px;
-    align-items: flex-start;
-}
-
-.avatar {
-    width: 50px;         /* TAMAÑO DEL AVATAR 50x50px */
-    height: 50px;
-    border-radius: 50%;  /* Avatares circulares */
-    margin-right: 15px;  /* Espacio entre avatar y texto */
-    object-fit: cover;
-    /* border: 1px solid #eee;  opcional */
-}
-
-.comentario-cuerpo-nuevo {
-    display: flex;
-    flex-direction: column;
-}
-
-.nombre-usuario {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #222;
-    margin-bottom: 4px;
-}
-
-.comentario-cuerpo-nuevo p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #444;
-    line-height: 1.3;
-}
-/* ... (Mantén todos los estilos anteriores para .post-card, .avatar, etc.) ... */
-
-/* Estilo inicial para ocultar los comentarios extra */
-.comentarios-extra {
-    max-height: 0;           /* Oculta los comentarios por defecto */
-    overflow: hidden;        /* Oculta el contenido que excede la altura */
-    transition: max-height 0.5s ease-out; /* Transición suave para el efecto de deslizamiento */
-}
-
-/* Clase que JavaScript añadirá para mostrar los comentarios */
-.comentarios-extra.visible {
-    /* Altura suficiente para mostrar todos los comentarios (debe ser mayor que el contenido total) */
-    max-height: 500px;       
-    transition: max-height 0.5s ease-in; /* Transición de entrada suave */
-}
-
-#toggle-comentarios {
-    background: none;
-    border: none;
-    color: #007bff;
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 0;
-    margin-top: 10px;
-    text-align: left;
-    width: 100%;
-    font-weight: bold;
-}
-
-#toggle-comentarios:hover {
-    text-decoration: underline;
-}
-/* Estilo inicial para ocultar el contenido deslizable */
-.contenido-deslizable {
-    max-height: 0;           /* Oculta el contenido por defecto */
-    overflow: hidden;        /* Oculta lo que se desborda */
-    transition: max-height 0.5s ease-in-out; /* Animación suave */
-}
-
-/* Clase que JavaScript añadirá para mostrar el contenido */
-.contenido-deslizable.visible {
-    max-height: 1000px;       /* Suficiente altura para mostrar todo el post/comentarios */
-}
-
-/* Estilo del botón */
-button {
-    background: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-/*card*/
-  .card_0 {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    float: right;
-    position: relative;
-    top: 50px;
-        padding: 20px;
- background: rgba(255, 255, 255, 0.1);
-    margin-bottom: 80px;
-    border-radius: 10px 10px;
-}
-   .card_0:hover {
-  box-shadow: 0 0 24px white;
-    transform: scale(1.01, 1.01);
-}
-   @media only screen and (min-width:320px) and (max-width:1200px){
-  .card_0 {
-  float: left;
-    }
-  }
-.card-overlay {
-    position: relative; /* Define el contexto para el posicionamiento absoluto */
-    width: 100%;
-    max-width: 500px; 
-    border-radius: 8px;
-    overflow: hidden; /* Mantiene el contenido dentro de los bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-}
-
-.card-image {
-    width: 100%;
-    height: 250px;
-    display: block;
-}
-
-.card-content {
-    position: relative; /* Superpone este div */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    
-    /* Estilos visuales para el contenido */
-    background-color: black; /* Fondo semitransparente oscuro */
-    color: white; /* Texto blanco */
-    padding: 80px;
-    text-align: center;
-
-    /* Centrado con Flexbox */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center;     /* Centra horizontalmente */
-}
-
-.card-title-overlay {
-    font-size: 1.8rem;
-    margin: 0 0 10px 0;
-}
-
-.card-paragraph-overlay {
-    font-size: 1rem;
-    margin: 0;
-}
-/*post_0*/
-  .post_0 {
-    font-family: sans-serif;
- background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    float: right;
-    position: relative;
-    top: auto;
-    border-radius: 10px 10px;
-}
-   .post_0:hover {
-  box-shadow: 0 0 24px white;
-    transform: scale(1.01, 1.01);
-}
-    @media only screen and (min-width:320px) and (max-width:1200px){
-  .post_0 {
-  float: left;
-    display: flex;
-    }
-  }
-  .post_title{
-    background: black;
-    color: white;
-  }
-
-.lista-posts {
-    list-style-type: none; /* Elimina las viñetas por defecto de la lista */
-    padding: 0;
-    max-width: 500px; /* Limita el ancho de la lista */
-    margin: auto; /* Centra la lista en la página */
-}
-
-.post-item {
-    display: flex;       /* Alinea los hijos (imagen y div de texto) horizontalmente */
-    align-items: center; /* Centra verticalmente la imagen y el texto */
-    background-color: white;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.post-thumbnail {
-    width: 50px;          /* Ancho exacto de 10px */
-    height: 50px;         /* Altura exacta de 10px */
-    object-fit: cover;    /* Asegura que la imagen cubra el cuadrado sin distorsión */
-    border-radius: 2px;   /* Bordes ligeramente redondeados para un look moderno */
-    margin-right: 15px;   /* Espacio entre la imagen y el texto */
-}
-
-.post-text-container {
-    display: flex;
-    flex-direction: column; /* Apila el título y el subtítulo verticalmente */
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px var(--color-shadow);
 }
 
 .post-title {
-    font-size: 0.9rem;
-    color: #333;
-    margin: 0; /* Elimina márgenes por defecto */
-    line-height: 1.2;
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--color-text-dark);
 }
 
 .post-subtitle {
-    font-size: 0.7rem;
-    color: #666;
-    margin: 3px 0 0 0; /* Pequeño margen superior para separarlo del título */
-    line-height: 1.2;
-}
-/*tags*/
-  .tags{
-    background: black;
-    color: white;
-  }
-  .tags_0 {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    float: right;
-    position: relative;
-    top: 50px;
-}
-  @media only screen and (min-width:320px) and (max-width:1200px){
-  .tags_0 {
-  float: left;
-    }
-  }
-/* --- Estilos de los Tags Modernos --- */
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin: 0 0 15px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.tag-moderno {
-    display: inline-flex;
-    align-items: center;
-    background-color: #e0f2fe; 
-    color: #0288d1;            
-    padding: 5px 5px;         
-    border-radius: 50px;       
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;           
-    transition: background-color 0.3s;
-    text-decoration: none;     
+.post-image,
+.post-image_1 {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 15px;
 }
 
-.tag-moderno:hover {
-    background-color: #b3e5fc;
+.post-image_1 {
+  height: 600px;
 }
 
-/* --- Estilos del Contenido de la Publicación --- */
-.post-content-detail {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.post-paragraph {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.post-content-detail h2 {
-    margin-top: 0;
-}
-
-.post-content-detail button {
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* --- ESTILOS NUEVOS: Comentarios Modernos con Cuadrado --- */
-
+/* --- Comentarios --- */
 .comentarios-container-moderno {
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.comments-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-text-dark);
+  margin: 0 0 15px;
 }
 
 .comentario-moderno {
-    display: flex;       /* Alinea avatar y texto */
-    margin-bottom: 15px;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .avatar {
-    width: 35px;         /* Tamaño del avatar */
-    height: 35px;
-    border-radius: 50%;  /* Avatares circulares */
-    margin-right: 12px;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .comentario-cuerpo-nuevo {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.info-usuario {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Empuja el cuadrado a la derecha */
-    width: 100%;
-}
-
-.cuadrado-right {
-    width: 10px;         /* El cuadrado de 10x10px */
-    height: 10px;
-    background-color: #007bff; 
-    margin-left: 10px;
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-light);
+  padding: 10px 15px;
+  border-radius: 15px;
+  flex-grow: 1;
 }
 
 .nombre-usuario {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #222;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #222;
+  margin-bottom: 4px;
 }
 
 .comentario-cuerpo-nuevo p {
-    margin: 5px 0 0 0; /* Margen superior para separarlo del nombre de usuario */
-    font-size: 0.9rem;
-    color: #444;
-    line-height: 1.3;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.3;
 }
+
+/* --- Animaciones de comentarios extra --- */
+.comentarios-extra,
+.contenido-deslizable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.comentarios-extra.visible {
+  max-height: 500px;
+}
+
+.contenido-deslizable.visible {
+  max-height: 1000px;
+}
+
+/* --- Botones --- */
+button,
+#toggle-comentarios {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: left;
+  width: 100%;
+  color: var(--color-primary);
+}
+
+button {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+#toggle-comentarios:hover {
+  text-decoration: underline;
+}
+/* --- Ajustes generales para pantallas pequeñas --- */
+@media (max-width: 768px) {
+  
+  .public {
+    float: none;              /* Evita que se desplace a la izquierda */
+    width: 100%;              /* Ocupa todo el ancho disponible */
+    padding: 15px;            /* Reduce padding */
+    border-radius: 8px;
+  }
+
+  .blog-list-container {
+    max-width: 100%;          /* Que el listado ocupe todo el ancho */
+    margin: 0 auto;           /* Centrado */
+    padding: 0 10px;          /* Espaciado lateral */
+  }
+
+  .post-card {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
+
+  .post-title {
+    font-size: 1.1rem;        /* Un poco más grande para legibilidad */
+  }
+
+  .post-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .post-image {
+    margin-bottom: 10px;
+  }
+
+  .post-image_1 {
+    height: auto;             /* Evita imágenes demasiado altas en móvil */
+    max-height: 300px;        /* Limita altura */
+    object-fit: cover;
+  }
+
+  .post-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  /* --- Comentarios --- */
+  .comentario-moderno {
+    flex-direction: column;   /* Avatar arriba, texto abajo */
+    align-items: flex-start;
+  }
+
+  .avatar {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .comentario-cuerpo-nuevo {
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+
+  .nombre-usuario {
+    font-size: 1rem;
+  }
+
+  .comentario-cuerpo-nuevo p {
+    font-size: 0.95rem;
+  }
+
+  /* --- Botones --- */
+  button {
+    width: 100%;              /* Botones ocupan todo el ancho */
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  #toggle-comentarios {
+    font-size: 1rem;
+  }
+}
+/* --- Ajustes para pantallas muy pequeñas --- */
+@media (max-width: 480px) {
+
+  .public {
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .blog-list-container {
+    padding: 0 8px;
+  }
+
+  .post-card {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .post-title {
+    font-size: 1.2rem;       /* Más grande para mejor lectura */
+  }
+
+  .post-subtitle {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .post-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;        /* Más aire entre líneas */
+    margin-bottom: 12px;
+  }
+
+  .post-image_1 {
+    max-height: 220px;       /* Limita aún más la altura */
+    object-fit: cover;
+  }
+
+  /* --- Comentarios --- */
+  .comentario-moderno {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .comentario-cuerpo-nuevo {
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .nombre-usuario {
+    font-size: 1rem;
+  }
+
+  .comentario-cuerpo-nuevo p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* --- Botones --- */
+  button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px;
+    border-radius: 6px;
+  }
+
+  #toggle-comentarios {
+    font-size: 1rem;
+  }
+}
+/* --- Ajustes para pantallas muy pequeñas (320px) --- */
+@media (max-width: 320px) {
+
+  .public {
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+  .blog-list-container {
+    padding: 0 6px;
+  }
+
+  .post-card {
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+  }
+
+  .post-title {
+    font-size: 1.1rem;       /* Legible pero no ocupa demasiado */
+  }
+
+  .post-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .post-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .post-image_1 {
+    max-height: 180px;       /* Imágenes más compactas */
+    object-fit: cover;
+  }
+
+  /* --- Comentarios --- */
+  .comentario-moderno {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .comentario-cuerpo-nuevo {
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+
+  .nombre-usuario {
+    font-size: 0.95rem;
+  }
+
+  .comentario-cuerpo-nuevo p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* --- Botones --- */
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 5px;
+  }
+
+  #toggle-comentarios {
+    font-size: 0.95rem;
+  }
+}
+
+/*card*/
+ /* --- Card principal --- */
+.card_0 {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  position: relative;
+  top: 50px;
+  padding: 20px;
+  background: var(--color-bg-light);
+  margin-bottom: 80px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card_0:hover {
+  box-shadow: 0 0 24px #fff;
+  transform: scale(1.01);
+}
+
+/* --- Overlay Card --- */
+.card-overlay {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+}
+
+.card-content {
+  position: relative;
+  background-color: #000;
+  color: var(--color-text-light);
+  padding: 40px; /* Ajustado para mejor balance */
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title-overlay {
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+}
+
+.card-paragraph-overlay {
+  font-size: 0.9rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita a 2 líneas en móvil */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Responsive --- */
+@media (min-width: 768px) {
+  .card_0 {
+    max-width: 600px; /* Más ancha en escritorio */
+  }
+
+  .card-content {
+    padding: 80px; /* Más espacio en escritorio */
+  }
+
+  .card-title-overlay {
+    font-size: 1.8rem;
+  }
+
+  .card-paragraph-overlay {
+    font-size: 1rem;
+    -webkit-line-clamp: unset; /* Permite más líneas en escritorio */
+  }
+}
+
+@media (max-width: 480px) {
+  .card_0 {
+    float: none;
+    top: 20px;
+    margin-bottom: 40px;
+    padding: 15px;
+  }
+
+  .card-image {
+    height: 180px; /* Más compacta en móvil */
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-title-overlay {
+    font-size: 1.4rem;
+  }
+
+  .card-paragraph-overlay {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 3; /* Permite hasta 3 líneas en pantallas pequeñas */
+  }
+}
+  /* --- Ajustes para pantallas muy pequeñas (320px) --- */
+@media (max-width: 320px) {
+
+  .card_0 {
+    float: none;              /* Evita problemas de layout en pantallas estrechas */
+    top: 20px;
+    margin-bottom: 30px;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .card-overlay {
+    max-width: 100%;          /* Ocupa todo el ancho disponible */
+    border-radius: 6px;
+  }
+
+  .card-image {
+    height: 150px;            /* Imagen más compacta */
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 15px;            /* Menos padding para ahorrar espacio */
+  }
+
+  .card-title-overlay {
+    font-size: 1.2rem;        /* Texto más legible pero ajustado */
+    margin-bottom: 8px;
+  }
+
+  .card-paragraph-overlay {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 3;    /* Permite hasta 3 líneas en pantallas pequeñas */
+    line-height: 1.4;
+  }
+}
+
+/*post_0*/
+ .post_0 {
+  font-family: sans-serif;
+  background: var(--color-bg-light);
+  padding: 20px;
+  float: right;
+  position: relative;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post_0:hover {
+  box-shadow: 0 0 24px var(--color-hover);
+  transform: scale(1.01);
+}
+
+/* --- Responsive entre 320px y 1200px --- */
+@media (min-width: 320px) and (max-width: 1200px) {
+  .post_0 {
+    float: left;
+    display: flex;
+  }
+}
+
+/* --- Título del post --- */
+.post_title {
+  background: var(--color-primary);
+  color: var(--color-hover);
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* --- Lista de posts --- */
+.lista-posts {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: auto;
+}
+
+.post-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px var(--color-shadow);
+}
+
+/* --- Miniatura --- */
+.post-thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+/* --- Contenedor de texto --- */
+.post-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.post-subtitle {
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  margin-top: 3px;
+  line-height: 1.2;
+}
+
+/* --- Ajustes para pantallas medianas y grandes --- */
+@media (min-width: 600px) {
+  .post-thumbnail {
+    width: 120px;
+    height: 120px;
+  }
+
+  .post-title {
+    font-size: 1.1rem;
+  }
+
+  .post-subtitle {
+    font-size: 0.9rem;
+  }
+}
+  @media (max-width: 480px) {
+  .post_0 {
+    float: none;              /* Evita problemas de layout */
+    max-width: 100%;          /* Ocupa todo el ancho disponible */
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .post_title {
+    font-size: 1.2rem;        /* Más grande para legibilidad */
+    padding: 8px;
+  }
+
+  .lista-posts {
+    max-width: 100%;          /* Lista ocupa todo el ancho */
+    padding: 0 8px;
+  }
+
+  .post-item {
+    flex-direction: column;   /* Imagen arriba, texto abajo */
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .post-thumbnail {
+    width: 80px;              /* Miniatura más compacta */
+    height: 80px;
+    margin: 0 0 10px 0;       /* Espacio debajo de la imagen */
+    border-radius: 6px;
+  }
+
+  .post-title {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .post-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+}
+@media (max-width: 320px) {
+  .post_0 {
+    float: none;              /* Evita problemas de layout */
+    max-width: 100%;          /* Ocupa todo el ancho disponible */
+    margin: 8px auto;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .post_title {
+    font-size: 1.1rem;        /* Texto más legible */
+    padding: 6px;
+  }
+
+  .lista-posts {
+    max-width: 100%;
+    padding: 0 6px;
+  }
+
+  .post-item {
+    flex-direction: column;   /* Imagen arriba, texto abajo */
+    align-items: flex-start;
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .post-thumbnail {
+    width: 60px;              /* Miniatura más pequeña */
+    height: 60px;
+    margin: 0 0 8px 0;
+    border-radius: 4px;
+  }
+
+  .post-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .post-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}
+
+/*tags*/
+  /* --- Tags básicos --- */
+.tags {
+  background: var(--color-bg-dark);
+  color: #fff;
+}
+  .title_tags{
+    background-color: black;
+  }
+.tags_0 {
+  font-family: sans-serif;
+  background: var(--color-bg-light);
+  margin: 0;
+  float: right;
+  position: relative;
+  top: 50px;
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .tags_0 {
+    float: left;
+  }
+}
+
+/* --- Tags modernos --- */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tag-moderno {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin: 0;
+}
+
+.tag-moderno:hover {
+  background: var(--color-tag-hover);
+}
+
+/* --- Contenido de la publicación --- */
+.post-content-detail {
+  padding: 20px;
+  background: #fff;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  width: 95%;
+}
+
+.post-content-detail h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.post-content-detail p {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.post-content-detail button {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background: var(--color-primary);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.post-image_1 {
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* --- Ajustes en escritorio --- */
+@media (min-width: 768px) {
+  .post-content-detail h2 {
+    font-size: 1.8rem;
+  }
+
+  .post-title h1 {
+    font-size: 2rem;
+  }
+}
+
+/* --- Comentarios modernos --- */
+.comentarios-container-moderno {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+}
+
+.comentario-moderno {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.comentario-cuerpo-nuevo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.info-usuario {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cuadrado-right {
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.nombre-usuario {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+}
+
+.comentario-cuerpo-nuevo p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.3;
+}
+  @media (max-width: 480px) {
+  .tags_0 {
+    float: none;              /* Evita problemas de layout */
+    top: 20px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 6px;
+    max-width: 100%;
+  }
+
+  .tags-container {
+    gap: 8px;                 /* Menor separación entre tags */
+    padding: 10px;
+    margin-bottom: 15px;
+    justify-content: center;  /* Centra los tags en móvil */
+  }
+
+  .tag-moderno {
+    font-size: 0.9rem;        /* Texto más legible */
+    padding: 6px 12px;        /* Botones más fáciles de pulsar */
+  }
+
+  .post-content-detail {
+    padding: 15px;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .post-content-detail h2 {
+    font-size: 1.2rem;
+  }
+
+  .post-content-detail p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .post-content-detail button {
+    width: 100%;              /* Botón ocupa todo el ancho */
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .post-image_1 {
+    max-height: 200px;        /* Imagen más compacta */
+    object-fit: cover;
+  }
+
+  /* --- Comentarios --- */
+  .comentario-moderno {
+    flex-direction: column;   /* Avatar arriba, texto abajo */
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+  }
+
+  .info-usuario {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nombre-usuario {
+    font-size: 1rem;
+  }
+
+  .comentario-cuerpo-nuevo p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+  @media (max-width: 320px) {
+  .tags_0 {
+    float: none;
+    top: 15px;
+    margin: 6px auto;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 100%;
+  }
+
+  .tags-container {
+    gap: 6px;                 /* Menor separación entre tags */
+    padding: 8px;
+    margin-bottom: 12px;
+    justify-content: center;
+  }
+
+  .tag-moderno {
+    font-size: 0.8rem;        /* Texto más compacto */
+    padding: 5px 10px;        /* Botones más pequeños */
+  }
+
+  .post-content-detail {
+    padding: 12px;
+    margin: 8px;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .post-content-detail h2 {
+    font-size: 1.1rem;
+  }
+
+  .post-content-detail p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .post-content-detail button {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .post-image_1 {
+    max-height: 160px;        /* Imagen más compacta */
+    object-fit: cover;
+  }
+
+  /* --- Comentarios --- */
+  .comentario-moderno {
+    flex-direction: column;   /* Avatar arriba, texto abajo */
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+
+  .info-usuario {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nombre-usuario {
+    font-size: 0.9rem;
+  }
+
+  .comentario-cuerpo-nuevo p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .cuadrado-right {
+    width: 8px;
+    height: 8px;
+  }
+}
+
   /*redes sociales*/
 
 .redes_sociales{
