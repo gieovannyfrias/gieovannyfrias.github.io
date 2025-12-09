@@ -331,7 +331,7 @@
           <div class="projcard-description">Descripcion - No disponible
           </div>
           <div class="projcard-tagbox">
-            <button><a href="">Ver </a></button>
+            <button><a href="https://www.gieovannyfrias.com/Compat">Ver </a></button>
           </div>
         </div>
       </div>
@@ -347,7 +347,7 @@
           <div class="projcard-description">Descripcion - No disponible
           </div>
           <div class="projcard-tagbox">
-            <button><a href="">Ver </a></button>
+            <button><a href="https://www.gieovannyfrias.com/Compat">Ver </a></button>
           </div>
         </div>
       </div>
@@ -363,7 +363,7 @@
           <div class="projcard-description">Descripcion - No disponible
           </div>
           <div class="projcard-tagbox">
-            <button><a href="">Ver </a></button>
+            <button><a href="https://www.gieovannyfrias.com/Compat">Ver </a></button>
           </div>
         </div>
       </div>
@@ -379,7 +379,7 @@
           <div class="projcard-description">Descripcion - No disponible
           </div>
           <div class="projcard-tagbox">
-            <button><a href="">Ver </a></button>
+            <button><a href="https://www.gieovannyfrias.com/Compat">Ver </a></button>
           </div>
         </div>
       </div>
@@ -395,7 +395,7 @@
           <div class="projcard-description">Descripcion - No disponible
           </div>
           <div class="projcard-tagbox">
-            <button><a href="">Ver </a></button>
+            <button><a href="https://www.gieovannyfrias.com/Compat">Ver </a></button>
           </div>
         </div>
       </div>
@@ -840,7 +840,14 @@ top: auto;
 }
       @media only screen and (min-width:320px) and (max-width:710px){
 .galeria {
-  width: 70%;
+  width: -webkit-fill-available;
+        height: 500px;
+        }
+    }
+          @media only screen and (min-width:320px) and (max-width:700px){
+.galeria {
+  width: 80%;
+       
         }
     }
 .cont_accordion {
@@ -953,6 +960,11 @@ top: auto;
     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
+      @media only screen and (min-width:320px) and (max-width:1200px){
+.projcard {
+height: 700px;
+        }
+    }
 
 .projcard:hover {
     box-shadow: 0 34px 32px -33px rgba(0, 0, 0, .18);
@@ -990,6 +1002,13 @@ top: auto;
     left: 0;
     transition: transform 0.2s ease;
 }
+      @media only screen and (min-width:320px) and (max-width:1200px){
+.projcard-img {
+position: relative;
+  width: -webkit-fill-available;
+        height: 350px;
+        }
+    }
 
 .projcard:nth-child(2n) .projcard-img {
     left: initial;
@@ -1012,12 +1031,22 @@ top: auto;
     width: calc(100% - 470px);
     font-size: 17px;
 }
-
+  @media only screen and (min-width:320px) and (max-width:1200px){
+.projcard-textbox {
+left: auto;
+  top: 350px;
+          width: calc(100% - 30px);
+    }
+    }
 .projcard:nth-child(2n) .projcard-textbox {
     left: initial;
     right: 430px;
 }
-
+ @media only screen and (min-width:320px) and (max-width:1200px){
+.projcard:nth-child(2n) .projcard-textbox {
+right: 0;
+    }
+    }
 .projcard-textbox::before,
 .projcard-textbox::after {
     content: "";
@@ -1031,6 +1060,13 @@ top: auto;
     width: 60px;
     transform: rotate(8deg);
 }
+     @media only screen and (min-width:320px) and (max-width:1200px){
+.projcard-textbox::before,
+.projcard-textbox::after {
+    width: 600px;
+    transform: rotateY(15deg);
+       }
+    }
 
 .projcard:nth-child(2n) .projcard-textbox::before {
     display: none;
@@ -1046,6 +1082,7 @@ top: auto;
     display: block;
 }
 
+    
 .projcard-textbox * {
     position: relative;
 }
@@ -1053,11 +1090,13 @@ top: auto;
 .projcard-title {
     font-family: 'Voces', 'Open Sans', arial, sans-serif;
     font-size: 24px;
+  z-index: 1;
 }
 
 .projcard-subtitle {
     font-family: 'Voces', 'Open Sans', arial, sans-serif;
     color: #888;
+  z-index: 1;
 }
 
 .projcard-bar {
@@ -1188,16 +1227,17 @@ top: auto;
     background: purple;
     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
+  z-index: 1;
 }
 
 .projcard-tagbox a{
     text-decoration: none;
     color: #ddd;
 }
-/*adsense*/
+/*adsense anuncios*/
     .adsense{
       background: transparent;
-      min-width: 40%;
+      min-width: 100%;
       max-width:100%;
     }
 /*footer*/
@@ -1215,7 +1255,7 @@ top: auto;
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
   overflow-x: clip;
-  min-height: 100vh;
+  min-height: 0;
   font-family: "Open Sans", sans-serif;
 }
 .pie-pagina .footer {
