@@ -15,7 +15,14 @@
   <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
 <script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
   
-  
+  <title>Productos de feliz navidad</title>
+   <meta name="title" content="Productos navideños"/>
+
+    <meta name="description" content="Los productos mas recomendados en nuestra plataforma para esta navidad."/>
+<meta name="robots" content="index, noimageindex">
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
   </head>
 
 <body>
@@ -249,12 +256,13 @@
   
   </div>
 </header>
-
+<div class="wrapper">
 <main class="content">
 	<div class="product-hero">
 		<div class="product-image collider">
 			<!-- Placeholder for a product image -->
-			<div class="image-placeholder">Imagen del producto - No disponible</div>
+          <img class="img_0" src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000">
+			<div class="image-placeholder"><span class="year"></span></div>
 		</div>
 		<div class="product-details">
 			<h1>Titulo del producto - No disponible</h1>
@@ -279,25 +287,42 @@
 		<div class="product-grid">
 			<div class="product-card collider">
 				<h3>Producto 1 - No disponible</h3>
+              <img class="img_1" src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000">
 				<p>$19.99</p>
               <a href="Compat.html"><button class="collider">Comprar</button></a>
 			</div>
 			<div class="product-card collider">
 				<h3>Producto 1 - No disponible</h3>
+            <img class="img_1" src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000">
 				<p>$12.50</p>
             <a href="Compat.html"><button class="collider">Comprar</button></a>
 
 			</div>
 			<div class="product-card collider">
 				<h3>Producto 1 - No disponible</h3>
+            <img class="img_1" src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000">
 				<p>$25.00</p>
           <a href="Compat.html"><button class="collider">Comprar</button></a>
 			</div>
 		</div>
 	</section>
-</main>
 
+  
+    <div class="adsense" style="background-color: transparent">
+  <!-- primer anuncio de adesense y para agregarle un segundo anuncio se copia el mismo pero ponlo donde quieres que se coloque -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8616709924287043"
+     data-ad-slot="8096037585"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+  </main>
 
+  </div>
   
     <div class="pie-pagina">
     <div class="main"></div>
@@ -477,7 +502,9 @@ body {
 }
 
 * {
-	box-sizing: border-box;
+ margin:0;
+border: 0;         
+box-sizing: border-box;
 }
 
   svg{
@@ -696,6 +723,11 @@ svg:not(:root).svg-inline--fa {
     color: red;
   }
 }
+  wrapper{
+   	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0;
+  }
 #snowCanvas {
     position: absolute;
     top: 0;
@@ -706,11 +738,11 @@ svg:not(:root).svg-inline--fa {
 
 
 .content {
-	position: relative;
+      	max-width: 1200px;
+    margin: 0 auto;
 	padding: 100px 5% 40px; /* Padding for fixed header */
+	position: relative;
 	z-index: 1;
-	max-width: 1200px;
-	margin: 0 auto;
   top: 200px;
 }
     @media only screen and (min-width:320px) and (max-width:1200px){
@@ -738,7 +770,8 @@ h1,p {
 	margin: 1rem 0;
 }
 
-.product-image {
+.product-image{
+  width: auto;
 	flex: 1;
 	min-height: 300px;
 background-color: rgba(255, 255, 255, 0.2);
@@ -749,10 +782,35 @@ background-color: rgba(255, 255, 255, 0.2);
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.image-placeholder {
-	font-size: 1.5em;
-	opacity: 0.7;
+.product-image {
+  position: relative; /* contenedor con posición relativa */
+  width: -webkit-fill-available;
+  height: 300px;
 }
+
+.img_0 {
+  font-size: 1.5em;
+  opacity: 0.7;
+  width: -webkit-fill-available;
+  height: 300px;
+}
+
+.image-placeholder {
+  position: absolute; /* se coloca encima */
+  top: 50%;           /* centrado vertical */
+  left: 50%;          /* centrado horizontal */
+  transform: translate(-50%, -50%); /* ajuste perfecto al centro */
+  font-size: 1.5em;
+  color: white;       /* color del texto */
+  background: rgba(0,0,0,0.5); /* fondo semitransparente opcional */
+  padding: 10px;
+  z-index: 2;         /* asegura que esté al frente */
+}
+ 
+  .img_1{
+    width: -webkit-fill-available;
+    height: 300px;
+  }
 
 .product-details {
 	flex: 1;
@@ -831,7 +889,7 @@ footer {
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
   overflow-x: clip;
-  min-height: 100vh;
+  min-height: 60vh;
   font-family: "Open Sans", sans-serif;
 }
 .pie-pagina .footer {
