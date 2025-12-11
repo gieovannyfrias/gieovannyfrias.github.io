@@ -362,16 +362,7 @@
       
 
       </div>
-        <!-- primer anuncio de adesense y para agregarle un segundo anuncio se copia el mismo pero ponlo donde quieres que se coloque -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8616709924287043"
-     data-ad-slot="8096037585"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>    
+     
       </div>
     <div class="pie-pagina">
     <div class="main"></div>
@@ -539,11 +530,23 @@
    body{
 margin: 0;
 background-image: url(https://lh3.googleusercontent.com/d/15G0lsBmIoSc91FzTRmYbK55I_g9MdhKu=w1000);
-  display: block;
-        margin-left: auto;
-        margin-right: auto;
-        align-content: center;
-        text-align: center;
+
+            /* Propiedades adicionales para controlar cómo se muestra la imagen */
+
+            /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+            background-size: cover;
+
+            /* Fija la imagen para que no se mueva al hacer scroll */
+            background-attachment: fixed;
+
+            /* Centra la imagen en la pantalla */
+            background-position: center;
+
+            /* Asegura que el body ocupe al menos toda la altura de la ventana */
+            min-height: 100vh;
+
+            /* Elimina el margen por defecto del body */
+            margin: 0;
         }
            @media only screen and (min-width:320px) and (max-width:1200px){
              body{
