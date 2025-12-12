@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mi-sitio-v1';
+const CACHE_NAME = 'gieovannyfrias-cache-v1';
 const APP_SHELL = [
   './index.html',
   './offline.html',
