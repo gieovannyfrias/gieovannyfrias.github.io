@@ -1,5 +1,5 @@
 # 🌐 gieovannyfrias.github.io
-Youtuber, Influencer , streamer, blogger o creador digital, artista musical y modelo
+Youtuber, Influencer , streamer, blogger o creador digital, artista musical y modelo.
 Este repositorio contiene un sitio web estático publicado en **GitHub Pages** con soporte **offline** gracias a un *Service Worker*.  
 Cuando el usuario pierde conexión a internet, se muestra automáticamente una página de fallback (`offline.html`).
 
