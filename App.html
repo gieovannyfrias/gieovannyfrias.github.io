@@ -673,9 +673,9 @@
 <style>
   /* ===== RESET ===== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+ margin:0;
+border: 0;         
+box-sizing: border-box;
 }
 
 html {
@@ -906,6 +906,7 @@ svg:not(:root).svg-inline--fa {
     color: red;
   }
 }
+  
 img {
   max-width: 100%;
   display: block;
@@ -1296,6 +1297,86 @@ img {
 .gp-more-value br {
   line-height: 1.6;
 }
+  /* ============================
+   📱 ADAPTACIÓN A MÓVILES
+   ============================ */
+@media (max-width: 768px) {
+
+  /* Ajuste general */
+  .gp-page {
+    padding: 12px;
+    top: 40px; /* antes 200px */
+  }
+
+  /* Cabecera: pasar de grid a columna */
+  .gp-app-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+  }
+
+  .gp-app-icon {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+  }
+
+  .gp-app-title {
+    font-size: 20px;
+  }
+
+  .gp-app-dev,
+  .gp-app-tags {
+    font-size: 12px;
+  }
+
+  /* Botón instalar centrado */
+  .gp-app-actions {
+    justify-content: center;
+  }
+
+  /* Capturas: más pequeñas en móvil */
+  .gp-screenshot {
+    min-width: 130px;
+    height: 260px;
+  }
+
+  /* Valoraciones: apilar columnas */
+  .gp-rating-block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gp-rating-left {
+    text-align: center;
+  }
+
+  /* Grid de información: columnas más pequeñas */
+  .gp-more-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
+   📱 MÓVILES MUY PEQUEÑOS
+   ============================ */
+@media (max-width: 480px) {
+
+  .gp-app-title {
+    font-size: 18px;
+  }
+
+  .gp-screenshot {
+    min-width: 110px;
+    height: 220px;
+  }
+
+  .gp-btn-install {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
+
 /* Footer */
 
 
