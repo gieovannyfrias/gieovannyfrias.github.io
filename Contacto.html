@@ -276,12 +276,12 @@
               <div class="tooltip-container">
     <button class="help-icon" aria-describedby="infoTooltip" aria-expanded="false">?</button>
     <div class="tooltip-content" id="infoTooltip" role="tooltip">
-      <strong>Ayuda estilo Glass</strong>
-      <p>Este tooltip tiene un efecto translúcido con desenfoque.</p>
-      <ul>
-        <li>Diseño moderno</li>
-        <li>Minimalista</li>
-        <li>Elegante</li>
+      <strong style="color: black">Advertencia</strong>
+      <p>Procura enviarme información personal no en ninguna de las 3 correos anteriores.</p>
+      <ul style="color: black">
+        <li>Fans</li>
+        <li>Colaboraciones</li>
+        <li>Agencias</li>
       </ul>
     </div>
   </div>
@@ -759,8 +759,19 @@ svg:not(:root).svg-inline--fa {
   padding: 40px;
   position: relative;
   top: 100px;
+      /* Escala el contenido al 75% */
+    transform: scale(0.75);
+    /* Define el punto de origen de la escala (esquina superior izquierda) */
+    transform-origin: top left;
+    /* Ajusta el ancho para que el layout se comporte como si estuviera al 100% */
+    width: 133.33%; /* 100 / 0.75 = 133.33 */
+   
 }
-
+  @media only screen and (min-width:320px) and (max-width:1200px){
+.wrapper {
+    top: auto;
+    }
+    }
 /* Título principal */
  /* Título moderno */
     .titulo-contacto {
@@ -915,6 +926,9 @@ svg:not(:root).svg-inline--fa {
   font-size: 0.9rem;
   color: #555;
 }
+    .title_position{
+      display: flex;
+    }
 .comment h2{
       font-family: "Segoe UI", Roboto, sans-serif;
 
