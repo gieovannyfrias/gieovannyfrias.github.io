@@ -27,7 +27,7 @@
   <div class="child-header">
     <div class="box-logo">
       <a href="index.html" class="link-logo">Gieovanny Frias</a>
-      <h6>Influencer, blogger o creador digital</h6>
+      <h6>Youtuber,Influencer,Streamer o creador digital</h6>
     </div>
     
     <nav class="box-menu-navegacion" id="menu-navegacion">
@@ -172,6 +172,9 @@
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
+              <li class="item-menu">
+              <a href="Libro-digital.html" class="item-menu-link">Libro</a>
+            </li>
          <li class="item-menu">
               <a href="Empleo.html" class="item-menu-link">Empleo</a>
             </li>
@@ -248,7 +251,6 @@
   </div>
 </header>
     <div class="wrapper">
-
   <section class="about-me" id="about-me">
   <div class="container">
     <div class="about-me-container">
@@ -284,8 +286,21 @@
 
   </div>
 </section>
+      <div class="donation">
+  <div class="card_1">
+    <h2 class="title_donation">2.-Haz tu donación</h2>
+    <p class="paragraph_donation">Selecciona un monto y serás redirigido al enlace de pago seguro.</p>
 
+    <div class="quick-amounts">
+      <button type="button" class="chip" data-amount="50" data-link="https://mpago.la/31Y5max">$50</button>
+      <button type="button" class="chip" data-amount="100" data-link="https://mpago.la/1qvQWg6">$100</button>
+      <button type="button" class="chip" data-amount="250" data-link="https://mpago.la/2RSNKxJ">$250</button>
+    </div>
 
+    <button class="btn" id="donarBtn">Donar ahora</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+      </div>
 
 
 
@@ -461,6 +476,19 @@
     </div>
   <style>
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+    :root {
+  --bg: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #22c55e;
+  --accent-hover: #16a34a;
+  --error: #ef4444;
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 8px 30px rgba(0,0,0,0.35);
+  --radius: 14px;
+  --transition: all 0.25s ease;
+}
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -697,6 +725,12 @@ svg:not(:root).svg-inline--fa {
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 32px;
+      /* Escala el contenido al 75% */
+    transform: scale(0.75);
+    /* Define el punto de origen de la escala (esquina superior izquierda) */
+    transform-origin: top left;
+    /* Ajusta el ancho para que el layout se comporte como si estuviera al 100% */
+    width: 133.33%; /* 100 / 0.75 = 133.33 */
 }
 .orange {
   color: red;
@@ -911,8 +945,135 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,109,121,1) 12%, rgb
   filter: unset;
   transform: scale(1.5);
 }
+/*donation*/
+    
+.donation {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+background:transparent;
+}
 
+@keyframes darkShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+    
 
+.card_1 {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  animation: fadeIn 0.6s ease;
+}
+
+.title_donation {
+  margin: 0 0 12px;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, #22c55e, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paragraph_donation {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.quick-amounts {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.chip {
+  flex: 1;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.chip.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff;
+  transform: scale(1.05);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #04110a;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(34,197,94,0.35);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(34,197,94,0.45);
+}
+
+.error {
+  color: var(--error);
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f9fafb;
+    --card-bg: rgba(255,255,255,0.8);
+    --text: #111827;
+    --muted: #6b7280;
+    --border: rgba(0,0,0,0.1);
+  }
+}
+    
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/*footer*/
+    
 .footer__link {
   text-decoration: none;
   color: #fff;
@@ -926,7 +1087,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,109,121,1) 12%, rgb
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
   overflow-x: clip;
-  min-height: 100vh;
+  min-height: 10vh;
   font-family: "Open Sans", sans-serif;
 }
 .pie-pagina .footer {
@@ -1088,6 +1249,7 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
 
   }
 }
+          
   </style>
   <script>
     /*años*/
@@ -1102,6 +1264,32 @@ const yearElements = document.querySelectorAll(".year");
 yearElements.forEach(el => {
   el.textContent = currentYear;
 });
+    /*donacion*/
+     const chips = document.querySelectorAll('.chip');
+    const donarBtn = document.getElementById('donarBtn');
+    const errorMsg = document.getElementById('errorMsg');
+
+    let selectedLink = null;
+
+    // Selección de monto
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        selectedLink = chip.dataset.link;
+        errorMsg.textContent = '';
+      });
+    });
+
+    // Botón de donar
+    donarBtn.addEventListener('click', () => {
+      if (!selectedLink) {
+        errorMsg.textContent = 'Por favor selecciona un monto antes de continuar.';
+        return;
+      }
+      // Redirige al enlace de pago correspondiente
+      window.location.href = selectedLink;
+    });
     /*header*/
      let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
