@@ -307,7 +307,23 @@
             <div style="background-image:url(https://lh3.googleusercontent.com/d/1LUhwl6gX16owE1NvSPes6bdz8roftcUZ=w1000)"></div>
           </div>
           <div class="userInfo">
+         <div class="title_position">
             <h2>Fans</h2>
+                  <div class="comment">
+              <div class="tooltip-container">
+    <button class="help-icon" aria-describedby="infoTooltip" aria-expanded="false">?</button>
+    <div class="tooltip-content" id="infoTooltip" role="tooltip">
+      <strong style="color: black">Advertencia</strong>
+      <p>Para los fans enviarme regalos,videos,memes,cartas,imagenes y etc.No en ninguna de las 3 correos anteriores.</p>
+      <ul style="color: black">
+        <li>Contacto</li>
+        <li>Colaboraciones</li>
+        <li>Agencias</li>
+      </ul>
+    </div>
+  </div>
+            </div>
+            </div>
             <p><strong>fans@gieovannyfrias.com</strong></p>
           </div>
           <div class="buttons">
@@ -325,7 +341,23 @@
             <div style="background-image:url(https://lh3.googleusercontent.com/d/1G1EyyFODaydSivFrbpl5pFHonXsRRy9S=w1000)"></div>
           </div>
           <div class="userInfo">
+                        <div class="title_position">
             <h2>Colaboraciones</h2>
+                                <div class="comment">
+              <div class="tooltip-container">
+    <button class="help-icon" aria-describedby="infoTooltip" aria-expanded="false">?</button>
+    <div class="tooltip-content" id="infoTooltip" role="tooltip">
+      <strong style="color: black">Advertencia</strong>
+      <p>Para colaboraciones como creadores,artistas, podcast y celebridades.No en ninguna de las 3 correos anteriores.</p>
+      <ul style="color: black">
+        <li>Fans</li>
+        <li>Contactos</li>
+        <li>Agencias</li>
+      </ul>
+    </div>
+  </div>
+            </div>
+            </div>
             <p><strong>colaboraciones@gieovannyfrias.com</strong></p>
           </div>
           <div class="buttons">
@@ -343,11 +375,30 @@
             <div style="background-image:url(https://lh3.googleusercontent.com/d/1LfX8uesVWuaRsuk1ZgXfz6dIZFQrMUwT=w1000)"></div>
           </div>
           <div class="userInfo">
+                                    <div class="title_position">
             <h2>Agencias</h2>
+                  <div class="comment">
+              <div class="tooltip-container">
+    <button class="help-icon" aria-describedby="infoTooltip" aria-expanded="false">?</button>
+    <div class="tooltip-content" id="infoTooltip" role="tooltip">
+      <strong style="color: black">Advertencia</strong>
+      <p>Para agencias son para marca, empresa se pueden comunicarse conmigo. No en ninguna de las 3 correos anteriores.</p>
+      <ul style="color: black">
+        <li>Fans</li>
+        <li>Colaboraciones</li>
+        <li>Contacto</li>
+      </ul>
+    </div>
+  </div>
+            </div>
+            </div>
             <p><strong>agencias@gieovannyfrias.com</strong></p>
           </div>
           <div class="buttons">
             <a class="btn" href="mailto:agencias@gieovannyfrias.com" onabort="showAndroidToast('Enviarlo desde el ordenador')">Enviar</a>
+          </div>
+           <div class="buttons">
+            <a class="btn" href="agencias.html">Enviar otra agencia</a>
           </div>
         </div>
       </div>
@@ -969,7 +1020,7 @@ svg:not(:root).svg-inline--fa {
       color: #fff;
       padding: 16px;
       border-radius: 12px;
-      font-size: 0.9rem;
+      font-size: 0.1rem;
       width: 240px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       bottom: 125%;
@@ -999,7 +1050,7 @@ svg:not(:root).svg-inline--fa {
   
   justify-content: center; /* centra los botones */
   gap: 20px;               /* espacio entre ellos */
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .buttons .btn:hover {
@@ -1033,7 +1084,7 @@ svg:not(:root).svg-inline--fa {
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
   overflow-x: clip;
-  min-height: 40vh;
+  min-height: 10vh;
   font-family: "Open Sans", sans-serif;
 }
 .pie-pagina .footer {
@@ -1215,27 +1266,42 @@ yearElements.forEach(el => {
   el.textContent = currentYear;
 });
     /*comment ?*/
-     const helpIcon = document.querySelector('.help-icon');
-    const tooltip = document.getElementById('infoTooltip');
+ const containers = document.querySelectorAll('.tooltip-container');
+
+  containers.forEach(container => {
+    const helpIcon = container.querySelector('.help-icon');
+    const tooltip = container.querySelector('.tooltip-content');
 
     helpIcon.addEventListener('click', () => {
-      const isVisible = tooltip.classList.toggle('visible');
-      helpIcon.setAttribute('aria-expanded', isVisible);
+      // 🔹 Cerrar todos los tooltips antes de abrir el actual
+      containers.forEach(c => {
+        const t = c.querySelector('.tooltip-content');
+        const btn = c.querySelector('.help-icon');
+        t.classList.remove('visible');
+        btn.setAttribute('aria-expanded', false);
+      });
+
+      // 🔹 Abrir solo el tooltip clicado
+      tooltip.classList.add('visible');
+      helpIcon.setAttribute('aria-expanded', true);
     });
 
+    // 🔹 Cerrar si se hace clic fuera
     document.addEventListener('click', (event) => {
-      if (!helpIcon.parentElement.contains(event.target)) {
+      if (!container.contains(event.target)) {
         tooltip.classList.remove('visible');
         helpIcon.setAttribute('aria-expanded', false);
       }
     });
 
+    // 🔹 Cerrar con Escape
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         tooltip.classList.remove('visible');
         helpIcon.setAttribute('aria-expanded', false);
       }
     });
+  });
       /*menu*/
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
