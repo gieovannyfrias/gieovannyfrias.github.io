@@ -303,31 +303,16 @@
 
         
     </div>
-  <div class="videos_destacados" align="center" >
+      <h1 class="title_streamings" style="color: white">Streaming de Gieovanny Frias</h1>
+      <div class="streamings">
+<div class="tabs">
+    <button class="tab active" data-platform="twitch">Twitch</button>
+    <button class="tab" data-platform="kick">Kick</button>
+  </div>
 
-             <img class="twitch_logo"  src="https://lh3.googleusercontent.com/d/1TA5HxaUd7Zges5l5x_t-_UbbVJnUA2Cu=w1000">
-<h3 class="title_clip_videos">TWITCH:gieovannyfrias</h3>
-   <iframe  style="background-image: url(https://lh3.googleusercontent.com/d/10GsB41qY3Lr8eAB9Q20vehrgaIIuRKYR=w1000);" class="canal_streaming_twitch"
-    src="https://player.twitch.tv/?channel=gieovannyfrias&muted=true&parent=streamernews.example.com" quality="high"
-    height="220"
-    width="450"
-    align="right">
-</iframe>
-       
-        </div>
-   <div class="videos_destacados" align="center">
+  <div class="content" id="player"></div>
 
-             <img class="kick_logo"  src="https://lh3.googleusercontent.com/d/1eBCMU5udwYivUg5S3RKoMLTzxVDZKbBY=w1000">
-<h3 class="title_clip_videos">KICK:gieovannyfrias</h3>
-<iframe  style="background-image: url(https://lh3.googleusercontent.com/d/1X-EX1PWp6X0ZHU_-67BHFYcUFQVgfzy1=w1000);" class="canal_streaming_kick"
-    src="https://player.kick.tv/?channel=gieovannyfrias&muted=true&parent=streamernews.example.com" quality="high"
-    height="220"
-    width="450"
-    align="right">
-</iframe>
-       
-        </div>
-  
+      </div>
   
     <!-- primer anuncio de adesense y para agregarle un segundo anuncio se copia el mismo pero ponlo donde quieres que se coloque -->
 <ins class="adsbygoogle"
@@ -1110,52 +1095,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);
   bottom: 250px;
     }
 }
-    .videos_destacados{
-      position: relative;
-left: 0;
-      top: 0;
-        
-    }
-       
     
-    .twitch_logo {
-            width: 100%;
-            height:  600px;
-            
-  filter: grayscale(100%);
-  transition: filter 1s;
-        filter: brightness(2);
-}
+       
 
- .twitch_logo:hover {
-  filter: grayscale(0%);
-}
-        @media only screen and (min-width:320px) and (max-width:1200px){
-
-   .twitch_logo {
-        width: 100%;
-            height:  300px;
-    }
-}
-      .kick_logo {
-            width: 100%;
-            height:  400px;
-            
-  filter: grayscale(100%);
-  transition: filter 1s;
-        filter: brightness(2);
-}
-
- .kick_logo:hover {
-  filter: grayscale(0%);
-}
-        @media only screen and (min-width:320px) and (max-width:1200px){
-
-    .kick_logo{
-        width: 100%;
-            height:  300px;
-    }
-}
       .canal_streaming_twitch{
         position: relative;
         bottom: 400px;
@@ -1176,8 +1118,48 @@ left: 0;
           right: 10px;
       }
       }
-      
-
+      /*streamings*/
+   .streamings {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1320;
+      color: #fff;
+    }
+    header {
+      padding: 15px;
+      text-align: center;
+      background: #161a2b;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #232946;
+    }
+    .tab {
+      flex: 1;
+      padding: 12px;
+      cursor: pointer;
+      text-align: center;
+      background: #161a2b;
+      border: none;
+      color: #a9afc7;
+      font-weight: bold;
+    }
+    .tab.active {
+      background: #7c5cff;
+      color: #fff;
+    }
+    .content {
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
 .footer__link {
   text-decoration: none;
   color: #fff;
@@ -1372,6 +1354,34 @@ const yearElements = document.querySelectorAll(".year");
 yearElements.forEach(el => {
   el.textContent = currentYear;
 });
+    /*streamings*/
+    const playerDiv = document.getElementById("player");
+    const tabs = document.querySelectorAll(".tab");
+
+    function render(platform) {
+      if (platform === "twitch") {
+        playerDiv.innerHTML = `
+<iframe src="https://player.twitch.tv/?channel=gieovannyfrias&parent=www.gieovannyfrias.com" height="400" width="100%" allowfullscreen> </iframe>    
+
+<iframe src="https://www.twitch.tv/embed/gieovannyfrias/chat?parent=www.gieovannyfrias.com" height="300" width="100%"> </iframe>        `;
+      } else {
+        playerDiv.innerHTML = `
+          <iframe src="https://player.kick.com/gieovannyfrias" allowfullscreen></iframe>
+          <p style="text-align:center;color:#a9afc7;">Kick no ofrece chat embebido oficial. Puedes abrirlo directamente en <a href="https://kick.com/gieovannyfrias" target="_blank" style="color:#7c5cff;">Kick.com</a>.</p>
+        `;
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        render(tab.dataset.platform);
+      });
+    });
+
+    // Render inicial
+    render("twitch");
     /*menu*/
      
   let btnHamburguesa = document.getElementById("btn-hamburguesa");
