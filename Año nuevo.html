@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
    <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
       <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+  <!-- Google adsense monetizacion -->
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
      crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  
+  <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
 <script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
   
-<meta name="title" content="Año nuevo"/>
-
-    <meta name="description" content="Feliz año para todo"/>
-    <meta name="robots" content="index"/>
-<meta name="robots" content="follow"/>
-<meta name="keywords" content="gieovannyfrias,gieovanny"/>
-<meta name="author" content="Gieovanny Frias">
-</head><body>
+  <title>Feliz Año Nuevo</title>
+</head>
+<body>
   
  <header class="header">
   <div class="child-header">
     <div class="box-logo">
       <a href="index.html" class="link-logo">Gieovanny Frias</a>
-      <h6>Influencer, blogger o creador digital</h6>
+      <h6>Youtuber,Influencer,Streamer o creador digital</h6>
     </div>
     
     <nav class="box-menu-navegacion" id="menu-navegacion">
@@ -169,6 +168,9 @@
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
+              <li class="item-menu">
+              <a href="Libro-digital.html" class="item-menu-link">Libro</a>
+            </li>
          <li class="item-menu">
               <a href="Empleo.html" class="item-menu-link">Empleo</a>
             </li>
@@ -221,6 +223,9 @@
              <li class="item-menu">
               <a href="Passes.html" class="item-menu-link">Passes</a>
             </li>
+               <li class="item-menu">
+              <a href="Reservar-fans.html" class="item-menu-link">Reservar fans</a>
+            </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
             </li>
@@ -241,21 +246,54 @@
   
   </div>
 </header>
-    <div class="wrapper">
-  <div class="imagen-fondo">
-<div id=greetings  class="center">
-   
-    <div  class="mensaje-ano-nuevo">
-    
-    
-    <h1 class="comienzo">Un nuevo comienzo empieza</h1>
-     </div>       
+  <div class="wrapper">
+    <div class="new_navidad">
+<audio id="musicBefore" src="https://firebasestorage.googleapis.com/v0/b/gieovanny-frias-432317.appspot.com/o/Musica%2Fbackground-music%20new%20navidad.mp3?alt=media&token=dddbac43-24d1-4d82-9fc9-5c828b9cc6dc" preload="auto" loop></audio>
+<audio id="musicAfter" src="https://firebasestorage.googleapis.com/v0/b/gieovanny-frias-432317.appspot.com/o/Musica%2Fbackground%20new-year.mp3?alt=media&token=f362fd5c-448a-4d07-91b6-8104e5676e19" preload="auto"></audio>
+
+  <div class="background-gradient"></div>
+
+  <div class="overlay"></div>
+
+  <main class="container">
+    <header class="header_1">
+      <h1 class="title">Cuenta regresiva para el Año Nuevo</h1>
+      <p class="subtitle">Que este nuevo año llegue lleno de luz, paz y nuevos comienzos para todos.</p>
+    </header>
+
+    <section class="countdown">
+      <div class="time-box">
+        <span class="number" id="days">00</span>
+        <span class="label">Días</span>
+      </div>
+      <div class="time-box">
+        <span class="number" id="hours">00</span>
+        <span class="label">Horas</span>
+      </div>
+      <div class="time-box">
+        <span class="number" id="minutes">00</span>
+        <span class="label">Minutos</span>
+      </div>
+      <div class="time-box">
+        <span class="number" id="seconds">00</span>
+        <span class="label">Segundos</span>
+      </div>
+    </section>
+
+    <section class="new-year-message hidden" id="newYearMessage">
+      <h2>🎆 ¡Feliz Año Nuevo <span class="year"></span>! 🎆</h2>
+      <p>Gracias por todo lo vivido. Lo mejor aún está por venir.</p>
+      <button id="replayButton">Ver confeti otra vez</button>
+    </section>
+
+
+  </main>
+
+  <canvas id="confettiCanvas"></canvas>
     </div>
-</div>
-  <canvas id="canvas"></canvas>
-  
-          <!-- primer anuncio de adesense y para agregarle un segundo anuncio se copia el mismo pero ponlo donde quieres que se coloque -->
-      <ins class="adsbygoogle"
+       <div style="background-color: transparent">
+        <!-- primer anuncio de adesense y para agregarle un segundo anuncio se copia el mismo pero ponlo donde quieres que se coloque -->
+<ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-8616709924287043"
      data-ad-slot="8096037585"
@@ -263,7 +301,8 @@
      data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script>  
+        </div>
   </div>
   
     <div class="pie-pagina">
@@ -403,7 +442,7 @@
       <div class="container-final">
     <div class="footer__label">
       <h2 class="footer__title">Gieovanny Frias</h2>
-        <span class="footer__subtitle">Influencer,blogger o creador digital</span>
+        <span class="footer__subtitle">Youtuber,Influencer,Streamer o creador digital</span>
     </div>
     
     <ul class="footer__links">
@@ -419,23 +458,49 @@
     </ul>
   
   </div>
-  <p class="footer__copy">© Copyright de Gieovanny Frias 2024</p>
+  <p class="footer__copy">© Copyright de Gieovanny Frias <span class="year"></span></p>
   </div>
 </div>
     </div>
-    <style>
-   *{
-             margin:0;
-            border: 0;
-           
-        }
-  body {
-  margin:0;
-    background: black;
+<style>
+  
+  /* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-      
 
+:root {
+  --bg-dark: #050816;
+  --bg-card: rgba(8, 11, 25, 0.85);
+  --accent: #ffcc00;
+  --accent-2: #ff4d9a;
+  --accent-3: #4dd0ff;
+  --text-main: #ffffff;
+  --text-soft: #c7c9d9;
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --radius-lg: 22px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.14);
+}
 
+/* Fondo degradado animado */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(circle at top left, #2e1a4f 0, #050816 45%, #000000 100%);
+  position: relative;
+}
+  .new_navidad{
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+  align-items: center;
+  justify-content: center;
+  }
   svg{
     
     color: white;
@@ -579,7 +644,7 @@ background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%,
   }
 
   .header {
-    position: relative;
+    /*position: relative;*/
     padding: 1rem 0;
   }
   
@@ -652,69 +717,246 @@ svg:not(:root).svg-inline--fa {
     color: red;
   }
 }
-  
- 
-     .wrapper {
-	max-width: 1400px;
-	margin: 0 auto;
-       padding: 0;
+  .wrapper{
+      max-width: 1200px;
+    margin: 0 auto;
+	padding: 0;
+position: relative;
+    top: 50px;
+  }
+    @media only screen and (min-width:320px) and (max-width:1200px){
+  .wrapper{
+top: auto;
       }
-       
-canvas {
-  position:fixed;
-  width:100%;
-  height:72.9%;
-  image-rendering: optimizeSpeed;            
-  image-rendering: -moz-crisp-edges;         
-  image-rendering: -webkit-optimize-contrast; 
-  image-rendering: -o-crisp-edges;            
-  image-rendering: pixelated;                 
-  -ms-interpolation-mode: nearest-neighbor;  
+  }
+.background-gradient {
+  position: fixed;
+  inset: -20%;
+  background: radial-gradient(circle at 10% 20%, #ff4d9a 0, transparent 55%),
+              radial-gradient(circle at 90% 10%, #4dd0ff 0, transparent 50%),
+              radial-gradient(circle at 50% 100%, #ffcc00 0, transparent 60%);
+  opacity: 0.16;
+  filter: blur(10px);
+  z-index: -2;
+  animation: floatBg 18s ease-in-out infinite alternate;
 }
-        @media only screen and (min-width:320px) and (max-width:1200px){
-          canvas{
-            height:70.1%;
-          }
-          }
-    .imagen-fondo{
-      height: 0;
-      background: aqua;
-    }
-    .comienzo{
-      color: red;
-    }
- .mensaje-ano-nuevo{
-            color: #fff;
-          height: 0vh;
-  filter: drop-shadow(0 0 10px white);  
-            
-        }
-.center {
-  margin-top: 100px;
-       color: red;
-  font-size: 3em;
-  overflow: hidden;
-  filter: drop-shadow(0 0 10px white);  
-    position: relative;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  height: 30vh;
+
+@keyframes floatBg {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-40px, 20px, 0) scale(1.06);
+  }
+}
+
+/* Capa oscura ligera para contraste */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 55%),
+              linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95));
+  z-index: -1;
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  padding: 24px;
+}
+
+.header_1 {
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  animation: fade-in-out $duration infinite;
+  margin-bottom: 26px;
 }
 
-  @media only screen and (min-width:320px) and (max-width:1200px){
-    .comienzo{
-      font-size: 30px;
-    }
-    .center{
-      font-size: 25px;
-    }
-    }
+.title {
+  font-size: clamp(2.3rem, 3vw, 3rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #ffffff, #ffcc00, #ff4d9a, #4dd0ff);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientText 10s ease infinite;
+}
 
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+}
+
+/* Tarjeta de cuenta regresiva */
+.countdown {
+  margin: 0 auto;
+  margin-top: 24px;
+  max-width: 720px;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.92), rgba(15, 23, 42, 0.95));
+  border-radius: var(--radius-lg);
+  border: var(--glass-border);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  padding: 22px;
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.time-box {
+  text-align: center;
+  padding: 16px 10px;
+  border-radius: 18px;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 55%),
+              linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75));
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.time-box::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 120deg,
+    rgba(255, 204, 0, 0.15),
+    transparent,
+    rgba(77, 208, 255, 0.15),
+    transparent,
+    rgba(255, 77, 154, 0.18)
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.time-box:hover::before {
+  opacity: 1;
+}
+
+.number {
+  display: block;
+  font-size: clamp(2.1rem, 3vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-soft);
+}
+
+/* Mensaje de Año Nuevo */
+.new-year-message {
+  margin: 26px auto 0;
+  max-width: 720px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.96), rgba(30, 64, 175, 0.9));
+  border-radius: var(--radius-lg);
+  border: var(--glass-border);
+  box-shadow: var(--shadow-soft);
+  padding: 24px 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-year-message::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle at 0 0, rgba(255, 204, 0, 0.25), transparent 55%),
+              radial-gradient(circle at 100% 0, rgba(77, 208, 255, 0.25), transparent 60%);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+}
+
+.new-year-message h2 {
+  position: relative;
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  margin-bottom: 10px;
+}
+
+.new-year-message p {
+  position: relative;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  margin-bottom: 18px;
+}
+
+#replayButton {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: radial-gradient(circle at top left, rgba(255, 204, 0, 0.7), rgba(255, 77, 154, 0.85));
+  color: #1f2933;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+#replayButton:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.04);
+}
+
+#replayButton:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+/* Canvas de confeti */
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .container {
+    padding: 18px 12px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 18px 14px;
+  }
+
+  .time-box {
+    padding: 14px 8px;
+  }
+
+
+}
+/*footer*/
+    
 .footer__link {
   text-decoration: none;
   color: #fff;
@@ -728,7 +970,7 @@ canvas {
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
   overflow-x: clip;
-  min-height: 76vh;
+  min-height: 40vh;
   font-family: "Open Sans", sans-serif;
 }
 .pie-pagina .footer {
@@ -890,126 +1132,209 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
 
   }
 }
-      
-    
-    </style>
-    <script>
-      const canvas = document.getElementById("canvas");
+            
+  </style>
+  <script>
+  
+  // ===============================
+//  FECHA DEL PRÓXIMO AÑO NUEVO
+// ===============================
+function getNextNewYear() {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const newYearDate = new Date(currentYear, 0, 1, 0, 0, 0);
+
+  // Si ya pasó el 1 de enero, usar el siguiente año
+  if (now > newYearDate) {
+    return new Date(currentYear + 1, 0, 1, 0, 0, 0);
+  }
+
+  return newYearDate;
+}
+
+let newYearDate = getNextNewYear();
+
+// ===============================
+//  ELEMENTOS DEL DOM
+// ===============================
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+const newYearMessageEl = document.getElementById("newYearMessage");
+const replayButton = document.getElementById("replayButton");
+
+// ===============================
+//  MÚSICA
+// ===============================
+const musicBefore = document.getElementById("musicBefore");
+const musicAfter = document.getElementById("musicAfter");
+
+// Iniciar música antes del Año Nuevo
+musicBefore.volume = 0.6;
+musicBefore.play();
+
+let reachedNewYear = false;
+
+// ===============================
+//  ACTUALIZAR CUENTA REGRESIVA
+// ===============================
+function updateCountdown() {
+  const now = new Date().getTime();
+  const diff = newYearDate.getTime() - now;
+
+  // Cuando llega el Año Nuevo
+  if (diff <= 0 && !reachedNewYear) {
+    reachedNewYear = true;
+    showNewYearMessage();
+    startConfettiBurst();
+
+    // 🔊 Cambiar música
+    musicBefore.pause();
+    musicBefore.currentTime = 0;
+
+    musicAfter.currentTime = 0;
+    musicAfter.play();
+
+    // Fijar todo en 00
+    daysEl.textContent = "00";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+
+    // Reiniciar hacia el siguiente año después de 5 segundos
+    setTimeout(() => {
+      reachedNewYear = false;
+      newYearMessageEl.classList.add("hidden");
+
+      const nextYear = newYearDate.getFullYear() + 1;
+      newYearDate = new Date(nextYear, 0, 1, 0, 0, 0);
+
+      // Volver a poner la música inicial
+      musicAfter.pause();
+      musicAfter.currentTime = 0;
+      musicBefore.play();
+
+    }, 5000);
+
+    return;
+  }
+
+  const seconds = Math.floor(diff / 1000);
+  const d = Math.floor(seconds / (60 * 60 * 24));
+  const h = Math.floor((seconds / (60 * 60)) % 24);
+  const m = Math.floor((seconds / 60) % 60);
+  const s = Math.floor(seconds % 60);
+
+  daysEl.textContent = String(d).padStart(2, "0");
+  hoursEl.textContent = String(h).padStart(2, "0");
+  minutesEl.textContent = String(m).padStart(2, "0");
+  secondsEl.textContent = String(s).padStart(2, "0");
+}
+
+// Iniciar intervalo
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ===============================
+//  MOSTRAR MENSAJE DE AÑO NUEVO
+// ===============================
+function showNewYearMessage() {
+  newYearMessageEl.classList.remove("hidden");
+}
+
+// ===============================
+//  CONFETI EN CANVAS
+// ===============================
+const canvas = document.getElementById("confettiCanvas");
 const ctx = canvas.getContext("2d");
 
-window.onload = window.onresize = function() {
-  const factor = 2;
-  const scale = window.devicePixelRatio / factor;
-  canvas.width = window.innerWidth * scale;
-  canvas.height = window.innerHeight * scale;
-  ctx.scale(scale * factor, scale * factor);
-  
-  setup();
-  window.requestAnimationFrame(draw);
-}
+let confettiPieces = [];
+let animationId = null;
 
-function setup() {
-  wind = 0;
-  
-  snowCount = 0;
-  snow = [];
-  while (snowCount++ < 500) snow.push(new Particle);
-  
-  snowCanvas = document.createElement('canvas');
-  landCanvas = document.createElement('canvas');
-  ctxSnow = snowCanvas.getContext('2d');
-  ctxLand = landCanvas.getContext('2d');
-  snowCanvas.width = landCanvas.width = canvas.width;
-  landCanvas.height = snowCanvas.height = canvas.height;
-  snowData = ctxSnow.getImageData(0,0,snowCanvas.width,snowCanvas.height);
-  landData = ctxLand.getImageData(0,0,landCanvas.width,landCanvas.height);
-  snowBuffer = new ArrayBuffer(snowData.data.length);
-  landBuffer = new ArrayBuffer(landData.data.length);
-  snowBuf8 = new Uint8ClampedArray(snowBuffer);
-  landBuf8 = new Uint8ClampedArray(landBuffer);
-  snowRef = new Uint32Array(snowBuffer);
-  landRef = new Uint32Array(landBuffer);
-  
-  ctx.fillStyle = '#1e1f26'; // Codepen color!
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
-function draw() {
-  window.requestAnimationFrame(draw);
-  if (snow.length <= 10) setup();
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  for (const s of snow) {
-    s.update();
-    s.draw();
+function createConfettiPieces(amount = 220) {
+  const colors = ["#ffcc00", "#ff4d9a", "#4dd0ff", "#ffffff", "#a855f7"];
+  const pieces = [];
+
+  for (let i = 0; i < amount; i++) {
+    pieces.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * -canvas.height,
+      size: 6 + Math.random() * 8,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      speedY: 2 + Math.random() * 4,
+      tilt: Math.random() * 10 - 5,
+      tiltAngleIncrement: 0.02 + Math.random() * 0.08,
+      tiltAngle: Math.random() * Math.PI,
+      opacity: 0.7 + Math.random() * 0.3
+    });
   }
-  snowData.data.set(snowBuf8);
-  landData.data.set(snowBuf8);
-  ctxSnow.putImageData(snowData,0,0);
-  ctxLand.putImageData(landData,0,0);
-  ctx.drawImage(snowCanvas,0,0);
-  ctx.drawImage(landCanvas,0,0)
-  
-  snow = snow.filter(s => { return !s.dead });
-  wind += 0.001;
-  wind %= 2*Math.PI;
+
+  return pieces;
 }
 
-window.onclick = function(event) {
-  setup();
+function drawConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  confettiPieces.forEach((p) => {
+    ctx.beginPath();
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.opacity;
+    const x = p.x + p.tilt;
+    const y = p.y;
+    ctx.fillRect(x, y, p.size, p.size * 0.4);
+  });
+  ctx.globalAlpha = 1;
 }
 
-class Particle {
-  constructor() {
-    this.color = '0xffFFF0A0';
-    this.reset();
-    this.y = Math.floor(canvas.height * (2 * Math.random() - 1));
-    this.dead = false;
-    this.weight = Math.random();
-  }
-  update() {
-    if (this.y == canvas.height-1) this.landHere();
-    let move = false;
-    if (
-      landRef[(this.y+1)*canvas.width+this.x] == this.color &&
-      landRef[(this.y+1)*canvas.width+this.x+1] == this.color &&
-      landRef[(this.y+1)*canvas.width+this.x-1] == this.color
-    ) this.landHere();
-    
-    if (landRef[(this.y+1)*canvas.width+this.x] != this.color) {
-      snowRef[this.y*canvas.width+this.x] = '0x00000000';
-      this.y++;
+function updateConfetti() {
+  confettiPieces.forEach((p) => {
+    p.y += p.speedY;
+    p.tiltAngle += p.tiltAngleIncrement;
+    p.tilt = Math.sin(p.tiltAngle) * 12;
+
+    if (p.y > canvas.height + 20) {
+      p.y = Math.random() * -canvas.height;
+      p.x = Math.random() * canvas.width;
     }
-    
-    let chance = Math.random();
-    if (
-      this.weight+chance < Math.cos(wind) &&
-      landRef[this.y*canvas.width+this.x+1] != this.color
-    ) this.x++;
-    
-    if (
-      this.weight+chance < Math.sin(wind) && 
-      landRef[this.y*canvas.width+this.x-1] != this.color
-    ) this.x--;
-    
-    this.x %= canvas.width;
-  }
-  reset() {
-    this.x = Math.floor(Math.random() * canvas.width);
-    this.y = Math.floor(-canvas.height * Math.random());
-  }
-  landHere() {
-    landRef[this.y*canvas.width+this.x] = this.color;
-    this.reset();
-    if (landRef[this.y*canvas.width+this.x] == this.color) this.dead = true;
-  }
-  draw() {
-    let index = this.y*canvas.width+this.x;
-    snowRef[index] = this.color;
-  }
+  });
 }
-      /*canva arriba*/
-    function update(){greetings.innerHTML=options}const DURATION=5e3;let options=["Muy pronto","🥠 sera el inicio del año  y empiezara nuevas aventuras! 🍪"],greetings=document.getElementById("greetings");setInterval(update,DURATION);document.addEventListener("click",function(){document.getElementById("player").play()},{once:!0});
-      /*año*/
-      
+
+function animateConfetti(duration = 4500) {
+  const start = performance.now();
+
+  function frame(now) {
+    const elapsed = now - start;
+    drawConfetti();
+    updateConfetti();
+
+    if (elapsed < duration) {
+      animationId = requestAnimationFrame(frame);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      cancelAnimationFrame(animationId);
+    }
+  }
+
+  animationId = requestAnimationFrame(frame);
+}
+
+function startConfettiBurst() {
+  confettiPieces = createConfettiPieces();
+  animateConfetti();
+}
+
+// Repetir confeti con el botón
+replayButton.addEventListener("click", () => {
+  startConfettiBurst();
+});
   // Obtener el año actual
 const currentYear = new Date().getFullYear();
 
@@ -1020,9 +1345,8 @@ const yearElements = document.querySelectorAll(".year");
 yearElements.forEach(el => {
   el.textContent = currentYear;
 });
-      /*menu*/
-      
-   let btnHamburguesa = document.getElementById("btn-hamburguesa");
+     /*header*/
+  let btnHamburguesa = document.getElementById("btn-hamburguesa");
 let menuNavegacion = document.getElementById("menu-navegacion");
 btnHamburguesa.addEventListener('click', function(){
     menuNavegacion.classList.toggle("viewMenu");
@@ -1034,6 +1358,6 @@ $(".angle-view-sub-menu ").click(function(){
     /*font awesome heard flecha abajo*/
      window.FontAwesomeConfig = {
         searchPseudoElements: true}
-    </script>
+  </script>
 </body>
 </html>
