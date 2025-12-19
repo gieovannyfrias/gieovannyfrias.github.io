@@ -41,7 +41,7 @@
   <div class="child-header">
     <div class="box-logo">
       <a href="index.html" class="link-logo">Gieovanny Frias</a>
-      <h6>Influencer, blogger o creador digital</h6>
+      <h6>Youtuber,Influencer,Streamer o creador digital</h6>
     </div>
     
     <nav class="box-menu-navegacion" id="menu-navegacion">
@@ -186,6 +186,9 @@
             <li class="item-menu">
               <a href="Donacion.html" class="item-menu-link">Donacion</a>
             </li>
+              <li class="item-menu">
+              <a href="Libro-digital.html" class="item-menu-link">Libro</a>
+            </li>
          <li class="item-menu">
               <a href="Empleo.html" class="item-menu-link">Empleo</a>
             </li>
@@ -238,6 +241,9 @@
              <li class="item-menu">
               <a href="Passes.html" class="item-menu-link">Passes</a>
             </li>
+               <li class="item-menu">
+              <a href="Reservar-fans.html" class="item-menu-link">Reservar fans</a>
+            </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
             </li>
@@ -259,10 +265,24 @@
   </div>
 </header>
     <div class="wrapper">
+      
 <audio  id="audioelement">
     <source src="https://github.com/gieovannyfrias/gieovannyfrias.github.io/raw/refs/heads/main/Musica/san%20valentin.mp3"autoplay="true" loop="-1" type="audio/mp3">
 </audio>
-  <canvas></canvas>
+      <div class="corazones">
+        <div class="hearts">
+    <div class="heart h1"></div>
+    <div class="heart h2"></div>
+    <div class="heart h3"></div>
+    <div class="heart h4"></div>
+    <div class="heart h5"></div>
+    <div class="heart h6"></div>
+    <div class="heart h7"></div>
+    <div class="heart h8"></div>
+    <div class="heart h9"></div>
+    <div class="heart h10"></div>
+  </div>
+      </div>
 <h1 class="title">Feliz dia san valentin <span class="year"></span></h1>
   <p class="paragraph">El origen de su nacimiento de San Valentín es de origen católico que se celebra cada año el 14 de febrero <span class="year"></span> como conmemoración de las buenas obras realizadas por san Valentín de Roma, relacionadas con el amor y la afectividad con el paso del tiempo atravez de siglos a la fiesta en sí ha ido ganando importancia desde una perspectiva como Día de los Enamorados o Día del Amor y la Amistad.</p>
 <div class="pulso">
@@ -706,10 +726,62 @@ svg:not(:root).svg-inline--fa {
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 32px;
+    position: relative;
+    top: 100px;
 }
+        .corazones {
+      margin: 0;
+      width: 100vw;
+      overflow: hidden; /* evita scroll */
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0; /* cubre toda la pantalla */
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      transform: rotate(45deg);
+      border-radius: 4px 0 0 4px;
+      animation: float 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      border-radius: 50%;
+    }
+    .heart::before { left: -10px; top: 0; }
+    .heart::after  { top: -10px; left: 0; }
+
+    @keyframes float {
+      0%   { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+      10%  { opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+    }
+
+    /* Variaciones para cubrir toda la pantalla */
+    .h1 { left: 5%;  animation-duration: 8s; animation-delay: 0s; }
+    .h2 { left: 15%; animation-duration: 10s; animation-delay: 2s; }
+    .h3 { left: 25%; animation-duration: 9s; animation-delay: 1s; }
+    .h4 { left: 35%; animation-duration: 11s; animation-delay: 3s; }
+    .h5 { left: 45%; animation-duration: 12s; animation-delay: 0.5s; }
+    .h6 { left: 55%; animation-duration: 9s; animation-delay: 1.5s; }
+    .h7 { left: 65%; animation-duration: 10s; animation-delay: 2.5s; }
+    .h8 { left: 75%; animation-duration: 13s; animation-delay: 1s; }
+    .h9 { left: 85%; animation-duration: 12s; animation-delay: 2s; }
+    .h10{ left: 95%; animation-duration: 14s; animation-delay: 3s; }
 .title{
   position: absolute;
-  top: 50%;
+  top: 30%;
   align-content: center;
   text-align: center;
   left: 0;
@@ -1122,99 +1194,6 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
           
   </style>
   <script>
-  var canvas = document.querySelector("canvas"),
-  ctx = canvas.getContext("2d");
-
-var ww,wh;
-
-function onResize(){
-  ww = canvas.width = window.innerWidth;
-  wh = canvas.height = window.innerHeight;
-}
-
-ctx.strokeStyle = "red";
-ctx.shadowBlur = 25;
-ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
-
-var precision = 100;
-var hearts = [];
-var mouseMoved = false;
-function onMove(e){
-  mouseMoved = true;
-  if(e.type === "touchmove"){
-    hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
-    hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
-  }
-  else{
-    hearts.push(new Heart(e.clientX, e.clientY));
-    hearts.push(new Heart(e.clientX, e.clientY));
-  }
-}
-
-var Heart = function(x,y){
-  this.x = x || Math.random()*ww;
-  this.y = y || Math.random()*wh;
-  this.size = Math.random()*2 + 1;
-  this.shadowBlur = Math.random() * 10;
-  this.speedX = (Math.random()+0.2-0.6) * 8;
-  this.speedY = (Math.random()+0.2-0.6) * 8;
-  this.speedSize = Math.random()*0.05 + 0.01;
-  this.opacity = 1;
-  this.vertices = [];
-  for (var i = 0; i < precision; i++) {
-    var step = (i / precision - 0.5) * (Math.PI * 2);
-    var vector = {
-      x : (15 * Math.pow(Math.sin(step), 3)),
-      y : -(13 * Math.cos(step) - 5 * Math.cos(2 * step) - 2 * Math.cos(3 * step) - Math.cos(4 * step)) 
-    }
-    this.vertices.push(vector);
-  }
-}
-
-Heart.prototype.draw = function(){
-  this.size -= this.speedSize;
-  this.x += this.speedX;
-  this.y += this.speedY;
-  ctx.save();
-  ctx.translate(-1000,this.y);
-  ctx.scale(this.size, this.size);
-  ctx.beginPath();
-  for (var i = 0; i < precision; i++) {
-    var vector = this.vertices[i];
-    ctx.lineTo(vector.x, vector.y);
-  }
-  ctx.globalAlpha = this.size;
-  ctx.shadowBlur = Math.round((3 - this.size) * 10);
-  ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
-  ctx.shadowOffsetX = this.x + 1000;
-  ctx.globalCompositeOperation = "screen"
-  ctx.closePath();
-  ctx.fill()
-  ctx.restore();
-};
-
-
-function render(a){
-  requestAnimationFrame(render);
-  
-  hearts.push(new Heart())
-  ctx.clearRect(0,0,ww,wh);
-  for (var i = 0; i < hearts.length; i++) {
-    hearts[i].draw();
-    if(hearts[i].size <= 0){
-      hearts.splice(i,1);
-      i--;
-    }
-  }
-}
-
-
-
-onResize();
-window.addEventListener("mousemove", onMove);
-window.addEventListener("touchmove", onMove);
-window.addEventListener("resize", onResize);
-requestAnimationFrame(render);
 
 /*fondo de pagina audio abajo*/
     const playSound = function() {
