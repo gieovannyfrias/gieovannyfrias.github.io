@@ -741,7 +741,9 @@ svg:not(:root).svg-inline--fa {
 }
   
     /* Layout */
-    .container { padding: 24px }
+    .container { 
+      padding: 24px;
+  }
     header {
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: saturate(180%) blur(12px);
@@ -762,7 +764,16 @@ svg:not(:root).svg-inline--fa {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow: var(--shadow);
     }
-    .actions { display: flex; gap: 10px; align-items: center }
+    .actions { 
+      display: flex; 
+      gap: 10px;
+      align-items: center;
+  }
+    @media only screen and (min-width:320px) and (max-width:500px){
+      .actions{
+      flex-direction: column;
+      }
+      }
 
     .btn {
       border: 1px solid var(--border);
@@ -787,6 +798,12 @@ svg:not(:root).svg-inline--fa {
       gap: 12px;
       margin: 18px 0 8px;
     }
+    @media only screen and (min-width:320px) and (max-width:500px){
+    .filters {
+        grid-template-columns:auto;
+
+      }
+  }
     .input, .select {
       width: 100%;
       padding: 12px 14px;
