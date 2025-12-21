@@ -784,9 +784,12 @@ svg:not(:root).svg-inline--fa {
       cursor: pointer;
       transition: transform .08s ease, background .2s ease, border-color .2s ease;
     }
-    .btn:hover { transform: translateY(-1px) }
+    .btn:hover { 
+      transform: translateY(-1px);
+  }
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent), var(--bg) 30%));
+background: linear-gradient(135deg, var(--accent), var(--bg)); 
+      background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent), var(--bg) 30%) );
       border: none;
       color: white;
     }
