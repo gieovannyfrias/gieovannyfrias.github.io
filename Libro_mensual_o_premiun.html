@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+  <!-- Google adsense monetizacion -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  
+  <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  
+  <title>Suscripción - Mensual y Anual</title>
+  
+  <meta name="title" content="Suscripción - Mensual y Anual"/>
+    <meta name="description" content="Libro digital de Gieovanny Frias mensual o anual."/>
+    <meta name="robots" content="index"/>
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
+</head>
+<body>
+    <h1 style="color: white" >El ascenso digital de una marca autentica</h1>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Elige tu suscripción</h1>
+      <p>Activa acceso a todas las funciones premium con pago mensual o ahorra más con el plan anual.</p>
+      <div class="toggle">
+        <div class="billing-labels">
+          <span id="label-mensual">Mensual</span>
+          <div id="switch" class="switch" aria-label="Cambiar a anual" role="button" tabindex="0"></div>
+          <span id="label-anual">Anual</span>
+          <span class="pill">Ahorra 20%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="plan-card" aria-live="polite">
+      <div class="badge">Recomendado</div>
+
+      <h2 style="margin:0;">Plan Premium</h2>
+      <p class="per">Facturación <span id="billing-text">mensual</span></p>
+
+      <div class="price-row">
+        <div class="price" id="price">$199 MXN</div>
+        <div class="per" id="per">/ mes</div>
+      </div>
+      <div class="save" id="save" style="display:none;">Ahorra 20% con anual</div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">✓</div>
+          <div><strong>Acceso total:</strong> Todas las funciones y actualizaciones.</div>
+        </div>
+        <div class="feature">
+          <div class="icon">✓</div>
+          <div><strong>Confiable:</strong> No se comparta con terceros.</div>
+        </div>
+        <div class="feature">
+          <div class="icon">✓</div>
+          <div><strong>Uso dispositivo:</strong> En smarphone y phone.</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btn-pagar" class="btn-primary">Proceder al pago</button>
+        <button class="btn-secondary" id="btn-detalles">Ver detalles del plan</button>
+        <div class="secure">
+          <div class="lock">🔒</div>
+          <span>Pago seguro con cifrado y estándar PCI-DSS</span>
+        </div>
+      </div>
+
+      <p class="fineprint">
+        El plan anual se cobra por adelantado. Cancela cuando quieras desde tu cuenta.
+        Consulta <a class="link" href="#" aria-label="Términos y condiciones">Términos</a> y
+        <a class="link" href="#" aria-label="Política de reembolsos">Reembolsos</a>.
+      </p>
+    </section>
+  </main>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #22c55e;
+      --primary-strong: #16a34a;
+      --accent: #38bdf8;
+      --ring: #1f2937;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Segoe UI Emoji";
+      background: radial-gradient(80rem 80rem at 20% 10%, #0b1220 0%, var(--bg) 45%, #0a0f1f 100%);
+      color: var(--text);
+      display: grid;
+      min-height: 100vh;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 860px) {
+      .container { grid-template-columns: 1.1fr 0.9fr; }
+    }
+
+    .hero {
+      border: 1px solid var(--ring);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+      backdrop-filter: blur(3px);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      margin: 0 0 0.5rem;
+      letter-spacing: 0.2px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0.25rem 0 1rem;
+      line-height: 1.6;
+    }
+
+    .plan-card {
+      position: relative;
+      border: 1px solid var(--ring);
+      border-radius: 16px;
+      padding: 1.25rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    }
+
+    /* Toggle */
+    .toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1rem 0 1.25rem;
+      user-select: none;
+    }
+
+    .switch {
+      position: relative;
+      width: 68px;
+      height: 34px;
+      background: #0b1426;
+      border: 1px solid #1f2937;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
+    .switch::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #e5e7eb, #cbd5e1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      transition: transform 0.25s ease;
+    }
+    .switch.active {
+      background: #0b2a1a;
+      border-color: #134e4a;
+    }
+    .switch.active::after { transform: translateX(34px); }
+
+    .billing-labels {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.55rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      border: 1px dashed #0ea5e9;
+      color: #7dd3fc;
+      background: rgba(14,165,233,0.06);
+    }
+
+    /* Price */
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin: 1rem 0 0.25rem;
+    }
+    .price {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .per {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .save {
+      color: #86efac;
+      font-size: 0.95rem;
+    }
+
+    /* Features */
+    .features {
+      margin: 1rem 0 1.25rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+    .feature {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      align-items: start;
+      gap: 0.6rem;
+      color: #cbd5e1;
+    }
+    .feature .icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0f766e;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    /* CTA */
+    .actions {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .btn-primary {
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-strong) 100%);
+      color: #051b0f;
+      border: none;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(34,197,94,0.22);
+      transition: transform 0.05s ease, filter 0.2s ease;
+    }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid #0ea5e9;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(56,189,248,0.08);
+      color: #a5f3fc;
+    }
+
+    .secure {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+    .secure .lock {
+      width: 18px; height: 18px;
+      border-radius: 4px;
+      background: #0c4a6e;
+      display: grid; place-items: center;
+      font-size: 12px;
+    }
+
+    /* Badge */
+    .badge {
+      position: absolute;
+      top: -10px; right: -10px;
+      background: #0ea5e9;
+      color: #05243a;
+      padding: 0.35rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(14,165,233,0.25);
+    }
+
+    /* Footer */
+    .fineprint {
+      margin-top: 0.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .link {
+      color: #93c5fd;
+      text-decoration: underline;
+      text-decoration-color: #60a5fa;
+    }
+  </style>
+<script>
+  // Configuración de precios y links
+  const PRICES = {
+    mensual: { 
+      amount: 20, 
+      periodLabel: "mes", 
+      billingLabel: "mensual",
+      link: "https://buy.stripe.com/4gMaEY3ou0bqgMw4qdfUQ07"   // 🔗 link pago mensual
+    },
+    anual:   { 
+      amount: 100, 
+      periodLabel: "año", 
+      billingLabel: "anual", 
+      discountInfo: "Ahorra 20% con anual",
+      link: "https://buy.stripe.com/bJe8wQbV04rG1RC5uhfUQ08"     // 🔗 link pago anual
+    }
+  };
+
+  const switchEl = document.getElementById("switch");
+  const priceEl = document.getElementById("price");
+  const perEl = document.getElementById("per");
+  const billingTextEl = document.getElementById("billing-text");
+  const saveEl = document.getElementById("save");
+  const btnPagar = document.getElementById("btn-pagar");
+  const btnDetalles = document.getElementById("btn-detalles");
+
+  let isAnnual = false;
+
+  // Formatear a moneda MXN
+  function formatMXN(value) {
+    return new Intl.NumberFormat("es-MX", {
+      style: "currency",
+      currency: "MXN",
+      maximumFractionDigits: 0
+    }).format(value);
+  }
+
+  // Actualizar interfaz según plan
+  function updateUI() {
+    const plan = isAnnual ? PRICES.anual : PRICES.mensual;
+    priceEl.textContent = formatMXN(plan.amount) + " MXN";
+    perEl.textContent = "/ " + plan.periodLabel;
+    billingTextEl.textContent = plan.billingLabel;
+    saveEl.style.display = isAnnual ? "block" : "none";
+    switchEl.classList.toggle("active", isAnnual);
+    btnPagar.textContent = isAnnual ? "Proceder al pago anual" : "Proceder al pago mensual";
+  }
+
+  // Cambiar entre mensual/anual
+  function toggleBilling() {
+    isAnnual = !isAnnual;
+    updateUI();
+  }
+
+  // Eventos del switch
+  switchEl.addEventListener("click", toggleBilling);
+  switchEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleBilling();
+    }
+  });
+
+  // Redirección al link correcto
+  btnPagar.addEventListener("click", () => {
+    const plan = isAnnual ? PRICES.anual : PRICES.mensual;
+    window.location.href = plan.link; // 🔗 redirige al link correspondiente
+  });
+
+  // Botón de detalles
+  btnDetalles.addEventListener("click", () => {
+    alert("Incluye acceso total, confiable con nuestros clientes  y uso de cualquier dispositivos.");
+  });
+
+  // Inicializar interfaz
+  updateUI();
+</script>
+
+</body>
+</html>

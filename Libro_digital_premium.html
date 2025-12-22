@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+  <!-- Google adsense monetizacion -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  
+  <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  
+  <title>Libro digital premium</title>
+  
+  <meta name="title" content="Libro digital premium"/>
+    <meta name="description" content="Libro digital de Gieovanny Frias mensual o anual."/>
+    <meta name="robots" content="index"/>
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
+</head>
+<body>
+  <div class="book-container">
+  <div class="book" id="book"></div>
+</div>
+  <div class="rotate-device-warning">
+    <p>Por favor, gira tu dispositivo a modo vertical (portrait).</p>
+    <!-- Opcional: añade un icono visual de rotación aquí, como un GIF o SVG -->
+</div>
+<style>
+
+:root {
+  --book-w: 600px;   /* base escritorio */
+  --book-h: 600px;
+  --speed: 0.6s;
+}
+
+/* Fondo y perspectiva */
+body {
+  background: #111;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  perspective: 2500px;
+  font-family: 'Segoe UI', sans-serif;
+}
+.rotate-device-warning {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000; /* Fondo oscuro para cubrir la app */
+    color: #fff;
+    z-index: 99999; /* Asegura que esté por encima de todo */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+  /* Media Query para dispositivos móviles en orientación horizontal */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .rotate-device-warning {
+        display: flex; /* Muestra el aviso solo en landscape en móviles */
+    }
+}
+
+/* Media Query para dispositivos no móviles (tablets y escritorio) */
+@media screen and (min-width: 768px) {
+    .rotate-device-warning {
+        display: none !important; /* Asegura que no aparezca en pantallas grandes */
+    }
+}
+/* Contenedor a pantalla completa (usar 100dvh para móviles) */
+.book-container {
+  width: 100%;
+  height: 100dvh;      /* mejor en móviles que 100vh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Libro */
+.book {
+  position: relative;
+  width: var(--book-w);
+  height: var(--book-h);
+  transform-style: preserve-3d;
+  transition: transform var(--speed) ease-in-out;
+}
+
+/* Página */
+.page {
+  /* valor por defecto para --z */
+  --z: 0;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: transform var(--speed) ease-in-out;
+  cursor: pointer;
+
+  /* profundidad real (no z-index plano) */
+  transform: translateZ(calc(var(--z) * 1px));
+  will-change: transform;
+}
+
+/* Caras */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: inset 10px 0 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: #f0f0f0;
+}
+
+/* Portada y contraportada diferenciadas */
+.front.is-cover {
+  color: #fff;
+}
+.back.is-cover {
+  color: #fff;
+}
+
+/* Volteo */
+.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  :root {
+    --book-w: 90vw;
+    --book-h: 70vh;
+  }
+  .front, .back {
+    padding: 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+  :root {
+    --book-w: 95vw;
+    --book-h: 80vh;
+  }
+  .front, .back {
+    padding: 15px;
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+}
+
+/* Móviles pequeños (320px) */
+@media (max-width: 320px) {
+  :root {
+    --book-w: 96vw;
+    --book-h: 84vh;
+  }
+  .front, .back {
+    padding: 10px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Accesibilidad: animaciones más suaves si el usuario prefiere reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .book, .page {
+    transition: none;
+  }
+}
+
+  
+</style>
+<script>
+  const book = document.getElementById('book');
+const totalPages = 15;
+
+const titulos = [
+  "Capítulo 1: El ascenso digital de Gieovanny Frías","Capítulo 2: Orígenes y formación","Capítulo 3: Explorando el mundo del streaming en vivo","Capítulo 4: YouTube: Documentando la aventura","Capítulo 5: Podcast sin censura: Voz sin filtro",
+  "Capítulo 6: La marca personal digital","Capítulo 7: Presencia multiplataforma","Capítulo 8: Contenido exclusivo y comunidad privada","Capítulo 9: Colaboraciones y conexiones","Capítulo 10: Visión hacia el futuro",
+  "Capítulo 11: Reflexiones finales","Capítulo 12: Referencia","Capítulo 13: Respuestas cultas","Capítulo 14: Informacion clasificada","Capítulo 15: Conclusion"
+];
+
+const parrafos = [
+  ["Un nuevo comienzo para Gieovanny Frías desde México como nombre real Jovani Camacho Frías que emergió como figura digital que redefine lo que significa ser autentico en internet. Con ascendencia española y mexicano y una formación en Tecnologías de la Información y comunicación, Gieovanny Frías transformo su pasión por la comunicación en una carrera multifacética como youtuber, influencer y streamer y futuro DJ.","Su historia comienza a mediado de 2023 cuando se lanza como streamer en Twitch y Kick conquistando audiencias con su estilo directo y espontaneo. En 2024, su canal de YouTube se convierte en un espacio de exploración visual. En 2025 lanza su podcast en Spotify donde aborda temas sin censura. Para 2026 planea debutar como DJ de música electrónica.","Mas que un influencer, Gieovanny Frías se ha convertido en una marca digital autentica, gestionando su contenido, monetización y comunidad con una visión clara: ser el mismo, sin filtros."],
+  ["Aquí exploramos los orígenes de la historia.","Se destacan las primeras culturas y sus aportes."],
+  ["Un vistazo a los avances científicos más recientes.","La ciencia moderna nos abre puertas a nuevas posibilidades."],
+  ["Relatos que despiertan la imaginación.","Historias fantásticas que nos transportan a otros mundos."],
+  ["El arte como reflejo de la cultura.","Cada obra es una ventana a la sociedad que la creó."],
+  ["Tecnología que transforma nuestro día a día.","Innovaciones que cambian la forma en que vivimos."],
+  ["La exploración espacial abre nuevas fronteras.","El universo es un misterio que seguimos descubriendo."],
+  ["Reflexiones filosóficas sobre la vida.","Preguntas que nos invitan a pensar más allá de lo cotidiano."],
+  ["Matemáticas presentadas de forma divertida.","Los números también cuentan historias fascinantes."],
+  ["Biografías de personajes célebres.","Sus vidas inspiran y dejan huella en la historia."],
+  ["Gieovanny Frías no es solo un creador de contenido o digital. Es un símbolo de autenticidad, evolución y conexión. Su historia inspira a quienes buscan expresarse sin miedo y construir una comunidad desde la verdad como en youtuber, influencer y streamer.","Ambas expresiones conectan emociones y culturas."],
+  ["La naturaleza y sus maravillas ocultas.","Cada rincón del planeta guarda secretos sorprendentes."],
+  ["Psicología para comprender la mente humana.","Exploramos cómo pensamos, sentimos y actuamos."],
+  ["Economía y sus impactos en la sociedad.","Analizamos cómo las decisiones afectan nuestro día a día."],
+  ["Un cierre que invita a seguir soñando.","El final es solo el comienzo de nuevas aventuras."]
+];
+
+const listados = {
+  "Capítulo 2: Orígenes y formación": ["Nombre completo: Jovani Camacho Frías", "Fecha de nacimiento: 10 de septiembre de 1996", "Lugar de origen: Ciudad de México", "Ascendencia: Española y mexicano","Estatura: 175 m","Años activo: 2023-presente","Ocupación: Youtuber, influencer y streamer","Educación: Tecnologías de la Información y comunicaciones"],
+  "Capítulo 3: Explorando el mundo del streaming en vivo": ["Inicio en Twitch y Kick en 2023", "Juegos como Fortnite", "Estilo espontáneo, sin guiones ni filtros"],
+  "Capítulo 4: YouTube: Documentando la aventura": ["Vlogs, viajes, documentales", "Enfoque visual y emocional", "Comunidad creciente por su autenticidad"],
+  "Capítulo 5: Podcast sin censura: Voz sin filtro": ["Lanzado en Spotify en 2025", "Temas maduros, sin censura", "Conversaciones honestas y profundas"],
+  "Capítulo 6: La marca personal digital": ["Gestión personal de contenido y monetización", "Conexión directa con seguidores", "Filosofía:Ser la versión más auténtica de mí mismo"],
+  "Capítulo 7: Presencia multiplataforma": ["Facebook, Instagram, Twitter (X), YouTube, TikTok, Snapchat, Telegram", "OnlyFans, Fansly, Mym Fans, Passes", "Cameo: videos y mensajes personalizados"],
+  "Capítulo 8: Contenido exclusivo y comunidad privada": ["OnlyFans: contenido en 4K sin contenido sexual explícito de paga o gratis", "Mym Fans: estilo Instagram por suscripción", "Passes: transmisiones en vivo de paga"],
+  "Capítulo 9: Colaboraciones y conexiones": ["Previstas con Staryuki y Caelike", "Expansión hacia nuevos públicos"],
+  "Capítulo 10: Visión hacia el futuro": ["Debut como DJ electro/electrónica en 2026", "Música DJ electro/electrónica en Spotify", "Evolución artística y creativa"],
+  "Capítulo 11: Reflexiones finales": ["Memoria", "Emociones", "Conducta", "Sueños"],
+  "Capítulo 12: Referencia": ["Frías, G. (s.f.). El ascenso digital. Obtenido de gieovannyfrias.com"],
+  "Capítulo 13: Respuestas cultas": ["Mercados", "Producción", "Consumo", "Globalización"],
+  "Capítulo 14: Informacion clasificada": ["Mercados", "Producción", "Consumo", "Globalización"],
+  "Capítulo 15: Conclusion": ["Resumen", "Reflexión", "Futuro", "Inspiración"]
+};
+
+// Validaciones para evitar errores silenciosos
+if (titulos.length !== totalPages) {
+  console.error("El arreglo 'titulos' debe tener " + totalPages + " elementos.");
+}
+if (parrafos.length !== totalPages) {
+  console.error("El arreglo 'parrafos' debe tener " + totalPages + " entradas (una por página).");
+}
+
+// Construcción de páginas
+for (let i = 0; i < totalPages; i++) {
+  const page = document.createElement('div');
+  page.className = 'page';
+  page.style.setProperty('--z', totalPages - i);
+
+  const isFirst = i === 0;
+  const isLast = i === totalPages - 1;
+
+  const contenidoParrafos = Array.isArray(parrafos[i])
+    ? parrafos[i].map(p => `<p>${p}</p>`).join("")
+    : `<p>${parrafos[i]}</p>`;
+
+  const listadoHTML = listados[titulos[i]]
+    ? `<ul>${listados[titulos[i]].map(el => `<li>${el}</li>`).join("")}</ul>`
+    : "";
+
+const frontContent = isFirst
+  ? `<div class="front is-cover" 
+         style="background:url('https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000') no-repeat center center;
+                background-size:cover; color:white;">
+         <h1>El ascenso digital de una marca autentica</h1>
+         <p>2023 Edicion</p>
+     </div>`
+  : `<div class="front">
+         <h3>${titulos[i]}</h3>
+         ${contenidoParrafos}
+         ${listadoHTML}
+     </div>`;
+
+
+const backContent = isLast
+  ? `<div class="back is-cover" id="contraportada"
+         style="background-color:black; color:white;">
+         <h3>FIN</h3>
+       </div>`
+  : `<div class="back">
+         <h3>${titulos[i]} (continuación)</h3>
+         ${contenidoParrafos}
+         ${listadoHTML}
+       </div>`;
+
+  page.innerHTML = frontContent + backContent;
+
+  // Comportamiento de volteo
+  page.addEventListener('click', () => {
+    page.classList.toggle('flipped');
+    const anyFlipped = document.querySelectorAll('.page.flipped').length > 0;
+    book.style.transform = anyFlipped ? 'translateX(50%)' : 'translateX(0)';
+  });
+
+  book.appendChild(page);
+}
+
+// Regresar al inicio al hacer clic en la contraportada
+const contraportada = document.getElementById('contraportada');
+if (contraportada) {
+  contraportada.addEventListener('click', (e) => {
+    e.stopPropagation(); // evita que el clic vuelva a voltear la página
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('flipped'));
+    book.style.transform = 'translateX(0)';
+  });
+}
+
+</script>
+  </body>
+</html>
