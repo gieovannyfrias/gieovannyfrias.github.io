@@ -28,10 +28,7 @@
   <div class="book-container">
   <div class="book" id="book"></div>
 </div>
-  <div class="rotate-device-warning">
-    <p>Por favor, gira tu dispositivo a modo vertical (portrait).</p>
-    <!-- Opcional: añade un icono visual de rotación aquí, como un GIF o SVG -->
-</div>
+
 <style>
 
 :root {
@@ -50,35 +47,7 @@ body {
   perspective: 2500px;
   font-family: 'Segoe UI', sans-serif;
 }
-.rotate-device-warning {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000; /* Fondo oscuro para cubrir la app */
-    color: #fff;
-    z-index: 99999; /* Asegura que esté por encima de todo */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-  /* Media Query para dispositivos móviles en orientación horizontal */
-@media screen and (max-width: 767px) and (orientation: landscape) {
-    .rotate-device-warning {
-        display: flex; /* Muestra el aviso solo en landscape en móviles */
-    }
-}
 
-/* Media Query para dispositivos no móviles (tablets y escritorio) */
-@media screen and (min-width: 768px) {
-    .rotate-device-warning {
-        display: none !important; /* Asegura que no aparezca en pantallas grandes */
-    }
-}
 /* Contenedor a pantalla completa (usar 100dvh para móviles) */
 .book-container {
   width: 100%;
@@ -208,29 +177,28 @@ const totalPages = 15;
 const titulos = [
   "Capítulo 1: El ascenso digital de Gieovanny Frías","Capítulo 2: Orígenes y formación","Capítulo 3: Explorando el mundo del streaming en vivo","Capítulo 4: YouTube: Documentando la aventura","Capítulo 5: Podcast sin censura: Voz sin filtro",
   "Capítulo 6: La marca personal digital","Capítulo 7: Presencia multiplataforma","Capítulo 8: Contenido exclusivo y comunidad privada","Capítulo 9: Colaboraciones y conexiones","Capítulo 10: Visión hacia el futuro",
-  "Capítulo 11: Reflexiones finales","Capítulo 12: Referencia","Capítulo 13: Respuestas cultas","Capítulo 14: Informacion clasificada","Capítulo 15: Conclusion"
+  "Capítulo 11: Reflexiones finales","Capítulo 12: Referencia","Capítulo 13: Respuestas ocultas","Capítulo 14: Información clasificada","Capítulo 15: Conclusion"
 ];
 
 const parrafos = [
   ["Un nuevo comienzo para Gieovanny Frías desde México como nombre real Jovani Camacho Frías que emergió como figura digital que redefine lo que significa ser autentico en internet. Con ascendencia española y mexicano y una formación en Tecnologías de la Información y comunicación, Gieovanny Frías transformo su pasión por la comunicación en una carrera multifacética como youtuber, influencer y streamer y futuro DJ.","Su historia comienza a mediado de 2023 cuando se lanza como streamer en Twitch y Kick conquistando audiencias con su estilo directo y espontaneo. En 2024, su canal de YouTube se convierte en un espacio de exploración visual. En 2025 lanza su podcast en Spotify donde aborda temas sin censura. Para 2026 planea debutar como DJ de música electrónica.","Mas que un influencer, Gieovanny Frías se ha convertido en una marca digital autentica, gestionando su contenido, monetización y comunidad con una visión clara: ser el mismo, sin filtros."],
-  ["Aquí exploramos los orígenes de la historia.","Se destacan las primeras culturas y sus aportes."],
-  ["Un vistazo a los avances científicos más recientes.","La ciencia moderna nos abre puertas a nuevas posibilidades."],
-  ["Relatos que despiertan la imaginación.","Historias fantásticas que nos transportan a otros mundos."],
-  ["El arte como reflejo de la cultura.","Cada obra es una ventana a la sociedad que la creó."],
-  ["Tecnología que transforma nuestro día a día.","Innovaciones que cambian la forma en que vivimos."],
-  ["La exploración espacial abre nuevas fronteras.","El universo es un misterio que seguimos descubriendo."],
-  ["Reflexiones filosóficas sobre la vida.","Preguntas que nos invitan a pensar más allá de lo cotidiano."],
-  ["Matemáticas presentadas de forma divertida.","Los números también cuentan historias fascinantes."],
-  ["Biografías de personajes célebres.","Sus vidas inspiran y dejan huella en la historia."],
-  ["Gieovanny Frías no es solo un creador de contenido o digital. Es un símbolo de autenticidad, evolución y conexión. Su historia inspira a quienes buscan expresarse sin miedo y construir una comunidad desde la verdad como en youtuber, influencer y streamer.","Ambas expresiones conectan emociones y culturas."],
-  ["La naturaleza y sus maravillas ocultas.","Cada rincón del planeta guarda secretos sorprendentes."],
-  ["Psicología para comprender la mente humana.","Exploramos cómo pensamos, sentimos y actuamos."],
-  ["Economía y sus impactos en la sociedad.","Analizamos cómo las decisiones afectan nuestro día a día."],
-  ["Un cierre que invita a seguir soñando.","El final es solo el comienzo de nuevas aventuras."]
+  ["Gieovanny Frías es un creador digital mexicano nacido el 10 de septiembre de 1996 en Ciudad de México. Se ha consolidado como youtuber, influencer, streamer, bloguero, artista musical y modelo, con una fuerte presencia en plataformas como YouTube, Twitch, Kick e Instagram.","La marca personal digital tiene sus orígenes en la evolución del concepto de reputación hacia el entorno online, y se forma mediante un proceso estratégico que combina autoconocimiento, comunicación y presencia digital.","La formación de una marca personal digital implica varios pasos clave en la contrucción como autoconocimiento, propósito, definir valores, fortalezas , objetivos,identificar qué te diferencia de otros profesionales.La otra es identidad visual, narrativa,crear elementos gráficos consistentes (logo, colores, tipografía),desarrollar un estilo de comunicación propio (tono, storytelling).Como tambien la presencia digital en optimizar perfiles en redes sociales , plataformas profesionales,crear contenido de valor (artículos, videos, podcasts) que refleje tu expertise.Pero tambien en la reputación y credibilidad en interactuar de manera auténtica con la audiencia,gestionar la huella digital: cuidar lo que se publica y cómo se percibe.En cambio en la estrategia de crecimiento como networking digital: colaborar con otros profesionales y medir resultados con métricas de alcance, interacción y posicionamiento."],
+  ["Explorar el streaming en vivo como marca personal digital significa usar las transmisiones en tiempo real no solo para entretener, sino para construir identidad, reputación y comunidad alrededor de tu nombre o proyecto.","El streaming en vivo es una poderosa herramienta para transformar tu presencia digital en una marca personal sólida, porque combina autenticidad, interacción y visibilidad global."],
+  ["La marca personal digital en YouTube puede ser la de consultores, educadores o creadores inspiracionales, que aprovechan la plataforma para mostrar su expertise, conectar con la audiencia y consolidar su identidad profesional.","Los creadores que han convertido su canal en una extensión de su identidad profesional y personal, usando la plataforma para diferenciarse y posicionarse en su nicho."],
+  ["El podcast es otra vía muy poderosa para construir una marca personal digital, porque combina cercanía, voz y narrativa en un formato íntimo y flexible. A diferencia de YouTube o el streaming en vivo, aquí el foco está en la conversación y el contenido auditivo","En cambio te permite transmitir tu voz, tu estilo y tu conocimiento en un formato íntimo y accesible, ideal para construir confianza y autoridad."],
+  ["La marca personal digital es la percepción que las personas tienen de ti en internet: la suma de lo que comunicas, lo que haces visible y cómo interactúas en entornos online. Es tu identidad proyectada en el mundo digital y puede abrirte oportunidades profesionales, colaboraciones y reconocimiento si la gestionas de forma estratégica.","Marca personal tradicional: Es la manera en que otros te perciben en tu vida profesional y social: tus habilidades, tu experiencia y tus valores.","Marca personal digital: Traslada esa percepción al entorno online. Se construye con tus perfiles en redes sociales, tu contenido, tu estilo de comunicación y tu reputación en internet."],
+  ["En cambio, nos referimos a que no se construye desde un solo elemento (por ejemplo, un perfil en redes sociales), sino desde la integración de múltiples factores que, juntos, forman la percepción que los demás tienen de ti en el entorno digital en la identidad visual, narrativa, comunicación, contenido de valor, reputación online, interacción, comunidad, huella digital, monetización y profesionalización.","Es la identidad se construye desde varios frentes simultáneamente: visual, narrativo, reputacional, comunitario y estratégico. La clave está en la coherencia y en que todos esos factores trabajen juntos para proyectar quién eres y qué representas."],
+  ["El rol de la comunidad privada en la marca personal digital es la exclusividad del acceso limitado que refuerza el sentido de pertenencia y la audiencia siente que forma parte de un círculo especial.","En el contenido premium es el material que no está disponible públicamente.","Por último, la monetización las suscripciones o membresías para acceder al grupo y venta de productos/servicios exclusivos dentro de la comunidad."],
+  ["Las colaboraciones y conexiones son un componente esencial en la construcción de una marca personal digital, porque amplifican tu alcance, fortalecen tu reputación y te permiten crecer más rápido que si trabajas en solitario.","Tambien son el motor que expande tu marca personal digital, porque multiplican tu visibilidad, fortalecen tu reputación y te integran en un ecosistema de apoyo mutuo."],
+  ["Implica proyectar cómo quieres que tu identidad evolucione en el entorno online y qué impacto deseas generar a largo plazo. No se trata solo de lo que comunicas hoy, sino de cómo construyes un legado digital que te acompañe en tu carrera, proyectos y relaciones."," La visión hacia el futuro de tu marca personal digital es imaginar cómo quieres ser recordado y reconocido en el mundo online, y trabajar hoy en los cimientos que harán posible ese legado."],
+  ["Gieovanny Frías no es solo un creador de contenido o digital. Es un símbolo de autenticidad, evolución y conexión. Su historia inspira a quienes buscan expresarse sin miedo y construir una comunidad desde la verdad como en youtuber, influencer y streamer.","No es solo un perfil en redes, es la huella que dejas en cada interacción online.","Se construye día a día con coherencia entre lo que eres, lo que comunicas y lo que proyectas."],
+  ["Estas referencias te ofrecen tanto bases teóricas como estrategias prácticas para entender y construir tu marca personal digital."],
+  ["Dentro de la construcción de una marca personal digital son aquellos mensajes, valores o significados que no se comunican de manera explícita, pero que igualmente forman parte de la percepción que otros tienen de ti en el entorno online.","¿Qué son las respuestas ocultas? Son mensajes implícitos lo que transmites sin decirlo directamente (tu estilo, tu coherencia, tu forma de interactuar) la otra es lenguaje no verbal digital con los colores, tipografía, imágenes, tono narrativo en todo comunica aunque no lo verbalices o tambien huella digital silenciosa en comentarios pasados, publicaciones antiguas, interacciones que siguen visibles, afectan tu reputación y por ultimo los valores subyacentes en tus decisiones (con quién colaboras, qué causas apoyas, cómo gestionas críticas) reflejan tu identidad."],
+  [" En una marca personal digital, la idea de información clasificada se transforma en algo más simbólico no hablamos de secretos de Estado, sino de contenidos, datos o estrategias que eliges no compartir públicamente, pero que forman parte de tu identidad y tu posicionamiento.","En la información clasificada dentro de una marca personal digital es todo aquello que eliges reservar para tu círculo más cercano o para tu estrategia interna, y que no compartes de manera abierta. Esa gestión consciente te permite mantener control, generar exclusividad y fortalecer tu posicionamiento."],
+  ["La marca personal digital es mucho más que tener presencia en redes sociales: es la construcción consciente de tu identidad en el entorno online, donde cada publicación, interacción y colaboración contribuye a la percepción que otros tienen de ti.","La marca personal digital es tu huella en internet: un espacio donde tu voz, tu estilo y tu propósito se convierten en valor para otros. Gestionarla con estrategia significa transformar tu presencia online en oportunidades reales de crecimiento, conexión y reconocimiento."]
 ];
 
 const listados = {
-  "Capítulo 2: Orígenes y formación": ["Nombre completo: Jovani Camacho Frías", "Fecha de nacimiento: 10 de septiembre de 1996", "Lugar de origen: Ciudad de México", "Ascendencia: Española y mexicano","Estatura: 175 m","Años activo: 2023-presente","Ocupación: Youtuber, influencer y streamer","Educación: Tecnologías de la Información y comunicaciones"],
   "Capítulo 3: Explorando el mundo del streaming en vivo": ["Inicio en Twitch y Kick en 2023", "Juegos como Fortnite", "Estilo espontáneo, sin guiones ni filtros"],
   "Capítulo 4: YouTube: Documentando la aventura": ["Vlogs, viajes, documentales", "Enfoque visual y emocional", "Comunidad creciente por su autenticidad"],
   "Capítulo 5: Podcast sin censura: Voz sin filtro": ["Lanzado en Spotify en 2025", "Temas maduros, sin censura", "Conversaciones honestas y profundas"],
@@ -239,11 +207,11 @@ const listados = {
   "Capítulo 8: Contenido exclusivo y comunidad privada": ["OnlyFans: contenido en 4K sin contenido sexual explícito de paga o gratis", "Mym Fans: estilo Instagram por suscripción", "Passes: transmisiones en vivo de paga"],
   "Capítulo 9: Colaboraciones y conexiones": ["Previstas con Staryuki y Caelike", "Expansión hacia nuevos públicos"],
   "Capítulo 10: Visión hacia el futuro": ["Debut como DJ electro/electrónica en 2026", "Música DJ electro/electrónica en Spotify", "Evolución artística y creativa"],
-  "Capítulo 11: Reflexiones finales": ["Memoria", "Emociones", "Conducta", "Sueños"],
+  "Capítulo 11: Reflexiones finales": ["Autenticidad", "Constancia", "Valor", "Adaptabilidad"],
   "Capítulo 12: Referencia": ["Frías, G. (s.f.). El ascenso digital. Obtenido de gieovannyfrias.com"],
-  "Capítulo 13: Respuestas cultas": ["Mercados", "Producción", "Consumo", "Globalización"],
-  "Capítulo 14: Informacion clasificada": ["Mercados", "Producción", "Consumo", "Globalización"],
-  "Capítulo 15: Conclusion": ["Resumen", "Reflexión", "Futuro", "Inspiración"]
+  "Capítulo 13: Respuestas ocultas": ["Consistencia", "Interacción", "Estética visual", "Silencio estratégico"],
+  "Capítulo 14: Información clasificada": ["Estrategias internas", "Datos privados", "Contenido exclusivo", "Relaciones estratégicas","Amenazas del gobierno"],
+  "Capítulo 15: Conclusion": ["Autenticidad", "Coherencia", "Multifactorialidad", "Evolución constante","Visión futura"]
 };
 
 // Validaciones para evitar errores silenciosos
