@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+  <!-- Google adsense monetizacion -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  
+  <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  
+  <title>Agenda vivo</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- SDK Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+</head>
+<body>
+  <header>
+    <h1>Agenda<span class="badge"><span class="year"></span></span></h1>
+    <div class="actions">
+      <button id="newEventBtn" class="btn primary">➕ Nuevo</button>
+      <button id="refreshBtn" class="btn">🔄 Refrescar</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Calendario -->
+    <div class="card calendar">
+      <div class="calendar-controls">
+        <div class="cal-nav">
+          <button id="prevMonth" class="icon-btn">◀</button>
+          <button id="nextMonth" class="icon-btn">▶</button>
+        </div>
+        <div id="monthLabel" class="month-label"></div>
+      </div>
+      <div class="weekdays">
+        <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+      </div>
+      <div id="calendarGrid" class="grid"></div>
+    </div>
+
+    <!-- Panel lateral -->
+    <div class="card">
+      <header><h2>Eventos y tareas</h2></header>
+      <div id="eventList" class="event-list"></div>
+    </div>
+  </div>
+<!-- Leyenda de colores -->
+<div class="card legend">
+  <header><h2>Significado de los puntos</h2></header>
+  <ul class="legend-list">
+    <li><span class="dot yellow"></span> Evento</li>
+    <li><span class="dot green"></span> Tarea pendiente</li>
+    <li><span class="dot red"></span> Tarea vencida</li>
+    <li><span class="dot blue"></span> Concierto</li>
+    <li><span class="dot purple"></span> Conferencia</li>
+  </ul>
+</div>
+
+  <!-- Modal -->
+  <div id="modal">
+    <div class="card modal-card">
+      <header><h2 id="modalTitle">Nuevo ítem</h2></header>
+      <div class="section">
+      <select id="typeInput" class="select">
+  <option value="event">Evento</option>
+  <option value="task">Tarea</option>
+  <option value="concert">Concierto</option>
+  <option value="conference">Conferencia</option>
+</select>
+        <input id="titleInput" class="input" type="text" placeholder="Título">
+<input id="dateInput" class="input" type="datetime-local">
+        <textarea id="notesInput" placeholder="Notas"></textarea>
+        <label><input type="checkbox" id="doneInput"> Completada</label>
+      </div>
+      <div class="footer">
+        <button id="cancelBtn" class="btn">Cancelar</button>
+        <button id="saveBtn" class="btn primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+<style>
+  
+  :root{
+  --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#94a3b8;
+  --primary:#22d3ee; --accent:#a78bfa; --ok:#10b981; --danger:#fb7185;
+  --border:#1f2937; --radius:14px; --shadow:0 12px 28px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:radial-gradient(1000px 600px at 20% 0%,#0b1024 0%,var(--bg) 40%,#0b0f1c 100%);
+  color:var(--text)
+}
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 18px;border-bottom:1px solid var(--border);
+  backdrop-filter:blur(6px);position:sticky;top:0;z-index:10;
+  background:rgba(15,23,42,.65)
+}
+header h1{margin:0;font-size:18px;font-weight:600}
+.badge{
+  font-size:12px;color:#c4b5fd;border:1px dashed #3f3f46;
+  padding:2px 6px;border-radius:8px;margin-left:8px
+}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{
+  padding:10px 14px;border-radius:12px;border:1px solid var(--border);
+  background:#0b1328;color:var(--text);cursor:pointer;transition:.2s;font-weight:500
+}
+.btn:hover{transform:translateY(-1px);border-color:#334155}
+.btn.primary{
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  color:#0b1020;border-color:transparent
+}
+.btn.warn{background:#2b0c13;border-color:#7f1d1d}
+.container{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:18px;
+  padding:18px;max-width:1100px;margin:0 auto
+}
+.card{
+  background:rgba(17,24,39,.65);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden
+}
+.card header{padding:12px 16px;border-bottom:1px solid var(--border)}
+.card header h2{margin:0;font-size:16px;color:#cbd5e1}
+.calendar{display:grid;grid-template-rows:auto auto 1fr;align-items: baseline;}
+.calendar-controls{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;gap:10px
+}
+.cal-nav{display:flex;gap:8px}
+.icon-btn{
+  width:36px;height:36px;border-radius:10px;border:1px solid var(--border);
+  background:#0b1328;color:var(--text);cursor:pointer;transition:.2s;
+  display:flex;align-items:center;justify-content:center
+}
+.icon-btn:hover{border-color:#334155;transform:translateY(-1px)}
+.month-label{font-weight:600;letter-spacing:.4px}
+.weekdays,.grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.weekdays div{
+  padding:10px;font-size:12px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em
+}
+  .day.selected { 
+    outline:2px solid var(--primary);
+    box-shadow:inset 0 0 0 2px var(--accent); }
+.day{
+  aspect-ratio:1/1;border:1px solid #0b1224;position:relative;
+  padding:8px;cursor:pointer;transition:.15s;
+  background:linear-gradient(180deg,rgba(13,20,38,.35),rgba(13,20,38,.2))
+}
+.day:hover{outline:2px solid #2dd4bf33;transform:translateY(-1px)}
+.day.out{opacity:.45}
+.day.today{outline:2px solid var(--accent);box-shadow:inset 0 0 0 1px #5b21b6}
+.day .num{font-size:13px;color:#cbd5e1}
+  
+  .legend {
+  background:rgba(17,24,39,.65); 
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:10px 14px;
+}
+
+.legend-list {
+  list-style:none;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.legend-list li {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+}
+
+.dot {
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  display:inline-block;
+}
+
+.dot.yellow { background:#facc15; }   /* Evento */
+.dot.green { background:#22c55e; }   /* Tarea pendiente */
+.dot.red { background:#ef4444; }     /* Tarea vencida */
+.dot.blue { background:#3b82f6; }    /* Concierto */
+.dot.purple { background:#a855f7; }  /* Conferencia */
+
+.section{padding:12px 16px;border-bottom:1px solid var(--border)}
+.section h3{margin:0 0 8px 0;font-size:14px;color:#cbd5e1}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .pill.event { background:#1f2937; /* gris oscuro */ color:#facc15; /* amarillo */ border:1px solid #facc15; }
+.pill{
+  padding:4px 8px;border-radius:999px;font-size:12px;border:1px solid #0b1a3a
+}
+.pill.ok{background:#05281f;color:#34d399;border-color:#064e3b}
+.pill.warn{background:#2b0c13;color:#fb7185;border-color:#7f1d1d}
+  .pill.concert {
+  background:#1e3a8a;   /* azul intenso */
+  color:#93c5fd;        /* azul claro */
+  border:1px solid #2563eb;
+}
+
+.pill.conference {
+  background:#3f0c2b;   /* púrpura oscuro */
+  color:#f0abfc;        /* púrpura claro */
+  border:1px solid #a21caf;
+}
+
+.event-list{display:flex;flex-direction:column;gap:10px;padding:12px 16px}
+.event{
+  display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px;border:1px solid var(--border);border-radius:12px;background:#0d172a
+}
+.event .meta{display:flex;flex-direction:column;gap:4px}
+.event .title{font-weight:600}
+.event .time{font-size:12px;color:var(--muted)}
+.empty{color:var(--muted);font-style:italic;padding:10px 16px}
+.input,.select,textarea{
+  width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);
+  background:#0b1328;color:var(--text);outline:none
+}
+#modal{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);
+  backdrop-filter:blur(4px);z-index:100
+}
+.modal-card{max-width:560px;margin:60px auto}
+.footer{
+  display:flex;justify-content:flex-end;gap:10px;
+  padding:14px 16px;border-top:1px solid var(--border)
+}
+@media (max-width:900px){ .container{grid-template-columns:1fr}}
+@media (max-width:600px){
+  header{flex-direction:column;text-align:center}
+  .actions{justify-content:center}
+  .btn{min-width:120px}
+  .calendar-controls{flex-direction:column;gap:8px}
+  .weekdays div{font-size:10px;padding:6px}
+  .day{padding:4px;font-size:12px}
+  .modal-card{width:95%;max-width:none;margin:20px auto}
+}
+
+  </style>
+  <script>
+// 🔌 Configuración Supabase
+const supabaseUrl = "https://armwwgylfrqpoewrwmsi.supabase.co"; 
+const supabaseKey = "sb_publishable_5qg1gte1Uteg62iSeWbUMg_hmvecNIj";                     
+const sb = supabase.createClient(supabaseUrl, supabaseKey);
+
+// 🔧 Referencias DOM
+const monthLabel = document.getElementById('monthLabel');
+const grid = document.getElementById('calendarGrid');
+const eventList = document.getElementById('eventList');
+const modal = document.getElementById('modal');
+const typeInput = document.getElementById('typeInput');
+const titleInput = document.getElementById('titleInput');
+const dateInput = document.getElementById('dateInput'); // datetime-local
+const notesInput = document.getElementById('notesInput');
+const doneInput = document.getElementById('doneInput');
+const saveBtn = document.getElementById('saveBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const newEventBtn = document.getElementById('newEventBtn');
+const prevMonthBtn = document.getElementById('prevMonth');
+const nextMonthBtn = document.getElementById('nextMonth');
+const refreshBtn = document.getElementById('refreshBtn');
+
+// 📌 Estado
+let state = {
+  cursor: new Date(),
+  selected: new Date(),
+  items: []
+};
+
+// 🛠️ Utilidades
+function pad(n){ return String(n).padStart(2,'0'); }
+function toKey(d){ const dt = new Date(d); return `${dt.getFullYear()}-${pad(dt.getMonth()+1)}-${pad(dt.getDate())}`; }
+function formatMonth(date){ return date.toLocaleString('es-MX',{month:'long',year:'numeric'}); }
+
+// 📅 Render calendario
+function renderCalendar(){
+  monthLabel.textContent = formatMonth(state.cursor);
+  grid.innerHTML = '';
+  const first = new Date(state.cursor.getFullYear(), state.cursor.getMonth(), 1);
+  const startDay = (first.getDay() + 6) % 7;
+  const daysInMonth = new Date(first.getFullYear(), first.getMonth()+1, 0).getDate();
+  const totalCells = 42;
+
+  for(let i=0;i<totalCells;i++){
+    const cell = document.createElement('div');
+    cell.className = 'day';
+    let dayNum, date, out=false;
+    if(i < startDay){
+      dayNum = new Date(first.getFullYear(), first.getMonth(), 0).getDate() - startDay + i + 1;
+      date = new Date(first.getFullYear(), first.getMonth()-1, dayNum);
+      out = true;
+    } else if(i >= startDay + daysInMonth){
+      dayNum = i - (startDay + daysInMonth) + 1;
+      date = new Date(first.getFullYear(), first.getMonth()+1, dayNum);
+      out = true;
+    } else {
+      dayNum = i - startDay + 1;
+      date = new Date(first.getFullYear(), first.getMonth(), dayNum);
+    }
+    const num = document.createElement('div');
+    num.className = 'num';
+    num.textContent = dayNum;
+    cell.appendChild(num);
+
+    const key = toKey(date);
+    const items = state.items.filter(e=>toKey(e.event_date)===key);
+
+    if(items.some(e=>e.type==='event')){
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      cell.appendChild(dot);
+    }
+    if(items.some(e=>e.type==='task' && !e.done)){
+      const dot = document.createElement('span');
+      dot.className = 'dot green';
+      dot.style.left='18px';
+      cell.appendChild(dot);
+    }
+    if(items.some(e=>e.type==='task' && !e.done && new Date(e.event_date)<new Date())){
+      const dot = document.createElement('span');
+      dot.className = 'dot red';
+      dot.style.left='28px';
+      cell.appendChild(dot);
+    }
+    if(items.some(e=>e.type==='concert')){ 
+      const dot = document.createElement('span'); 
+      dot.className = 'dot blue'; 
+      dot.style.left='38px'; 
+      cell.appendChild(dot); 
+    } 
+    if(items.some(e=>e.type==='conference')){ 
+      const dot = document.createElement('span'); 
+      dot.className = 'dot purple';
+      dot.style.left='48px';
+      cell.appendChild(dot); 
+    }
+    if(out) cell.classList.add('out');
+    if(toKey(date)===toKey(new Date())) cell.classList.add('today');
+
+    cell.addEventListener('click',()=>{
+      state.selected = date;
+      renderEvents();
+    });
+
+    grid.appendChild(cell);
+  }
+}
+
+function renderEvents(){
+  eventList.innerHTML = '';
+  const key = toKey(state.selected);
+  const items = state.items.filter(e=>toKey(e.event_date)===key);
+
+  if(items.length===0){
+    eventList.innerHTML = '<div class="empty">Sin eventos/tareas</div>';
+  } else {
+    items.sort((a,b)=> new Date(a.event_date) - new Date(b.event_date));
+
+    items.forEach(e=>{
+      const div = document.createElement('div');
+      div.className = 'event';
+
+      let pillClass = '';
+      let pillText = '';
+      if(e.type === 'task'){
+        pillClass = e.done ? 'ok' : 'warn';
+        pillText = e.done ? 'Completada' : 'Pendiente';
+      } else if(e.type === 'event'){
+        pillClass = 'event';
+        pillText = 'Evento';
+      } else if(e.type === 'concert'){
+        pillClass = 'concert';
+        pillText = 'Concierto';
+      } else if(e.type === 'conference'){
+        pillClass = 'conference';
+        pillText = 'Conferencia';
+      }
+
+      div.innerHTML = `
+        <div class="meta">
+          <div class="title">${e.title}</div>
+          <div class="time">
+            ${new Date(e.event_date).toLocaleString('es-MX',{
+              dateStyle:'short',
+              timeStyle:'short'
+            })}
+            ${e.notes ? ' - ' + e.notes : ''}
+          </div>
+        </div>
+        <div class="pill ${pillClass}">${pillText}</div>
+        <div class="actions">
+          <button class="btn small edit">✏️ Editar</button>
+          <button class="btn small delete">🗑️ Eliminar</button>
+        </div>
+      `;
+
+      div.querySelector('.edit').addEventListener('click', ()=>{
+        const clave = prompt("Ingresa la clave para editar:");
+        if(clave !== "01800"){ 
+          alert("Clave incorrecta ❌"); 
+          return; 
+        }
+        openModal();
+        state.editingId = e.id;
+        typeInput.value = e.type;
+        titleInput.value = e.title;
+        dateInput.value = e.event_date.slice(0,16); // formato válido para datetime-local
+        notesInput.value = e.notes || '';
+        doneInput.checked = e.done;
+      });
+
+      div.querySelector('.delete').addEventListener('click', async ()=>{
+        const clave = prompt("Ingresa la clave para eliminar:"); 
+        if(clave !== "01800"){ 
+          alert("Clave incorrecta ❌"); 
+          return; 
+        }
+        await sb.from('agenda_items').delete().eq('id', e.id);
+      });
+
+      eventList.appendChild(div);
+    });
+  }
+}
+
+// 📦 Cargar datos desde Supabase
+async function loadAll(){
+  const { data, error } = await sb
+    .from('agenda_items')
+    .select('*')
+    .order('event_date', { ascending: true });
+  if(error){ console.error(error); return; }
+  state.items = data || [];
+  renderCalendar();
+  renderEvents();
+}
+
+// ➕ Guardar nuevo ítem
+saveBtn.addEventListener('click', async ()=>{
+  if(!titleInput.value) return;
+
+  const payload = {
+    type: typeInput.value,
+    event_date: dateInput.value,
+    title: titleInput.value,
+    notes: notesInput.value,
+    done: typeInput.value==='task' ? doneInput.checked : false
+  };
+
+  if(state.editingId){
+    await sb.from('agenda_items').update(payload).eq('id', state.editingId);
+    state.editingId = null;
+  } else {
+    await sb.from('agenda_items').insert([payload]);
+  }
+
+  closeModal();
+});
+
+// ❌ Eliminar ítem
+async function deleteItem(id){
+  await sb.from('agenda_items').delete().eq('id', id);
+}
+
+// 🔄 Suscripción realtime
+const channel = sb
+  .channel('agenda-rt')
+  .on('postgres_changes', { event: '*', schema: 'public', table: 'agenda_items' }, (payload) => {
+    const { eventType, new: after, old: before } = payload;
+    if(eventType === 'INSERT'){
+      state.items.push(after);
+    }else if(eventType === 'UPDATE'){
+      const i = state.items.findIndex(x=>x.id === after.id);
+      if(i>-1) state.items[i] = after;
+    }else if(eventType === 'DELETE'){
+      const i = state.items.findIndex(x=>x.id === before.id);
+      if(i>-1) state.items.splice(i,1);
+    }
+    renderCalendar();
+    renderEvents();
+  });
+
+// 📌 Modal
+function openModal(){
+  modal.style.display='block';
+  dateInput.value = toKey(state.selected);
+  titleInput.value = '';
+  notesInput.value = '';
+  doneInput.checked = false;
+}
+function closeModal(){ modal.style.display='none'; }
+
+newEventBtn.addEventListener('click', ()=>{
+  const clave = prompt("Ingresa la clave para crear un nuevo evento:");
+  if(clave !== "01800"){ 
+    alert("Clave incorrecta ❌"); 
+    return; 
+  }
+  openModal();
+  state.editingId = null; // aseguramos que sea un nuevo ítem
+});
+
+cancelBtn.addEventListener('click', closeModal);
+
+// ⏪⏩ Navegación meses
+prevMonthBtn.addEventListener('click',()=>{
+  state.cursor = new Date(state.cursor.getFullYear(), state.cursor.getMonth()-1, 1);
+  renderCalendar();
+});
+nextMonthBtn.addEventListener('click',()=>{
+  state.cursor = new Date(state.cursor.getFullYear(), state.cursor.getMonth()+1, 1);
+  renderCalendar();
+});
+refreshBtn.addEventListener('click', loadAll);
+
+// 🚀 Inicialización
+(async function init(){
+  await channel.subscribe();
+  await loadAll();
+})();
+  
+  // Obtener el año actual
+const currentYear = new Date().getFullYear();
+
+// Seleccionar todos los elementos con la clase "year"
+const yearElements = document.querySelectorAll(".year");
+
+// Insertar el año en cada uno
+yearElements.forEach(el => {
+  el.textContent = currentYear;
+});
+  </script>
+</body>
+</html>
