@@ -1,11 +1,29 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Panel de conocimiento</title>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+  <!-- Google adsense monetizacion -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  
+  <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  
+  <title>Panel de conocimiento negocio- Gieovanny Frias</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <meta name="title" content="Panel de conocimiento negocio"/>
+    <meta name="description" content="Este panel de conocimiento muestra todo disponible de un negocio."/>
+    <meta name="robots" content="index"/>
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
 </head>
 <body>
   <main class="page">
@@ -13,7 +31,7 @@
       <!-- Columna izquierda: imagen y acciones -->
       <aside class="kp-left">
         <div class="kp-image">
-          <img id="kp-image" alt="" />
+          <img class="img_1" id="kp-image" alt="" />
         </div>
         <div class="kp-actions">
           <a id="kp-website" class="kp-btn" target="_blank" rel="noopener">Sitio web</a>
@@ -80,7 +98,12 @@ body {
   box-shadow: var(--shadow);
   padding: 20px;
 }
-
+    @media only screen and (min-width:320px) and (max-width:430px){
+.knowledge-panel {
+  display: block;
+      }
+  }
+  
 @media (max-width: 800px) {
   .knowledge-panel { grid-template-columns: 1fr; }
 }
@@ -95,11 +118,20 @@ body {
   background: #eee;
   border: 1px solid var(--border);
 }
-.kp-image img {
+.kp-image .img_1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+    @media only screen and (min-width:320px) and (max-width:430px){
+
+.kp-image .img_1 {
+    width: 200px;
+  }
+      .kp-image {
+            width: min-content;
+      }
+  }
 
 .kp-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .kp-btn {
@@ -184,6 +216,12 @@ body {
   grid-template-columns: 140px 1fr;
   gap: 8px;
 }
+      @media only screen and (min-width:320px) and (max-width:430px){
+.kp-fact {
+    grid-template-columns:1fr;
+
+        }
+  }
 .kp-fact .label { color: var(--muted); }
 .kp-fact .value a { color: var(--link); text-decoration: none; }
 .kp-fact .value a:hover { text-decoration: underline; }
