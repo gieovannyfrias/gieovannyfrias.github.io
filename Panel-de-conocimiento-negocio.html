@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de conocimiento</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="page">
+    <section class="knowledge-panel" role="region" aria-label="Panel de conocimiento">
+      <!-- Columna izquierda: imagen y acciones -->
+      <aside class="kp-left">
+        <div class="kp-image">
+          <img id="kp-image" alt="" />
+        </div>
+        <div class="kp-actions">
+          <a id="kp-website" class="kp-btn" target="_blank" rel="noopener">Sitio web</a>
+          <a id="kp-map" class="kp-btn outline" target="_blank" rel="noopener">Mapa</a>
+        </div>
+        <div class="kp-social" id="kp-social" aria-label="Perfiles sociales"></div>
+      </aside>
+
+      <!-- Columna derecha: nombre, descripción y datos -->
+      <div class="kp-right">
+        <header class="kp-header">
+          <h1 id="kp-title"></h1>
+          <p id="kp-subtitle" class="kp-subtitle"></p>
+        </header>
+
+        <div class="kp-description">
+          <p id="kp-description"></p>
+          <button id="kp-readmore" class="linklike" aria-expanded="false">Ver más</button>
+        </div>
+
+        <div class="kp-facts" id="kp-facts" aria-label="Datos principales"></div>
+
+        <div class="kp-availability" id="kp-availability"></div>
+
+        <div class="kp-people-also" id="kp-people-also" aria-label="Otros también buscan"></div>
+      </div>
+    </section>
+  </main>
+  <hr>
+<style>
+  
+  :root {
+  --text: #202124;
+  --muted: #5f6368;
+  --link: #1a73e8;
+  --border: #dadce0;
+  --bg: #fff;
+  --chip-bg: #f1f3f4;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color: var(--text);
+  background: black;
+}
+
+.page {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.knowledge-panel {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .knowledge-panel { grid-template-columns: 1fr; }
+}
+
+.kp-left { display: flex; flex-direction: column; gap: 16px; }
+
+.kp-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eee;
+  border: 1px solid var(--border);
+}
+.kp-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kp-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.kp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--link);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+  .kp-btn, .kp-chip {
+    padding: 12px 16px; font-size: 16px;
+  }
+.kp-btn.outline {
+  background: transparent;
+  color: var(--link);
+  border-color: var(--link);
+}
+
+.kp-social { display: flex; flex-wrap: wrap; gap: 8px; }
+.kp-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--chip-bg);
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+}
+
+.kp-right { display: flex; flex-direction: column; gap: 16px; }
+
+.kp-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: clamp(20px, 5vw, 28px);
+
+  }
+
+.kp-subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.kp-description p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.5;
+}
+.linklike {
+  margin-top: 6px;
+  background: none;
+  border: none;
+  color: var(--link);
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.kp-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+@media (max-width: 600px) {
+  .kp-facts { grid-template-columns: 1fr; }
+}
+.kp-fact {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+}
+.kp-fact .label { color: var(--muted); }
+.kp-fact .value a { color: var(--link); text-decoration: none; }
+.kp-fact .value a:hover { text-decoration: underline; }
+
+.kp-availability {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.kp-people-also {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.kp-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text);
+}
+.kp-chip:hover {
+  border-color: var(--link);
+}
+
+  </style>
+  <script>
+  
+  // Ejemplo de datos (puedes sustituir por fetch desde tu API)
+const entity = {
+  name: "Gieovanny Frias",
+  subtitle: "Servicio de producción de vídeo",
+  description: "Gieovanny Frías es una marca personal digital que representa una propuesta creativa multifacética en el mundo del contenido online. Como Youtuber, influencer, Streamer, Bloguero o creador digital, Artista musical y Modelo, donde se desenvuelve en diversas plataformas como YouTube, Facebook, Instagram, Twitter, Twitch, Kick, Spotify, blogs y redes sociales, combinando entretenimiento, comunicación, musica, producción de video y expresión artística.",
+  image: "https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000",
+  website: "https://www.gieovannyfrias.com",
+  map: "https://www.google.com/maps/place/Gieovanny+Fr%C3%ADas/@25.9890485,-113.0848233,3768653m/data=!3m1!1e3!4m6!3m5!1s0x85ce113b9064d92f:0x50e8745db61089c6!8m2!3d23.5541269!4d-102.6205!16s%2Fg%2F11y9_rkq2d?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+  facts: [
+    { label: "Dirección", value: "México, Ciudad de México" },
+    { label: "Horarios", value: "Lun-Dom: 24 hrs" },
+    { label: "Teléfono", value: "+52 55 9533 2151" },
+    { label: "Fundación", value: "2023" },
+    { label: "Precio", value: "NA" },
+    { label: "Sitio oficial", value: { text: "www.gieovannyfrias.com", href: "https://www.gieovannyfrias.com" } },
+  ],
+  social: [
+    { name: "Instagram", href: "https://instagram.com/gieovannyfrias.com" },
+    { name: "Facebook", href: "https://facebook.com/gieovannyfrias.com" },
+    { name: "X", href: "https://x.com/gieovannyfrias.com" },
+  ],
+  availability: { status: "Abierto ahora", note: "Cierra nunca" },
+  peopleAlsoSearch: ["Editor de video", "Medios sociales", "Streaming", "Marcas"]
+};
+
+function renderKP(data) {
+  const byId = (id) => document.getElementById(id);
+
+  // Imagen
+  const img = byId("kp-image");
+  img.src = data.image;
+  img.alt = `Imagen de ${data.name}`;
+
+  // Acciones
+  const website = byId("kp-website");
+  website.href = data.website || "#";
+  website.textContent = "Sitio web";
+
+  const map = byId("kp-map");
+  map.href = data.map || "#";
+  map.textContent = "Mapa";
+
+  // Título y subtítulo
+  byId("kp-title").textContent = data.name;
+  byId("kp-subtitle").textContent = data.subtitle || "";
+
+  // Descripción con "ver más"
+  const descEl = byId("kp-description");
+  const btnMore = byId("kp-readmore");
+  const fullText = data.description || "";
+  const shortText = truncateSentence(fullText, 220);
+
+  let expanded = false;
+  descEl.textContent = shortText;
+  btnMore.style.display = fullText.length > shortText.length ? "inline" : "none";
+  btnMore.addEventListener("click", () => {
+    expanded = !expanded;
+    descEl.textContent = expanded ? fullText : shortText;
+    btnMore.textContent = expanded ? "Ver menos" : "Ver más";
+    btnMore.setAttribute("aria-expanded", String(expanded));
+  });
+
+  // Facts
+  const factsEl = document.getElementById("kp-facts");
+  factsEl.innerHTML = "";
+  (data.facts || []).forEach((f) => {
+    const row = document.createElement("div");
+    row.className = "kp-fact";
+
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = f.label;
+
+    const value = document.createElement("div");
+    value.className = "value";
+    if (typeof f.value === "string") {
+      value.textContent = f.value;
+    } else if (f.value?.href) {
+      const a = document.createElement("a");
+      a.href = f.value.href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = f.value.text || f.value.href;
+      value.appendChild(a);
+    }
+
+    row.append(label, value);
+    factsEl.appendChild(row);
+  });
+
+  // Social
+  const socialEl = document.getElementById("kp-social");
+  socialEl.innerHTML = "";
+  (data.social || []).forEach((s) => {
+    const a = document.createElement("a");
+    a.href = s.href;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = s.name;
+    socialEl.appendChild(a);
+  });
+
+  // Disponibilidad
+  const availEl = document.getElementById("kp-availability");
+  availEl.innerHTML = "";
+  if (data.availability?.status) {
+    const dot = document.createElement("span");
+    dot.style.width = "8px";
+    dot.style.height = "8px";
+    dot.style.borderRadius = "50%";
+    dot.style.display = "inline-block";
+    dot.style.background = data.availability.status.includes("Abierto") ? "#34a853" : "#ea4335";
+
+    const text = document.createElement("span");
+    text.textContent = `${data.availability.status}${data.availability.note ? " · " + data.availability.note : ""}`;
+
+    availEl.append(dot, text);
+  }
+
+  // Otros también buscan
+  const alsoEl = document.getElementById("kp-people-also");
+  alsoEl.innerHTML = "";
+  (data.peopleAlsoSearch || []).forEach((term) => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "kp-chip";
+    chip.textContent = term;
+    chip.addEventListener("click", () => {
+      // Aquí podrías disparar una búsqueda o navegación
+      console.log("Buscar:", term);
+    });
+    alsoEl.appendChild(chip);
+  });
+}
+
+function truncateSentence(text, max) {
+  if (!text || text.length <= max) return text;
+  const trimmed = text.slice(0, max);
+  const lastSpace = trimmed.lastIndexOf(" ");
+  return trimmed.slice(0, lastSpace > 0 ? lastSpace : max) + "…";
+}
+
+// Inicializa
+document.addEventListener("DOMContentLoaded", () => {
+  renderKP(entity);
+});
+
+  </script>
+</body>
+</html>
