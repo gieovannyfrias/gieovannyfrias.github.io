@@ -985,10 +985,25 @@ background: linear-gradient(90deg, rgba(19,4,5,1) 0%, rgba(255,0,0,1) 50%, rgba(
     }    
     
 .snap-container {
-  /*height: 100vh;*/
-  overflow: auto;  
-  scroll-snap-type: y mandatory;  
+  /* 1. Usa dvh (dynamic viewport height) para evitar saltos en móviles */
+  height: 100dvh; 
+  
+  /* 2. Scroll suave y snap obligatorio */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  
+  /* 3. Mejora el rendimiento táctil y evita el "rebote" elástico excesivo */
+  -webkit-overflow-scrolling: touch; 
+  overscroll-behavior-y: contain;
 }
+
+/* 4. Importante: los hijos deben definir dónde se detienen */
+.snap-container > section {
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* Evita que el usuario se pase de largo varias secciones */
+}
+
     .title_anos_1 {
          font-family: "Luckiest Guy", cursive;
   font-weight: 400;
