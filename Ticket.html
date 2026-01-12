@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+  <!-- Google adsense monetizacion -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  
+  <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  
+  <title>Ticket - QR</title>
+    <meta name="title" content="Conferencia - QR"/>
+
+    <meta name="description" content="Consulta nuestas conferencias por medio de pago en QR."/>
+<meta name="robots" content="index, noimageindex">
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
+  <style>
+    body {
+  margin: 0;
+    padding: 1rem;
+    display: flex;
+    min-height: 100vh;
+    background: #0b0f14;
+    font-family: 'Inter', sans-serif;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+          /* Escala el contenido al 75% */
+    transform: scale(0.75);
+    /* Define el punto de origen de la escala (esquina superior izquierda) */
+    transform-origin: top left;
+    /* Ajusta el ancho para que el layout se comporte como si estuviera al 100% */
+    width: 133.33%; /* 100 / 0.75 = 133.33 */
+    /* Opcional: Elimina márgenes predeterminados del body */
+    margin: 0;
+    padding: 0;
+    }
+    .ticket {
+      position: relative;
+      width: 100%; max-width: 420px;
+      padding: 2rem;
+      border-radius: 24px;
+      text-align: center;
+      color: #e6edf7;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(110,231,255,0.4);
+      box-shadow: 0 0 25px rgba(110,231,255,.4), 0 0 40px rgba(167,139,250,.3);
+      overflow: hidden;
+      animation: floatUp 1s ease;
+    }
+    .ticket::before, .ticket::after {
+      content: ""; position: absolute; width: 40px; height: 40px;
+      background: #0b0f14; border-radius: 50%;
+    }
+    .ticket::before { top: 50%; left: -20px; transform: translateY(-50%); }
+    .ticket::after  { top: 50%; right: -20px; transform: translateY(-50%); }
+
+    .ticket h1 { font-size: 1.4rem; margin-bottom: .5rem; color: #6ee7ff; text-transform: uppercase; }
+    .ticket h2 { font-size: 1rem; margin-bottom: 1rem; color: #a78bfa; }
+    .ticket p  { margin: .3rem 0; color: #d1d5db; font-size: .9rem; }
+
+   .qr {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical dentro del contenedor */
+}
+.qr canvas, .qr img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+}
+
+    .legend { margin-top: .8rem; font-size: .8rem; color: #6ee7ff; font-style: italic; }
+    .btn { display: inline-block; margin-top: 1rem; padding: .7rem 1rem; border-radius: 12px;
+      background: linear-gradient(90deg, #6ee7ff, #a78bfa); color: #042b33; font-weight: 700; text-decoration: none; }
+    @keyframes floatUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 480px) {
+      .ticket { max-width: 90%;padding: 1.2rem; border-radius: 20px; }
+      .ticket h1 { font-size: 1.2rem; } .ticket h2 { font-size: .95rem; } .ticket p { font-size: .85rem; }
+      .qr canvas, .qr img { width: 100px; height: 100px; }
+      .btn { width: 100%; padding: .9rem; }
+    }
+    .badge {
+      position: absolute;
+      top: 12px; right: -10px;
+      padding: .4rem .7rem;
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 600;
+      color: #fff;
+      transform: rotate(45deg);
+    }
+    .badge.disponible {
+      background: #34d399;
+      box-shadow: 0 0 10px rgba(52,211,153,.6);
+    }
+    .badge.nodisponible {
+      background: #ef4444;
+      box-shadow: 0 0 10px rgba(239,68,68,.6);
+    }
+    .countdown {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #6ee7ff;
+  text-align: center;
+  margin: 1rem 0;
+}
+    @media (max-width: 480px) {
+  .ticket { padding: 1.2rem; border-radius: 20px; }
+  .ticket h1 { font-size: 1.2rem; }
+  .ticket h2 { font-size: .95rem; }
+  .ticket p { font-size: .85rem; }
+  .qr canvas, .qr img { width: 100px; height: 100px; }
+  .btn { width: 100%; padding: .9rem; }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Tickets -->
+  <div class="ticket">
+    <h1>🎟 Entrada General</h1>
+    <span class="badge disponible" id="badge-general">Disponible</span>
+    <div id="countdown-general" class="countdown"></div>
+    <h2>Acceso básico</h2>
+    <p>Ideal para una experiencia dinámica, sin asiento asignado.</p>
+    <p class="">Taller</p>
+    <div class="qr" id="qr-general"></div>
+    <p class="legend" id="legend-general">Tu pase estándar para la conferencia.</p>
+  </div>
+
+  <div class="ticket">
+    <span class="badge nodisponible" id="badge-dias">No disponible</span>
+    <h1>🎟 Por Día / Varios Días</h1>
+    <div id="countdown-dias" class="countdown"></div>
+    <h2>Flexibilidad total</h2>
+    <p>Elige un día o cubre toda la conferencia.</p>
+    <div class="qr" id="qr-dias"></div>
+    <p class="legend" id="legend-dias">Pase adaptable a tu agenda.</p>
+  </div>
+
+  <div class="ticket">
+    <span class="badge disponible" id="badge-early">Disponible</span>
+    <h1>🎟 Early Bird</h1>
+    <div id="countdown-early" class="countdown"></div>
+    <h2>Anticipada</h2>
+    <p>Descuento por comprar con antelación.</p>
+    <div class="qr" id="qr-early"></div>
+    <p class="legend" id="legend-early">Entrada anticipada con beneficios de precio.</p>
+  </div>
+
+  <div class="ticket">
+    <span class="badge nodisponible" id="badge-vip">No disponible</span>
+    <h1>🎟 VIP / Premium</h1>
+    <div id="countdown-vip" class="countdown"></div>
+    <h2>Acceso exclusivo</h2>
+    <p>Asientos preferenciales y zonas VIP.</p>
+    <div class="qr" id="qr-vip"></div>
+    <p class="legend" id="legend-vip">Tu acceso legendario.</p>
+  </div>
+
+  <div class="ticket">
+    <span class="badge disponible" id="badge-meet">Disponible</span>
+    <h1>🎟 Meet & Greet</h1>
+    <div id="countdown-meet" class="countdown"></div>
+    <h2>Fan Experience</h2>
+    <p>Encuentros con ponentes.</p>
+    <div class="qr" id="qr-meet"></div>
+    <p class="legend" id="legend-meet">Paquete especial para fans.</p>
+  </div>
+
+  <div class="ticket">
+    <span class="badge nodisponible" id="badge-platinum">No disponible</span>
+    <h1>🎟 Platinum</h1>
+    <div id="countdown-platinum" class="countdown"></div>
+    <h2>Dinámicas</h2>
+    <p>Entradas con precios variables según demanda.</p>
+    <div class="qr" id="qr-platinum"></div>
+    <p class="legend" id="legend-platinum">Cupo reservado de alta demanda.</p>
+  </div>
+
+  <div class="ticket">
+    <span class="badge disponible" id="badge-exclusivas">Disponible</span>
+    <h1>🎟 Exclusivas</h1>
+    <div id="countdown-exclusivas" class="countdown"></div>
+    <h2>Miembros / Patrocinadores</h2>
+    <p>Solo accesibles con códigos especiales.</p>
+    <div class="qr" id="qr-exclusivas"></div>
+    <p class="legend" id="legend-exclusivas">Entrada exclusiva para miembros.</p>
+  </div>
+
+  <!-- Librería QR -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script>
+    const tickets = [
+      {id:"qr-general", text:"https://www.gieovannyfrias.com/Compat"},
+      {id:"qr-dias", text:"https://www.gieovannyfrias.com/Compat"},
+      {id:"qr-early", text:"https://www.gieovannyfrias.com/Compat"},
+      {id:"qr-vip", text:"https://www.gieovannyfrias.com/Compat"},
+      {id:"qr-meet", text:"https://www.gieovannyfrias.com/Compat"},
+      {id:"qr-platinum", text:"https://www.gieovannyfrias.com/Compat"},
+      {id:"qr-exclusivas", text:"https://www.gieovannyfrias.com/Compat"}
+    ];
+
+    tickets.forEach(t => {
+      const container = document.getElementById(t.id);
+      new QRCode(container, {
+        text: t.text,
+        width: 120,
+        height: 120,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
+      container.style.cursor = "pointer";
+      container.onclick = () => window.open(t.text, "_blank");
+    });
+    /*contador regresivo*/
+  const countdowns = [
+    {id: "countdown-general", date: new Date("Jan 20, 2026 10:00:00")},
+    {id: "countdown-vip", date: new Date("Jan 21, 2026 09:00:00")},
+    {id: "countdown-meet", date: new Date("Jan 22, 2026 15:00:00")},
+    {id: "countdown-exclusivas", date: new Date("Jan 23, 2026 12:00:00")},
+    {id: "countdown-platinum", date: new Date("Jan 24, 2026 11:00:00")},
+    {id: "countdown-early", date: new Date("Jan 25, 2026 08:00:00")},
+    {id: "countdown-dias", date: new Date("Jan 26, 2026 14:00:00")}
+  ];
+
+  countdowns.forEach(c => {
+    const el = document.getElementById(c.id);
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = c.date.getTime() - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        el.innerHTML = "🎉 ¡Evento iniciado!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      el.innerHTML = `⏳ Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  });
+    // Configuración de disponibilidad por fecha disponible y no disponible en automatico segun la fecha y hora
+  const ticketsStatus = [
+    {
+      badgeId:"badge-general",
+      qrId:"qr-general",
+      legendId:"legend-general",
+      deadline: new Date("Jan 20, 2026 23:59:59"),
+      url:"https://www.gieovannyfrias.com/Compat"
+    },
+    {
+      badgeId:"badge-vip",
+      qrId:"qr-vip",
+      legendId:"legend-vip",
+      deadline: new Date("Jan 18, 2026 23:59:59"),
+      url:"https://www.gieovannyfrias.com/Compat"
+    },
+    {
+      badgeId:"badge-meet",
+      qrId:"qr-meet",
+      legendId:"legend-meet",
+      deadline: new Date("Jan 22, 2026 23:59:59"),
+      url:"https://www.gieovannyfrias.com/Compat"
+    },
+    {
+      badgeId:"badge-dias",
+      qrId:"qr-dias",
+      legendId:"legend-dias",
+      deadline: new Date("Jan 19, 2026 23:59:59"),
+      url:"https://www.gieovannyfrias.com/Compat"
+    },
+    {
+      badgeId:"badge-early",
+      qrId:"qr-early",
+      legendId:"legend-early",
+      deadline: new Date("Jan 21, 2026 23:59:59"),
+      url:"https://www.gieovannyfrias.com/Compat"
+    },
+    {
+      badgeId:"badge-platinum",
+      qrId:"qr-platinum",
+      legendId:"legend-platinum",
+      deadline: new Date("Jan 23, 2026 23:59:59"),
+      url:"https://www.gieovannyfrias.com/Compat"
+    },
+    {
+      badgeId:"badge-exclusivas",
+      qrId:"qr-exclusivas",
+      legendId:"legend-exclusivas",
+      deadline: new Date("Jan 24, 2026 23:59:59"),
+      url:"https://www.gieovannyfrias.com/Compat"
+    }
+  ];
+
+  ticketsStatus.forEach(t => {
+    const badge = document.getElementById(t.badgeId);
+    const container = document.getElementById(t.qrId);
+    const legend = document.getElementById(t.legendId);
+    const now = new Date();
+
+    if (now >= t.deadline) {
+      // 🔴 Expirado
+      badge.textContent = "No disponible";
+      badge.classList.remove("disponible");
+      badge.classList.add("nodisponible");
+
+      legend.textContent = "⛔ Este pase ha caducado.";
+      container.style.cursor = "not-allowed";
+      container.onclick = () => alert("⛔ Este pase ya caducó");
+    } else {
+      // 🟢 Disponible
+      badge.textContent = "Disponible";
+      badge.classList.remove("nodisponible");
+      badge.classList.add("disponible");
+
+      container.style.cursor = "pointer";
+container.onclick = () => window.open(t.url, "_blank");
+    }
+  });
+  </script>
+</body>
+</html>
