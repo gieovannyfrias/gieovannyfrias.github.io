@@ -292,7 +292,7 @@
 <div class="slide" style="background-image:url('https://lh3.googleusercontent.com/d/1DwxJh3gNycdUeG9SJbyqMldEjgKO62Hu=w1000')">
   <div class="overlay"></div>
   <div class="month">May</div>
-  <div class="event_1">: Terrazas modernas con mobiliario minimalista y cielo despejado</div>
+  <div class="event_1">Terrazas modernas con mobiliario minimalista y cielo despejado</div>
 </div>
 
 <div class="slide" style="background-image:url('https://lh3.googleusercontent.com/d/1KMuisH3nSxBAwwS-EEXwIDiw31EjHcKJ=w1000')">
@@ -1225,12 +1225,36 @@ svg:not(:root).svg-inline--fa {
   align-items: center;
   text-align: center;
   color: white;
+  padding: 1rem; /* espacio interno para móviles */
 }
 
 .slide.active {
   opacity: 1;
   z-index: 1;
 }
+
+/* 📱 Ajustes para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .slide {
+    height: auto;          /* no fuerza toda la altura */
+    min-height: 100vh;     /* asegura que cubra la pantalla */
+    background-size: contain; /* evita recortes bruscos */
+    font-size: 0.9rem;     /* texto más pequeño */
+    padding: 2rem 1rem;
+  }
+}
+
+/* 📱 Ajustes para pantallas pequeñas (teléfonos) */
+@media (max-width: 480px) {
+  .slide {
+    flex-direction: column;
+    justify-content: flex-start; /* contenido arriba */
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+}
+
 
 .overlay {
   border: none;
