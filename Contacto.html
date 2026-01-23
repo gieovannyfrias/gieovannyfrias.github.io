@@ -420,6 +420,7 @@
 
     <div class="messenger">
     
+  
   <!-- Botón flotante con SVG para abrir/cerrar el chatbot -->
   <button class="chat-fab" id="chat-fab" aria-label="Abrir chat">
     <!-- Ícono SVG (burbuja de chat) -->
@@ -434,10 +435,9 @@
       <div id="chat-header">
         <h4>Asistente con Gieovanny Frias</h4>
         <div id="chat-banner" role="alert">
-  <span>Aviso: Cuando termines con el asistente usa el comando /clear para borrar.</span>
+  <span>Aviso: Cuando termines con el asistente usa el comando /clear para borrar el historial.</span>
   <button id="banner-close" aria-label="Cerrar aviso">✕</button>
 </div>
-
         <button id="chat-close" aria-label="Cerrar">✕</button>
       </div>
 
@@ -1118,7 +1118,7 @@ svg:not(:root).svg-inline--fa {
       padding: 0;
       margin: 0;
     }
-     /* Botón flotante con SVG */
+    /* Botón flotante con SVG */
     .chat-fab {
       position: fixed;
       right: 20px;
@@ -1140,14 +1140,14 @@ svg:not(:root).svg-inline--fa {
 
     .chat-fab svg { width: 28px; height: 28px; fill: #fff; }
 
-     /* Contenedor del chatbot con animación de deslizamiento */
+    /* Contenedor del chatbot con animación de deslizamiento */
     #chat-wrapper {
       position: fixed;
       right: 20px;
       bottom: 90px;
-      width: 350px;
+      width: 380px;
       max-width: calc(100vw - 40px);
-      height: 500px;
+      height: 560px;
       transform: translateY(20px);
       opacity: 0;
       pointer-events: none;
@@ -1159,7 +1159,9 @@ svg:not(:root).svg-inline--fa {
       transform: translateY(0);
       opacity: 1;
       pointer-events: auto;
-    } #chat-container {
+    }
+
+    #chat-container {
       width: 100%;
       height: 100%;
       background: #fff;
@@ -1188,7 +1190,7 @@ svg:not(:root).svg-inline--fa {
     #chat-header {
   position: relative;
 }
-#chat-banner {
+    #chat-banner {
   position: absolute;
   left: 0;
   right: 0; 
@@ -1210,8 +1212,9 @@ svg:not(:root).svg-inline--fa {
   cursor: pointer;
   font-size: 14px;
 }
-#chat-banner.hidden { display: none; }
-
+#chat-banner.hidden {
+  display: none;
+    }
     #chat-close {
       background: transparent;
       border: none;
@@ -1494,7 +1497,6 @@ background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%
             
 
   </style>
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
   <script>
   function showAndroidToast(toast) {
@@ -1512,62 +1514,45 @@ const yearElements = document.querySelectorAll(".year");
 yearElements.forEach(el => {
   el.textContent = currentYear;
 });
-    /*comment ?*/
- const containers = document.querySelectorAll('.tooltip-container');
-
-  containers.forEach(container => {
-    const helpIcon = container.querySelector('.help-icon');
-    const tooltip = container.querySelector('.tooltip-content');
-
-    helpIcon.addEventListener('click', () => {
-      // 🔹 Cerrar todos los tooltips antes de abrir el actual
-      containers.forEach(c => {
-        const t = c.querySelector('.tooltip-content');
-        const btn = c.querySelector('.help-icon');
-        t.classList.remove('visible');
-        btn.setAttribute('aria-expanded', false);
-      });
-
-      // 🔹 Abrir solo el tooltip clicado
-      tooltip.classList.add('visible');
-      helpIcon.setAttribute('aria-expanded', true);
-    });
-
-    // 🔹 Cerrar si se hace clic fuera
-    document.addEventListener('click', (event) => {
-      if (!container.contains(event.target)) {
-        tooltip.classList.remove('visible');
-        helpIcon.setAttribute('aria-expanded', false);
-      }
-    });
-
-    // 🔹 Cerrar con Escape
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        tooltip.classList.remove('visible');
-        helpIcon.setAttribute('aria-expanded', false);
-      }
-    });
-  });
-    /*messenger*/
-    // Conexión a Supabase
-    const client = supabase.createClient(
-      "https://meriqfkkxbkmzdrjofog.supabase.co",   // cambia por tu URL
-      "sb_publishable_Ppdw-E5S9_OtGT-2GI8BHA_4weKy1uq"                        // cambia por tu anon key
-    );
-
-    let rules = {};
-
-    // Cargar reglas desde Supabase
-    async function loadRules() {
-      const { data, error } = await client.from("rules").select("*");
-      if (error) {
-        console.error("Error cargando reglas:", error.message);
-        return;
-      }
-      rules = {};
-      data.forEach(r => { rules[r.keyword] = r.reply; });
-    }
+   // Reglas simples
+    const rules = {
+      "hola": "¡Hola! Soy tu chatbot de Gieovanny Frias 😃",
+      "adios": "Hasta luego 👋",
+      "gracias": "¡De nada! Estoy aquí para ayudarte.",
+      "horario": "Abrimos todos los días de lunes a domingo las 24 hrs",
+      "precio": "Nuestros precios varían según el producto.",
+      "agenda":"Entra a nuestra agenda oficial donde podras enterarte en tiempo real https://www.gieovannyfrias.com/Agenda",
+      "contacto": "Puedes escribirnos al correo contacto@gieovannyfrias.com es oficial",
+      "direccion": "Estamos ubicados en México, Ciudad de México.",
+      "telefono": "Nuestro número es +52 55 9533 2151 Ext.101",
+      "servicios":" No ofrecemos soporte técnico y capacitación.",
+      "servicios": "Ofrecemos soporte técnico, ventas y capacitación.",
+      "whatsapp":"Nuestro whatsapp oficial es +52 55 51 57 01 60",
+      "telegram":" Entra al enlace de telegram de nuestro canal a https://t.me/gieovannyfrias",
+      "canal":"Entra al enlace de whatpsaap de nuestro canal a https://www.whatsapp.com/channel/0029VakXZdV4SpkO4Kib6Q22",
+      "redes":" Entérate nuestras de redes oficiales a https://links.gieovannyfrias.com",
+      "facebook":"Entra a facebook oficial https://www.facebook.com/gieovannyfrias",
+      "instagram":"Entra a instagram oficial a https://www.instagram.com/gieovannyfrias/",
+      "donacion":"Entra a nuestra donación para ayudar al creador de manera voluntario https://donate.stripe.com/eVa9B10vc3Qg8N25kl",
+      "saludos":"Para tener tu propio video personalizado po medio de saludos, cumpleaños o propagandas a https://www.cameo.com/gieovannyfrias por medios de fans",
+      "tienda":"Entra a nuestra tienda oficial https://www.gieovannyfrias.com/mi%20tienda",
+      "mensajeria":"Entra a mensajería premium de paga https://app.txt.com/p/gieovannyfrias",
+      "app":"Para tener la aplicación de android descárgalo desde nuestra pagina oficial https://www.gieovannyfrias.com/App ahi te enteras de lo que pasa o publicamos.",
+      "directorio":"Entra de todos los trabajadores (personas o empresas) que trabajamos https://www.gieovannyfrias.com/Directorio",
+      "empleo":"Quieres trabajo entra a https://www.gieovannyfrias.com/Empleo para saber de los detalles, horario y requisitos que pedimos para entrar con nosostros",
+      "tiktok":"Entra TikTok oficial https://www.tiktok.com/@gieovannyfrias",
+      "cv":"Nuestro curriculum oficial https://www.gieovannyfrias.com/Curr%C3%ADculum",
+      "manager":"Entra para saber el contacto directo https://www.gieovannyfrias.com/Management%20Team",
+      "contacto":"Puedes escribirnos al correo contacto@gieovannyfrias.com oficial o también a https://www.gieovannyfrias.com/Contacto encontraras todos los contactos oficiales o https://www.gieovannyfrias.com/Contactos directo.",
+      "podcast":"Nuestro podcast oficial https://www.gieovannyfrias.com/Podcast",
+      "noticias":"Entérate de nuestras noticias recientes, destacadas oficiales a https://www.gieovannyfrias.com/Noticias",
+      "premium":" No exhibimos contenido explicito https://onlyfans.com/gieovannyfrias , https://fansly.com/gieovannyfrias , https://mym.fans/Gieovannyfrias , https://www.luvi.fans/gieovannyfrias/ , https://www.passes.com/gieovannyfrias",
+      "citas":"Reserva tu lugar https://www.gieovannyfrias.com/Reservar-fans",
+      "youtube":"Entra a YouTube oficial https://www.youtube.com/@gieovannyfrias",
+      "twitter":"Entra a Twitter (X) oficial a https://x.com/gieovannyfrias",
+      "fans":"Enviame un correo de fans@gieovannyfrias.com para cualquier mensaje ,video o regalo"
+        
+    };
 
     function quitarAcentos(texto) {
       return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -1581,15 +1566,14 @@ yearElements.forEach(el => {
       return "No entendí tu mensaje 🤔";
     }
 
-    async function sendMessage() {
+    function sendMessage() {
       const chat = document.getElementById("chat");
       const input = document.getElementById("input");
       const userMsg = input.value.trim();
       if (!userMsg) return;
 
-      // Comando /clear
+      // /clear
       if (userMsg === "/clear") {
-        await client.from("messages").delete().neq("id", 0);
         chat.innerHTML = "";
         const botDiv = document.createElement("div");
         botDiv.className = "message bot";
@@ -1599,27 +1583,35 @@ yearElements.forEach(el => {
         return;
       }
 
-      // Comando /help
+      // /help
       if (userMsg === "/help") {
         const botDiv = document.createElement("div");
         botDiv.className = "message bot";
         botDiv.textContent =
-          "📖 Lista de comandos disponibles:\n" +
+          "📖 Comandos:\n" +
           "/help → muestra esta ayuda\n" +
           "/clear → borra el historial\n" +
-          Object.keys(rules).map(k => "/" + k + " → " + rules[k]).join("\n");
+          "/hola → saludo\n" +
+          "/adios → despedida\n" +
+          "/gracias → cortesía\n" +
+          "/horario → horario\n" +
+          "/precio → precios\n" +
+          "/contacto → contacto\n" +
+          "/direccion → ubicación\n" +
+          "/telefono → teléfono\n" +
+          "/servicios → servicios\n" +
+          "/fans → fans@gieovannyfrias.com";
         chat.appendChild(botDiv);
         chat.scrollTo({ top: chat.scrollHeight, behavior: "smooth" });
         input.value = "";
         return;
       }
 
-      // Mostrar mensaje del usuario
+      // Mensaje del usuario
       const userDiv = document.createElement("div");
       userDiv.className = "message user";
       userDiv.textContent = userMsg;
       chat.appendChild(userDiv);
-      await client.from("messages").insert({ role: "user", content: userMsg });
 
       // Respuesta del bot
       const botReply = getBotReply(userMsg);
@@ -1627,27 +1619,19 @@ yearElements.forEach(el => {
       botDiv.className = "message bot";
       botDiv.textContent = botReply;
       chat.appendChild(botDiv);
-      await client.from("messages").insert({ role: "bot", content: botReply });
 
       chat.scrollTo({ top: chat.scrollHeight, behavior: "smooth" });
       input.value = "";
     }
 
-    function executeCommand(cmd) {
-      document.getElementById("input").value = cmd;
-      sendMessage();
-      document.getElementById("sidebar").style.display = "none";
-    }
-
-    document.getElementById("input").addEventListener("keypress", e => {
-      if (e.key === "Enter") sendMessage();
-    });
-// Menú ☰
+    // Menú ☰
     const toggleBtn = document.getElementById("toggle-btn");
     const sidebar = document.getElementById("sidebar");
     toggleBtn.onclick = () => {
-      sidebar.style.display = sidebar.style.display === "flex" ? "none" : "flex";
+      const isOpen = sidebar.style.display === "flex";
+      sidebar.style.display = isOpen ? "none" : "flex";
     };
+
     function executeCommand(cmd) {
       document.getElementById("input").value = cmd;
       sendMessage();
@@ -1670,10 +1654,7 @@ yearElements.forEach(el => {
     document.getElementById("chat-close").onclick = () => {
       chatWrapper.classList.remove("open");
     };
-    // Inicializar reglas
-    loadRules();
-    
-
+    //aviso mensaje/clean
   const banner = document.getElementById('chat-banner');
   const bannerClose = document.getElementById('banner-close');
   bannerClose.addEventListener('click', () => banner.classList.add('hidden'));
