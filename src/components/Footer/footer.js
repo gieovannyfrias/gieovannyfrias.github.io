@@ -1,160 +1,84 @@
-// footer.js moderno 2026
-
-// Renderizar Footer dinámicamente
-function renderFooter() {
-  const footer = document.createElement("footer");
-  footer.classList.add("footer-modern");
-  footer.innerHTML = `
-    <div class="footer-container">
-      <!-- Logo / Nombre -->
-      <div class="footer-logo">
-        <h2>Noticias 2026</h2>
-        <p>Tu portal de información actualizada</p>
+const footerHTML = `
+  <div class="pie-pagina">
+    <footer class="footer">
+      <!-- Burbujas decorativas -->
+      <div class="bubbles">
+        ${Array.from({ length: 20 }).map((_, i) => {
+          const size = [2, 2.5, 3, 3.5, 4, 4.5, 5][i % 7];
+          const position = (i + 1) * 5;
+          const time = (2 + (i % 3) * 0.5).toFixed(1);
+          const delay = (i * 0.3).toFixed(1);
+          const distance = 7 + (i % 5) * 2;
+          return `<div class="bubble" style="--size:${size}rem; --position:${position}%; --time:${time}s; --delay:${delay}s; --distance:${distance}rem;"></div>`;
+        }).join("")}
       </div>
 
-      <!-- Enlaces rápidos -->
-      <div class="footer-links">
-        <h3>Enlaces rápidos</h3>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#acerca">Acerca de</a></li>
-          <li><a href="#categorias">Categorías</a></li>
-          <li><a href="#opinion">Opinión</a></li>
-          <li><a href="#multimedia">Multimedia</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
+      <!-- Contenido final -->
+      <div class="content-final">
+        <div class="container-final">
+          <div class="footer__label">
+            <h2 class="footer__title">Gieovanny Frias</h2>
+            <span class="footer__subtitle">Youtuber, Influencer, Streamer o creador digital</span>
+          </div>
 
-      <!-- Redes sociales -->
-      <div class="footer-social">
-        <h3>Síguenos</h3>
-        <div class="social-icons">
-          <a href="#">🌐 Facebook</a>
-          <a href="#">🐦 Twitter/X</a>
-          <a href="#">📸 Instagram</a>
-          <a href="#">▶️ YouTube</a>
+          <ul class="footer__links">
+            <li class="footer-li">
+              <a href="https://drive.google.com/file/d/1LWJyVwBbuv3goY2DdWCJ8l5p-SEKQ16x/view" class="footer__link">Políticas de privacidad</a>
+            </li>
+            <li class="footer-li">
+              <a href="https://drive.google.com/file/d/1pkTlVZ9pfXBuEUX4-hNlkj6N-gqyU9O2/view" class="footer__link">Términos y condiciones</a>
+            </li>
+            <li class="footer-li">
+              <a href="https://drive.google.com/file/d/1_hl20sgiB7Txi59MK62lvrTHmgfITBBh/view" class="footer__link">Políticas de cookies</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Copy final -->
+        <div class="footer__copy">
+          © <span class="year"></span> Todos los derechos reservados | Gieovanny Frias
         </div>
       </div>
+    </footer>
+  </div>
+`;
 
-      <!-- Sección Legal -->
-      <div class="footer-legal">
-        <h3>Información Legal</h3>
-        <ul>
-          <li><a href="#">Política de Privacidad</a></li>
-          <li><a href="#">Términos y Condiciones</a></li>
-          <li><a href="#">Aviso de Privacidad</a></li>
-          <li><a href="#">Política de Cookies</a></li>
-          <li><a href="#">Accesibilidad</a></li>
-        </ul>
-      </div>
-    </div>
+// Insertar el footer al final del body
+document.body.insertAdjacentHTML("beforeend", footerHTML);
 
-    <!-- Derechos -->
-    <div class="footer-bottom">
-      <p>© 2026 Noticias. Todos los derechos reservados.</p>
-    </div>
-  `;
-  document.body.appendChild(footer);
-}
-
-// Inyectar CSS dinámicamente
-(function addFooterCSS() {
-  const style = document.createElement("style");
-  style.innerHTML = `
-.footer-modern {
-  width: 100%;
-  background: linear-gradient(135deg, #1e1e2f, #0d0d1a);
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: 40px;
-  border-top: 3px solid #ff1e1e;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-logo h2 {
-  font-size: 1.6rem;
-  background: linear-gradient(90deg, #ff1e1e, #ffd700, #2575fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.footer-links h3,
-.footer-social h3,
-.footer-legal h3 {
-  margin-bottom: 12px;
-  font-size: 1.2rem;
-  color: #ffd700;
-}
-
-.footer-links ul, .footer-legal ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li, .footer-legal ul li {
-  margin-bottom: 8px;
-}
-
-.footer-links ul li a, .footer-legal ul li a {
-  text-decoration: none;
-  color: #ddd;
-  transition: color 0.3s ease;
-}
-
-.footer-links ul li a:hover, .footer-legal ul li a:hover {
-  color: #ff1e1e;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 12px;
-  text-decoration: none;
-  color: #ddd;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #ffd700;
-}
-
-.footer-legal {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* 📱 Adaptación a móviles */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+// Insertar estilos directamente desde JS
+const style = document.createElement("style");
+style.textContent = `
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background-color:transparent; font-family:"Open Sans", sans-serif; }
+  .footer__link { text-decoration:none; color:#fff; }
+  .footer-li { list-style:none; }
+  .pie-pagina { display:grid; grid-template-rows:1fr auto auto; grid-template-areas:"main" "footer"; min-height:100vh; overflow-x:hidden; }
+  .pie-pagina .footer { grid-area:footer; background:linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); display:grid; position:relative; z-index:1; }
+  .pie-pagina .footer .bubbles { position:absolute; top:0; left:0; right:0; height:6rem; background:inherit; }
+  .pie-pagina .footer .bubbles .bubble { position:absolute; left:var(--position,50%); background:inherit; border-radius:50%; animation:bubble-size var(--time,3s) linear infinite var(--delay,0s), bubble-move var(--time,3s) linear infinite var(--delay,0s); transform:translate(-50%,100%); }
+  .pie-pagina .footer .content-final { padding:6rem 1rem 2rem; background:inherit; z-index:2; }
+  .footer .content-final .container-final { max-width:768px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; color:#fff; }
+  .content-final h2 { margin-bottom:.25rem; font-size:2.25rem; }
+  .content-final span { font-size:.875rem; }
+  .footer__links { list-style:none; display:flex; flex-direction:row; column-gap:2rem; justify-content:center; }
+  .footer__links .footer__link { transition:all 150ms ease-out; display:inline-block; }
+  .footer__link:after { content:''; display:block; margin:auto; height:2px; width:0; background-color:red; transition:width .25s ease-out; }
+  .footer__link:hover:after { width:100%; }
+  .footer__copy { background:inherit; font-size:.875rem; text-align:center; color:#dcdcdc; padding:3rem 0 2rem; }
+  @keyframes bubble-size { 0%,75% { width:var(--size,4rem); height:var(--size,4rem);} 100% { width:0; height:0;} }
+  @keyframes bubble-move { 0% { bottom:-4rem;} 100% { bottom:var(--distance,10rem);} }
+  @media only screen and (max-width:600px) {
+    .footer .content-final { padding:2rem 1.5rem; }
+    .footer .content-final .container-final { grid-template-columns:1fr; }
+    .content-final h2 { font-size:1.5rem; }
+    .content-final span { font-size:.813rem; }
+    .footer__links { flex-direction:column; row-gap:1.5rem; }
   }
-  .footer-links ul li, .footer-legal ul li {
-    margin-bottom: 12px;
-  }
-  .social-icons a {
-    display: block;
-    margin: 8px 0;
-  }
-}
-  `;
-  document.head.appendChild(style);
-})();
+`;
+document.head.appendChild(style);
 
-// Inicializar al cargar
-document.addEventListener("DOMContentLoaded", renderFooter);
+// JS para insertar el año actual
+document.querySelectorAll(".year").forEach(el => {
+  el.textContent = new Date().getFullYear();
+});
