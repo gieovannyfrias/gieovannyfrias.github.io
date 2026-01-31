@@ -8,8 +8,8 @@ document.body.insertAdjacentHTML("afterbegin", `
     
     <nav class="box-menu-navegacion" id="menu-navegacion">
       <ul class="menu-navegacion">
-        <li class="item-menu">
-          <a href="index.html" class="item-menu-link">Pagina principal</a>
+<li class="item-menu item-menu-sub-menu">
+<a href="index.html" class="item-menu-link">Pagina principal</a>
         </li>
         <li class="item-menu">
           <a href="acerca%20de.html" class="item-menu-link">Acerca de</a>
@@ -19,7 +19,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
-          <ul class="sub-menu" id="sub-menu">
+          <ul class="sub-menu">
             <li class="item-menu">
               <a href="calendario.html" class="item-menu-link">Calendario</a>
             </li>
@@ -54,7 +54,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           <a href="Compat.html" class="item-menu-link">Compat</a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
-          <ul class="sub-menu" id="sub-menu">
+          <ul class="sub-menu">
             <li class="item-menu">
               <a href="Mexico.html" class="item-menu-link">Mexico</a>
             </li>
@@ -124,7 +124,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           <a href="#" class="item-menu-link">Info</a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
-          <ul class="sub-menu" id="sub-menu">
+          <ul class="sub-menu" >
             <li class="item-menu">
               <a href="Estadisticas.html" class="item-menu-link">Estadisticas</a>
             </li>
@@ -160,7 +160,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           <a href="#" class="item-menu-link">Categoria</a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
-          <ul class="sub-menu" id="sub-menu">
+          <ul class="sub-menu" >
             <li class="item-menu">
               <a href="Streamings.html" class="item-menu-link">Streamings</a>
             </li>
@@ -176,7 +176,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           <a href="Musica_personal.html" class="item-menu-link">Musica </a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
-          <ul class="sub-menu" id="sub-menu">
+          <ul class="sub-menu" >
             <li class="item-menu">
               <a href="Spotify.html" class="item-menu-link">Spotify</a>
             </li>
@@ -190,7 +190,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           <a href="Content_pay.html" class="item-menu-link">Content pay</a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
-          <ul class="sub-menu" id="sub-menu">
+          <ul class="sub-menu">
              <li class="item-menu">
               <a href="Only%20fans.html" class="item-menu-link">Only fans</a>
             </li>
@@ -226,6 +226,7 @@ document.body.insertAdjacentHTML("afterbegin", `
   
   </div>
 </header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 `);
 
 /* ====== Inserta CSS del menú ====== */
@@ -237,258 +238,231 @@ style.textContent = `
 border: 0;         
 box-sizing: border-box;
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-html {
-  font-size: 85%;
+body {
+
+  background-color: #F5F5F5;
 }
 
-/* Escala todo el contenido al 85% */
-body {
-  transform: scale(0.85);
-  transform-origin: top left;
-  width: 117.64%;
-  height: 117.64%;
-}
 
   svg{
     
     color: white;
   }
-/* ====== Header ====== */
+
 .header {
   width: 100%;
-  background: rgba(0,0,0,0.9);
-  position: fixed;
-  top: 0;
-  z-index: 10;
-}
+    background: rgba(0,0,0,0.9);
 
-/* Logo */
-.box-logo {
-  text-align: center;
-  margin: 0 auto;
+  font-family: 'Signika Negative', sans-serif;
+  top: 0;
+  position: fixed;
+z-index: 2;
 }
+.header a {
+  text-decoration: none;
+}
+.child-header {
+  max-width: 100%;
+  padding: 0 2%;
+  margin: 0 auto 0;
+    display: flex;
+  align-items: center;
+flex-direction: column;
+  }
+
 
 .link-logo {
   font-weight: 700;
+  color: white;
   font-size: 28px;
-  background: linear-gradient(90deg, #ff4ead, #8421d5);
-  -webkit-background-clip: text;
+    background: linear-gradient(90deg, #ff4ead, #8421d5);
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
-  text-decoration: none;
-  display: inline-block;
+  
 }
 
-h6 {
-  margin-top: .5rem;
-  font-size: 14px;
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(11,157,232,1) 100%);
-  -webkit-background-clip: text;
+  h6{
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(11,157,232,1) 100%);
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
-  text-align: center;
-}
 
-/* ====== Menú principal ====== */
-.menu-navegacion {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  }
+.box-menu-navegacion {
+  width: 100%;
+}
+.box-menu-navegacion ul {
+  margin: 0;
   list-style: none;
   padding: 0;
-  margin: 0;
 }
-main {
-  margin-top: 80px;
+.menu-navegacion {  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .item-menu-link {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
-  background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%, rgba(232,11,64,1) 100%);
-  -webkit-background-clip: text;
+background: linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(94,57,215,1) 51%, rgba(232,11,64,1) 100%);
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
   transition: .3s linear;
-  padding: 1.2rem;
-  text-decoration: none;
+  padding: 1.8rem 0;
+  display: inline-block;
 }
+
 
 .item-menu-link:hover {
   color: white;
 }
-
-/* ====== Submenús ====== */
-/* Contenedor del item con submenú */
-.item-menu-sub-menu {
-  position: relative;
-  display: inline-flex;   /* nombre + flecha en la misma fila */
-  align-items: center;
+.item-menu-sub-menu:hover i {
+  color: #d92626;
+  transition: .3s linear;
 }
+  .fa-angle-down{
+  
+  }
+   .fa-angle-down:before {
+      content: "\f107";
+      color: white;
+    width: 1rem;
+    text-align: center;
+    float: none;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+    content: '\f107';
+    font-family: 'FontAwesome';
+    }
 
-/* Enlace */
-.item-menu-link {
-  display: inline-block;  /* evita que ocupe toda la línea */
-  margin-right: 5px;      /* espacio entre texto y flecha */
-}
-
-/* Flecha */
-.angle-view-sub-menu {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 5px;
-  color: white;
-  cursor: pointer;
-  transition: transform .3s ease;
-}
-
-/* Flecha rota al abrir */
-.item-menu-sub-menu.open .angle-view-sub-menu {
-  transform: rotate(180deg);
-}
-
-/* Submenú desplegable debajo */
-.sub-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: #111;
-  overflow: hidden;
-  max-height: 0;
-transition: max-height .3s ease, opacity .3s ease;
-position: absolute;
-  top: 100%;
-  left: 0;
-  width: 250px;
-  z-index: 2;
-opacity: 0;
-}
-
-.sub-menu.open {
-  max-height: 500px;
-opacity: 1;
-}
-
-.sub-menu .item-menu-link {
-  display: block;
-  padding: .8rem;
-}
-
-/* ====== Botón hamburguesa ====== */
 .btn-hamburguesa {
   display: none;
-  background: transparent;
+  background-color: transparent;
+  height: 30px;
   border: none;
   cursor: pointer;
 }
-
 .btn-hamburguesa span {
+  height: 2px;
   display: block;
+  background-color:wheat;
   width: 25px;
-  height: 3px;
-  background: white;
-  margin: 5px 0;
-  border-radius: 2px;
+  border-radius: 20px;
+}
+.btn-hamburguesa span:nth-child(2) {
+  margin: .4rem 0;
 }
 
-/* ====== Responsive (móvil) ====== */
-@media only screen and (min-width:320px) and (max-width:1200px) {
+
+.item-menu-sub-menu {
+  position: relative;
+}
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  background-color: black;
+  transform: scaley(0);
+  transform-origin: top;
+  transition: transform .3s linear;
+}
+.sub-menu .item-menu-link {
+  padding: .8rem;
+}
+
+.item-menu-sub-menu:hover .sub-menu {
+  transform: scaley(1);
+}
+
+  @media only screen and (min-width:320px) and (max-width:1200px){
   .btn-hamburguesa {
     display: block;
     position: absolute;
-    right: 1rem;
-    top: 1rem;
-    z-index: 20;
+    right: 0;
   }
 
   .header {
     position: relative;
     padding: 1rem 0;
   }
-
-  main {
-    margin-top: 80px;
-  }
-
+  
+  
   .box-menu-navegacion {
     position: absolute;
     top: 100%;
     left: 0;
     background-color: black;
     width: 100%;
-    max-height: 0;
-    overflow-x: hidden;
-overflow-y: auto; 
-/* permite scroll vertical si el menú es más alto que la pantalla */
-    transition: max-height .3s ease;
+    transform: scaley(0);
+    transform-origin: top;
+    transition: .3s linear;
     padding: 0 2rem;
   }
-
-  .box-menu-navegacion.viewMenu {
-    max-height: 600px;
-  }
-
   .menu-navegacion {
-    flex-direction: column;
-    align-items: center; /* centrado */
-text-align: center; /* centra el texto */
+    flex-direction:column;
+    align-items:center;
   }
-/* enlaces del menú */ 
-.item-menu-link { 
-display: block;
-text-align: center;
-/* centra el texto */ 
-padding: 1rem; 
-margin: 0 auto;
+  .item-menu-link {
+    padding: 1vh;
+  }
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    left: 100px;
 }
-  .item-menu-sub-menu {
-    display: block; 
-/* cada item ocupa toda la fila */
-  }
+  /* .item-menu-sub-menu {
+         display: flex;
 
-  /* nombre + flecha juntos */
-  .item-menu-sub-menu > .item-menu-link,
-  .item-menu-sub-menu > .angle-view-sub-menu {
-    display: inline-flex;
     align-items: center;
-justify-content: center; /* centra ícono y texto */
- text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }*/
+    
+ .angle-view-sub-menu {
+   /* border: 1px solid red;*/
+    width: 30px;
+   height: 30px;
+    display: flex;
+   position: relative;
+   left: 200px;
+   bottom: 40px;
+    justify-content: center;
+    padding: .2rem 0;
+  }
+  .angle-view-sub-menu:hover {
+    color: white;
+    
+    }
+   .sub-menu {
+    /*width: 100%;
+    position: initial;
+    transform: scaley(1);
+    display: none;*/
+     top: 40px;
+     position: absolute;
+     left: 0;
+     display: block;
+     z-index: 1;
+  }
+  
+  .viewMenu {
+    transform: scaley(1);
   }
 
-.sub-menu {
-  position: relative;
-  width: 100%;
-  background: #111;
-  max-height: 0;
-  overflow: hidden;
-transition: max-height .3s ease, opacity .3s ease;
-opacity: 0;
-  /* 👇 Nuevo */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centra los ítems */
-  text-align: center;  /* centra el texto */
-}
 
-.sub-menu.open {
-  max-height: 500px; 
-opacity: 1;
+  .item-menu-link:hover,
+  .item-menu-sub-menu:hover i {
+    color: red;
+  }
 }
+  
 
-.sub-menu .item-menu-link {
-  display: block;
-  padding: .8rem;
-  width: 100%;          /* ocupa todo el ancho */
-  text-align: center;   /* centra el texto */
-}
 
-}
  
 `;
 document.head.appendChild(style);
@@ -518,22 +492,29 @@ btnHamburguesa.addEventListener("click", () => {
 document.querySelectorAll(".angle-view-sub-menu").forEach(icon => {
   icon.addEventListener("click", () => {
     const subMenu = icon.parentElement.querySelector(".sub-menu");
-    const isOpen = subMenu.classList.toggle("open");
+    const isOpen = subMenu.classList.contains("open");
+
+    if (isOpen) {
+      // Cierra con animación
+      subMenu.style.maxHeight = null;
+      subMenu.classList.remove("open");
+    } else {
+      // Abre con la altura real del contenido
+      subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+      subMenu.classList.add("open");
+    }
 
     // Cambiar flecha
-    icon.classList.toggle("fa-angle-down", !isOpen);
-    icon.classList.toggle("fa-angle-up", isOpen);
+    icon.classList.toggle("fa-angle-down", isOpen);
+    icon.classList.toggle("fa-angle-up", !isOpen);
 
     // Accesibilidad
-    icon.setAttribute("aria-expanded", isOpen);
-    subMenu.setAttribute("aria-hidden", !isOpen);
+    icon.setAttribute("aria-expanded", !isOpen);
+    subMenu.setAttribute("aria-hidden", isOpen);
   });
 });
-
 
 /* ====== Font Awesome config ====== */
 window.FontAwesomeConfig = {
   searchPseudoElements: true
 };
-
-
