@@ -45,6 +45,7 @@ const footerHTML = `
 
 // Insertar el footer al final del body
 document.body.insertAdjacentHTML("beforeend", footerHTML);
+(function addFooterCSS() {
 
 // Insertar estilos directamente desde JS
 const style = document.createElement("style");
@@ -75,10 +76,15 @@ style.textContent = `
     .content-final span { font-size:.813rem; }
     .footer__links { flex-direction:column; row-gap:1.5rem; }
   }
-`;
-document.head.appendChild(style);
+  `;
+  document.head.appendChild(style);
+})();
 
 // JS para insertar el año actual
 document.querySelectorAll(".year").forEach(el => {
   el.textContent = new Date().getFullYear();
 });
+
+// Inicializar al cargar
+document.addEventListener("DOMContentLoaded", renderFooter);
+
