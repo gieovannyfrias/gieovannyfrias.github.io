@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.gieovannyfrias.com/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Sección acerca de -->
+  <url>
+    <loc>https://www.gieovannyfrias.com/acerca%20de</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Sección Música -->
+  <url>
+    <loc>https://www.gieovannyfrias.com/Spotify</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección Moda -->
+  <url>
+    <loc>https://www.gieovannyfrias.com/Modelo_fashion_masculino_influencer_marca</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Sección Streaming -->
+  <url>
+    <loc>https://www.gieovannyfrias.com/Streamings</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sección Contacto -->
+  <url>
+    <loc>https://www.gieovannyfrias.com/contacto</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+<!--
+  <lastmod> → fecha de última modificación  
+Indica cuándo se actualizó esa página por última vez.
+-->
+<!--
+<changefreq> → frecuencia estimada de cambios  
+Es una sugerencia de cada cuánto se actualiza la página.
+Ejemplos:
+
+daily → si cambias contenido todos los días (ej. noticias).
+
+weekly → si actualizas una vez por semana (ej. blog).
+
+monthly → si cambias poco (ej. página de contacto).
+→ No es obligatorio, pero ayuda a orientar a los buscadores
+-->
+<!--
+  <priority> → importancia relativa (1.0 es la más alta)  
+Indica qué tan importante es esa página dentro de tu sitio.
+Ejemplos:
+
+1.0 → página principal (home).
+
+0.9 → secciones clave como streaming.
+
+0.5 → páginas menos críticas como contacto.
+→ No afecta el ranking en Google directamente, pero ayuda a organizar la jerarquía interna.
+-->
+<!--
+  <loc> = qué página es.
+
+<lastmod> = cuándo se actualizó.
+
+<changefreq> = cada cuánto cambia.
+
+<priority> = qué tan importante es dentro del sitio.
+-->
+</urlset>
