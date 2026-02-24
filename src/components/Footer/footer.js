@@ -23,13 +23,13 @@ const footerHTML = `
 
           <ul class="footer__links">
             <li class="footer-li">
-              <a href="https://drive.google.com/file/d/1LWJyVwBbuv3goY2DdWCJ8l5p-SEKQ16x/view" class="footer__link">Políticas de privacidad</a>
+              <a href="https://www.gieovannyfrias.com/documentacion-proyecto/docs/legales/politicas%20de%20privacidad.pdf" class="footer__link">Políticas de privacidad</a>
             </li>
             <li class="footer-li">
-              <a href="https://drive.google.com/file/d/1pkTlVZ9pfXBuEUX4-hNlkj6N-gqyU9O2/view" class="footer__link">Términos y condiciones</a>
+              <a href="https://www.gieovannyfrias.com/documentacion-proyecto/docs/legales/Terminos%20y%20condiciones.pdf" class="footer__link">Términos y condiciones</a>
             </li>
             <li class="footer-li">
-              <a href="https://drive.google.com/file/d/1_hl20sgiB7Txi59MK62lvrTHmgfITBBh/view" class="footer__link">Políticas de cookies</a>
+              <a href="https://www.gieovannyfrias.com/documentacion-proyecto/docs/legales/politicaCookies.pdf" class="footer__link">Políticas de cookies</a>
             </li>
           </ul>
         </div>
