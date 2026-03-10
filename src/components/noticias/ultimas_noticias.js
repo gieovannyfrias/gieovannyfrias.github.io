@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 .content-wrapper::-webkit-scrollbar { height: 8px; }
 .content-wrapper::-webkit-scrollbar-thumb {
-  background: #444;
+  background: #007bff;
   border-radius: 4px;
 }
 .content-wrapper::-webkit-scrollbar-track { background: #222; }
@@ -86,9 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     @media (max-width: 480px) {
   .content-wrapper {
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: auto;
   }
   .news-card {
     width: 100%;
