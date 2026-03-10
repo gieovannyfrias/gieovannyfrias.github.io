@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   background: #007bff;    /* color visible */
   border-radius: 4px;
 }
-.related-news::-webkit-scrollbar-track { background: #eee; }
+.related-news::-webkit-scrollbar-track { background: ##222; }
 
 .news-item {
   flex: 0 0 auto;         /* no se encoge */
@@ -110,17 +110,20 @@ document.addEventListener("DOMContentLoaded", () => {
   .news-item {
     width: 100%;       /* tarjetas más estrechas */
   }
+.news-item img {
+    height: 400px;
+    width: 100%;
+}
 }
 
 @media (max-width: 480px) {
   .related-news {
-    flex-direction: column; /* apilar verticalmente en pantallas muy pequeñas */
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: auto;
   }
   .news-item {
     width: 100%;        /* ocupar todo el ancho */
   }
+
 }
 
   `;
