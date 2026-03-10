@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     .destacadas-wrapper::-webkit-scrollbar { height: 8px; }
     .destacadas-wrapper::-webkit-scrollbar-thumb {
-      background: #444;
+      background: #007bff;
       border-radius: 4px;
     }
     .destacadas-wrapper::-webkit-scrollbar-track { background: #222; }
@@ -84,9 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     @media (max-width: 480px) {
       .destacadas-wrapper {
-        flex-direction: column;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow-x: auto;
       }
       .destacada-card {
         width: 100%;
