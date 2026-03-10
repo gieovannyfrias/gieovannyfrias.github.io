@@ -18,6 +18,14 @@ margin-bottom: 10px;
       scroll-snap-type: y mandatory;
       padding-bottom: 10px;
     }
+
+  .trend-list::-webkit-scrollbar { width: 10px; }
+  .trend-list::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 4px;
+}
+  .trend-list::-webkit-scrollbar-track { background: #222; }
+
     .trend-item {
       flex: 0 0 auto;
       scroll-snap-align: start;
