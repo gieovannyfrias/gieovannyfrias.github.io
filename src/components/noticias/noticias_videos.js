@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   background: #007bff;
   border-radius: 4px;
 }
-.video-list::-webkit-scrollbar-track { background: #eee; }
+.video-list::-webkit-scrollbar-track { background: #222; }
 
 
 .video-item {
@@ -86,52 +86,37 @@ document.addEventListener("DOMContentLoaded", () => {
       .video-item p {
         font-size: 13px;
       }
-    }
-@media (max-width: 480px) {
-  .video-list {
-    flex-direction: column;   /* apilar verticalmente en móviles */
-    overflow-x: hidden;
-    overflow-y: auto;         /* scroll vertical visible */
-    max-height: 500px;
-  }
-  .video-item {
-    width: 100%;              /* ocupar todo el ancho */
-  }
-}
-
-/* 📱 Ajustes para móviles */
-@media (max-width: 768px) {
   .video-item {
     width: 100%;   /* más estrecho en tablets */
   }
   .video-item iframe {
     height: 160px;
   }
-}
-
+    }
 @media (max-width: 480px) {
   .video-list {
-    flex-direction: column; /* apilar verticalmente en móviles pequeños */
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 500px;
   }
   .video-item {
-    width: 100%;   /* ocupar todo el ancho */
+    width: 100%;              /* ocupar todo el ancho */
   }
-  .video-item iframe {
+ .video-item iframe {
     height: 200px;
   }
 }
+
+
   `;
   document.head.appendChild(style);
 
   // Datos de videos
   const videos = [
-    { titulo: "Título del Video 1", descripcion: "Descripción breve del primer video.", enlace: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { titulo: "Título del Video 2", descripcion: "Descripción breve del segundo video.", enlace: "https://www.youtube.com/embed/ScMzIvxBSi4" },
-    { titulo: "Título del Video 2", descripcion: "Descripción breve del segundo video.", enlace: "https://www.youtube.com/embed/ScMzIvxBSi4" },
-    { titulo: "Título del Video 2", descripcion: "Descripción breve del segundo video.", enlace: "https://www.youtube.com/embed/ScMzIvxBSi4" },
-    { titulo: "Título del Video 3", descripcion: "Descripción breve del tercer video.", enlace: "https://www.youtube.com/embed/ysz5S6PUM-U" }
+    { titulo: "Título del Video 1", descripcion: "Descripción breve del primer video.", enlace: "https://www.youtube.com/embed/ddneEAsh6Xg" },
+    { titulo: "Título del Video 2", descripcion: "Descripción breve del segundo video.", enlace: "https://www.youtube.com/embed/ddneEAsh6Xg" },
+    { titulo: "Título del Video 2", descripcion: "Descripción breve del segundo video.", enlace: "https://www.youtube.com/embed/ddneEAsh6Xg" },
+    { titulo: "Título del Video 2", descripcion: "Descripción breve del segundo video.", enlace: "https://www.youtube.com/embed/ddneEAsh6Xg" },
+    { titulo: "Título del Video 3", descripcion: "Descripción breve del tercer video.", enlace: "https://www.youtube.com/embed/ddneEAsh6Xg" }
   ];
 
   // Selecciona el contenedor ya existente en tu HTML
