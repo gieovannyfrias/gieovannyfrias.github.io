@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       padding-right: 10px;
     }
     .sidebar_0::-webkit-scrollbar { width: 8px; }
-    .sidebar_0::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+    .sidebar_0::-webkit-scrollbar-thumb { background: #007bff; border-radius: 4px; }
     .sidebar_0::-webkit-scrollbar-track { background: #222; }
     .sidebar_0 a {
       display: flex;
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .title_22 { font-size: 1rem; margin: 0; }
     @media (max-width: 768px) {
       .flex { flex-direction: column; }
-      .sidebar_0 { max-height: none; overflow-y: visible; }
+      .sidebar_0 { overflow-x: auto; }
     }
   `;
   document.head.appendChild(style);
