@@ -167,7 +167,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           
           <ul class="sub-menu" >
             <li class="item-menu">
-              <a href="Streamings.html" class="item-menu-link">Streamings</a>
+              <a href="Live.html" class="item-menu-link">Live</a>
             </li>
              <li class="item-menu">
               <a href="Youtuber.html" class="item-menu-link">Youtuber</a>
