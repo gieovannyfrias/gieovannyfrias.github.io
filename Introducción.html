@@ -39,8 +39,9 @@
 
 <div class="scene">
 	<div class="scroll-track">
-
-		<section class="panel" id="panel_void">
+<!--empresario-->
+	<section class="panel" id="panel_earth">
+  	<section class="panel" id="panel_void">
 			<div class="panel-inner is-center">
 				<span class="layer-bg" aria-hidden="true">Empresario</span>
 				<div class="panel-copy align-center">
@@ -50,7 +51,9 @@
 				</div>
 			</div>
 		</section>
+      </section>
 
+<!--artista musical-->
 		<section class="panel" id="panel_spirit">
 			<div class="panel-inner is-right">
 				<span class="layer-bg" aria-hidden="true">Artista</span>
@@ -61,21 +64,21 @@
 				</div>
 			</div>
 		</section>
-
+<!--modelo-->
 		<section class="panel" id="panel_mind">
-			<div class="panel-inner is-center">
+			<div class="panel-inner is-left">
 				<span class="layer-bg" aria-hidden="true">Modelo</span>
-				<div class="panel-copy align-center">
+				<div class="panel-copy align-left">
 					<p class="layer-tag">Modelo · Modelo influencer</p>
 					<h2>FOTOS.<br>VIDEOS.<br>REVISTAS.<br>EDICION.</h2>
 					<p class="layer-line">PLataformas online<br>Editor de producción.</p>
 				</div>
 			</div>
 		</section>
-
+<!--celebridad de intenet-->
 		<section class="panel" id="panel_body">
 			<div class="panel-inner is-right">
-				<span class="layer-bg" aria-hidden="true">Personalidad</span>
+				<span class="layer-bg" aria-hidden="true">Celebridad</span>
 				<div class="panel-copy align-right">
 					<p class="layer-tag">Celebridad de internet · personalidad de internet</p>
 					<h2>REDES SOCIALES<br>YOU TUBE<br>TIK TOK.</h2>
@@ -83,10 +86,10 @@
 				</div>
 			</div>
 		</section>
-
+<!--Marca personal-->
 		<section class="panel" id="panel_earth">
 			<div class="panel-inner">
-				<span class="layer-bg" aria-hidden="true">Celebridad</span>
+				<span class="layer-bg" aria-hidden="true">Marca</span>
 				<div class="panel-copy">
 					<p class="layer-tag">Celebridad de internet · personalidad de internet · Modelo · Artista musical · Empresario</p>
 					<h2>GIEOVANNY<br>FRÍAS</h2>
@@ -104,16 +107,13 @@
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap");
 
-/* Reset */
-*,
-*::before,
-*::after {
+/* Reset & Performance */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Tokens */
 :root {
     --bg: #0e0c0a;
     --fg: #ede8df;
@@ -126,9 +126,9 @@
     --z-ui: 10;
 }
 
-/* Base */
 html {
     overscroll-behavior: none;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -136,54 +136,53 @@ body {
     color: var(--fg);
     font-family: var(--font-mono);
     overflow-x: hidden;
-    overscroll-behavior: none;
-  zoom:75%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Layout */
+/* Layout - Optimized Gradient & Performance */
 .scene {
     position: fixed;
     inset: 0;
     overflow: hidden;
+    z-index: 0;
+    /* Transformación Z para forzar GPU */
+    transform: translateZ(0); 
     background: linear-gradient(
         to top,
-        oklch(32% 0.12 55) 0%,
-        oklch(31% 0.12 57) 3.4%,
-        oklch(29% 0.11 65) 8.6%,
-        oklch(26% 0.1 80) 15.6%,
-        oklch(23% 0.09 130) 24.2%,
-        oklch(20% 0.08 200) 34.4%,
-        oklch(17% 0.07 230) 45.9%,
-        oklch(14% 0.06 252) 57.8%,
-        oklch(12% 0.06 268) 69.6%,
-        oklch(11% 0.05 280) 80.2%,
-        oklch(9% 0.04 300) 89.2%,
-        oklch(6% 0.02 320) 95.9%,
-        oklch(4% 0.01 0) 100%
+        oklch(32% 0.12 55), oklch(29% 0.11 65) 10%,
+        oklch(23% 0.09 130) 25%, oklch(17% 0.07 230) 45%,
+        oklch(11% 0.05 280) 80%, oklch(4% 0.01 0) 100%
     );
     background-size: 100% 500%;
     background-position-y: 100%;
+    will-change: background-position-y;
 }
 
 .scroll-track {
     display: block;
-    inline-size: 100%;
+    width: 100%;
     position: relative;
     will-change: transform;
 }
 
-/* UI */
+/* UI Elements - Fixed positioning and visibility */
 #hud {
     position: fixed;
-    inset-block-start: var(--ui-inset);
-    inset-inline-end: var(--ui-inset);
+    top: var(--ui-inset);
+    right: var(--ui-inset);
     z-index: var(--z-ui);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 0.4rem;
     pointer-events: none;
-  z-index: 1;
+}
+
+.hud-title, .progress-bar, .hud-label {
+    position: relative;
+    /* Consolidamos el desplazamiento en una sola lógica */
+    transform: translateY(120px);
 }
 
 .hud-title {
@@ -192,76 +191,58 @@ body {
     letter-spacing: 0.12em;
     color: var(--accent);
     line-height: 1.1;
-    text-align: right;
     opacity: 0.6;
-    position: relative;
-  top: 100px;
 }
 
 .progress-bar {
-    inline-size: 5rem;
-    block-size: var(--hairline);
+    width: 5rem;
+    height: var(--hairline);
     background: color-mix(in srgb, var(--muted) 30%, transparent);
-    position: relative;
     overflow: hidden;
-    position: relative;
-  top: 95px;
+    margin-top: -5px; /* Ajuste fino de posición */
 }
 
 .progress-fill {
-    position: absolute;
-    inset-block: 0;
-    inset-inline-start: 0;
+    height: 100%;
     width: 0%;
     background: var(--accent);
-    transition: none;
+    will-change: width;
 }
 
-.hud-label {
-    font-size: 0.5rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--accent);
-  position: relative;
-  top: 100px;
-}
-
+/* Navigation - Interaction optimized */
 #panel_nav {
     position: fixed;
-    inset-inline-start: var(--ui-inset);
-    inset-block-start: 50%;
-    translate: 0 -50%;
+    left: var(--ui-inset);
+    top: 50%;
+    transform: translateY(-50%);
     z-index: var(--z-ui);
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .nav-dot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    inline-size: 1.2rem;
-    block-size: 1.2rem;
-    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    place-items: center;
     background: transparent;
+    border: none;
     cursor: pointer;
-    padding: 0;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s;
     opacity: 0.4;
-    transition: scale 0.3s, opacity 0.3s;
 }
 
 .nav-dot::after {
     content: "";
-    display: block;
-    inline-size: 0.2rem;
-    block-size: 0.2rem;
+    width: 0.2rem;
+    height: 0.2rem;
     border-radius: 50%;
     background-color: var(--muted);
-    transition: background-color 0.3s;
 }
 
 .nav-dot.is-active {
-    scale: 1.8;
+    transform: scale(1.8);
     opacity: 1;
 }
 
@@ -269,188 +250,124 @@ body {
     background-color: var(--accent);
 }
 
-/* Panels */
+/* Panels & Typography - Render Optimized */
 .panel {
-    min-block-size: 100lvh;
-    block-size: auto;
-    inline-size: 100%;
+    min-height: 100lvh;
+    width: 100%;
     position: relative;
-    display: block;
 }
 
 .panel-inner {
-    min-block-size: 100lvh;
-    block-size: auto;
+    min-height: 100lvh;
     display: flex;
     align-items: flex-end;
     padding: 4vw 5vw;
     position: relative;
     overflow: hidden;
 }
-
-.panel-inner.is-right {
-    justify-content: flex-end;
-}
-
-.panel-inner.is-center {
-    justify-content: center;
-}
-
-.layer-bg {
-    position: absolute;
-    inset-block-end: -0.15em;
-    inset-inline-start: -0.02em;
-    font-family: var(--font-display);
-    font-size: clamp(16rem, 28vw, 30rem);
-    line-height: 1.1;
-    letter-spacing: -0.04em;
-    color: color-mix(in srgb, var(--fg) 4%, transparent);
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
-}
-
-.panel-inner.is-right .layer-bg {
-    inset-inline-start: auto;
-    inset-inline-end: -0.02em;
-}
-
-.panel-inner.is-center .layer-bg {
-    inset-inline-start: 50%;
-    translate: -50% 0;
-}
-
-.panel-copy {
-    position: relative;
-    z-index: 1;
-    max-inline-size: 36rem;
-}
-
-.align-right {
+/* Asegura la alineación a la derecha para el contenedor interno */
+.panel-inner.is-left {
+    justify-content: flex-end; /* Empuja el contenido al borde derecho */
     text-align: right;
 }
-.align-center {
-    text-align: center;
+
+/* Posiciona el texto gigante de fondo (Personalidad) a la derecha */
+.panel-inner.is-left .layer-bg {
+    left: auto;
+    right: -0.02em;
+}
+  .panel-copy.align-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los elementos internos a la derecha */
+    text-align: right;
 }
 
-.layer-tag {
-    font-size: 0.55rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--accent);
-    opacity: 0.7;
-    margin-block-end: 1.2rem;
+/* Ajuste opcional para dispositivos móviles */
+@media (max-width: 900px) {
+    .panel-inner.is-left {
+        justify-content: center; /* En móviles es mejor centrar para legibilidad */
+        text-align: center;
+    }
+    .panel-copy.align-left {
+        align-items: center;
+        text-align: center;
+    }
+}
+.layer-bg {
+    position: absolute;
+    bottom: -0.15em;
+    left: -0.02em;
+    font-family: var(--font-display);
+    font-size: clamp(16rem, 28vw, 30rem);
+    color: color-mix(in srgb, var(--fg) 4%, transparent);
+    user-select: none;
+    white-space: nowrap;
+    z-index: 0;
 }
 
 h2 {
     font-family: var(--font-display);
     font-size: clamp(3rem, 8vw, 7rem);
     font-weight: 400;
-    letter-spacing: 0.03em;
     line-height: 0.9;
     color: var(--fg);
-    margin-block-end: 1.5rem;
-  text-transform: uppercase;
-  text-shadow:
-    0 0 5px #0ff,
-    0 0 10px #0ff,
-    0 0 20px #0ff,
-    0 0 40px #0ff,
-    0 0 80px #0ff;
-  animation: flicker 2s infinite alternate;
-}
-
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.3;
-  }
-}
-
-.layer-line {
-    font-size: clamp(0.65rem, 1.2vw, 0.8rem);
-    line-height: 1.9;
-    color: color-mix(in srgb, var(--fg) 55%, transparent);
-    letter-spacing: 0.05em;
-}
-
-.scroll-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-block-start: 2.5rem;
-    color: var(--accent);
-    animation: hint-pulse 2.5s ease-in-out infinite;
-}
-
-.scroll-hint-text {
-    font-size: 0.52rem;
-    letter-spacing: 0.22em;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
+    /* Optimización de sombra para no saturar GPU */
+    text-shadow: 0 0 15px color-mix(in srgb, #0ff 50%, transparent);
+    animation: flicker 3s step-end infinite;
+    will-change: opacity;
 }
 
-#panel_spirit h2 {
-    color: var(--accent);
+/* Flicker optimizado con menos pasos */
+@keyframes flicker {
+    0%, 90%, 100% { opacity: 1; }
+    92%, 95% { opacity: 0.5; }
 }
 
-#panel_spirit .layer-bg {
-    color: color-mix(in srgb, var(--accent) 6%, transparent);
+/* Responsive - Consolidado */
+@media (max-width: 900px) {
+    #panel_nav { display: none; }
+    .panel-inner { padding: 8vw 6vw; }
+    .layer-bg { font-size: 35vw; }
+}
+  /* Centrado del contenedor principal */
+.panel-inner.is-center {
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    text-align: center;
 }
 
-#panel_void h2 {
-    color: color-mix(in srgb, var(--fg) 55%, transparent);
+/* Centrado del bloque de texto y elementos internos */
+.panel-copy.align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra los párrafos y el H2 */
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;        /* Evita que se corte en pantallas pequeñas */
 }
 
-#panel_void .layer-bg {
-    display: none;
+/* Centrado del texto gigante de fondo (Celebridad) */
+.panel-inner.is-center .layer-bg {
+    left: 50%;
+    transform: translateX(-50%); /* Lo mantiene justo en el medio tras el texto */
+    text-align: center;
+    width: 100%;
 }
 
-#panel_void .layer-tag {
-    color: var(--accent);
-    opacity: 0.5;
+/* Asegura que el scroll-hint también esté centrado */
+.align-center .scroll-hint {
+    justify-content: center;
+    margin-inline: auto;
 }
-
-#panel_void .layer-line {
-    color: color-mix(in srgb, var(--fg) 45%, transparent);
-}
-
-@keyframes hint-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
-}
-
-/* Responsive */
-@media (width <= 56.25em) {
-    :root {
-        --ui-inset: 1.25rem;
-    }
-
-    #panel_nav {
-        display: none;
-    }
-
-    .panel-inner {
-        padding: 6vw 6vw;
-    }
-
-    .layer-bg {
-        font-size: 35vw;
-    }
-
-    h2 {
-        font-size: clamp(2.5rem, 11vw, 5rem);
-    }
-}
-
 
 </style>
   
               <!-- La ruta debe recorrer todas las carpetas -->
 <script src="src/components/Header/header.js" defer></script>
 <script>
-
 const IS_TOUCH = navigator.maxTouchPoints > 0;
 const LAYERS = ["CELEBRIDAD DE INTERNET", "PERSONALIDAD DE INTERNET", "MODELO", "ARTISTA MUSICAL", "EMPRESARIO"];
 const LERP = IS_TOUCH ? 1 : 0.1;
@@ -465,28 +382,32 @@ const createScroller = (options = {}) => {
 	let currentY = 0;
 	let targetY = 0;
 	let raf = null;
-	let lastTime = null;
+	let lastTime = performance.now();
 
-	const travel = () =>
-		Math.max(0, scrollElement.scrollHeight - window.innerHeight);
+	// Cache de la altura para evitar recalcular layouts costosos
+	let cachedTravel = 0;
+	const updateTravel = () => {
+		cachedTravel = Math.max(0, scrollElement.scrollHeight - window.innerHeight);
+	};
 
 	const setY = (y) => {
-		scrollElement.style.transform = `translate3d(0, ${y}px, 0)`;
+		scrollElement.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
 	};
 
 	const updateHeight = () => {
 		const h = `${scrollElement.scrollHeight}px`;
 		if (document.body.style.height !== h) document.body.style.height = h;
+		updateTravel();
 	};
 
 	const tick = (time) => {
-		if (!lastTime) lastTime = time;
 		const delta = (time - lastTime) / 16.666;
 		lastTime = time;
-		const lerpFactor = IS_TOUCH ? 1 : 1 - Math.pow(1 - LERP, delta);
+
 		const diff = targetY - currentY;
 
-		if (Math.abs(diff) > 0.01) {
+		if (Math.abs(diff) > 0.05) { // Umbral ligeramente mayor para ahorrar CPU
+			const lerpFactor = IS_TOUCH ? 1 : 1 - Math.pow(1 - LERP, delta || 1);
 			currentY += diff * lerpFactor;
 			setY(currentY);
 		} else if (currentY !== targetY) {
@@ -498,99 +419,93 @@ const createScroller = (options = {}) => {
 	};
 
 	const onScroll = () => {
-		const t = travel();
-		targetY = -t + window.scrollY;
-		const progress = t > 0 ? window.scrollY / t : 0;
+		targetY = -cachedTravel + window.scrollY;
+		const progress = cachedTravel > 0 ? window.scrollY / cachedTravel : 0;
 		onProgress?.(clamp(progress, 0, 1));
 	};
 
 	const onResize = () => {
-		const t = travel();
-		targetY = -t + window.scrollY;
+		updateHeight();
+		targetY = -cachedTravel + window.scrollY;
 		currentY = targetY;
 		setY(currentY);
-		const progress = t > 0 ? window.scrollY / t : 0;
-		onProgress?.(clamp(progress, 0, 1));
+		onScroll();
 	};
 
 	const scrollToPanel = (index) => {
-		const clamped = clamp(index, 0, LAYERS.length - 1);
-		const progress = clamped / (LAYERS.length - 1);
-		window.scrollTo({ top: travel() * progress });
+		const progress = clamp(index, 0, LAYERS.length - 1) / (LAYERS.length - 1);
+		window.scrollTo({ top: cachedTravel * progress, behavior: 'smooth' });
 	};
 
-	const destroy = () => {
-		if (raf) cancelAnimationFrame(raf);
-		resizeObserver.disconnect();
-		window.removeEventListener("scroll", onScroll);
-		window.removeEventListener("resize", onResize);
-	};
-
-	updateHeight();
-
+	// Observer optimizado
 	const resizeObserver = new ResizeObserver(() => {
-		updateHeight();
-		const t = travel();
-		targetY = -t + window.scrollY;
-		currentY = targetY;
-		setY(currentY);
-		const progress = t > 0 ? window.scrollY / t : 0;
-		onProgress?.(clamp(progress, 0, 1));
+		requestAnimationFrame(onResize);
 	});
-	resizeObserver.observe(scrollElement);
 
-	const t = travel();
-	const initialY = -t + window.scrollY;
-	currentY = initialY;
-	targetY = initialY;
-	setY(currentY);
-	const initialProgress = t > 0 ? window.scrollY / t : 0;
-	onProgress?.(clamp(initialProgress, 0, 1));
+	const init = () => {
+		updateHeight();
+		resizeObserver.observe(scrollElement);
+		
+		const initialY = -cachedTravel + window.scrollY;
+		currentY = targetY = initialY;
+		setY(currentY);
 
-	window.addEventListener("scroll", onScroll, { passive: true });
-	window.addEventListener("resize", onResize, { passive: true });
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("resize", onResize, { passive: true });
+		raf = requestAnimationFrame(tick);
+	};
 
-	raf = requestAnimationFrame(tick);
+	init();
 
-	return { scrollToPanel, destroy };
+	return { 
+		scrollToPanel, 
+		destroy: () => {
+			cancelAnimationFrame(raf);
+			resizeObserver.disconnect();
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("resize", onResize);
+		} 
+	};
 };
 
 const ui = (() => {
-	const fill = document.getElementById("progress_fill");
-	const label = document.getElementById("hud_label");
-	const dots = [...document.querySelectorAll(".nav-dot")];
-	const scene = document.querySelector(".scene");
+	// Cache de elementos del DOM
+	const elements = {
+		fill: document.getElementById("progress_fill"),
+		label: document.getElementById("hud_label"),
+		dots: document.querySelectorAll(".nav-dot"),
+		scene: document.querySelector(".scene")
+	};
 	let lastIndex = -1;
 
 	return {
 		update(progress) {
 			const p = clamp(progress, 0, 1);
-			if (fill) fill.style.width = `${p * 100}%`;
-			if (scene) scene.style.backgroundPositionY = `${(1 - p) * 100}%`;
+			const percent = p * 100;
+
+			// Actualizaciones de GPU (Transformaciones y Opacidad son más rápidas)
+			if (elements.fill) elements.fill.style.width = `${percent}%`;
+			if (elements.scene) elements.scene.style.backgroundPositionY = `${100 - percent}%`;
 
 			const index = Math.min(Math.floor(p * LAYERS.length), LAYERS.length - 1);
 
 			if (index !== lastIndex) {
 				lastIndex = index;
-				if (label) label.textContent = LAYERS[index];
-				dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
+				if (elements.label) elements.label.textContent = LAYERS[index];
+				elements.dots.forEach((dot, i) => {
+					dot.classList.toggle("is-active", i === index);
+				});
 			}
 		}
 	};
 })();
 
+// Inicialización limpia
 const initialize = () => {
 	const run = () => {
-		document.fonts.ready.then(() => {
-			const scroller = createScroller({
-				onProgress: (progress) => ui.update(progress)
-			});
-
-			document.querySelectorAll(".nav-dot").forEach((dot) => {
-				dot.addEventListener("click", () => {
-					scroller?.scrollToPanel(Number(dot.dataset.index));
-				});
-			});
+		const scroller = createScroller({ onProgress: ui.update });
+		document.querySelectorAll(".nav-dot").forEach(dot => {
+			dot.onclick = () => scroller?.scrollToPanel(Number(dot.dataset.index));
 		});
 	};
 
@@ -602,6 +517,7 @@ const initialize = () => {
 };
 
 initialize();
+
 
 </script>
   </body>
