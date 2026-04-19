@@ -77,6 +77,9 @@ document.body.insertAdjacentHTML("afterbegin", `
   <li class="item-menu">
               <a href="Post.html" class="item-menu-link">Post</a>
             </li>
+ <li class="item-menu">
+              <a href="Wikipedia.html" class="item-menu-link">Wikipedia</a>
+            </li>
           </ul>
         </li>
                  <li class="item-menu item-menu-sub-menu">
