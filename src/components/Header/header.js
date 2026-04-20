@@ -178,6 +178,12 @@ document.body.insertAdjacentHTML("afterbegin", `
           <li class="item-menu">
               <a href="Streamer.html" class="item-menu-link">Streamer</a>
             </li>
+ <li class="item-menu">
+              <a href="Creador_digital.html" class="item-menu-link">Creador digital</a>
+            </li>
+ <li class="item-menu">
+              <a href="Creador_de_contenido.html" class="item-menu-link">Creador de contenido</a>
+            </li>
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
