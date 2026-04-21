@@ -184,6 +184,9 @@ document.body.insertAdjacentHTML("afterbegin", `
  <li class="item-menu">
               <a href="Creador_de_contenido.html" class="item-menu-link">Creador de contenido</a>
             </li>
+ <li class="item-menu">
+              <a href="Influencer.html" class="item-menu-link">Influencer</a>
+            </li>
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
