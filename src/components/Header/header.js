@@ -80,6 +80,9 @@ document.body.insertAdjacentHTML("afterbegin", `
  <li class="item-menu">
               <a href="Wikipedia.html" class="item-menu-link">Wikipedia</a>
             </li>
+ <li class="item-menu">
+              <a href="Citas.html" class="item-menu-link">Agendar cita</a>
+            </li>
           </ul>
         </li>
                  <li class="item-menu item-menu-sub-menu">
