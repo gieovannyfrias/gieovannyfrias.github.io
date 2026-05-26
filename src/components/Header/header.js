@@ -9,38 +9,38 @@ document.body.insertAdjacentHTML("afterbegin", `
     <nav class="box-menu-navegacion" id="menu-navegacion">
       <ul class="menu-navegacion">
 <li class="item-menu item-menu-sub-menu">
-<a href="index.html" class="item-menu-link">Pagina principal</a>
+<a href="https://www.gieovannyfrias.com" class="item-menu-link">Pagina principal</a>
         </li>
         <li class="item-menu">
-          <a href="acerca%20de.html" class="item-menu-link">Acerca de</a>
+          <a href="/acerca%20de" class="item-menu-link">Acerca de</a>
         </li>
         
         <li class="item-menu item-menu-sub-menu">
-          <a href="2024.html" class="item-menu-link"><span class="year"></span></a>
+          <a href="/2024" class="item-menu-link"><span class="year"></span></a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
           <ul class="sub-menu">
             <li class="item-menu">
-              <a href="calendario.html" class="item-menu-link">Calendario</a>
+              <a href="/calendario" class="item-menu-link">Calendario</a>
             </li>
               <li class="item-menu">
-              <a href="Dia-de-muertos.html" class="item-menu-link">Dia de muertos</a>
+              <a href="/Dia-de-muertos" class="item-menu-link">Dia de muertos</a>
             </li>
             <li class="item-menu">
-            <a href="A%C3%B1o%20nuevo.html" class="item-menu-link">A&ntilde;o nuevo</a>
+            <a href="/A%C3%B1o%20nuevo" class="item-menu-link">A&ntilde;o nuevo</a>
             </li>
             <li class="item-menu">
-              <a href="Reyes%20magos.html" class="item-menu-link">Reyes magos</a>
+              <a href="/Reyes%20magos" class="item-menu-link">Reyes magos</a>
             </li>
                <li class="item-menu">
-              <a href="San-Valentin.html" class="item-menu-link">San valentin</a>
+              <a href="/San-Valentin" class="item-menu-link">San valentin</a>
             </li>
                <li class="item-menu">
-              <a href="Covid-19.html" class="item-menu-link">Covid-19</a>
+              <a href="/Covid-19" class="item-menu-link">Covid-19</a>
             </li>
             
             <li class="item-menu">
-              <a href="Feliz-navidad.html" class="item-menu-link">Feliz navidad</a>
+              <a href="/Feliz-navidad" class="item-menu-link">Feliz navidad</a>
             </li>
           </ul>
         </li>
@@ -51,37 +51,37 @@ document.body.insertAdjacentHTML("afterbegin", `
           <a href="https://links.gieovannyfrias.com/" class="item-menu-link">Rs</a>
         </li>
                 <li class="item-menu item-menu-sub-menu">
-          <a href="Compat.html" class="item-menu-link">Compat</a>
+          <a href="/Compat" class="item-menu-link">Compat</a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
           <ul class="sub-menu">
             <li class="item-menu">
-              <a href="Mexico.html" class="item-menu-link">Mexico</a>
+              <a href="/Mexico" class="item-menu-link">Mexico</a>
             </li>
             <li class="item-menu">
-              <a href="Noticias.html" class="item-menu-link">Noticias</a>
+              <a href="/Noticias" class="item-menu-link">Noticias</a>
             </li>
             
             <li class="item-menu">
-              <a href="Responder%20preguntas%20anonimas%20frecuentes.html" class="item-menu-link">Preguntas anonimas</a>
+              <a href="/Responder%20preguntas%20anonimas%20frecuentes" class="item-menu-link">Preguntas anonimas</a>
             </li>
               <li class="item-menu">
-              <a href="Colaboraciones.html" class="item-menu-link">Colaboraciones</a>
+              <a href="/Colaboraciones" class="item-menu-link">Colaboraciones</a>
             </li>
               <li class="item-menu">
-              <a href="Articulos-instantaneos.html" class="item-menu-link">Articulos instantaneos</a>
+              <a href="/Articulos-instantaneos" class="item-menu-link">Articulos instantaneos</a>
             </li>
          <li class="item-menu">
-              <a href="Team.html" class="item-menu-link">Equipo</a>
+              <a href="/Team" class="item-menu-link">Equipo</a>
             </li>
   <li class="item-menu">
-              <a href="Post.html" class="item-menu-link">Post</a>
+              <a href="/Post" class="item-menu-link">Post</a>
             </li>
  <li class="item-menu">
-              <a href="Wikipedia.html" class="item-menu-link">Wikipedia</a>
+              <a href="/Wikipedia" class="item-menu-link">Wikipedia</a>
             </li>
  <li class="item-menu">
-              <a href="Citas.html" class="item-menu-link">Agendar cita</a>
+              <a href="/Citas" class="item-menu-link">Agendar cita</a>
             </li>
           </ul>
         </li>
@@ -91,10 +91,10 @@ document.body.insertAdjacentHTML("afterbegin", `
           
       <ul class="sub-menu" id="sub-menu-crypto">
   <li class="item-menu">
-    <a href="Criptomonedas.html" class="item-menu-link">Criptomonedas</a>
+    <a href="/Criptomonedas" class="item-menu-link">Criptomonedas</a>
   </li>
   <li class="item-menu">
-    <a href="NFT.html" class="item-menu-link">NFT</a>
+    <a href="/NFT" class="item-menu-link">NFT</a>
   </li>
 </ul>
 
@@ -105,28 +105,28 @@ document.body.insertAdjacentHTML("afterbegin", `
           
           <ul class="sub-menu" id="sub-menu-cc">
             <li class="item-menu">
-              <a href="Facebook.html" class="item-menu-link">Facebook</a>
+              <a href="/Facebook" class="item-menu-link">Facebook</a>
             </li>
             <li class="item-menu">
-              <a href="Instagram.html" class="item-menu-link">Instagram</a>
+              <a href="/Instagram" class="item-menu-link">Instagram</a>
             </li>
             <li class="item-menu">
-<a href="x.html" class="item-menu-link" aria-label="Perfil en X (Twitter)">X</a>
+<a href="/x" class="item-menu-link" aria-label="Perfil en X (Twitter)">X</a>
             </li>
             <li class="item-menu">
-              <a href="linkein.html" class="item-menu-link">LinkeIng</a>
+              <a href="/linkein" class="item-menu-link">LinkeIng</a>
             </li>
             <li class="item-menu">
-              <a href="Tik%20tok.html" class="item-menu-link">Tik Tok</a>
+              <a href="/Tik%20tok" class="item-menu-link">Tik Tok</a>
             </li>
               <li class="item-menu">
-              <a href="Pinterest.html" class="item-menu-link">Pinterest</a>
+              <a href="/Pinterest" class="item-menu-link">Pinterest</a>
             </li>
               <li class="item-menu">
-              <a href="Discord.html" class="item-menu-link">Discord</a>
+              <a href="/Discord" class="item-menu-link">Discord</a>
             </li>
                 <li class="item-menu">
-              <a href="Podcast.html" class="item-menu-link">Podcast</a>
+              <a href="/Podcast" class="item-menu-link">Podcast</a>
             </li>
           
           </ul>
@@ -137,33 +137,33 @@ document.body.insertAdjacentHTML("afterbegin", `
           
           <ul class="sub-menu" >
             <li class="item-menu">
-              <a href="Estadisticas.html" class="item-menu-link">Estadisticas</a>
+              <a href="/Estadisticas" class="item-menu-link">Estadisticas</a>
             </li>
             <li class="item-menu">
-              <a href="Management%20Team.html" class="item-menu-link">Management Team</a>
+              <a href="/Management%20Team" class="item-menu-link">Management Team</a>
             </li>
               <li class="item-menu">
-              <a href="Directorio.html" class="item-menu-link">Directorio</a>
+              <a href="/Directorio" class="item-menu-link">Directorio</a>
             </li>
             
             <li class="item-menu">
-              <a href="agencias.html" class="item-menu-link">Agencias</a>
+              <a href="/agencias" class="item-menu-link">Agencias</a>
             </li>
             <li class="item-menu">
-              <a href="mi%20tienda.html" class="item-menu-link">Tienda</a>
+              <a href="/mi%20tienda" class="item-menu-link">Tienda</a>
             </li>
             <li class="item-menu">
-              <a href="App.html" class="item-menu-link">App</a>
+              <a href="/App" class="item-menu-link">App</a>
             </li>
             
             <li class="item-menu">
-              <a href="Donacion.html" class="item-menu-link">Donacion</a>
+              <a href="/Donacion" class="item-menu-link">Donacion</a>
             </li>
               <li class="item-menu">
-              <a href="Libro-digital.html" class="item-menu-link">Libro</a>
+              <a href="/Libro-digital" class="item-menu-link">Libro</a>
             </li>
          <li class="item-menu">
-              <a href="Empleo.html" class="item-menu-link">Empleo</a>
+              <a href="/Empleo" class="item-menu-link">Empleo</a>
             </li>
           </ul>
         </li>
@@ -173,58 +173,58 @@ document.body.insertAdjacentHTML("afterbegin", `
           
           <ul class="sub-menu" >
             <li class="item-menu">
-              <a href="Live.html" class="item-menu-link">Live</a>
+              <a href="/Live" class="item-menu-link">Live</a>
             </li>
              <li class="item-menu">
-              <a href="Youtuber.html" class="item-menu-link">Youtuber</a>
+              <a href="/Youtuber" class="item-menu-link">Youtuber</a>
             </li>
           <li class="item-menu">
-              <a href="Streamer.html" class="item-menu-link">Streamer</a>
+              <a href="/Streamer" class="item-menu-link">Streamer</a>
             </li>
  <li class="item-menu">
-              <a href="Creador_digital.html" class="item-menu-link">Creador digital</a>
+              <a href="/Creador_digital" class="item-menu-link">Creador digital</a>
             </li>
  <li class="item-menu">
-              <a href="Creador_de_contenido.html" class="item-menu-link">Creador de contenido</a>
+              <a href="/Creador_de_contenido" class="item-menu-link">Creador de contenido</a>
             </li>
  <li class="item-menu">
-              <a href="Influencer.html" class="item-menu-link">Influencer</a>
+              <a href="/Influencer" class="item-menu-link">Influencer</a>
             </li>
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="Musica_personal.html" class="item-menu-link">Musica </a>
+          <a href="/Musica_personal" class="item-menu-link">Musica </a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
           <ul class="sub-menu" >
             <li class="item-menu">
-              <a href="Spotify.html" class="item-menu-link">Spotify</a>
+              <a href="/Spotify" class="item-menu-link">Spotify</a>
             </li>
          <li class="item-menu">
-              <a href="YouTube%20music.html" class="item-menu-link">Youtube music</a>
+              <a href="/YouTube%20music" class="item-menu-link">Youtube music</a>
             </li>
          
           </ul>
         </li>
         <li class="item-menu item-menu-sub-menu">
-          <a href="Content_pay.html" class="item-menu-link">Content pay</a>
+          <a href="/Content_pay" class="item-menu-link">Content pay</a>
 <i class="fas fa-angle-down angle-view-sub-menu" role="button" aria-expanded="false"></i>
           
           <ul class="sub-menu">
              <li class="item-menu">
-              <a href="Only%20fans.html" class="item-menu-link">Only fans</a>
+              <a href="/Only%20fans" class="item-menu-link">Only fans</a>
             </li>
              <li class="item-menu">
-              <a href="fansly.html" class="item-menu-link">Fansly</a>
+              <a href="/fansly" class="item-menu-link">Fansly</a>
             </li>
              <li class="item-menu">
-              <a href="Mym%20fans.html" class="item-menu-link">Mym fans</a>
+              <a href="/Mym%20fans" class="item-menu-link">Mym fans</a>
             </li>
              <li class="item-menu">
-              <a href="Passes.html" class="item-menu-link">Passes</a>
+              <a href="/Passes" class="item-menu-link">Passes</a>
             </li>
                <li class="item-menu">
-              <a href="Reservar-fans.html" class="item-menu-link">Reservar fans</a>
+              <a href="/Reservar-fans" class="item-menu-link">Reservar fans</a>
             </li>
             <li class="item-menu">
               <a href="https://throne.com/gieovannyfrias" class="item-menu-link">Throne Wishlist</a>
@@ -233,7 +233,7 @@ document.body.insertAdjacentHTML("afterbegin", `
           </ul>
         </li>
         <li class="item-menu">
-          <a href="Contacto.html" class="item-menu-link">Contacto</a>
+          <a href="/Contacto" class="item-menu-link">Contacto</a>
         </li>
       </ul>
     </nav>
