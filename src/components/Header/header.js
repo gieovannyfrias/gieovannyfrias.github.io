@@ -3,7 +3,7 @@ document.body.insertAdjacentHTML("afterbegin", `
   <div class="child-header">
     <div class="box-logo">
       <a href="index.html" class="link-logo">Gieovanny Frias</a>
-      <h6>Youtuber,Influencer,Streamer o creador digital</h6>
+      <h6>Youtuber, Influencer, Streamer, Dj, Modelo</h6>
     </div>
     
     <nav class="box-menu-navegacion" id="menu-navegacion">
