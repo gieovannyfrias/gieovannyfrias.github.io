@@ -116,278 +116,425 @@
 </script>
   </div>
  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
-
-  
-    .scroll-container {
-      display: flex;
-      flex-direction: row;
-      width: 100vw;
-      height: 100vh;
-      overflow-x: auto;
-     /* overflow-y: hidden;*/
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-    }
-
-    .section {
-      flex: 0 0 100vw;
-      height: 200vh;
-      scroll-snap-align: start;
-      font-size: 2em;
-      color: white;
-    }
-     @media only screen and (min-width:320px) and (max-width:1200px){
-       .section {
-         font-size: large;
-   }
-   }
-    #sec1 { background: linear-gradient(120deg, #1db954, #191414);}
-    #sec2 { background: linear-gradient(120deg, #1db954, #191414);}
-    #sec3 { background: linear-gradient(120deg, #1db954, #191414);}
-    #sec4 { background: linear-gradient(120deg, #1db954, #191414);}
-   
-.spotify-background{
-    /* Define el degradado lineal */
-    background: linear-gradient(120deg, #1db954, #191414); 
-    /* Otra opción de colores: linear-gradient(120deg, #1ed760, #121212); */
-
-    /* Asegura que el contenedor ocupe toda la pantalla */
-    width: 100%;
-    height: 100%;
-
-    /* Centra el contenido (opcional) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  /* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+:root {
+    --bg-black: #000000;
+    --bg-dark: #121212;
+    --bg-card: #181818;
+    --bg-card-hover: #282828;
+    --spotify-green: #1ed760;
+    --spotify-green-hover: #1fdf64;
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --transition-smooth: all 0.3s cubic-bezier(0.3, 0, 0, 1);
 }
-     .title, .paragraph{
-      color: white;
-    }
-   
-.btn_1 {
-    color: #ffffff;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+* {
     margin: 0;
-    display: flex;
-    justify-content: center; /* Centrado horizontal del contenedor */
-    align-items: center; /* Centrado vertical del contenedor */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Contenedor para los botones */
-.buttons-container {
-    display: flex; /* Usa flexbox para alinear los botones en línea */
-    gap: 20px; /* Espacio entre los botones */
-    justify-content: center; /* Centra los botones dentro de su contenedor */
+body {
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Contenedor de Scroll de pantalla completa (opcional si usas scroll snap) */
+.scroll-container {
     width: 100%;
 }
 
-/* Estilos base para los botones */
-.spotify-button {
-    padding: 14px 32px; /* Relleno para hacerlos grandes y notorios */
-    border-radius: 500px; /* Esquinas muy redondeadas (cápsula) */
-    text-decoration: none; /* Quita el subrayado de los enlaces */
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Transiciones suaves */
-    display: inline-block;
+.section {
+    min-height: 100vh;
+    padding: 80px 10% 60px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   2. SECCIÓN 1: BIENVENIDA (HERO SECTION)
+   ========================================================================== */
+#sec1 {
+    background: linear-gradient(135deg, #1e3264 0%, var(--bg-black) 100%);
+    padding-top: 40px;
+}
+
+.spotify-background {
     text-align: center;
+    max-width: 800px;
 }
 
-/* Estilo para el botón principal (verde) */
+.title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.paragraph {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* Botones Premium */
+.buttons-container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.spotify-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 500px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: var(--transition-smooth);
+}
+
 .spotify-button.primary {
-    background-color: #1DB954; /* Verde Spotify oficial */
-    color: #121212;
-    border: none;
+    background-color: var(--spotify-green);
+    color: var(--bg-black);
 }
 
-/* Efecto hover para el botón principal */
 .spotify-button.primary:hover {
-    background-color: #1ed760; /* Verde ligeramente más claro al pasar el ratón */
-    transform: scale(1.05); /* Ligera animación de escala */
+    background-color: var(--spotify-green-hover);
+    transform: scale(1.04);
 }
 
-/* Estilo para el botón secundario (transparente/blanco) */
 .spotify-button.secondary {
     background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff; /* Borde blanco */
+    color: var(--text-main);
+    border: 1px solid var(--text-muted);
 }
 
-/* Efecto hover para el botón secundario */
 .spotify-button.secondary:hover {
-    background-color: #ffffff; /* Fondo blanco al pasar el ratón */
-    color: #121212; /* Texto oscuro al pasar el ratón */
-    transform: scale(1.05); /* Ligera animación de escala */
+    border-color: var(--text-main);
+    transform: scale(1.04);
 }
-   .artist{
-         position: relative;
-      top: 180px;
-   }
-   .title_2{
-         display: flex;
-    justify-content: center;
+
+/* ==========================================================================
+   3. SECCIÓN 2: ARTISTA (GIOVANNY FRÍAS)
+   ========================================================================== */
+#sec2 {
+    background: linear-gradient(180deg, var(--bg-black) 0%, var(--bg-dark) 100%);
+}
+
+.artist {
+    width: 100%;
+    max-width: 900px;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.title_2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    display: flex;
     align-items: center;
-    text-align: center;
+    gap: 12px;
+    margin-bottom: 8px;
        font-family: "Trade Winds", system-ui;
   font-weight: 400;
   font-style: normal;
-     color: whitesmoke;
-   }
-   .subtitle_2{
-         display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-   }
-   .subencabezado{
-     font-size: 15px;
-       display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-   }
-   .paragraph_2{
-    color: white;
-     font-size: 20px;
-   }
-      .bi-patch-check-fill{
-    color:darkturquoise;
-     width: 20px; /* Ancho deseado */
-  height: auto;
-   }
-    .galeria_1 {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-      position: relative;
-      top: 100px;
+   
 }
 
-
-.contenedor-principal {
-    display: flex; /* Alinea la galería y la descripción horizontalmente */
-    gap: 20px; /* Espacio entre la galería y la descripción */
-    max-width: 900px; /* Limita el ancho total del contenedor */
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.title_2 svg {
+    color: #3d91ff; /* Azul verificado oficial */
+    width: 28px;
+    height: 28px;
 }
-     @media only screen and (min-width:320px) and (max-width:1200px){
 
+.subtitle_2 {
+    font-size: 1.1rem;
+    color: var(--spotify-green);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+}
+
+.subencabezado {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.paragraph_2 {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 32px;
+}
+
+/* Ajustes finos para el reproductor embebido */
+iframe[data-testid="embed-iframe"] {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    transition: var(--transition-smooth);
+}
+
+iframe[data-testid="embed-iframe"]:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. SECCIÓN 3: GALERÍA Y CARACTERÍSTICAS
+   ========================================================================== */
 .contenedor-principal {
-   display: block;
-   }
-   }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Grid de fotos estilo mosaico moderno */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(2, 150px); /* Cuadrícula de 2x2 con imágenes más pequeñas */
-    grid-template-rows: repeat(2, 150px);
-    gap: 10px;
-    /* Asegura que la galería no se encoja si el texto es muy largo */
-    flex-shrink: 0; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
 .imagen-contenedor {
-    width: 100%;
-    height: 100%;
+    position: relative;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--bg-card);
 }
 
 .imagen-contenedor img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: var(--transition-smooth);
 }
 
+.imagen-contenedor:hover img {
+    transform: scale(1.08) rotate(1deg);
+    filter: brightness(0.8);
+}
+
+/* Texto de beneficios */
 .descripcion-contenedor {
-    flex-grow: 1; /* Permite que este contenedor use el espacio restante */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subtitle_3 {
+    color: var(--spotify-green);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+.title_3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 10px;
+    border-left: 3px solid var(--spotify-green);
+    padding-left: 12px;
+}
+
+.paragraph_3 {
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. SECCIÓN 4: NAVEGACIÓN Y FOTOS ROTADAS
+   ========================================================================== */
+.position_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+  z-index: 1;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title_4 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--spotify-green);
+}
+
+.subtitle_4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.paragraph_4 {
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Efecto de mockups de fotos en cascada/giradas */
+.position_1 {
+    min-height: 400px;
+}
+
+.foto-girada, .foto-girada_1 {
+    position: absolute;
+    right: 5%;
+    width: 260px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: -10px 20px 40px rgba(0,0,0,0.6);
+    transition: var(--transition-smooth);
+}
+
+.foto-girada {
+    transform: rotate(-8deg) translateX(-40px);
+    z-index: 1;
+}
+
+.foto-girada_1 {
+    transform: rotate(6deg) translateY(20px);
+    z-index: 2;
+}
+
+.position_1:hover .foto-girada {
+    transform: rotate(-12deg) translateX(-70px) scale(1.02);
+}
+
+.position_1:hover .foto-girada_1 {
+    transform: rotate(2deg) translateY(10px) translateX(20px) scale(1.04);
+}
+
+/* ==========================================================================
+   6. PUBLICIDAD Y ANIMACIONES
+   ========================================================================== */
+.adsbygoogle {
+    margin: 40px auto;
+    max-width: 900px;
+  height: 400px;
+    background: var(--bg-card);
+    border-radius: 8px;
     padding: 10px;
-    /* Opcional: añade un fondo ligero para diferenciar */
-    /* background-color: #fafafa; */ 
 }
 
-.descripcion-contenedor, h1, p {
-    margin-top: 0;
-    color: #333;
-}
-    .title_3{
-      font-size: 16px;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    .subtitle_3{
-       font-size: 16px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .paragraph_3{
-     font-size: 16px;
-    }
-    
-        .position_1{
-      display: flex;
-              position: relative;
-      top: 250px;
-    }
-    .list{
-      display: flex;
-      flex-direction: column;
-    }
-   
- .title_4{
-      font-size: 40px;
-    }
-    .subtitle_4{
-       font-size: 35px;
-    }
-    .paragraph_4{
-     font-size: 20px;
-      color: burlywood;
-    }
-    
-    .foto-girada{
-     /* La propiedad transform con la función rotate() hace el giro */
-    transform: rotate(80deg); 
-    
-    /* Opcional: añade una transición suave al pasar el ratón por encima */
-    transition: transform 0.5s ease;
-      width:20%;
-      height:20%;
 }
 
-/* Opcional: gira la foto 90 grados adicionales al pasar el ratón */
-.foto-girada:hover {
-    transform: rotate(250deg); /* 60deg + 90deg */
-}
-    .foto-girada_1{
-    /* Gira la imagen 60 grados en sentido antihorario (contrario a las manecillas del reloj) */
-    transform: rotate(-60deg); 
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (MÓVILES Y TABLETS)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .section {
+        padding: 60px 5%;
+    }
     
-    /* Opcional: añade una transición suave */
-    transition: transform 0.5s ease;
-        width:20%;
-      height:20%;
+    .contenedor-principal, .position_1 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .position_1 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .foto-girada, .foto-girada_1 {
+        position: relative;
+        right: auto;
+        width: 45%;
+        height: 100%;
+        display: inline-block;
+        margin: 0 2%;
+    }
+    
+    .foto-girada { transform: rotate(-4deg); }
+    .foto-girada_1 { transform: rotate(4deg); }
 }
 
-/* Opcional: gira la foto 90 grados adicionales al pasar el ratón */
-.foto-girada_1:hover {
-    transform: rotate(-120deg); /* Duplica el giro antihorario */
+@media (max-width: 600px) {
+    .artist {
+        padding: 20px;
+    }
+    .title_2 {
+        font-size: 1.8rem;
+    }
+    .buttons-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .spotify-button {
+        width: 100%;
+    }
+        .position_1 {
+        display: flex;
+        flex-direction: column; /* Alinea texto y fotos verticalmente */
+        min-height: auto;       /* Quita la altura fija innecesaria en móvil */
+    }
+
+       .position_1 {
+        display: flex;
+        flex-direction: column; /* Alinea texto y fotos verticalmente */
+        min-height: auto;       /* Quita la altura fija innecesaria en móvil */
+    }
+
+    .foto-girada, .foto-girada_1 {
+        position: relative;     /* Crucial: rompe el absoluto de escritorio */
+        right: auto;            /* Resetea la posición lateral */
+        width: 100%;            /* Toma todo el ancho disponible del contenedor */
+        max-width: 320px;       /* Evita que se estiren de más en pantallas medianas */
+        height: 580px;          /* Mantiene la proporción original sin distorsionar */
+        margin: 20px auto 0 auto; /* Centra las imágenes y les da espacio arriba */
+        display: block;
+        transform: none; /* Desactiva la rotación en móvil */
+    }
 }
-  </style>
+
+  </style> 
         <!-- La ruta debe recorrer todas las carpetas -->
 <script src="src/components/Header/header.js" defer></script>
+  <script src="src/components/Footer/footer.js" defer></script>
+
   <script>
     const container = document.getElementById('scrollContainer');
     const totalSections = container.children.length;
