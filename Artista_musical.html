@@ -8,6 +8,10 @@
   <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
      crossorigin="anonymous"></script>
+<!--  fuente de playlist-title-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
      <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
   <meta name="google-adsense-account" content="ca-pub-8616709924287043">
   <script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -84,293 +88,339 @@
   </div>
   
 
-
-  <style>
-        * {
-        margin: 0;
-            border: 0;
-         
-  box-sizing: border-box;
-}
-  body {
-  font-family: 'Montserrat', sans-serif !important;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
- /* background: url('') center center no-repeat;
-  background-size: cover;  imagen url*/
-    background-color: #1DB954;
-}
-::-moz-selection {
-  color: #fff;
-  background: #000;
+<style>
+  
+  /* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+:root {
+    --spotify-green: #1DB954;
+    --white: #ffffff;
+    --black: #000000;
+    --text-muted: #b3b3b3;
+    --overlay-vignette: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.95) 80%, rgba(0, 0, 0, 0.95) 100%);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-::selection {
-  color: #fff;
-  background: #000;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
 }
-    
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: var(--spotify-green);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* Selección de texto */
+::-moz-selection { color: var(--white); background: var(--black); }
+::selection { color: var(--white); background: var(--black); }
+
 .sc-truncate[style] {
-  display: none !important;
+    display: none !important;
 }
 
+/* ==========================================================================
+   2. CONTENEDORES PRINCIPALES Y LAYOUT
+   ========================================================================== */
 .playlist-container {
-  	max-width: 6000px;
-	margin: 0 auto;
-	padding: 32px;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-      top: 100px;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 32px;
+    position: relative;
+    top: 100px;
     z-index: 1;
-}
-      @media only screen and (min-width:320px) and (max-width:1200px){
-    .playlist-container {
-      top: 0;
-        }
 }
 
 .channel-item {
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: top left;
+    width: 100%;
+/*    height: 100vh;*/
+    background-size: cover;
+    background-position: top left;
 }
 
 .channel-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
 }
 
+/* Caja de información (Título y Descripción) */
 .channel-box {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 5vw;
-  width: 40vw;
-  z-index: 99;
+    position: absolute;
+    top: 50%;
+    left: 8vw;
+    width: 40vw;
+    transform: translateY(-50%);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
+/* ==========================================================================
+   3. ELEMENTOS DE CONTENIDO
+   ========================================================================== */
 .playlist-logo {
-  border-radius: 50%;
-  position: relative;
-  margin-left: 35%;
-  margin-bottom: 10%;
-  border: 2px solid white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    object-fit: cover;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 .playlist-title {
-  font-size: 3.5vw;
-  color: #fff;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.8vw;
+    font-size: clamp(1.8rem, 3.5vw, 3.5rem); /* Evita que se encoja infinitamente */
+    color: var(--white);
+    font-weight: 900;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+     font-family: "Trade Winds", system-ui;
+  font-style: normal;
 }
 
 .playlist-description {
     font-family: "Indie Flower", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: #fff;
-  font-size: 2vw;
-  line-height: 1.6;
+    font-weight: 400;
+    color: var(--white);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
 }
-    .social-links{
-      font-size: 40px;
-    }
-    .fa{
-      text-decoration: none;
-      color: white;
-    }
+
+.social-links {
+    font-size: 32px;
+    margin-top: 12px;
+    display: flex;
+    gap: 20px;
+}
+
+.fa {
+    text-decoration: none;
+    color: var(--white);
+    transition: var(--transition-smooth);
+}
+
+.fa:hover {
+    color: var(--black);
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   4. EFECTOS MULTIMEDIA Y REPRODUCTOR
+   ========================================================================== */
 .vignette-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0.95) 80%, rgba(0, 0, 0, 0.95) 100%);
-  height: 190%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--overlay-vignette);
+    height: 100%; /* Corregido de 190% a 100% para evitar desbordamiento */
+    pointer-events: none;
 }
 
-/* Particle container. */
-canvas {
-  display: block;
-  vertical-align: bottom;
+canvas, #particle-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
-#particle-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-}
-
+/* Contenedor del Iframe y el Vinilo */
 .record-container {
-  position: absolute;
-  bottom: 2vw;
-  right: 2vw;
-  width: 45%;
-  height: 40vw;
-  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 1);
-}
-
-.spotify-iframe {
-position: absolute;
-    margin-top: 10px;
-    right: 10px;
-    width: 70%;
-    height: 150%;
-    margin-left: 10px;
-    z-index: 90;
-}
-
-  @media only screen and (min-width:320px) and (max-width:600px){
-  .spotify-iframe {
-    right: 10px;
-    height: 100vh;
-    bottom: 1em;
-    width: 90vw;
-    top: 90%;
-  }
-
-  .song-list-button .circle-button {
-    display: none;
-  }
-
-  .channel-item {
-    background-position: center;
-  }
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    width: 42vw;
+    height: 60vh;
+    background: rgba(0,0,0,0.4);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
 }
 
 .player-background {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
-
+    position: absolute;
+    inset: 0;
 }
 
+.spotify-iframe {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 90%;
+    height: 90%;
+    z-index: 90;
+    border-radius: 12px;
+}
+
+/* Vinilo Animado */
 .record-box {
-  position: absolute;
-  bottom: 6vw;
-  right: 2vw;
-  width: 45%;
-  height: 50%;
-  overflow: hidden;
-  display: flex;
-  z-index: 80;
-}
-
-.album-box {
-  display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    display: flex;
+    z-index: 95;
+    pointer-events: none;
 }
 
 .album-box img {
-  border-radius: 100%;
-  height: 11vw;
-  width: 11vw;
-  margin: 0.5vw;
-  animation: recordRotate linear 7s infinite;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    border: 2px solid rgba(255,255,255,0.2);
+    animation: recordRotate linear 8s infinite;
 }
 
 @keyframes recordRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
+/* Botonera de matriz de puntos (.song-list-button) */
 .song-list-button {
-  position: absolute;
-  top: 50%;
-  left: -80px;
-  transform: translateY(-50%);
-  width: 55px;
-  height: 55px;
-  display: block;
+    position: absolute;
+    top: 50%;
+    left: -80px;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
 }
 
 .circle-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #fff;
-  border-radius: 50px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    transition: var(--transition-smooth);
 }
 
-.circle-button2 {
-  top: 0;
-  left: 20px;
+.song-list-button:hover .circle-button {
+    background-color: var(--white);
 }
 
-.circle-button3 {
-  top: 0;
-  left: 40px;
+/* ==========================================================================
+   5. RESPONSIVE DESIGN (MEDIA QUERIES INTEGRADAS)
+   ========================================================================== */
+
+/* Ajuste general para Tablets y Laptops Medianas */
+@media only screen and (max-width: 1200px) {
+    .playlist-container {
+        top: 0;
+    }
+    .channel-box {
+        width: 45vw;
+        left: 5vw;
+    }
+    .record-container {
+        width: 45vw;
+        right: 3vw;
+    }
 }
 
-.circle-button4 {
-  top: 20px;
-  left: 0;
-}
+/* Ajuste crítico para Celulares (Mobile-First Fix) */
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Permite scroll vertical si el contenido supera la pantalla */
+    }
 
-.circle-button5 {
-  top: 20px;
-  left: 20px;
-}
+    .playlist-container {
+        height: auto;
+        min-height: 100vh;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 0;
+    }
 
-.circle-button6 {
-  top: 20px;
-  left: 40px;
-}
+    .channel-item {
+        height: auto;
+/*        min-height: 100vh;*/
+        background-position: center;
+    }
 
-.circle-button7 {
-  top: 40px;
-  left: 0;
-}
+    .channel-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+    }
 
-.circle-button8 {
-  top: 40px;
-  left: 20px;
-}
+    /* La caja de texto ahora se posiciona de forma relativa para no encimarse */
+    .channel-box {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: none;
+        text-align: center;
+        align-items: center;
+        padding: 20px 10px;
+        margin-bottom: 40px;
+    }
 
-.circle-button9 {
-  top: 40px;
-  left: 40px;
-}
+    .playlist-logo {
+        margin: 0 auto 16px auto;
+    }
 
-  @media only screen and (min-width:320px) and (max-width:600px){
-  .song-list-button,
-  .record-box.paused {
-    display: none;
-  }
-}
+    .social-links {
+        justify-content: center;
+    }
 
-  @media only screen and (min-width:320px) and (max-width:600px){
-  .record-container {
-    position: absolute;
-    bottom: 2vw;
-    right: 2vw;
-    width: 100%;
-    height: 10vw;
-    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 1);
-    top: 80%;
-  }
-}
+    /* El contenedor del reproductor se adapta al ancho móvil sin desbordar */
+    .record-container {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        max-width: 480px;
+        height: 450px; /* Altura perfecta para albergar el iframe de spotify en móvil */
+        margin: 0 auto 40px auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
 
+    .spotify-iframe {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        padding: 12px;
+    }
+
+    /* Ocultar elementos estorbosos en teléfonos */
+    .song-list-button,
+    .record-box,
+    .record-box.paused {
+        display: contents;
+    }
+}
 
   </style>
                       <!-- La ruta debe recorrer todas las carpetas -->
