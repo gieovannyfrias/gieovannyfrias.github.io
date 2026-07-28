@@ -55,7 +55,7 @@ style.textContent = `
   .footer__link { text-decoration:none; color:#fff; }
   .footer-li { list-style:none; }
   .pie-pagina { display:grid; grid-template-rows:1fr auto auto; grid-template-areas:"main" "footer"; min-height:100vh; overflow-x:hidden; }
-  .pie-pagina .footer { grid-area:footer; background:linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); display:grid; position:relative; z-index:1; }
+  .pie-pagina .footer { grid-area:footer;background: linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(35,30,20,1) 50%, rgba(20,20,20,1) 100%);border-top: 1px solid rgba(212, 175, 55, 0.3); display:grid; position:relative; z-index:1; }
   .pie-pagina .footer .bubbles { position:absolute; top:0; left:0; right:0; height:6rem; background:inherit; }
   .pie-pagina .footer .bubbles .bubble { position:absolute; left:var(--position,50%); background:inherit; border-radius:50%; animation:bubble-size var(--time,3s) linear infinite var(--delay,0s), bubble-move var(--time,3s) linear infinite var(--delay,0s); transform:translate(-50%,100%); }
   .pie-pagina .footer .content-final { padding:6rem 1rem 2rem; background:inherit; z-index:2; }
