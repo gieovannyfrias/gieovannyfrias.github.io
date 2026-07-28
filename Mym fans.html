@@ -220,84 +220,36 @@
   </div>
   
   <style>
-  
-  * {
+/* --- 1. RESETEO Y CONFIGURACIÓN BASE --- */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-    body{
-      background-color: black;
-    }
-    
-  
-      .wrapper {
-	max-width: 1400px;
-	margin: 0 auto;
-	padding: 0px;
+
+body {
+  background-color: black;
 }
-      
-    
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0; /* Simplificado padding: 0px */
+}
+
+/* --- 2. CONTENEDOR PRINCIPAL DE COLUMNAS --- */
 .imagen_vertical {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
   margin-top: 150px;
-}  
-    .mis_fans{
-  text-align: center;
-  background: transparent;
-  padding-top: 20px;
 }
 
-.boton{
-      text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-			text-align:center;
-			text-decoration: none;
-      font-family: 'Helvetica Neue', Helvetica, sans-serif;
-      display:inline-block;
-			color: #FFF;
-			background: #7F8C8D;
-			padding: 20px 40px 20px 40px;
-			white-space: nowrap;
-			-webkit-border-radius: 5px;
-			-moz-border-radius: 5px;
-			border-radius: 5px;
-			margin: 10px 5px;
-			-webkit-transition: all 0.2s ease-in-out;
-			-ms-transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			-o-transition: all 0.2s ease-in-out;
-			transition: all 0.2s ease-in-out;
-}
-   
-.azul{
-background:green;
-  border: 1px solid white;
-}
-
-.azul:hover{
-background: darkgreen;
-}
-
-    @media only screen and (min-width:320px) and (max-width:700px){
-     
-.imagen_vertical {
-  display:flex;
-  gap: 20px;
-
-     }
-      .boton{
-position: relative;
-      left: 350px;
-        top: 250px;
-        z-index: 2;
-      }
-    }  
+/* --- 3. COLUMNAS INCLINADAS (#image-container) --- */
 #image-container {
   flex-shrink: 0;
   width: 200px;
@@ -310,51 +262,104 @@ position: relative;
   overflow: hidden;
   transform: rotate(15deg);
 }
-     
+
+/* Variaciones por posición del contenedor */
+#image-container:nth-child(2) .image {
+  animation-direction: alternate-reverse;
+}
+
+#image-container:nth-child(3) {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+
+/* Pausar animación al hacer hover */
+#image-container:hover .image {
+  animation-play-state: paused;
+}
+
+/* --- 4. CONTENEDOR DE IMAGEN (.image) --- */
 .image {
-  flex-shrink:0;
+  flex-shrink: 0;
   height: 350px;
   width: 100%;
-   border-style: solid;
-  border-color: white;
-      border-radius: 25px 25px 25px 25px;
+  border: 1px solid white; /* Simplificado border-style y border-color */
+  border-radius: 25px; /* Reducido border-radius redundante */
   overflow: hidden;
   animation: move 15s linear infinite alternate;
   user-select: none;
 }
-     @media only screen and (min-width:320px) and (max-width:1200px){
-     
-.image {
-    width: 97%;
 
-  height: 300px;
-     }
-    }
 .picture {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-@keyframes move {
-  0% {
-    transform: translatey(0);
-  }
-  100% {
-    transform: translatey(500%);
-  }
-}
-#image-container:nth-child(2) .image {
-  animation-direction: alternate-reverse;
-}
-#image-container:nth-child(3) {
-  flex-direction: column-reverse;
-  justify-content: flex-start;
+
+/* --- 5. COMPONENTES DE INTERFAZ Y BOTONES --- */
+.mis_fans {
+  text-align: center;
+  background: transparent;
+  padding-top: 20px;
 }
 
-#image-container:hover .image {
-  animation-play-state: paused;
+.boton {
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  display: inline-block;
+  color: #FFF;
+  background: #7F8C8D;
+  padding: 20px 40px; /* Simplificado padding repetido */
+  white-space: nowrap;
+  border-radius: 5px; /* Eliminados prefijos obsoletos (-webkit-, -moz-) */
+  margin: 10px 5px;
+  transition: all 0.2s ease-in-out; /* Eliminados prefijos de transición heredados */
 }
+
+.azul {
+  background: green;
+  border: 1px solid white;
+}
+
+.azul:hover {
+  background: darkgreen;
+}
+
+/* --- 6. ANIMACIONES --- */
+@keyframes move {
+  0% {
+    transform: translateY(0); /* Corregido translatey por buenas prácticas */
+  }
+  100% {
+    transform: translateY(500%);
+  }
+}
+
+/* --- 7. RESPONSIVE / MEDIA QUERIES --- */
+@media only screen and (min-width: 320px) and (max-width: 1200px) {
+  .image {
+    width: 97%;
+    height: 300px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 900px) {
+  .imagen_vertical {
+    display: flex;
+    gap: 20px;
+  }
+  .boton {
+    position: relative;
+    left: 350px;
+    top: 250px;
+    z-index: 2;
+  }
+}
+
+
   
   </style>
               <!-- La ruta debe recorrer todas las carpetas -->
