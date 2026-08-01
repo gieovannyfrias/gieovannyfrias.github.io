@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://lh3.googleusercontent.com/d/1MDXpTD3Flv-QP1GgV-fLViPOf_CtVBjA=w1000" type="image/x-icon">
+      <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-search-pseudo-elements></script>  
+  <!-- Google adsense monetizacion -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616709924287043"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-8616709924287043">
+  
+  <!-- Código de Protección contra errores de Recuperación de bloqueo de anuncios monetizacion-->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8616709924287043?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  
+  <title>Articulos Individuales</title>
+    <meta name="title" content="Articulos Individuales"/>
+    <meta name="description" content="Encuestra todos los articulos mas recientes en este año."/>
+<meta name="robots" content="index, noimageindex">
+<meta name="robots" content="follow"/>
+<meta name="keywords" content="gieovannyfrias,gieovanny"/>
+<meta name="author" content="Gieovanny Frias">
+  
+
+  
+</head>
+<body>
+
+  <main class="container">
+    <header class="blog-header">
+      <h1 class="main-title">Artículos Destacados</h1>
+      <div class="filter-wrapper">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="tech">Tecnología</button>
+        <button class="filter-btn" data-filter="model">Modelo</button>
+        <button class="filter-btn" data-filter="business">Negocios</button>
+      </div>
+    </header>
+
+    <div class="blog-grid" id="blogGrid"></div>
+  </main>
+
+  <!-- Ventana Modal Única Dinámica -->
+  <div class="modal-overlay" id="customModal" role="dialog" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close" id="closeModalBtn" aria-label="Cerrar modal">&times;</button>
+      <div class="modal-body" id="modalDynamicContent">
+        <!-- El contenido detallado de cada artículo se inyectará aquí -->
+      </div>
+    </div>
+  </div>
+<style>
+  
+  :root {
+  --bg-main: #0b0f19;
+  --bg-card: #131a26;
+  --accent-gradient: linear-gradient(135deg, #10b981, #059669); 
+  --text-primary: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --radius-lg: 16px;
+  --radius-sm: 8px;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, sans-serif;
+  padding:0;
+  zoom:75%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #fff, var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filter-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* ==========================================================================
+   DISEÑO DE REJILLA OPTIMIZADO PARA MÓVIL Y ESCRITORIO
+   ========================================================================== */
+.blog-grid {
+  display: grid;
+  /* En teléfonos, usa todo el ancho disponible protegiendo los bordes */
+  grid-template-columns: minmax(0, 1fr); 
+  gap: 20px; /* Espacio más compacto en dispositivos móviles */
+}
+
+/* Media Query: Se activa automáticamente en pantallas medianas y grandes */
+@media (min-width: 640px) {
+  .blog-grid {
+    /* Regresa al comportamiento de columnas automáticas en tablets y PC */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px; /* Recupera el espacio amplio original */
+  }
+}
+
+
+.blog-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-holder {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.blog-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-action {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.card-action:hover {
+  background: var(--accent-gradient);
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   ESTILOS PRÉMIUM DE LA VENTANA MODAL (Efectos de desenfoque y profundidad)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 8, 15, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  background: #151f32;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: #ef4444;
+  border-color: transparent;
+  color: #fff;
+}
+
+/* Estilos internos del contenido inyectado en el modal */
+.modal-hero-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.modal-content-padding {
+  padding: 35px;
+}
+
+.modal-meta-info {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.modal-article-title {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.modal-full-text {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.modal-full-text p {
+  margin-bottom: 16px;
+}
+/* ==========================================================================
+   BOTONES DE COMPARTIR EN REDES SOCIALES (PRÉMIUM)
+   ========================================================================== */
+.modal-share-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.share-title {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.share-buttons-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.share-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: none;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+/* Colores de marca optimizados */
+.share-item-btn.x-twitter {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.share-item-btn.facebook {
+  background: #1877f2;
+}
+.share-item-btn.linkedin {
+  background: #0077b5;
+}
+.share-item-btn.whatsapp {
+  background: #25d366;
+}
+.share-item-btn.copy-link {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.share-item-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.share-item-btn.copy-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+  </style>
+     <!-- La ruta debe recorrer todas las carpetas -->
+<script src="src/components/Header/header.js" defer></script>
+<script src="src/components/Footer/footer.js" defer></script>
+  <script>
+  // Arreglo con 10 publicaciones. Cada una incluye un campo 'fullContent' exclusivo.
+// Arreglo con 10 publicaciones. Cada una cuenta con imágenes y contenidos únicos.
+const posts = [
+  { 
+    id: 1, category: "tech", tag: "Tecnología", date: "Julio 30, 2026", 
+    title: "IA Agéntica (Sistemas Multiagente)", 
+    desc: "Los creadores usan IA en sus plataformas",
+    cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Los creadores ya no usan la IA solo para responder preguntas o redactar textos, sino como asistentes autónomos que ejecutan tareas complejas de distribución y optimización</p>"
+  },
+  { 
+    id: 2, category: "model", tag: "Modelo", date: "Julio 28, 2026", 
+    title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 3, category: "business", tag: "Negocios", date: "Julio 25, 2026", 
+    title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 4, category: "tech", tag: "Tecnología", date: "Julio 22, 2026", 
+    title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 5, category: "model", tag: "Modelo", date: "Julio 20, 2026", 
+ title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 6, category: "business", tag: "Negocios", date: "Julio 18, 2026", 
+  title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 7, category: "tech", tag: "Tecnología", date: "Julio 15, 2026", 
+    title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 8, category: "model", tag: "Modelo", date: "Julio 12, 2026", 
+ title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 9, category: "business", tag: "Negocios", date: "Julio 09, 2026", 
+ title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  },
+  { 
+    id: 10, category: "tech", tag: "Tecnología", date: "Julio 05, 2026", 
+   title: "Titulo - No disponible", 
+    desc: "Descripción - No disponible.",
+     cardImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    modalImg: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+    fullContent: "<p>Parrafo - No disponible.</p>"
+  }
+];
+
+const grid = document.getElementById('blogGrid');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const modal = document.getElementById('customModal');
+const modalContent = document.getElementById('modalDynamicContent');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+// Actualización del renderizado de la cuadrícula principal
+function renderPosts(filteredPosts) {
+  grid.innerHTML = filteredPosts.map(post => `
+    <article class="blog-card" data-category="${post.category}">
+      <div class="card-img-holder">
+        <!-- Inyección de la imagen exclusiva de la tarjeta -->
+        <img src="${post.cardImg}" alt="${post.title}" class="card-img" loading="lazy">
+        <span class="card-badge">${post.tag}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">${post.date}</div>
+        <h2 class="card-title">${post.title}</h2>
+        <p class="card-desc">${post.desc}</p>
+        <button class="card-action" onclick="openModal(${post.id})">Leer Artículo</button>
+      </div>
+    </article>
+  `).join('');
+}
+
+// Lógica de filtrado por categoría integrada
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    
+    const filterValue = e.target.getAttribute('data-filter');
+    renderPosts(filterValue === 'all' ? posts : posts.filter(p => p.category === filterValue));
+  });
+});
+
+// Actualización del modal para inyectar la imagen HD única
+function openModal(id) {
+  const post = posts.find(p => p.id === id);
+  if (!post) return;
+
+  const baseUrl = window.location.origin + window.location.pathname;
+  const uniqueArticleUrl = `${baseUrl}?post_id=${post.id}`;
+  const encodedUrl = encodeURIComponent(uniqueArticleUrl);
+  const encodedTitle = encodeURIComponent(`Recomiendo leer: "${post.title}"`);
+  const twitterText = encodeURIComponent(`Espectacular artículo de ${post.tag}: "${post.title}"`);
+
+  modalContent.innerHTML = `
+    <!-- Inyección de la imagen HD exclusiva del modal -->
+    <img src="${post.modalImg}" alt="${post.title}" class="modal-hero-img">
+    <div class="modal-content-padding">
+      <div class="modal-meta-info">
+        <span>${post.tag}</span>
+        <span>•</span>
+        <span>${post.date}</span>
+      </div>
+      <h2 class="modal-article-title">${post.title}</h2>
+      <div class="modal-full-text">
+        ${post.fullContent}
+      </div>
+      
+<div class="modal-share-container">
+  <h3 class="share-title">Compartir este artículo único</h3>
+  <div class="share-buttons-list">
+    <a class="share-item-btn x-twitter" href="https://x.com{encodedUrl}&text=${twitterText}" target="_blank" rel="noopener noreferrer">
+      𝕏 Twitter
+    </a>
+    <a class="share-item-btn facebook" href="https://facebook.com{encodedUrl}" target="_blank" rel="noopener noreferrer">
+      Facebook
+    </a>
+    <a class="share-item-btn linkedin" href="https://linkedin.com{encodedUrl}" target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
+    <a class="share-item-btn whatsapp" href="https://whatsapp.com{encodedTitle}%20${encodedUrl}" target="_blank" rel="noopener noreferrer">
+      WhatsApp
+    </a>
+    <!-- NUEVO: Botón oficial de Telegram con ID dinámico -->
+    <a class="share-item-btn telegram" href="https://t.me{encodedUrl}&text=${encodedTitle}" target="_blank" rel="noopener noreferrer">
+      ✈️ Telegram
+    </a>
+    <button class="share-item-btn copy-link" onclick="copyArticleLink('${uniqueArticleUrl}', this)">
+      🔗 Copiar Enlace Único
+    </button>
+  </div>
+</div>
+
+    </div>
+  `;
+
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; 
+}
+
+// Copiar al portapapeles el enlace específico
+function copyArticleLink(url, buttonElement) {
+  navigator.clipboard.writeText(url).then(() => {
+    const originalText = buttonElement.innerHTML;
+    buttonElement.innerHTML = "✅ ¡Enlace de Artículo Copiado!";
+    buttonElement.style.background = "#22c55e";
+    buttonElement.style.borderColor = "transparent";
+    
+    setTimeout(() => {
+      buttonElement.innerHTML = originalText;
+      buttonElement.style.background = "";
+      buttonElement.style.borderColor = "";
+    }, 2000);
+  }).catch(err => {
+    console.error('Error al copiar: ', err);
+  });
+}
+
+/* ==========================================================================
+   SISTEMA INTELIGENTE DE DETECCIÓN (DEEP LINKING)
+   ========================================================================== */
+window.addEventListener('DOMContentLoaded', () => {
+  // Inicializa las tarjetas primero
+  renderPosts(posts);
+
+  // Analiza los parámetros de la barra de direcciones de navegación
+  const urlParams = new URLSearchParams(window.location.search);
+  const postIdFromUrl = urlParams.get('post_id');
+
+  // Si existe el parámetro '?post_id=X', abre ese modal de inmediato al cargar la página
+  if (postIdFromUrl) {
+    const targetId = parseInt(postIdFromUrl, 10);
+    setTimeout(() => {
+      openModal(targetId);
+    }, 300);
+  }
+});
+
+// Función para cerrar el modal
+function closeModal() {
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = ''; // Devuelve el scroll al body
+}
+
+// Eventos de cierre
+closeModalBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal(); // Cierra si hace clic fuera del contenedor blanco
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); // Cierra con tecla ESC
+});
+
+
+  </script>
+</body>
+</html>
