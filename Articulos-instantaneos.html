@@ -29,6 +29,7 @@
     
     <article>
       <h1 class="titiles">Gieovanny Frias</h1>
+      <a href="/Articulos_destacados"><button class="btn-premium">Explorar ahora</button></a>
       <div class="info_block">
         <p class="info">Noviembre 14, 2024 / 8 min de lectura </p>
       </div> 
@@ -156,7 +157,7 @@
   height: 6px;
   background-color: var(--accent);
   position: fixed;
-          margin-top: 95px;
+          margin-top: auto;
   inset: 0 0 auto;
   transform-origin: left;
 }
@@ -177,6 +178,30 @@ body {
         position: relative;
         margin-top: 100px;
       }
+      .btn-premium {
+background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+box-shadow: 0 15px 25px -5px rgba(186, 143, 85, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+box-shadow: 0 15px 25px -5px rgba(186, 143, 85, 0.5);
+}
+
+.btn-premium:active {
+  transform: translateY(0);
+box-shadow: 0 15px 25px -5px rgba(186, 143, 85, 0.7);
+}
+
 main {
   margin-top: var(--spacing-xl);
   padding-block: var(--spacing-m); 
