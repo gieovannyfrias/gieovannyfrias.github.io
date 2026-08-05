@@ -2,7 +2,7 @@ document.body.insertAdjacentHTML("afterbegin", `
 <header class="header">
   <div class="child-header">
     <div class="box-logo">
-      <a href="index.html" class="link-logo">Gieovanny Frias</a>
+      <a href="index.html" class="link-logo">Gieovanny Frías</a>
       <h6>Youtuber, Influencer, Streamer, Dj, Modelo</h6>
     </div>
     
