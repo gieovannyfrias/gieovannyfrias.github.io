@@ -17,7 +17,7 @@ const footerHTML = `
       <div class="content-final">
         <div class="container-final">
           <div class="footer__label">
-            <h2 class="footer__title">Gieovanny Frias</h2>
+            <h2 class="footer__title">Gieovanny Frías</h2>
             <span class="footer__subtitle">Youtuber, Influencer, Streamer, Dj, Modelo</span>
           </div>
 
