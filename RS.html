@@ -40,7 +40,7 @@ como ser creador de contenido"/>
   <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
 </svg></h1>
 
-    <h2 class="card-jobtitle">Youtuber|Influencer|Streamer|<br>Bloguero o creador digital|<br>Dj|Modelo</h2>
+    <h2 class="card-jobtitle">Creador de contenido|Streamer|<br>Podcaster|Modelo|DJ|Empresario</h2>
 
   </div>
 
@@ -51,7 +51,9 @@ como ser creador de contenido"/>
       <div class="card-content">
 
         <div class="card-subtitle">Acerca de</div>
-<p>🎥 Youtuber • 📱 Influencer • 🎮 Streamer • ✍️ Bloguero / Creador digital • 🎶 Dj • 📸 Modelo • 🌐 Celebridad de internet 🇲🇽 🌮</p>
+<p>✨Marca personal digital✨<br>
+🎥 Youtuber•📱Influencer•🎮Streamer•✍️Bloguero / Creador digital<br>•🎙️Podcaster•🎧 Dj Electro/electrónica•📸 Modelo•🏢Empresario
+📍🇲🇽 🌮</p>
         <p class="card-desc">
 Gieovanny Frías nació el 10 de septiembre de 1996 en Ciudad de México, México. Es un youtuber, influencer, streamer, bloguero o creador digital, artista musical, modelo y celebridad de internet mexicano cuyo canal consiste principalmente en vlogs, documental, viajes y aventuras en YouTube.En tanto en twitch y kick en videojuegos de streaming en vivo que soy un streamer apasionado por los videojuegos de todo tipo de diferente categoría variado donde se podrá ver buen rollo e humor, partidas en vivo con interacción constante al chat y tener una comunidad inclusiva.En cambio la musica me categorizo como Dj electro/electronica mexicano reconocido por su energía en el escenario y su habilidad para conectar con el público a través de ritmos vibrantes y atmósferas envolventes en ser originario de México, que se ha dedicado su carrera a explorar los sonidos más innovadores de la música electrónica, fusionando estilos que van desde el techno y el house hasta propuestas experimentales que reflejan su identidad única.Tambien soy modelo fashion donde comparto contenido de moda y estilo mediante modelo influencer e digital donde creo contenido en redes sociales de fotografía o video donde comparto ideas de vestimenta en el outfit masculino. También soy un empresario digital que fusiona negocios, tecnología y creatividad. Ahora ya para terminar soy una marca personal digital donde es la identidad y reputación online como persona, cómo se presenta en redes, qué valores transmite y cómo conecta con su audiencia.
         </p>
@@ -780,17 +782,14 @@ body {
   font-family: "Jost", sans-serif;
 
  background: black;
+  zoom:75%;
 }
     .wrapper {
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 32px;
+      padding-top: 100px;
 }
-  
- 
-  
-  
-
 .card {
 
   max-width: 100%;
@@ -865,7 +864,7 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
   }
 
 .social-buttons{
-  width: 30%;
+  width: 100%;
   display:flex;
   background: rgba(256,256,256,0.5);
   padding:15px;
@@ -899,11 +898,12 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
   @media only screen and (min-width:320px) and (max-width:1200px){
 .social-buttons{
         width: max-content;
-        display: block;
+        display: flex;
         margin-left: auto;
         margin-right: auto;
         align-content: center;
         text-align: center;
+  flex-wrap: wrap;
      }
     }
     .bi-patch-check-fill{
@@ -1007,7 +1007,7 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
   position: relative;
   animation: cambiar 10s ease-in-out infinite;
       	max-width: 1800px;
-	margin: 0 auto;
+/*	margin: 0 auto;*/
 	padding: 0;
 }
     @keyframes cambiar{
@@ -1029,15 +1029,15 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
 
 .card.is-active .card-header {
 
-  height: 80px;
+  height: 180px;
 
 }
 
 .card.is-active .card-cover {
 
-  height: 140px;
+  height: 260px;
 
-  top: -50px;
+  top: -20px;
 
 }
 
@@ -1092,8 +1092,8 @@ background: linear-gradient(90deg, rgba(181,169,169,1) 0%, rgba(255,255,255,1) 5
 }
   @media only screen and (min-width:320px) and (max-width:1200px){
 .card.is-active .card-jobtitle {
-top: 80px;
-  left: auto;
+top: 140px;
+  left: 100px;
   letter-spacing: 1px;
       
      }
@@ -1126,24 +1126,36 @@ top: 80px;
   transition: 0.3s;
 
 }
-
-.card-cover {
-
-width: 100%;
-    height: 100%;
-    position: absolute;
-    height: 160px;
-    top: -20%;
-    left: 0;
-    will-change: top;
-    background-size: cover;
-    background-position: top;
-    filter: drop-shadow(2px 4px 6px black);
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+/* Estilos base (Escritorio / Tablets) */
+.card-cover { 
+  position: absolute; 
+  top: -20%; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-size: cover; 
+  background-position: top; 
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5)); 
+  transform: scale(1.2); 
+  transition: 0.5s; 
+  will-change: top, transform; 
+  image-rendering: -webkit-optimize-contrast; /* Evita el desenfoque en navegadores WebKit/Safari */
+  image-rendering: crisp-edges;
 }
+
+/* Adaptación para Móviles (Máxima Nitidez) */
+@media (max-width: 2000px) {
+  .card-cover {
+    top: 0; 
+    height: 100px; 
+    /* Eliminamos el scale() exagerado para que se muestre a su resolución real 1:1 */
+    transform: scale(1); 
+    /* Contiene la imagen perfectamente sin estirarla artificialmente */
+    background-size: cover; 
+    background-position: center; 
+  }
+}
+
 
 .card-avatar {
 
@@ -1718,43 +1730,41 @@ background: linear-gradient(90deg, rgba(127,125,159,1) 0%, rgba(58,58,164,1) 52%
 <script src="src/components/Footer/footer.js" defer></script>
   <script>
   
-  const buttons = document.querySelectorAll(".card-buttons button");
-
+const card = document.querySelector(".card");
+const buttons = document.querySelectorAll(".card-buttons button");
 const sections = document.querySelectorAll(".card-section");
 
-const card = document.querySelector(".card");
+// Guardamos el botón y la sección activa para no usar loops en cada clic
+let activeBtn = document.querySelector(".card-buttons button.is-active") || buttons[0];
+let activeSection = document.querySelector(".card-section.is-active") || sections[0];
 
-const handleButtonClick = e => {
+const handleButtonClick = (e) => {
+  const currentBtn = e.currentTarget; // Usar currentTarget es más seguro que target
+  if (currentBtn === activeBtn) return; // Si ya está activo, no hace nada
 
-  const targetSection = e.target.getAttribute("data-section");
+  const targetSelector = currentBtn.getAttribute("data-section");
+  const targetSection = document.querySelector(targetSelector);
+  if (!targetSection) return; // Evita errores si la sección no existe
 
-  const section = document.querySelector(targetSection);
+  // 1. Alternar estado de la tarjeta principal
+  const isAbout = targetSelector === "#about";
+  card.classList.toggle("is-active", !isAbout);
+  card.setAttribute("data-state", targetSelector);
 
-  targetSection !== "#about" ?
+  // 2. Desactivar elementos anteriores directamente (sin loops)
+  if (activeBtn) activeBtn.classList.remove("is-active");
+  if (activeSection) activeSection.classList.remove("is-active");
 
-  card.classList.add("is-active") :
+  // 3. Activar nuevos elementos
+  currentBtn.classList.add("is-active");
+  targetSection.classList.add("is-active");
 
-  card.classList.remove("is-active");
-
-  card.setAttribute("data-state", targetSection);
-
-  sections.forEach(s => s.classList.remove("is-active"));
-
-  buttons.forEach(b => b.classList.remove("is-active"));
-
-  e.target.classList.add("is-active");
-
-  section.classList.add("is-active");
-
+  // 4. Actualizar referencias del estado activo
+  activeBtn = currentBtn;
+  activeSection = targetSection;
 };
 
-buttons.forEach(btn => {
-
-  btn.addEventListener("click", handleButtonClick);
-
-});
-  
-    
+buttons.forEach(btn => btn.addEventListener("click", handleButtonClick));
   </script>
   </body>
 </html>
