@@ -1,4 +1,9 @@
 const footerHTML = `
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+</head>
   <div class="pie-pagina">
     <footer class="footer">
       <!-- Burbujas decorativas -->
@@ -36,7 +41,7 @@ const footerHTML = `
 
         <!-- Copy final -->
         <div class="footer__copy">
-          © <span class="year"></span> Todos los derechos reservados | Gieovanny Frias
+          © <span class="year"></span> Todos los derechos reservados | Gieovanny Frías
         </div>
       </div>
     </footer>
@@ -52,6 +57,10 @@ const style = document.createElement("style");
 style.textContent = `
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background-color:transparent; font-family:"Open Sans", sans-serif; }
+.footer__title{  
+font-family: "Trade Winds", system-ui;
+  font-weight: 400;
+  font-style: normal;}
   .footer__link { text-decoration:none; color:#fff; }
   .footer-li { list-style:none; }
   .pie-pagina { display:grid; grid-template-rows:1fr auto auto; grid-template-areas:"main" "footer"; min-height:100vh; overflow-x:hidden; }
