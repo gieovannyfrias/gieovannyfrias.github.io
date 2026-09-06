@@ -1,4 +1,9 @@
 document.body.insertAdjacentHTML("afterbegin", `
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+</head>
 <header class="header">
   <div class="child-header">
     <div class="box-logo">
@@ -292,6 +297,9 @@ flex-direction: column;
 
 
 .link-logo {
+  font-family: "Trade Winds", system-ui;
+  font-weight: 400;
+  font-style: normal;
   font-weight: 700;
   color: white;
   font-size: 28px;
