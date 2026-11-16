@@ -37,198 +37,133 @@
     
       <div class="wrapper">
 
-    <div class="container">
-        <div class="menu">
-         <div id=current-day-info class=color>
-    <h3 id=app-name-landscape class="off-color center default-cursor">Calendario</h3>
-    <div>
-       <label for="1name"> Año
-         <span class="year"></span>
-    </label>
-    </div>
-    <div>
-      <h3 id=cur-day class="current-day-heading center default-cursor">Lunes-Domingo</h3>
-      <h3 id=cur-month class="current-month-heading center default-cursor">Enero-Diciembre</h3>
-      <h3 id=cur-date class="current-date-heading center default-cursor">1 de Enero(Año nuevo)</h3>
-      <div  id="reloj"></div>
-      <div id="current_date"></div>
-    </div>
-<!-- 
-<div class="corazon"></div>  
--->
-    </div>
+  <!-- Cabecera con reloj, fecha y tarjeta de calendario -->
+  <div class="container">
+    <div class="menu">
+      <div id="current-day-info" class="color">
+        <h3 id="app-name-landscape" class="off-color center default-cursor">Calendario</h3>
+        <div>
+          <span>Año <span class="year"></span></span>
         </div>
-      <div class="calendar">
-    <div id="monthName"></div>
-    <div id="dayName"></div>
-    <div id="dayNumber"></div>
-    <div id="year"></div>
-  </div> 
+        <div>
+          <h3 id="cur-day" class="current-day-heading center default-cursor">Lunes - Domingo</h3>
+          <h3 id="cur-month" class="current-month-heading center default-cursor">Enero - Diciembre</h3>
+          <h3 id="cur-date" class="current-date-heading center default-cursor">1 de Enero (Año Nuevo)</h3>
+          <div id="reloj"></div>
+          <div id="current_date"></div>
+        </div>
+        <!-- <div class="corazon"></div> -->
+      </div>
     </div>
-    <br>
-    <div style="background-color: black;">
+
+    <div class="calendar">
+      <div id="monthName"></div>
+      <div id="dayName"></div>
+      <div id="dayNumber"></div>
+      <div id="year"></div>
+    </div>
+  </div>
+
+  <!-- Título de Eventos -->
+  <div style="background-color: black; margin-top: 30px;">
     <h1 class="title_eventos_conciertos">Eventos y conciertos</h1>
-    </div>
-      <div class="eventos">
-  <div class="eventos_1">
-  <div class="section">
-    <div class="blog-post blog-single-post">
-      <div class="single-post-title">
-        
-          <h2 class="title_fecha" >Fecha</h2>
-        <h2 class="title_description" >Descripcion</h2>
-          <h2 class="title_area" > Area</h2>
-                  <h2 class="title_precio" >Precio</h2>
-        
-      </div><br>
-      <div class="single-post-content">
-        
-        <table class="events-list">
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">16</div>
-                <div class="event-month">MAR</div>
-                <div class="event-year"><span class="year"></span></div>
-              </div>
-            </td>
-            <td>
-              El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">$50.00</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">5</div>
-                <div class="event-month">APR</div>
-                                <div class="event-year"><span class="year"></span></div>
+  </div>
 
-              </div>
-            </td>
-            <td>
-                El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i>Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">FREE</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">31</div>
-                <div class="event-month">MAY</div>
-                                <div class="event-year"><span class="year"></span></div>
+  <!-- Tabla de Eventos y Conciertos -->
+  <div class="eventos">
+    <div class="eventos_1">
+      <div class="section">
+        <div class="blog-post blog-single-post">
+          <div class="single-post-content">
+            <table class="events-list">
+              <thead>
+                <tr class="single-post-title" style="position: static;">
+                  <th class="title_fecha" style="float: none; text-align: left;">Fecha</th>
+                  <th class="title_description" style="float: none; margin-left: 0; text-align: left;">Descripción</th>
+                  <th class="title_area" style="float: none; margin-left: 0; text-align: left;">Área</th>
+                  <th class="title_precio" style="float: none; margin-left: 0; text-align: left;">Precio</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="event-date">
+                      <div class="event-day">16</div>
+                      <div class="event-month">MAR</div>
+                      <div class="event-year"><span class="year"></span></div>
+                    </div>
+                  </td>
+                  <td>El evento o concierto estará disponible próximamente este año.</td>
+                  <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de México</td>
+                  <td class="event-price hidden-xs">$50.00</td>
+                  <td><a href="#" class="fcc-btn">Comprar</a></td>
+                </tr>
 
-              </div>
-            </td>
-            <td>
-               El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">$30.00</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">17</div>
-                <div class="event-month">SEP</div>
-                                <div class="event-year"><span class="year"></span></div>
+                <tr>
+                  <td>
+                    <div class="event-date">
+                      <div class="event-day">5</div>
+                      <div class="event-month">ABR</div>
+                      <div class="event-year"><span class="year"></span></div>
+                    </div>
+                  </td>
+                  <td>El evento o concierto estará disponible próximamente este año.</td>
+                  <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de México</td>
+                  <td class="event-price hidden-xs">FREE</td>
+                  <td><a href="#" class="fcc-btn">Comprar</a></td>
+                </tr>
 
-              </div>
-            </td>
-            <td>
-                 El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">FREE</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">16</div>
-                <div class="event-month">MAR</div>
-                                <div class="event-year"><span class="year"></span></div>
+                <tr>
+                  <td>
+                    <div class="event-date">
+                      <div class="event-day">31</div>
+                      <div class="event-month">MAY</div>
+                      <div class="event-year"><span class="year"></span></div>
+                    </div>
+                  </td>
+                  <td>El evento o concierto estará disponible próximamente este año.</td>
+                  <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de México</td>
+                  <td class="event-price hidden-xs">$30.00</td>
+                  <td><a href="#" class="fcc-btn">Comprar</a></td>
+                </tr>
 
-              </div>
-            </td>
-            <td>
-               El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">$50.00</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">5</div>
-                <div class="event-month">APR</div>
-                                <div class="event-year"><span class="year"></span></div>
-
-              </div>
-            </td>
-            <td>
-               El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">FREE</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">31</div>
-                <div class="event-month">MAY</div>
-                                <div class="event-year"><span class="year"></span></div>
-
-              </div>
-            </td>
-            <td>
-                El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">$30.00</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="event-date">
-                <div class="event-day">17</div>
-                <div class="event-month">SEP</div>
-                                <div class="event-year"><span class="year"></span></div>
-
-              </div>
-            </td>
-            <td>
-                 El evento o conciertos estaran en proximamente del año.
-            </td>
-            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i>Ciudad de Mexico</td>
-            <td class="event-price hidden-xs">FREE</td>
-            <td><a href="#" class="fcc-btn">Comprar</a></td>
-          </tr>
-        </table>
-
+                <tr>
+                  <td>
+                    <div class="event-date">
+                      <div class="event-day">17</div>
+                      <div class="event-month">SEP</div>
+                      <div class="event-year"><span class="year"></span></div>
+                    </div>
+                  </td>
+                  <td>El evento o concierto estará disponible próximamente este año.</td>
+                  <td class="event-venue hidden-xs"><i class="icon-map-marker"></i> Ciudad de México</td>
+                  <td class="event-price hidden-xs">FREE</td>
+                  <td><a href="#" class="fcc-btn">Comprar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-    </div>  
+  <!-- Llamado a la acción y botones inferiores -->
+  <h2 style="color: white; margin: 30px 0 20px; font-size: 2rem; line-height: 1.4; text-align: center;">
+    Entérate de todas las novedades de cada día en tiempo real, donde podrás encontrar en la agenda conciertos, reuniones, eventos y conferencias de cualquier tipo de publicación.
+  </h2>
 
-  
-     <h1 style="color: white">Enterate de todas las novedades de cada dia en tiempo real sin ninguna novedad donde podras encontrar en la agenda conciertos, reuniones, eventos, conferencias de cualquier tipo de publicación.</h1>
-        <div class="centro"> 
-          <nav class="botones" aria-label="Acciones principales"> 
-            <a href="Eventos.html" id="btnEntrar" class="boton">Entrar</a>
-            <a href="Registro_calendario.html" id="btnRegistro" class="boton">Registro</a> 
-            <a href="Agenda.html" id="btnAgenda" class="boton">Agenda</a>
-          </nav>
-        </div>
+  <div class="centro" style="margin-bottom: 40px;">
+    <nav class="botones" aria-label="Acciones principales">
+      <a href="/Eventos" id="btnEntrar" class="boton">Entrar</a>
+      <a href="/Registro_calendario" id="btnRegistro" class="boton">Registro</a>
+      <a href="/Agenda" id="btnAgenda" class="boton">Agenda</a>
+    </nav>
+  </div>
+
+
+
         <!-- primer anuncio de adesense y para agregarle un segundo anuncio se copia el mismo pero ponlo donde quieres que se coloque -->
         <div style="background: transparent">
       <ins class="adsbygoogle"
@@ -242,7 +177,8 @@
 </script>
         </div></div>
 <style>
-      * {
+/* ================= BASE Y CONTENEDORES ================= */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -252,154 +188,152 @@
 html {
   font-size: 50%;
 }
-  body{
-    background-color: black;
-  }
-  
- 
-  
-      .wrapper {
-	max-width: 1400px;
-	margin: 0 auto;
-	padding: 2px;
-}
-    .menu{
-        width: 100%;
-        text-align: center;
-        font-family: Comic Sans MS, Comic Sans, cursive;
- font-size: 33px; 
-    }
-  @media only screen and (min-width:320px) and (max-width:1200px){
- .menu {
-    font-size: 10px;
-  }
-}
-  .corazon {
-  animation: latido 1s infinite;
-  background-color:hotpink;
-  display: inline-block;
-  height: 50px;
-  margin: 0 10px;
-  top: 0;
-  transform: rotate(-45deg);
-  position:; 
-  left: 45%; 
-  top: 45%;
-  width: 50px;
+
+body {
+  background-color: black;
+  zoom: 75%;
 }
 
-.corazon:before,
-.corazon:after {
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2px;
+  overflow: hidden;
+}
+
+/* ================= MENÚ ================= */
+.menu {
+  width: 100%;
+  text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 33px;
+  color: white;
+}
+
+/* ================= CORAZÓN ANIMADO ================= */
+.corazon {
+  animation: latido 1s infinite;
+  background-color: hotpink;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 35px 25px; /* Margen extra para que los lóbulos superiores no se corten */
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.corazon::before,
+.corazon::after {
   content: "";
   background-color: hotpink;
   border-radius: 50%;
   height: 50px;
-  position: absolute;
   width: 50px;
+  position: absolute;
 }
 
-.corazon:before {
+.corazon::before {
   top: -25px;
   left: 0;
 }
 
-.corazon:after {
+.corazon::after {
   left: 25px;
   top: 0;
 }
 
 @keyframes latido {
-  0%
-  {
-    transform: scale( 1 )
-      rotate(-45deg);    
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
   }
-  20%
-  {
-    transform: scale( 1.25 )
-      rotate(-45deg);  
+  20% {
+    transform: scale(1.25) rotate(-45deg);
   }
-   40%
-  {
-    transform: scale( 1.5 )
-      rotate(-45deg);
+  40% {
+    transform: scale(1.45) rotate(-45deg);
   }
-}  
+}
 
+/* ================= CONTENEDOR Y ETIQUETAS ================= */
 .container {
-    
   width: 100%;
-  background-color:black;
+  background-color: black;
   color: #eee;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 150px;
 }
-    
-  label{
-            color: white;
-        }
-/*calendario*/
-  
-     .calendar {
-      position: relative;
-      background: #ffffff;
-      border-radius: 8px;
-      width: 200px;
-      text-align: center;
-      overflow: hidden;
-      -webkit-box-reflect: below 1px linear-gradient (transparent, transparent, #0004);
-    }
 
-    .calendar #monthName {
-      position: relative;
-      background: #ff6331;
-      color: #ffffff;
-      padding: 10px;
-      font-size: 30px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
+label {
+  color: white;
+}
 
-    .calendar #dayName {
-      font-size: 20px;
-      font-weight: 300;
-      margin-top: 20px;
-      color: #999;
-    }
+/* ================= CALENDARIO TARJETA ================= */
+.calendar {
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+/*  overflow: hidden;*/
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+}
 
-    .calendar #dayNumber {
-      font-size: 80px;
-      font-weight: 700;
-      margin-top: 0px;
-      color: #333;
-      line-height: 1em;
-    }
+.calendar #monthName {
+  position: relative;
+  background: #ff6331;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
-    .calendar #year {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #999;
-    }
-  
-  /*mes*/
-  
+.calendar #dayName {
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 20px;
+  color: #999;
+}
+
+.calendar #dayNumber {
+  font-size: 80px;
+  font-weight: 700;
+  margin-top: 0;
+  color: #333;
+  line-height: 1em;
+}
+
+.calendar #year {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #999;
+}
+
+/* ================= CALENDARIO MENSUAL (.month) ================= */
 .month {
   width: 100%;
   height: 12rem;
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
   text-align: center;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .month i {
   font-size: 2.5rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.month i:hover {
+  transform: scale(1.2);
 }
 
 .month h1 {
@@ -420,13 +354,14 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
   padding: 0 0.4rem;
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .weekdays div {
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.1rem;
-  width: calc(44.2rem / 7);
+  width: calc(100% / 7); /* Más seguro que 44.2rem/7 para adaptarse a cualquier ancho */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -438,8 +373,20 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
   display: flex;
   flex-wrap: wrap;
   padding: 0.2rem;
+  color: white;
 }
 
+/* ================= RESPONSIVE ================= */
+@media only screen and (max-width: 900px) {
+  .menu {
+    font-size: 18px;
+  }
+
+  .container {
+    justify-content: center;
+  }
+}
+/* ================= DÍAS DEL CALENDARIO ================= */
 .days div {
   font-size: 1.4rem;
   margin: 0.3rem;
@@ -448,8 +395,9 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease, border 0.2s ease;
 }
 
 .days div:hover:not(.today) {
@@ -465,98 +413,63 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
 
 .today {
   background-color: #167e56;
+  font-weight: bold;
 }
-  
-  
-  
-  
-  
-  .title_eventos_conciertos{
-    font-size: 42px;
-background: linear-gradient(90deg, rgba(249,0,43,1) 0%, rgba(2,88,245,1) 23%, rgba(78,79,80,1) 53%, rgba(255,255,255,1) 184%);
-  background-clip: text;
+
+/* ================= TÍTULOS Y SECCIÓN DE EVENTOS ================= */
+.title_eventos_conciertos {
+  font-size: 42px;
+  background: linear-gradient(90deg, rgba(249,0,43,1) 0%, rgba(2,88,245,1) 23%, rgba(78,79,80,1) 53%, rgba(255,255,255,1) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
-    
-  }
-  @media only screen and (min-width:320px) and (max-width:1200px){
-      .title_eventos_conciertos{
-    margin-top: 100px;
-    }
-  }
-  .eventos {
+}
+
+.eventos {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #535b60;
   background-color: black;
 }
- .single-post-title {
+
+.single-post-title {
   position: absolute;
-background: linear-gradient(90deg, rgba(238,238,245,1) 0%, rgba(6,144,173,1) 92%, rgba(255,255,255,1) 184%);
-  background-clip: text;
+  background: linear-gradient(90deg, rgba(238,238,245,1) 0%, rgba(6,144,173,1) 92%, rgba(255,255,255,1) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
-   
 }
-    @media only screen and (min-width:320px) and (max-width:1200px){
-      .eventos{
-        font-size: 20px;
-      }
- .single-post-title {
-font-size: 0.5em;
-      }
-  }
-   .title_fecha {
-float: left;
-  
-     }
-  .title_description {
-float: left;
-    left;margin-left: 40px;
-  }
-       .title_area {
-float: left;
-    margin-left: 630px;"
-  }
-       .title_precio {
-float: left;
-     margin-left: 130px;
-  }
-  
-  @media only screen and (min-width:320px) and (max-width:1200px){
 
-  .title_fecha {
-    margin-left: 1px;
+/* Encabezados de columnas de eventos */
+.title_fecha {
+  float: left;
+}
 
-  
-     }
-  .title_description {
+.title_description {
+  float: left;
+  margin-left: 40px;
+}
 
-    margin-left: 30px;
-  }
-       .title_area {
+.title_area {
+  float: left;
+  margin-left: 630px;
+}
 
-    margin-left: 20px;"
-  }
-       .title_precio {
+.title_precio {
+  float: left;
+  margin-left: 130px;
+}
 
-     margin-left: 30px;
-  }
-  
-  }
-  
-  
-  
+/* ================= TABLA / LISTA DE EVENTOS ================= */
 .events-list {
   width: 100%;
   font-size: 0.9em;
+  border-collapse: collapse;
 }
-  @media only screen and (min-width:320px) and (max-width:1200px){
-.events-list {
-font-size: 10px;
-    }
-  }
+
 .events-list tr td {
   padding: 5px 20px 5px 0;
 }
@@ -574,59 +487,144 @@ font-size: 10px;
   margin: 3px 0;
   padding: 2px 10px;
   border-left: 5px solid #CFCFCF;
-  -webkit-transition: all .25s linear;
-  -moz-transition: all .25s linear;
-  -o-transition: all .25s linear;
-  -ms-transition: all .25s linear;
-  transition: all .25s linear;
+  transition: all 0.25s linear;
 }
 
 .events-list .event-date .event-day {
   color: red;
-  font-size: 1.em;
+  font-size: 1.1em;
   font-weight: 600;
   text-align: left;
 }
 
-.events-list .event-date .event-month .event-year {
+.events-list .event-date .event-month,
+.events-list .event-date .event-year {
   color: #777;
   font-size: 1em;
   font-weight: 600;
   text-align: left;
 }
-  td{
-    font-size: 1.3em;
-    color: white;
-  }
+
+td {
+  font-size: 1.3em;
+  color: white;
+}
 
 .events-list .event-date .event-venue,
 .events-list .event-date .event-price {
   white-space: nowrap;
 }
-  .fcc-btn {
-background: linear-gradient(90deg, rgba(147,147,153,1) 0%, rgba(114,147,207,1) 45%, rgba(163,6,173,1) 92%, rgba(255,255,255,1) 184%);
-    margin-left: -20px;
-    color: white;
+
+/* Botón degradado de eventos */
+.fcc-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(147,147,153,1) 0%, rgba(114,147,207,1) 45%, rgba(163,6,173,1) 92%, rgba(255,255,255,1) 100%);
+  margin-left: -20px;
+  color: white;
   padding: 15px 17px;
   text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .fcc-btn:hover {
-background: linear-gradient(90deg, rgba(235,249,0,1) 0%, rgba(245,75,2,1) 51%, rgba(163,6,173,1) 92%, rgba(255,255,255,1) 184%);
+  background: linear-gradient(90deg, rgba(235,249,0,1) 0%, rgba(245,75,2,1) 51%, rgba(163,6,173,1) 92%, rgba(255,255,255,1) 100%);
+  transform: scale(1.03);
 }
 
-/* CSS  boton*/
-     .list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      
-      font-family: Arial, sans-serif;
-    }
-   /* Contenedor centrado en pantalla */ .centro { display: flex; align-items: center; justify-content: center; height: 100%; } /* Fila de botones */ .botones { display: flex; gap: 16px; } /* Estilo base para los <a> como botones */ .boton { display: inline-block; text-decoration: none; padding: 12px 24px; border-radius: 8px; color: #fff; background: #2563eb; /* azul */ font-weight: 600; transition: transform 0.15s ease, background-color 0.2s ease; } .boton:hover { background: #1e4fd6; transform: translateY(-1px); } /* Colores por botón (opcional) */ #btnRegistro { background: #10b981; } /* verde */ #btnRegistro:hover { background: #0a946a; } #btnAgenda { background: red; } /* naranja */ #btnAgenda:hover { background: darkred; }
-  
+/* ================= BOTONES DE REGISTRO Y AGENDA ================= */
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.botones {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boton {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #2563eb;
+  font-weight: 600;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.boton:hover {
+  background: #1e4fd6;
+  transform: translateY(-1px);
+}
+
+#btnRegistro {
+  background: #10b981;
+}
+
+#btnRegistro:hover {
+  background: #0a946a;
+}
+
+#btnAgenda {
+  background: red;
+}
+
+#btnAgenda:hover {
+  background: darkred;
+}
+
+/* ================= RESPONSIVE EVENTOS ================= */
+@media only screen and (min-width: 320px) and (max-width: 1200px) {
+  .title_eventos_conciertos {
+    margin-top: 100px;
+    font-size: 28px;
+  }
+
+  .eventos {
+    font-size: 20px;
+  }
+
+  .single-post-title {
+    font-size: 0.5em;
+  }
+
+  .title_fecha {
+    margin-left: 1px;
+  }
+
+  .title_description {
+    margin-left: 30px;
+  }
+
+  .title_area {
+    margin-left: 20px;
+  }
+
+  .title_precio {
+    margin-left: 30px;
+  }
+
+  .events-list {
+    font-size: 10px;
+  }
+}
+
       
       </style>
                         <!-- La ruta debe recorrer todas las carpetas -->
